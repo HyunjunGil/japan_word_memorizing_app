@@ -9222,6 +9222,7 @@
 ];
         // 초기화
         function init() {
+            initVoices();  // 일본어 음성 초기화
             // DEFAULT_WORD_SETS를 그대로 사용
             wordSets = [...DEFAULT_WORD_SETS];
             
@@ -9653,6 +9654,49 @@
             answerShown = false; // 정답 표시 상태 초기화
         }
         
+        // Web Speech API로 발음 재생 (Chrome에서 Google 일본어 음성 사용)
+        let jaVoice = null;
+        
+        // 페이지 로드 시 일본어 음성 찾기
+        function initVoices() {
+            const setVoice = () => {
+                const voices = speechSynthesis.getVoices();
+                // Google 일본어 음성 우선, 없으면 다른 일본어 음성 사용
+                jaVoice = voices.find(v => v.name === 'Google 日本語') 
+                       || voices.find(v => v.lang.startsWith('ja'));
+            };
+            
+            setVoice();
+            if (speechSynthesis.onvoiceschanged !== undefined) {
+                speechSynthesis.onvoiceschanged = setVoice;
+            }
+        }
+        
+        function playPronunciation(text) {
+            if (!text || text.trim() === '') {
+                return;
+            }
+            
+            // 이전 발화 중단
+            speechSynthesis.cancel();
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            
+            if (jaVoice) {
+                utterance.voice = jaVoice;
+            }
+            
+            utterance.rate = 0.9;  // 약간 느리게 (학습용)
+            utterance.pitch = 1;
+            
+            utterance.onerror = (e) => {
+                console.error('발음 재생 실패:', e);
+            };
+            
+            speechSynthesis.speak(utterance);
+        }
+        
         // 공부하기 테이블 표시
         function displayStudyTable(wordSet) {
             const container = document.getElementById('studyTableContainer');
@@ -9668,14 +9712,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        ${wordSet.words.map(word => {
-                            const searchQuery = encodeURIComponent(`${word.japanese} 번역`);
-                            const googleSearchUrl = `https://www.google.com/search?q=${searchQuery}`;
+                        ${wordSet.words.map((word, index) => {
+                            // 발음이 있으면 발음을, 없으면 일본어 표기를 사용
+                            const textToSpeak = word.pronunciation && word.pronunciation.trim() !== '' 
+                                ? word.pronunciation 
+                                : word.japanese;
                             return `
                             <tr>
                                 <td class="id-cell">${word.id}</td>
                                 <td class="japanese-cell">
-                                    <a href="${googleSearchUrl}" target="_blank" class="japanese-link">${word.japanese}</a>
+                                    <span class="japanese-link" onclick="playPronunciation('${textToSpeak.replace(/'/g, "\\'")}')" style="cursor: pointer;">${word.japanese}</span>
                                 </td>
                                 <td class="pronunciation-cell">${word.pronunciation}</td>
                                 <td class="meaning-cell">${word.meaning}</td>

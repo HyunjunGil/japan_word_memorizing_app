@@ -84,6 +84,7 @@ let answerShown = false;     // 정답 표시 여부
 let weights = {};           // 가중치 객체
 let studyMode = 'quiz';     // 'quiz' or 'study'
 let buttonAlignment = 'center'; // 'left', 'center', 'right'
+let jaVoice = null;         // Web Speech API 일본어 음성 객체
 ```
 
 ### 히스토리 구조 (스택 방식)
@@ -222,10 +223,31 @@ let buttonAlignment = 'center'; // 'left', 'center', 'right'
 - **`displayStudyTable(wordSet)`**: 테이블 형태로 모든 단어 표시
   - ID, 일본어, 발음, 의미 컬럼
   - 스크롤 가능한 고정 헤더
+  - **일본어 단어 클릭 시 발음 재생**: Web Speech API를 사용하여 발음 재생
   
 - **`displayStudyMode(word)`**: 플래시카드 형태로 모든 정보 표시
   - 일본어 표기를 메인으로 표시
   - 발음, 의미 함께 표시
+
+### 7-1. 발음 재생 기능 (Web Speech API)
+- **`initVoices()`**: 페이지 로드 시 일본어 음성 초기화
+  - Chrome 브라우저에서 "Google 日本語" 음성을 우선적으로 찾음
+  - 없으면 다른 일본어 음성 사용
+  - `speechSynthesis.onvoiceschanged` 이벤트로 음성 목록 업데이트 대기
+  
+- **`playPronunciation(text)`**: Web Speech API를 사용하여 발음 재생
+  - 이전 발화 중단 (`speechSynthesis.cancel()`)
+  - `SpeechSynthesisUtterance` 객체 생성
+  - 언어 설정: `ja-JP`
+  - 음성 선택: `jaVoice`가 있으면 사용 (Chrome의 Google 일본어 음성)
+  - 속도: 0.9 (학습용으로 약간 느리게)
+  - 피치: 1 (기본값)
+  - 에러 처리: `utterance.onerror` 이벤트로 에러 로깅
+  - **특징**:
+    - 프록시 서버 불필요
+    - API 키 불필요
+    - Chrome에서 고품질 Google 일본어 음성 사용
+    - 다른 브라우저에서는 OS 기본 일본어 음성 사용
 
 ### 8. 네비게이션
 - **`goHome()`**: 처음 화면으로 돌아가기
@@ -254,6 +276,7 @@ let buttonAlignment = 'center'; // 'left', 'center', 'right'
   - 전체 문제 수 대비 완료된 문제 수 표시
   - "진행도: A / B" 형태로 좌측 상단에 표시
 - **`init()`**: 페이지 로드 시 초기화
+  - `initVoices()` 호출하여 일본어 음성 초기화
   - `DEFAULT_WORD_SETS`를 `wordSets`에 복사
   - 파일 목록 렌더링
 
@@ -324,6 +347,7 @@ let buttonAlignment = 'center'; // 'left', 'center', 'right'
 - ✅ 문제 유형 히스토리 저장 (이전 버튼 클릭 시 같은 문제 유형 표시)
 - ✅ **진행도 표시**: 좌측 상단에 "진행도: A / B" 형태로 표시 (A = 완료된 문제 수, B = 전체 문제 수)
 - ✅ **완료 시 자동 이동**: 모든 문제 완료 시 알람 없이 바로 처음 화면으로 이동
+- ✅ **발음 재생 기능**: 공부하기 모드에서 일본어 단어 클릭 시 Web Speech API로 발음 재생 (Chrome에서 Google 일본어 음성 사용)
 
 ### 제약사항
 - ⚠️ 단일 HTML 파일 구조 (코드 분리 없음)
@@ -344,7 +368,7 @@ let buttonAlignment = 'center'; // 'left', 'center', 'right'
 5. **데이터 영구 저장**: LocalStorage 또는 IndexedDB 추가 (선택적)
 6. **다크 모드**: 테마 전환
 7. **애니메이션**: 카드 플립 효과
-8. **오디오 재생**: 발음 듣기 기능
+8. **오디오 재생**: 발음 듣기 기능 ✅ (Web Speech API로 구현 완료)
 
 ## 코드 품질
 
@@ -407,4 +431,8 @@ DEFAULT_WORD_SETS를 wordSets에 복사
 - ES6+ 문법 사용 (async/await, 화살표 함수 등)
 - 모던 브라우저 권장 (Chrome, Firefox, Safari, Edge)
 - LocalStorage 불필요 (메모리 기반만 사용)
+- **Web Speech API**: 발음 재생 기능 사용
+  - Chrome: "Google 日本語" 고품질 음성 사용 (클라우드 기반, 인터넷 연결 필요)
+  - Firefox/Safari: OS 기본 일본어 음성 사용 (로컬 TTS 엔진)
+  - Edge: Chrome과 유사하게 Google 음성 사용 가능
 
