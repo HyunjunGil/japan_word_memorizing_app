@@ -537,6 +537,18 @@
             color: #333;
         }
         
+        .study-table .japanese-link {
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .study-table .japanese-link:hover {
+            color: #333;
+            text-decoration: underline;
+        }
+        
         .study-table .pronunciation-cell {
             color: #666;
             font-size: 16px;
@@ -832,6 +844,7 @@
             <div class="header-buttons">
                 <button class="header-btn hidden" id="homeBtn" onclick="goHome()">처음으로</button>
                 <button class="header-btn hidden" id="changeSetBtn" onclick="changeWordSet()">단어셋 변경</button>
+                <button class="header-btn hidden" id="startQuizBtn" onclick="startQuizFromStudy()">평가하기로</button>
                 <button class="header-btn hidden" id="settingsBtn" onclick="toggleAlignmentMenu()">⚙</button>
             </div>
             <div class="alignment-menu" id="alignmentMenu">
@@ -9428,10 +9441,13 @@
                 displayStudyTable(selectedSet);
                 document.getElementById('studyTableScreen').classList.remove('hidden');
                 document.getElementById('settingsBtn').classList.add('hidden');
+                document.getElementById('changeSetBtn').classList.add('hidden');
+                document.getElementById('startQuizBtn').classList.remove('hidden');
             } else {
                 // 평가하기 모드: 플래시카드 화면 표시
                 document.getElementById('flashcardScreen').classList.remove('hidden');
                 document.getElementById('settingsBtn').classList.remove('hidden');
+                document.getElementById('startQuizBtn').classList.add('hidden');
                 updateProgress(); // 초기 진행도 설정
                 nextCard();
             }
@@ -9651,14 +9667,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        ${wordSet.words.map(word => `
+                        ${wordSet.words.map(word => {
+                            const searchQuery = encodeURIComponent(`${word.japanese} 번역`);
+                            const googleSearchUrl = `https://www.google.com/search?q=${searchQuery}`;
+                            return `
                             <tr>
                                 <td class="id-cell">${word.id}</td>
-                                <td class="japanese-cell">${word.japanese}</td>
+                                <td class="japanese-cell">
+                                    <a href="${googleSearchUrl}" target="_blank" class="japanese-link">${word.japanese}</a>
+                                </td>
                                 <td class="pronunciation-cell">${word.pronunciation}</td>
                                 <td class="meaning-cell">${word.meaning}</td>
                             </tr>
-                        `).join('')}
+                        `;
+                        }).join('')}
                     </tbody>
                 </table>
             `;
@@ -9743,8 +9765,57 @@
                 document.getElementById('fileSelectionScreen').classList.remove('hidden');
                 document.getElementById('homeBtn').classList.add('hidden');
                 document.getElementById('changeSetBtn').classList.add('hidden');
+                document.getElementById('startQuizBtn').classList.add('hidden');
                 document.getElementById('settingsBtn').classList.add('hidden');
             }
+        }
+        
+        // 공부하기에서 평가하기로 전환
+        function startQuizFromStudy() {
+            // 현재 선택된 단어셋으로 평가하기 모드 시작
+            selectedQuestions = [];
+            
+            // 현재 선택된 단어들로 문제 생성
+            selectedWords.forEach(word => {
+                // 일본어 표기 문제
+                selectedQuestions.push({
+                    word: word,
+                    questionType: 'japanese',
+                    questionLabel: '일본어 표기',
+                    weightKey: `${word.fileName}_${word.id}_japanese`
+                });
+                // 의미 문제
+                selectedQuestions.push({
+                    word: word,
+                    questionType: 'meaning',
+                    questionLabel: '뜻',
+                    weightKey: `${word.fileName}_${word.id}_meaning`
+                });
+            });
+            
+            // 가중치 초기화: 각 문제의 가중치를 1로 설정
+            weights = {};
+            selectedQuestions.forEach(question => {
+                weights[question.weightKey] = 1;
+            });
+            
+            // 모드 변경
+            studyMode = 'quiz';
+            
+            // 화면 전환
+            document.getElementById('studyTableScreen').classList.add('hidden');
+            document.getElementById('flashcardScreen').classList.remove('hidden');
+            document.getElementById('startQuizBtn').classList.add('hidden');
+            document.getElementById('changeSetBtn').classList.remove('hidden');
+            document.getElementById('settingsBtn').classList.remove('hidden');
+            
+            // 학습 상태 초기화
+            currentWordIndex = -1;
+            wordHistory = [];
+            
+            // 평가하기 모드 시작
+            updateProgress();
+            nextCard();
         }
         
         // 단어셋 변경
@@ -9754,6 +9825,7 @@
                 document.getElementById('studyTableScreen').classList.add('hidden');
                 document.getElementById('fileSelectionScreen').classList.remove('hidden');
                 document.getElementById('changeSetBtn').classList.add('hidden');
+                document.getElementById('startQuizBtn').classList.add('hidden');
                 document.getElementById('settingsBtn').classList.add('hidden');
             }
         }
