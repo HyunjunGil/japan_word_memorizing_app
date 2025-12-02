@@ -202,6 +202,18 @@
             font-weight: bold;
         }
         
+        .btn-icon {
+            width: 56px;
+            height: 56px;
+            padding: 0;
+            border-radius: 50%;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+        }
+        
         .btn-primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -211,6 +223,10 @@
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-icon.btn-primary {
+            flex: 0 0 auto;
         }
         
         .btn-secondary {
@@ -350,9 +366,11 @@
             display: flex;
             gap: 15px;
             width: 100%;
+            justify-content: center;
+            align-items: center;
         }
         
-        .card-controls .btn {
+        .card-controls .btn:not(.btn-icon) {
             flex: 1;
         }
         
@@ -583,12 +601,19 @@
             }
             
             .card-controls {
-                flex-direction: column;
-                gap: 10px;
+                flex-direction: row;
+                justify-content: center;
+                gap: 15px;
             }
             
             .card-controls .btn {
-                width: 100%;
+                width: auto;
+            }
+            
+            .card-controls .btn-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
             }
             
             .study-item {
@@ -764,9 +789,9 @@
                         <div class="card-answer hidden" id="cardAnswer"></div>
                     </div>
                     <div class="card-controls">
-                        <button class="btn btn-secondary" id="prevBtn" onclick="previousCard()" disabled>이전으로</button>
-                        <button class="btn btn-primary" id="showAnswerBtn" onclick="showAnswer()">정답 확인</button>
-                        <button class="btn btn-primary" id="nextBtn" onclick="nextCard()">다음으로</button>
+                        <button class="btn btn-icon btn-secondary" id="prevBtn" onclick="previousCard()" disabled>◀</button>
+                        <button class="btn btn-icon btn-primary" id="showAnswerBtn" onclick="showAnswer()">?</button>
+                        <button class="btn btn-icon btn-primary" id="nextBtn" onclick="nextCard()">▶</button>
                     </div>
                 </div>
             </div>
@@ -1696,8 +1721,7 @@
             document.getElementById('cardAnswer').innerHTML = answerHTML;
             document.getElementById('cardAnswer').classList.add('hidden');
             document.getElementById('showAnswerBtn').classList.remove('hidden');
-            document.getElementById('showAnswerBtn').textContent = '정답 확인';
-            document.getElementById('nextBtn').textContent = '다음으로';
+            document.getElementById('showAnswerBtn').textContent = '?';
             answerShown = false; // 정답 표시 상태 초기화
         }
         
@@ -1770,12 +1794,12 @@
             if (answerShown) {
                 // 정답이 보여져 있으면 숨기기
                 cardAnswer.classList.add('hidden');
-                showAnswerBtn.textContent = '정답 확인';
+                showAnswerBtn.textContent = '?';
                 answerShown = false;
             } else {
                 // 정답이 숨겨져 있으면 보여주기
                 cardAnswer.classList.remove('hidden');
-                showAnswerBtn.textContent = '정답 숨기기';
+                showAnswerBtn.textContent = '✓';
                 answerShown = true;
                 
                 // 가중치 증가 (정답을 처음 보여줄 때만)
