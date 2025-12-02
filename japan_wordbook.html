@@ -365,6 +365,13 @@
             display: none;
         }
         
+        .card-answer.hidden {
+            display: flex;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
         .empty-state {
             text-align: center;
             padding: 60px 20px;
@@ -1666,6 +1673,27 @@
             document.getElementById('questionType').textContent = currentQuestion.label;
             document.getElementById('cardContent').textContent = currentQuestion.value;
             document.getElementById('cardContent').style.fontSize = '48px';
+            
+            // 답 부분도 미리 렌더링하되 hidden으로 설정 (카드 높이 유지)
+            const answers = [];
+            if (currentQuestion.type !== 'japanese') {
+                answers.push({ label: '일본어 표기', value: word.japanese });
+            }
+            if (currentQuestion.type !== 'pronunciation' && hasPronunciation) {
+                answers.push({ label: '발음', value: word.pronunciation });
+            }
+            if (currentQuestion.type !== 'meaning') {
+                answers.push({ label: '뜻', value: word.meaning });
+            }
+            
+            const answerHTML = answers.map(ans => `
+                <div class="card-answer-item">
+                    <div class="card-answer-label">${ans.label}</div>
+                    <div class="card-answer-value">${ans.value}</div>
+                </div>
+            `).join('');
+            
+            document.getElementById('cardAnswer').innerHTML = answerHTML;
             document.getElementById('cardAnswer').classList.add('hidden');
             document.getElementById('showAnswerBtn').classList.remove('hidden');
             document.getElementById('nextBtn').textContent = '다음으로';
@@ -1739,29 +1767,7 @@
             // 가중치 증가
             weights[word.weightKey] = Math.min(5, (weights[word.weightKey] || 1) + 1);
             
-            // 발음이 있는지 확인
-            const hasPronunciation = word.pronunciation && word.pronunciation.trim() !== '';
-            
-            // 나머지 정보 표시
-            const answers = [];
-            if (currentQuestion.type !== 'japanese') {
-                answers.push({ label: '일본어 표기', value: word.japanese });
-            }
-            if (currentQuestion.type !== 'pronunciation' && hasPronunciation) {
-                answers.push({ label: '발음', value: word.pronunciation });
-            }
-            if (currentQuestion.type !== 'meaning') {
-                answers.push({ label: '뜻', value: word.meaning });
-            }
-            
-            const answerHTML = answers.map(ans => `
-                <div class="card-answer-item">
-                    <div class="card-answer-label">${ans.label}</div>
-                    <div class="card-answer-value">${ans.value}</div>
-                </div>
-            `).join('');
-            
-            document.getElementById('cardAnswer').innerHTML = answerHTML;
+            // 답은 이미 displayQuizMode에서 렌더링되었으므로 hidden 클래스만 제거
             document.getElementById('cardAnswer').classList.remove('hidden');
             document.getElementById('showAnswerBtn').classList.add('hidden');
         }

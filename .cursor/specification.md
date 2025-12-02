@@ -155,10 +155,11 @@ let studyMode = 'quiz';     // 'quiz' or 'study'
     - 발음 → 일본어 표기/의미 맞추기
     - 뜻 → 일본어 표기/발음 맞추기
   - 발음이 없는 단어는 발음 문제 제외
+  - **카드 높이 유지**: 답 부분도 미리 렌더링하되 `hidden` 클래스로 숨김 처리 (공간은 유지)
   
 - **`showAnswer()`**: 정답 표시
   - 가중치 +1
-  - 나머지 정보 표시
+  - 이미 렌더링된 답 부분의 `hidden` 클래스만 제거하여 표시
   - "정답 확인" 버튼 숨김
 
 ### 7. 공부하기 모드
@@ -200,6 +201,7 @@ let studyMode = 'quiz';     // 'quiz' or 'study'
 - `.card`: 플래시카드 컨테이너
 - `.study-table`: 공부하기 테이블
 - `.hidden`: 숨김 처리 (display: none)
+- `.card-answer.hidden`: 답 영역 숨김 처리 (공간은 유지, visibility: hidden 사용)
 - `.btn-primary`, `.btn-secondary`: 버튼 스타일
 
 ## 학습 흐름
@@ -228,6 +230,7 @@ let studyMode = 'quiz';     // 'quiz' or 'study'
 - ✅ 기본 단어셋 내장 (page_01, page_02)
 - ✅ JSON 파일 업로드 지원
 - ✅ 간단한 구조 (영구 저장 없음)
+- ✅ 카드 높이 일정 유지 (정답 확인 전후 동일한 높이)
 
 ### 제약사항
 - ⚠️ 단일 HTML 파일 구조 (코드 분리 없음)
