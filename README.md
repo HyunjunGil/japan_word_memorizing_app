@@ -44,6 +44,7 @@ japan_study/
 │   └── ...
 ├── results_tmp/                 # 임시 단어 데이터
 ├── word_init_script.py          # 단어 데이터 초기화 스크립트
+├── apply_update_japan_wordbook.sh # 변경사항 자동 반영 스크립트
 └── README.md                    # 이 파일
 ```
 
@@ -175,7 +176,21 @@ japan_study/
 
 개발 및 코드 수정 시에는 `japan_wordbook_no_words.html` 파일을 사용하는 것을 권장합니다. 이 파일은 `DEFAULT_WORD_SETS`가 축소되어 있어 로딩이 빠르고 수정이 용이합니다.
 
-수정 완료 후 변경사항을 `japan_wordbook.html`에 반영하세요.
+### 변경사항 자동 반영
+
+수정 완료 후 변경사항을 `japan_wordbook.html`에 자동으로 반영하려면 다음 스크립트를 실행하세요:
+
+```bash
+./apply_update_japan_wordbook.sh
+```
+
+이 스크립트는 다음 작업을 수행합니다:
+1. `japan_wordbook_no_words.html`을 `japan_wordbook.html`로 복사
+2. `word_init_script.py`를 실행하여 `results/` 폴더의 단어 데이터를 `japan_wordbook.html`에 초기화
+
+수동으로 반영하려면:
+1. `japan_wordbook_no_words.html`의 변경사항을 `japan_wordbook.html`에 복사
+2. `python word_init_script.py japan_wordbook.html results` 명령 실행
 
 ## 📖 상세 명세
 
