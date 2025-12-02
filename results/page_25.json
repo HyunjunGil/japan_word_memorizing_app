@@ -1,0 +1,281 @@
+{
+  "fileName": "page_25",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "相変わらず",
+      "pronunciation": "あいかわらず",
+      "meaning": "변함없이"
+    },
+    {
+      "id": 2,
+      "japanese": "前と同じで",
+      "pronunciation": "まえとおなじで",
+      "meaning": "전과 같이"
+    },
+    {
+      "id": 3,
+      "japanese": "案外",
+      "pronunciation": "あんがい",
+      "meaning": "의외로"
+    },
+    {
+      "id": 4,
+      "japanese": "思ったより",
+      "pronunciation": "おもったより",
+      "meaning": "생각보다"
+    },
+    {
+      "id": 5,
+      "japanese": "いきなり",
+      "pronunciation": "いきなり",
+      "meaning": "갑자기"
+    },
+    {
+      "id": 6,
+      "japanese": "突然",
+      "pronunciation": "とつぜん",
+      "meaning": "돌연, 갑자기"
+    },
+    {
+      "id": 7,
+      "japanese": "およそ",
+      "pronunciation": "およそ",
+      "meaning": "약, 대략"
+    },
+    {
+      "id": 8,
+      "japanese": "大体",
+      "pronunciation": "だいたい",
+      "meaning": "대강, 대략"
+    },
+    {
+      "id": 9,
+      "japanese": "こっそり",
+      "pronunciation": "こっそり",
+      "meaning": "살짝, 몰래"
+    },
+    {
+      "id": 10,
+      "japanese": "周りに気づかれないように",
+      "pronunciation": "まわりにきづかれないように",
+      "meaning": "주변에서 눈치채지 못하게"
+    },
+    {
+      "id": 11,
+      "japanese": "次第に",
+      "pronunciation": "しだいに",
+      "meaning": "점점, 차츰"
+    },
+    {
+      "id": 12,
+      "japanese": "少しずつ",
+      "pronunciation": "すこしずつ",
+      "meaning": "조금씩"
+    },
+    {
+      "id": 13,
+      "japanese": "じっと",
+      "pronunciation": "じっと",
+      "meaning": "가만히, 꼼짝 않고"
+    },
+    {
+      "id": 14,
+      "japanese": "うごかないで",
+      "pronunciation": "うごかないで",
+      "meaning": "움직이지 않고"
+    },
+    {
+      "id": 15,
+      "japanese": "しばらく",
+      "pronunciation": "しばらく",
+      "meaning": "잠깐"
+    },
+    {
+      "id": 16,
+      "japanese": "少し",
+      "pronunciation": "すこし",
+      "meaning": "조금, 약간"
+    },
+    {
+      "id": 17,
+      "japanese": "正直",
+      "pronunciation": "しょうじき",
+      "meaning": "정직하게, 솔직히"
+    },
+    {
+      "id": 18,
+      "japanese": "うそをつかないで",
+      "pronunciation": "うそをつかないで",
+      "meaning": "거짓말을 하지 않고"
+    },
+    {
+      "id": 19,
+      "japanese": "絶対",
+      "pronunciation": "ぜったい",
+      "meaning": "절대"
+    },
+    {
+      "id": 20,
+      "japanese": "必ず",
+      "pronunciation": "かならず",
+      "meaning": "반드시"
+    },
+    {
+      "id": 21,
+      "japanese": "相当",
+      "pronunciation": "そうとう",
+      "meaning": "상당히"
+    },
+    {
+      "id": 22,
+      "japanese": "かなり",
+      "pronunciation": "かなり",
+      "meaning": "꽤"
+    },
+    {
+      "id": 23,
+      "japanese": "たまたま",
+      "pronunciation": "たまたま",
+      "meaning": "우연히"
+    },
+    {
+      "id": 24,
+      "japanese": "偶然",
+      "pronunciation": "ぐうぜん",
+      "meaning": "우연히"
+    },
+    {
+      "id": 25,
+      "japanese": "たまに",
+      "pronunciation": "たまに",
+      "meaning": "이따금"
+    },
+    {
+      "id": 26,
+      "japanese": "ときどき",
+      "pronunciation": "ときどき",
+      "meaning": "가끔, 때때로"
+    },
+    {
+      "id": 27,
+      "japanese": "ちっとも",
+      "pronunciation": "ちっとも",
+      "meaning": "조금도"
+    },
+    {
+      "id": 28,
+      "japanese": "全然",
+      "pronunciation": "ぜんぜん",
+      "meaning": "전혀"
+    },
+    {
+      "id": 29,
+      "japanese": "次々と",
+      "pronunciation": "つぎつぎと",
+      "meaning": "차례로"
+    },
+    {
+      "id": 30,
+      "japanese": "続いて",
+      "pronunciation": "つづいて",
+      "meaning": "계속해서"
+    },
+    {
+      "id": 31,
+      "japanese": "どうしても",
+      "pronunciation": "どうしても",
+      "meaning": "어떻게 해서라도"
+    },
+    {
+      "id": 32,
+      "japanese": "ぜひ",
+      "pronunciation": "ぜひ",
+      "meaning": "꼭"
+    },
+    {
+      "id": 33,
+      "japanese": "当然",
+      "pronunciation": "とうぜん",
+      "meaning": "당연"
+    },
+    {
+      "id": 34,
+      "japanese": "もちろん",
+      "pronunciation": "もちろん",
+      "meaning": "물론"
+    },
+    {
+      "id": 35,
+      "japanese": "なるべく",
+      "pronunciation": "なるべく",
+      "meaning": "가능한 한"
+    },
+    {
+      "id": 36,
+      "japanese": "できるだけ",
+      "pronunciation": "できるだけ",
+      "meaning": "가능한 한"
+    },
+    {
+      "id": 37,
+      "japanese": "年中",
+      "pronunciation": "ねんじゅう",
+      "meaning": "항상, 늘"
+    },
+    {
+      "id": 38,
+      "japanese": "いつも",
+      "pronunciation": "いつも",
+      "meaning": "항상, 늘"
+    },
+    {
+      "id": 39,
+      "japanese": "のろのろ",
+      "pronunciation": "のろのろ",
+      "meaning": "느릿느릿"
+    },
+    {
+      "id": 40,
+      "japanese": "ゆっくり",
+      "pronunciation": "ゆっくり",
+      "meaning": "천천히"
+    },
+    {
+      "id": 41,
+      "japanese": "非常に",
+      "pronunciation": "ひじょうに",
+      "meaning": "매우"
+    },
+    {
+      "id": 42,
+      "japanese": "とても",
+      "pronunciation": "とても",
+      "meaning": "대단히"
+    },
+    {
+      "id": 43,
+      "japanese": "普段",
+      "pronunciation": "ふだん",
+      "meaning": "평소"
+    },
+    {
+      "id": 44,
+      "japanese": "いつも",
+      "pronunciation": "いつも",
+      "meaning": "언제나"
+    },
+    {
+      "id": 45,
+      "japanese": "前もって",
+      "pronunciation": "まえもって",
+      "meaning": "사전에"
+    },
+    {
+      "id": 46,
+      "japanese": "事前に",
+      "pronunciation": "じぜんに",
+      "meaning": "사전에"
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "fileName": "page_22",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "スケジュール",
+      "pronunciation": "",
+      "meaning": "스케줄"
+    },
+    {
+      "id": 2,
+      "japanese": "予定",
+      "pronunciation": "よてい",
+      "meaning": "예정"
+    },
+    {
+      "id": 3,
+      "japanese": "中身",
+      "pronunciation": "なかみ",
+      "meaning": "내용, 속"
+    },
+    {
+      "id": 4,
+      "japanese": "内容",
+      "pronunciation": "ないよう",
+      "meaning": "내용"
+    },
+    {
+      "id": 5,
+      "japanese": "ブーム",
+      "pronunciation": "",
+      "meaning": "붐, 유행"
+    },
+    {
+      "id": 6,
+      "japanese": "はやる",
+      "pronunciation": "",
+      "meaning": "유행하다"
+    },
+    {
+      "id": 7,
+      "japanese": "孫",
+      "pronunciation": "まご",
+      "meaning": "손자"
+    },
+    {
+      "id": 8,
+      "japanese": "娘の息子",
+      "pronunciation": "むすめ の むすこ",
+      "meaning": "딸의 아들"
+    },
+    {
+      "id": 9,
+      "japanese": "めい",
+      "pronunciation": "",
+      "meaning": "조카딸"
+    },
+    {
+      "id": 10,
+      "japanese": "兄弟の娘",
+      "pronunciation": "きょうだい の むすめ",
+      "meaning": "형제의 딸"
+    },
+    {
+      "id": 11,
+      "japanese": "翌年",
+      "pronunciation": "よくねん",
+      "meaning": "익년, 다음 해"
+    },
+    {
+      "id": 12,
+      "japanese": "次の年",
+      "pronunciation": "つぎ の とし",
+      "meaning": "다음 해"
+    },
+    {
+      "id": 13,
+      "japanese": "わけ",
+      "pronunciation": "",
+      "meaning": "이유"
+    },
+    {
+      "id": 14,
+      "japanese": "理由",
+      "pronunciation": "りゆう",
+      "meaning": "이유"
+    },
+    {
+      "id": 15,
+      "japanese": "疑う",
+      "pronunciation": "うたが",
+      "meaning": "의심하다"
+    },
+    {
+      "id": 16,
+      "japanese": "本当ではないかと思う",
+      "pronunciation": "ほんとう で は ない か と おも",
+      "meaning": "진짜가 아닌가하고 생각하다"
+    },
+    {
+      "id": 17,
+      "japanese": "奪う",
+      "pronunciation": "うば",
+      "meaning": "빼앗다"
+    },
+    {
+      "id": 18,
+      "japanese": "取る",
+      "pronunciation": "と",
+      "meaning": "빼앗다"
+    },
+    {
+      "id": 19,
+      "japanese": "覚える",
+      "pronunciation": "おぼ",
+      "meaning": "외우다"
+    },
+    {
+      "id": 20,
+      "japanese": "暗記する",
+      "pronunciation": "あんき",
+      "meaning": "암기하다"
+    },
+    {
+      "id": 21,
+      "japanese": "カーブする",
+      "pronunciation": "",
+      "meaning": "구부러지다"
+    },
+    {
+      "id": 22,
+      "japanese": "曲がる",
+      "pronunciation": "ま",
+      "meaning": "구부러지다"
+    },
+    {
+      "id": 23,
+      "japanese": "回収する",
+      "pronunciation": "かいしゅう",
+      "meaning": "회수하다"
+    },
+    {
+      "id": 24,
+      "japanese": "集める",
+      "pronunciation": "あつ",
+      "meaning": "모으다"
+    },
+    {
+      "id": 25,
+      "japanese": "輝く",
+      "pronunciation": "かがや",
+      "meaning": "빛나다"
+    },
+    {
+      "id": 26,
+      "japanese": "光る",
+      "pronunciation": "ひか",
+      "meaning": "빛나다"
+    },
+    {
+      "id": 27,
+      "japanese": "協力する",
+      "pronunciation": "きょうりょく",
+      "meaning": "협력하다"
+    },
+    {
+      "id": 28,
+      "japanese": "手伝う",
+      "pronunciation": "てつだ",
+      "meaning": "돕다"
+    },
+    {
+      "id": 29,
+      "japanese": "諦める",
+      "pronunciation": "あきら",
+      "meaning": "포기하다"
+    },
+    {
+      "id": 30,
+      "japanese": "辞める",
+      "pronunciation": "や",
+      "meaning": "그만두다"
+    },
+    {
+      "id": 31,
+      "japanese": "与える",
+      "pronunciation": "あたえる",
+      "meaning": "주다, 수여하다"
+    },
+    {
+      "id": 32,
+      "japanese": "あげる",
+      "pronunciation": "",
+      "meaning": "주다"
+    },
+    {
+      "id": 33,
+      "japanese": "余る",
+      "pronunciation": "あま",
+      "meaning": "남다"
+    },
+    {
+      "id": 34,
+      "japanese": "多すぎて残る",
+      "pronunciation": "おお すぎ て のこ",
+      "meaning": "너무 많아서 남다"
+    },
+    {
+      "id": 35,
+      "japanese": "慌てる",
+      "pronunciation": "あわ",
+      "meaning": "황급히 굴다"
+    },
+    {
+      "id": 36,
+      "japanese": "急ぐ",
+      "pronunciation": "いそ",
+      "meaning": "서두르다"
+    },
+    {
+      "id": 37,
+      "japanese": "くたびれる",
+      "pronunciation": "",
+      "meaning": "지치다"
+    },
+    {
+      "id": 38,
+      "japanese": "疲れる",
+      "pronunciation": "つか",
+      "meaning": "피로하다"
+    },
+    {
+      "id": 39,
+      "japanese": "検討する",
+      "pronunciation": "けんとう",
+      "meaning": "검토하다"
+    },
+    {
+      "id": 40,
+      "japanese": "よく考える",
+      "pronunciation": "よく かんが",
+      "meaning": "잘 생각하다"
+    },
+    {
+      "id": 41,
+      "japanese": "混雑する",
+      "pronunciation": "こんざつ",
+      "meaning": "혼잡하다"
+    },
+    {
+      "id": 42,
+      "japanese": "人がたくさんいる",
+      "pronunciation": "ひと が たくさん いる",
+      "meaning": "사람이 많이 있다"
+    },
+    {
+      "id": 43,
+      "japanese": "指導する",
+      "pronunciation": "しどう",
+      "meaning": "지도하다"
+    },
+    {
+      "id": 44,
+      "japanese": "教える",
+      "pronunciation": "おし",
+      "meaning": "가르치다"
+    },
+    {
+      "id": 45,
+      "japanese": "しゃべる",
+      "pronunciation": "",
+      "meaning": "말하다"
+    },
+    {
+      "id": 46,
+      "japanese": "話す",
+      "pronunciation": "はな",
+      "meaning": "말하다"
+    }
+  ]
+}

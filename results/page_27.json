@@ -1,0 +1,287 @@
+{
+  "fileName": "page_27",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "行き先",
+      "pronunciation": "いきさき",
+      "meaning": "행선지, 목적지"
+    },
+    {
+      "id": 2,
+      "japanese": "異常",
+      "pronunciation": "いじょう",
+      "meaning": "이상(정상의 반대)"
+    },
+    {
+      "id": 3,
+      "japanese": "応援",
+      "pronunciation": "おうえん",
+      "meaning": "응원"
+    },
+    {
+      "id": 4,
+      "japanese": "オーバー",
+      "pronunciation": "",
+      "meaning": "오버, 초과"
+    },
+    {
+      "id": 5,
+      "japanese": "活動",
+      "pronunciation": "かつどう",
+      "meaning": "활동"
+    },
+    {
+      "id": 6,
+      "japanese": "期限",
+      "pronunciation": "きげん",
+      "meaning": "기한"
+    },
+    {
+      "id": 7,
+      "japanese": "希望",
+      "pronunciation": "きぼう",
+      "meaning": "희망"
+    },
+    {
+      "id": 8,
+      "japanese": "距離",
+      "pronunciation": "きょり",
+      "meaning": "거리"
+    },
+    {
+      "id": 9,
+      "japanese": "緊張",
+      "pronunciation": "きんちょう",
+      "meaning": "긴장"
+    },
+    {
+      "id": 10,
+      "japanese": "区別",
+      "pronunciation": "くべつ",
+      "meaning": "구분"
+    },
+    {
+      "id": 11,
+      "japanese": "交流",
+      "pronunciation": "こうりゅう",
+      "meaning": "교류"
+    },
+    {
+      "id": 12,
+      "japanese": "参加",
+      "pronunciation": "さんか",
+      "meaning": "참가"
+    },
+    {
+      "id": 13,
+      "japanese": "実物",
+      "pronunciation": "じつぶつ",
+      "meaning": "실물"
+    },
+    {
+      "id": 14,
+      "japanese": "締め切り",
+      "pronunciation": "しめきり",
+      "meaning": "마감"
+    },
+    {
+      "id": 15,
+      "japanese": "修理",
+      "pronunciation": "しゅうり",
+      "meaning": "수리"
+    },
+    {
+      "id": 16,
+      "japanese": "渋滞",
+      "pronunciation": "じゅうたい",
+      "meaning": "정체"
+    },
+    {
+      "id": 17,
+      "japanese": "診察",
+      "pronunciation": "しんさつ",
+      "meaning": "진찰"
+    },
+    {
+      "id": 18,
+      "japanese": "性格",
+      "pronunciation": "せいかく",
+      "meaning": "성격"
+    },
+    {
+      "id": 19,
+      "japanese": "制限",
+      "pronunciation": "せいげん",
+      "meaning": "제한"
+    },
+    {
+      "id": 20,
+      "japanese": "知識",
+      "pronunciation": "ちしき",
+      "meaning": "지식"
+    },
+    {
+      "id": 21,
+      "japanese": "中旬",
+      "pronunciation": "ちゅうじゅん",
+      "meaning": "중순"
+    },
+    {
+      "id": 22,
+      "japanese": "都合",
+      "pronunciation": "つごう",
+      "meaning": "사정, 형편"
+    },
+    {
+      "id": 23,
+      "japanese": "訪問",
+      "pronunciation": "ほうもん",
+      "meaning": "방문"
+    },
+    {
+      "id": 24,
+      "japanese": "翻訳",
+      "pronunciation": "ほんやく",
+      "meaning": "번역"
+    },
+    {
+      "id": 25,
+      "japanese": "満員",
+      "pronunciation": "まんいん",
+      "meaning": "만원"
+    },
+    {
+      "id": 26,
+      "japanese": "見本",
+      "pronunciation": "みほん",
+      "meaning": "견본"
+    },
+    {
+      "id": 27,
+      "japanese": "未来",
+      "pronunciation": "みらい",
+      "meaning": "미래"
+    },
+    {
+      "id": 28,
+      "japanese": "申し込み",
+      "pronunciation": "もうしこみ",
+      "meaning": "신청"
+    },
+    {
+      "id": 29,
+      "japanese": "ユーモア",
+      "pronunciation": "",
+      "meaning": "유머"
+    },
+    {
+      "id": 30,
+      "japanese": "植える",
+      "pronunciation": "うえる",
+      "meaning": "심다"
+    },
+    {
+      "id": 31,
+      "japanese": "受け入れる",
+      "pronunciation": "うけいれる",
+      "meaning": "받아들이다"
+    },
+    {
+      "id": 32,
+      "japanese": "埋める",
+      "pronunciation": "うめる",
+      "meaning": "묻다, 메우다"
+    },
+    {
+      "id": 33,
+      "japanese": "追いつく",
+      "pronunciation": "おいつく",
+      "meaning": "따라잡다"
+    },
+    {
+      "id": 34,
+      "japanese": "追い抜く",
+      "pronunciation": "おいぬく",
+      "meaning": "앞지르다"
+    },
+    {
+      "id": 35,
+      "japanese": "落ち着く",
+      "pronunciation": "おちつく",
+      "meaning": "침착하다, 안정되다"
+    },
+    {
+      "id": 36,
+      "japanese": "かきまぜる",
+      "pronunciation": "",
+      "meaning": "뒤섞다"
+    },
+    {
+      "id": 37,
+      "japanese": "重なる",
+      "pronunciation": "かさなる",
+      "meaning": "겹치다"
+    },
+    {
+      "id": 38,
+      "japanese": "区切る",
+      "pronunciation": "くぎる",
+      "meaning": "구분하다, 단락 짓다"
+    },
+    {
+      "id": 39,
+      "japanese": "気付く",
+      "pronunciation": "きづく",
+      "meaning": "깨닫다"
+    },
+    {
+      "id": 40,
+      "japanese": "断る",
+      "pronunciation": "ことわる",
+      "meaning": "거절하다"
+    },
+    {
+      "id": 41,
+      "japanese": "こぼす",
+      "pronunciation": "",
+      "meaning": "흘리다"
+    },
+    {
+      "id": 42,
+      "japanese": "縮小する",
+      "pronunciation": "しゅくしょうする",
+      "meaning": "축소하다"
+    },
+    {
+      "id": 43,
+      "japanese": "知り合う",
+      "pronunciation": "しりあう",
+      "meaning": "알게 되다, 아는 사이가 되다"
+    },
+    {
+      "id": 44,
+      "japanese": "だく",
+      "pronunciation": "",
+      "meaning": "안다"
+    },
+    {
+      "id": 45,
+      "japanese": "たまる",
+      "pronunciation": "",
+      "meaning": "쌓이다, 늘다"
+    },
+    {
+      "id": 46,
+      "japanese": "伝わる",
+      "pronunciation": "つたわる",
+      "meaning": "전해지다, 알려지다"
+    },
+    {
+      "id": 47,
+      "japanese": "詰める",
+      "pronunciation": "つめる",
+      "meaning": "채우다"
+    }
+  ]
+}

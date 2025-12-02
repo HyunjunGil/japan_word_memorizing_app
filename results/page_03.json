@@ -1,0 +1,293 @@
+{
+  "fileName": "page_03",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "出張",
+      "pronunciation": "しゅっちょう",
+      "meaning": "출장"
+    },
+    {
+      "id": 2,
+      "japanese": "食器",
+      "pronunciation": "しょっき",
+      "meaning": "식기"
+    },
+    {
+      "id": 3,
+      "japanese": "接近",
+      "pronunciation": "せっきん",
+      "meaning": "접근"
+    },
+    {
+      "id": 4,
+      "japanese": "特急",
+      "pronunciation": "とっきゅう",
+      "meaning": "특급"
+    },
+    {
+      "id": 5,
+      "japanese": "日課",
+      "pronunciation": "にっか",
+      "meaning": "일과"
+    },
+    {
+      "id": 6,
+      "japanese": "日程",
+      "pronunciation": "にってい",
+      "meaning": "일정"
+    },
+    {
+      "id": 7,
+      "japanese": "熱心",
+      "pronunciation": "ねっしん",
+      "meaning": "열심"
+    },
+    {
+      "id": 8,
+      "japanese": "発刊",
+      "pronunciation": "はっかん",
+      "meaning": "발간"
+    },
+    {
+      "id": 9,
+      "japanese": "発見",
+      "pronunciation": "はっけん",
+      "meaning": "발견"
+    },
+    {
+      "id": 10,
+      "japanese": "発想",
+      "pronunciation": "はっそう",
+      "meaning": "발상"
+    },
+    {
+      "id": 11,
+      "japanese": "発達",
+      "pronunciation": "はったつ",
+      "meaning": "발달"
+    },
+    {
+      "id": 12,
+      "japanese": "立派だ",
+      "pronunciation": "りっぱ",
+      "meaning": "훌륭하다"
+    },
+    {
+      "id": 13,
+      "japanese": "以降",
+      "pronunciation": "いこう",
+      "meaning": "이후"
+    },
+    {
+      "id": 14,
+      "japanese": "応用",
+      "pronunciation": "おうよう",
+      "meaning": "응용"
+    },
+    {
+      "id": 15,
+      "japanese": "共通",
+      "pronunciation": "きょうつう",
+      "meaning": "공통"
+    },
+    {
+      "id": 16,
+      "japanese": "興味",
+      "pronunciation": "きょうみ",
+      "meaning": "흥미"
+    },
+    {
+      "id": 17,
+      "japanese": "苦労",
+      "pronunciation": "くろう",
+      "meaning": "고생"
+    },
+    {
+      "id": 18,
+      "japanese": "効果",
+      "pronunciation": "こうか",
+      "meaning": "효과"
+    },
+    {
+      "id": 19,
+      "japanese": "講義",
+      "pronunciation": "こうぎ",
+      "meaning": "강의"
+    },
+    {
+      "id": 20,
+      "japanese": "広告",
+      "pronunciation": "こうこく",
+      "meaning": "광고"
+    },
+    {
+      "id": 21,
+      "japanese": "交代",
+      "pronunciation": "こうたい",
+      "meaning": "교대"
+    },
+    {
+      "id": 22,
+      "japanese": "紅茶",
+      "pronunciation": "こうちゃ",
+      "meaning": "홍차"
+    },
+    {
+      "id": 23,
+      "japanese": "交通",
+      "pronunciation": "こうつう",
+      "meaning": "교통"
+    },
+    {
+      "id": 24,
+      "japanese": "合流",
+      "pronunciation": "ごうりゅう",
+      "meaning": "합류"
+    },
+    {
+      "id": 25,
+      "japanese": "作業",
+      "pronunciation": "さぎょう",
+      "meaning": "작업"
+    },
+    {
+      "id": 26,
+      "japanese": "時刻表",
+      "pronunciation": "じこくひょう",
+      "meaning": "운행시간표"
+    },
+    {
+      "id": 27,
+      "japanese": "事情",
+      "pronunciation": "じじょう",
+      "meaning": "사정"
+    },
+    {
+      "id": 28,
+      "japanese": "失業",
+      "pronunciation": "しつぎょう",
+      "meaning": "실업"
+    },
+    {
+      "id": 29,
+      "japanese": "授業料",
+      "pronunciation": "じゅぎょうりょう",
+      "meaning": "수업료"
+    },
+    {
+      "id": 30,
+      "japanese": "主要だ",
+      "pronunciation": "しゅよう",
+      "meaning": "주요하다"
+    },
+    {
+      "id": 31,
+      "japanese": "使用",
+      "pronunciation": "しよう",
+      "meaning": "사용"
+    },
+    {
+      "id": 32,
+      "japanese": "商業",
+      "pronunciation": "しょうぎょう",
+      "meaning": "상업"
+    },
+    {
+      "id": 33,
+      "japanese": "正直",
+      "pronunciation": "しょうじき",
+      "meaning": "정직"
+    },
+    {
+      "id": 34,
+      "japanese": "常識",
+      "pronunciation": "じょうしき",
+      "meaning": "상식"
+    },
+    {
+      "id": 35,
+      "japanese": "上達",
+      "pronunciation": "じょうたつ",
+      "meaning": "기능이 향상됨"
+    },
+    {
+      "id": 36,
+      "japanese": "商品",
+      "pronunciation": "しょうひん",
+      "meaning": "상품"
+    },
+    {
+      "id": 37,
+      "japanese": "情報",
+      "pronunciation": "じょうほう",
+      "meaning": "정보"
+    },
+    {
+      "id": 38,
+      "japanese": "送信",
+      "pronunciation": "そうしん",
+      "meaning": "송신"
+    },
+    {
+      "id": 39,
+      "japanese": "早退",
+      "pronunciation": "そうたい",
+      "meaning": "조퇴"
+    },
+    {
+      "id": 40,
+      "japanese": "大量",
+      "pronunciation": "たいりょう",
+      "meaning": "대량"
+    },
+    {
+      "id": 41,
+      "japanese": "朝刊",
+      "pronunciation": "ちょうかん",
+      "meaning": "조간"
+    },
+    {
+      "id": 42,
+      "japanese": "調査",
+      "pronunciation": "ちょうさ",
+      "meaning": "조사"
+    },
+    {
+      "id": 43,
+      "japanese": "到着",
+      "pronunciation": "とうちゃく",
+      "meaning": "도착"
+    },
+    {
+      "id": 44,
+      "japanese": "道路",
+      "pronunciation": "どうろ",
+      "meaning": "도로"
+    },
+    {
+      "id": 45,
+      "japanese": "表面",
+      "pronunciation": "ひょうめん",
+      "meaning": "표면"
+    },
+    {
+      "id": 46,
+      "japanese": "方向",
+      "pronunciation": "ほうこう",
+      "meaning": "방향"
+    },
+    {
+      "id": 47,
+      "japanese": "流行",
+      "pronunciation": "りゅうこう",
+      "meaning": "유행"
+    },
+    {
+      "id": 48,
+      "japanese": "漁師",
+      "pronunciation": "りょうし",
+      "meaning": "어부"
+    }
+  ]
+}

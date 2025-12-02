@@ -1,0 +1,287 @@
+{
+  "fileName": "page_29",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "新しい",
+      "pronunciation": "あたらしい",
+      "meaning": "새롭다"
+    },
+    {
+      "id": 2,
+      "japanese": "受け取る",
+      "pronunciation": "うけとる",
+      "meaning": "받다"
+    },
+    {
+      "id": 3,
+      "japanese": "受け持ち",
+      "pronunciation": "うけもち",
+      "meaning": "담당, 담당자"
+    },
+    {
+      "id": 4,
+      "japanese": "売れる",
+      "pronunciation": "うれる",
+      "meaning": "팔리다"
+    },
+    {
+      "id": 5,
+      "japanese": "エレベーター",
+      "pronunciation": "",
+      "meaning": "엘리베이터"
+    },
+    {
+      "id": 6,
+      "japanese": "お菓子",
+      "pronunciation": "おかし",
+      "meaning": "과자"
+    },
+    {
+      "id": 7,
+      "japanese": "送る",
+      "pronunciation": "おくる",
+      "meaning": "보내다"
+    },
+    {
+      "id": 8,
+      "japanese": "ガソリン代",
+      "pronunciation": "ガソリンだい",
+      "meaning": "기름 값"
+    },
+    {
+      "id": 9,
+      "japanese": "管理",
+      "pronunciation": "かんり",
+      "meaning": "관리"
+    },
+    {
+      "id": 10,
+      "japanese": "機能",
+      "pronunciation": "きのう",
+      "meaning": "기능"
+    },
+    {
+      "id": 11,
+      "japanese": "着る",
+      "pronunciation": "きる",
+      "meaning": "입다"
+    },
+    {
+      "id": 12,
+      "japanese": "携帯電話",
+      "pronunciation": "けいたいでんわ",
+      "meaning": "휴대전화"
+    },
+    {
+      "id": 13,
+      "japanese": "消しゴム",
+      "pronunciation": "けしゴム",
+      "meaning": "지우개"
+    },
+    {
+      "id": 14,
+      "japanese": "質問",
+      "pronunciation": "しつもん",
+      "meaning": "질문"
+    },
+    {
+      "id": 15,
+      "japanese": "事務所",
+      "pronunciation": "じむしょ",
+      "meaning": "사무소"
+    },
+    {
+      "id": 16,
+      "japanese": "請求書",
+      "pronunciation": "せいきゅうしょ",
+      "meaning": "청구서"
+    },
+    {
+      "id": 17,
+      "japanese": "洗濯機",
+      "pronunciation": "せんたくき",
+      "meaning": "세탁기"
+    },
+    {
+      "id": 18,
+      "japanese": "出す",
+      "pronunciation": "だす",
+      "meaning": "내다, 제출하다"
+    },
+    {
+      "id": 19,
+      "japanese": "タバコ",
+      "pronunciation": "",
+      "meaning": "담배"
+    },
+    {
+      "id": 20,
+      "japanese": "多様化",
+      "pronunciation": "たようか",
+      "meaning": "다양화"
+    },
+    {
+      "id": 21,
+      "japanese": "担当者",
+      "pronunciation": "たんとうしゃ",
+      "meaning": "담당자"
+    },
+    {
+      "id": 22,
+      "japanese": "注意",
+      "pronunciation": "ちゅうい",
+      "meaning": "주의"
+    },
+    {
+      "id": 23,
+      "japanese": "定期的だ",
+      "pronunciation": "ていきてきだ",
+      "meaning": "정기적이다"
+    },
+    {
+      "id": 24,
+      "japanese": "程度",
+      "pronunciation": "ていど",
+      "meaning": "정도"
+    },
+    {
+      "id": 25,
+      "japanese": "問い合わせる",
+      "pronunciation": "といあわせる",
+      "meaning": "문의하다"
+    },
+    {
+      "id": 26,
+      "japanese": "入金",
+      "pronunciation": "にゅうきん",
+      "meaning": "입금"
+    },
+    {
+      "id": 27,
+      "japanese": "人気",
+      "pronunciation": "にんき",
+      "meaning": "인기"
+    },
+    {
+      "id": 28,
+      "japanese": "乗る",
+      "pronunciation": "のる",
+      "meaning": "타다"
+    },
+    {
+      "id": 29,
+      "japanese": "販売",
+      "pronunciation": "はんばい",
+      "meaning": "판매"
+    },
+    {
+      "id": 30,
+      "japanese": "服",
+      "pronunciation": "ふく",
+      "meaning": "옷"
+    },
+    {
+      "id": 31,
+      "japanese": "不具合",
+      "pronunciation": "ふぐあい",
+      "meaning": "상태가 좋지 않음"
+    },
+    {
+      "id": 32,
+      "japanese": "便利だ",
+      "pronunciation": "べんりだ",
+      "meaning": "편리하다"
+    },
+    {
+      "id": 33,
+      "japanese": "朝晩",
+      "pronunciation": "あさばん",
+      "meaning": "아침 저녁"
+    },
+    {
+      "id": 34,
+      "japanese": "あて先",
+      "pronunciation": "あてさき",
+      "meaning": "수신인"
+    },
+    {
+      "id": 35,
+      "japanese": "雨",
+      "pronunciation": "あめ",
+      "meaning": "비"
+    },
+    {
+      "id": 36,
+      "japanese": "以前",
+      "pronunciation": "いぜん",
+      "meaning": "이전"
+    },
+    {
+      "id": 37,
+      "japanese": "受付",
+      "pronunciation": "うけつけ",
+      "meaning": "접수"
+    },
+    {
+      "id": 38,
+      "japanese": "駅",
+      "pronunciation": "えき",
+      "meaning": "역"
+    },
+    {
+      "id": 39,
+      "japanese": "お知らせ",
+      "pronunciation": "おしらせ",
+      "meaning": "알림"
+    },
+    {
+      "id": 40,
+      "japanese": "終わる",
+      "pronunciation": "おわる",
+      "meaning": "끝나다"
+    },
+    {
+      "id": 41,
+      "japanese": "かかる",
+      "pronunciation": "",
+      "meaning": "(비용·시간 등이) 들다"
+    },
+    {
+      "id": 42,
+      "japanese": "確認",
+      "pronunciation": "かくにん",
+      "meaning": "확인"
+    },
+    {
+      "id": 43,
+      "japanese": "期間",
+      "pronunciation": "きかん",
+      "meaning": "기간"
+    },
+    {
+      "id": 44,
+      "japanese": "件名",
+      "pronunciation": "けんめい",
+      "meaning": "건명"
+    },
+    {
+      "id": 45,
+      "japanese": "午前中",
+      "pronunciation": "ごぜんちゅう",
+      "meaning": "오전중"
+    },
+    {
+      "id": 46,
+      "japanese": "最近",
+      "pronunciation": "さいきん",
+      "meaning": "요즘, 최근"
+    },
+    {
+      "id": 47,
+      "japanese": "締め切り",
+      "pronunciation": "しめきり",
+      "meaning": "마감"
+    }
+  ]
+}

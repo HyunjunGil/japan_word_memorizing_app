@@ -1,0 +1,299 @@
+{
+  "fileName": "page_10",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "退院",
+      "pronunciation": "たいいん",
+      "meaning": "퇴원"
+    },
+    {
+      "id": 2,
+      "japanese": "入院",
+      "pronunciation": "にゅういん",
+      "meaning": "입원"
+    },
+    {
+      "id": 3,
+      "japanese": "職員",
+      "pronunciation": "しょくいん",
+      "meaning": "직원"
+    },
+    {
+      "id": 4,
+      "japanese": "定員",
+      "pronunciation": "ていいん",
+      "meaning": "정원"
+    },
+    {
+      "id": 5,
+      "japanese": "影響",
+      "pronunciation": "えいきょう",
+      "meaning": "영향"
+    },
+    {
+      "id": 6,
+      "japanese": "撮影",
+      "pronunciation": "さつえい",
+      "meaning": "촬영"
+    },
+    {
+      "id": 7,
+      "japanese": "映画",
+      "pronunciation": "えいが",
+      "meaning": "영화"
+    },
+    {
+      "id": 8,
+      "japanese": "反映",
+      "pronunciation": "はんえい",
+      "meaning": "반영"
+    },
+    {
+      "id": 9,
+      "japanese": "仮定",
+      "pronunciation": "かてい",
+      "meaning": "가정"
+    },
+    {
+      "id": 10,
+      "japanese": "仮名",
+      "pronunciation": "かめい",
+      "meaning": "가명"
+    },
+    {
+      "id": 11,
+      "japanese": "過去",
+      "pronunciation": "かこ",
+      "meaning": "과거"
+    },
+    {
+      "id": 12,
+      "japanese": "通過",
+      "pronunciation": "つうか",
+      "meaning": "통과"
+    },
+    {
+      "id": 13,
+      "japanese": "高価",
+      "pronunciation": "こうか",
+      "meaning": "고가"
+    },
+    {
+      "id": 14,
+      "japanese": "評価",
+      "pronunciation": "ひょうか",
+      "meaning": "평가"
+    },
+    {
+      "id": 15,
+      "japanese": "解決",
+      "pronunciation": "かいけつ",
+      "meaning": "해결"
+    },
+    {
+      "id": 16,
+      "japanese": "正解",
+      "pronunciation": "せいかい",
+      "meaning": "정답"
+    },
+    {
+      "id": 17,
+      "japanese": "改札",
+      "pronunciation": "かいさつ",
+      "meaning": "개찰"
+    },
+    {
+      "id": 18,
+      "japanese": "改造",
+      "pronunciation": "かいぞう",
+      "meaning": "개조"
+    },
+    {
+      "id": 19,
+      "japanese": "意志",
+      "pronunciation": "いし",
+      "meaning": "의지"
+    },
+    {
+      "id": 20,
+      "japanese": "志望",
+      "pronunciation": "しぼう",
+      "meaning": "지망"
+    },
+    {
+      "id": 21,
+      "japanese": "雑誌",
+      "pronunciation": "ざっし",
+      "meaning": "잡지"
+    },
+    {
+      "id": 22,
+      "japanese": "週刊誌",
+      "pronunciation": "しゅうかんし",
+      "meaning": "주간지"
+    },
+    {
+      "id": 23,
+      "japanese": "表紙",
+      "pronunciation": "ひょうし",
+      "meaning": "표지"
+    },
+    {
+      "id": 24,
+      "japanese": "用紙",
+      "pronunciation": "ようし",
+      "meaning": "용지"
+    },
+    {
+      "id": 25,
+      "japanese": "各自",
+      "pronunciation": "かくじ",
+      "meaning": "각자"
+    },
+    {
+      "id": 26,
+      "japanese": "自信",
+      "pronunciation": "じしん",
+      "meaning": "자신"
+    },
+    {
+      "id": 27,
+      "japanese": "維持",
+      "pronunciation": "いじ",
+      "meaning": "유지"
+    },
+    {
+      "id": 28,
+      "japanese": "持参",
+      "pronunciation": "じさん",
+      "meaning": "지참"
+    },
+    {
+      "id": 29,
+      "japanese": "文書",
+      "pronunciation": "ぶんしょ",
+      "meaning": "문서"
+    },
+    {
+      "id": 30,
+      "japanese": "履歴書",
+      "pronunciation": "りれきしょ",
+      "meaning": "이력서"
+    },
+    {
+      "id": 31,
+      "japanese": "商業",
+      "pronunciation": "しょうぎょう",
+      "meaning": "상업"
+    },
+    {
+      "id": 32,
+      "japanese": "商店",
+      "pronunciation": "しょうてん",
+      "meaning": "상점"
+    },
+    {
+      "id": 33,
+      "japanese": "常識",
+      "pronunciation": "じょうしき",
+      "meaning": "상식"
+    },
+    {
+      "id": 34,
+      "japanese": "正常",
+      "pronunciation": "せいじょう",
+      "meaning": "정상"
+    },
+    {
+      "id": 35,
+      "japanese": "表情",
+      "pronunciation": "ひょうじょう",
+      "meaning": "표정"
+    },
+    {
+      "id": 36,
+      "japanese": "友情",
+      "pronunciation": "ゆうじょう",
+      "meaning": "우정"
+    },
+    {
+      "id": 37,
+      "japanese": "乗客",
+      "pronunciation": "じょうきゃく",
+      "meaning": "승객"
+    },
+    {
+      "id": 38,
+      "japanese": "乗車",
+      "pronunciation": "じょうしゃ",
+      "meaning": "승차"
+    },
+    {
+      "id": 39,
+      "japanese": "心配",
+      "pronunciation": "しんぱい",
+      "meaning": "걱정"
+    },
+    {
+      "id": 40,
+      "japanese": "熱心",
+      "pronunciation": "ねっしん",
+      "meaning": "열심"
+    },
+    {
+      "id": 41,
+      "japanese": "進学",
+      "pronunciation": "しんがく",
+      "meaning": "진학"
+    },
+    {
+      "id": 42,
+      "japanese": "進歩",
+      "pronunciation": "しんぽ",
+      "meaning": "진보"
+    },
+    {
+      "id": 43,
+      "japanese": "改正",
+      "pronunciation": "かいせい",
+      "meaning": "개정"
+    },
+    {
+      "id": 44,
+      "japanese": "修正",
+      "pronunciation": "しゅうせい",
+      "meaning": "수정"
+    },
+    {
+      "id": 45,
+      "japanese": "成功",
+      "pronunciation": "せいこう",
+      "meaning": "성공"
+    },
+    {
+      "id": 46,
+      "japanese": "成長",
+      "pronunciation": "せいちょう",
+      "meaning": "성장"
+    },
+    {
+      "id": 47,
+      "japanese": "専攻",
+      "pronunciation": "せんこう",
+      "meaning": "전공"
+    },
+    {
+      "id": 48,
+      "japanese": "専門家",
+      "pronunciation": "せんもんか",
+      "meaning": "전문가"
+    },
+    {
+      "id": 49,
+      "japanese": "線路",
+      "pronunciation": "せんろ",
+      "meaning": "선로"
+    }
+  ]
+}

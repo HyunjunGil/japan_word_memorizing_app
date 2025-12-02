@@ -1,0 +1,293 @@
+{
+  "fileName": "page_04",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "完成",
+      "pronunciation": "かんせい",
+      "meaning": "완성"
+    },
+    {
+      "id": 2,
+      "japanese": "経営",
+      "pronunciation": "けいえい",
+      "meaning": "경영"
+    },
+    {
+      "id": 3,
+      "japanese": "経営学",
+      "pronunciation": "けいえいがく",
+      "meaning": "경영학"
+    },
+    {
+      "id": 4,
+      "japanese": "計算",
+      "pronunciation": "けいさん",
+      "meaning": "계산"
+    },
+    {
+      "id": 5,
+      "japanese": "成長",
+      "pronunciation": "せいちょう",
+      "meaning": "성장"
+    },
+    {
+      "id": 6,
+      "japanese": "提供",
+      "pronunciation": "ていきょう",
+      "meaning": "제공"
+    },
+    {
+      "id": 7,
+      "japanese": "停止",
+      "pronunciation": "ていし",
+      "meaning": "정지"
+    },
+    {
+      "id": 8,
+      "japanese": "反省",
+      "pronunciation": "はんせい",
+      "meaning": "반성"
+    },
+    {
+      "id": 9,
+      "japanese": "平均",
+      "pronunciation": "へいきん",
+      "meaning": "평균"
+    },
+    {
+      "id": 10,
+      "japanese": "命令",
+      "pronunciation": "めいれい",
+      "meaning": "명령"
+    },
+    {
+      "id": 11,
+      "japanese": "通知",
+      "pronunciation": "つうち",
+      "meaning": "통지"
+    },
+    {
+      "id": 12,
+      "japanese": "入荷",
+      "pronunciation": "にゅうか",
+      "meaning": "입하"
+    },
+    {
+      "id": 13,
+      "japanese": "夫婦",
+      "pronunciation": "ふうふ",
+      "meaning": "부부"
+    },
+    {
+      "id": 14,
+      "japanese": "普通",
+      "pronunciation": "ふつう",
+      "meaning": "보통"
+    },
+    {
+      "id": 15,
+      "japanese": "郵送",
+      "pronunciation": "ゆうそう",
+      "meaning": "우송"
+    },
+    {
+      "id": 16,
+      "japanese": "有名",
+      "pronunciation": "ゆうめい",
+      "meaning": "유명"
+    },
+    {
+      "id": 17,
+      "japanese": "下車",
+      "pronunciation": "げしゃ",
+      "meaning": "하차"
+    },
+    {
+      "id": 18,
+      "japanese": "下宿",
+      "pronunciation": "げしゅく",
+      "meaning": "하숙"
+    },
+    {
+      "id": 19,
+      "japanese": "上下",
+      "pronunciation": "じょうげ",
+      "meaning": "상하"
+    },
+    {
+      "id": 20,
+      "japanese": "間接",
+      "pronunciation": "かんせつ",
+      "meaning": "간접"
+    },
+    {
+      "id": 21,
+      "japanese": "期間",
+      "pronunciation": "きかん",
+      "meaning": "기간"
+    },
+    {
+      "id": 22,
+      "japanese": "居間",
+      "pronunciation": "いま",
+      "meaning": "거실"
+    },
+    {
+      "id": 23,
+      "japanese": "仲間",
+      "pronunciation": "なかま",
+      "meaning": "동료"
+    },
+    {
+      "id": 24,
+      "japanese": "行為",
+      "pronunciation": "こうい",
+      "meaning": "행위"
+    },
+    {
+      "id": 25,
+      "japanese": "発行",
+      "pronunciation": "はっこう",
+      "meaning": "발행"
+    },
+    {
+      "id": 26,
+      "japanese": "流行",
+      "pronunciation": "りゅうこう",
+      "meaning": "유행"
+    },
+    {
+      "id": 27,
+      "japanese": "行事",
+      "pronunciation": "ぎょうじ",
+      "meaning": "행사"
+    },
+    {
+      "id": 28,
+      "japanese": "王様",
+      "pronunciation": "おうさま",
+      "meaning": "왕, 임금님"
+    },
+    {
+      "id": 29,
+      "japanese": "様々だ",
+      "pronunciation": "さまざま",
+      "meaning": "여러 가지이다"
+    },
+    {
+      "id": 30,
+      "japanese": "模様",
+      "pronunciation": "もよう",
+      "meaning": "모양, 무늬"
+    },
+    {
+      "id": 31,
+      "japanese": "様子",
+      "pronunciation": "ようす",
+      "meaning": "상태, 상황"
+    },
+    {
+      "id": 32,
+      "japanese": "個人",
+      "pronunciation": "こじん",
+      "meaning": "개인"
+    },
+    {
+      "id": 33,
+      "japanese": "知人",
+      "pronunciation": "ちじん",
+      "meaning": "지인"
+    },
+    {
+      "id": 34,
+      "japanese": "他人",
+      "pronunciation": "たにん",
+      "meaning": "타인"
+    },
+    {
+      "id": 35,
+      "japanese": "人形",
+      "pronunciation": "にんぎょう",
+      "meaning": "인형"
+    },
+    {
+      "id": 36,
+      "japanese": "意外",
+      "pronunciation": "いがい",
+      "meaning": "의외"
+    },
+    {
+      "id": 37,
+      "japanese": "外貨",
+      "pronunciation": "がいか",
+      "meaning": "외화"
+    },
+    {
+      "id": 38,
+      "japanese": "外食",
+      "pronunciation": "がいしょく",
+      "meaning": "외식"
+    },
+    {
+      "id": 39,
+      "japanese": "外科",
+      "pronunciation": "げか",
+      "meaning": "외과"
+    },
+    {
+      "id": 40,
+      "japanese": "活気",
+      "pronunciation": "かっき",
+      "meaning": "활기"
+    },
+    {
+      "id": 41,
+      "japanese": "空気",
+      "pronunciation": "くうき",
+      "meaning": "공기"
+    },
+    {
+      "id": 42,
+      "japanese": "休日",
+      "pronunciation": "きゅうじつ",
+      "meaning": "휴일"
+    },
+    {
+      "id": 43,
+      "japanese": "平日",
+      "pronunciation": "へいじつ",
+      "meaning": "평일"
+    },
+    {
+      "id": 44,
+      "japanese": "日時",
+      "pronunciation": "にちじ",
+      "meaning": "일시"
+    },
+    {
+      "id": 45,
+      "japanese": "日課",
+      "pronunciation": "にっか",
+      "meaning": "일과"
+    },
+    {
+      "id": 46,
+      "japanese": "下記",
+      "pronunciation": "かき",
+      "meaning": "하기"
+    },
+    {
+      "id": 47,
+      "japanese": "下線",
+      "pronunciation": "かせん",
+      "meaning": "밑줄"
+    },
+    {
+      "id": 48,
+      "japanese": "地下",
+      "pronunciation": "ちか",
+      "meaning": "지하"
+    }
+  ]
+}

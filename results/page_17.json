@@ -1,0 +1,287 @@
+{
+  "fileName": "page_17",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "通知",
+      "pronunciation": "つうち",
+      "meaning": "통지"
+    },
+    {
+      "id": 2,
+      "japanese": "動作",
+      "pronunciation": "どうさ",
+      "meaning": "동작"
+    },
+    {
+      "id": 3,
+      "japanese": "当日",
+      "pronunciation": "とうじつ",
+      "meaning": "당일"
+    },
+    {
+      "id": 4,
+      "japanese": "登場",
+      "pronunciation": "とうじょう",
+      "meaning": "등장"
+    },
+    {
+      "id": 5,
+      "japanese": "特長",
+      "pronunciation": "とくちょう",
+      "meaning": "특별한 장점"
+    },
+    {
+      "id": 6,
+      "japanese": "泥",
+      "pronunciation": "どろ",
+      "meaning": "진흙"
+    },
+    {
+      "id": 7,
+      "japanese": "仲",
+      "pronunciation": "なか",
+      "meaning": "사이"
+    },
+    {
+      "id": 8,
+      "japanese": "流れ",
+      "pronunciation": "ながれ",
+      "meaning": "흐름"
+    },
+    {
+      "id": 9,
+      "japanese": "農業",
+      "pronunciation": "のうぎょう",
+      "meaning": "농업"
+    },
+    {
+      "id": 10,
+      "japanese": "発展",
+      "pronunciation": "はってん",
+      "meaning": "발전"
+    },
+    {
+      "id": 11,
+      "japanese": "番",
+      "pronunciation": "ばん",
+      "meaning": "차례, 순서"
+    },
+    {
+      "id": 12,
+      "japanese": "半日",
+      "pronunciation": "はんにち",
+      "meaning": "반나절"
+    },
+    {
+      "id": 13,
+      "japanese": "物価",
+      "pronunciation": "ぶっか",
+      "meaning": "물가"
+    },
+    {
+      "id": 14,
+      "japanese": "平気",
+      "pronunciation": "へいき",
+      "meaning": "태연함"
+    },
+    {
+      "id": 15,
+      "japanese": "貿易",
+      "pronunciation": "ぼうえき",
+      "meaning": "무역"
+    },
+    {
+      "id": 16,
+      "japanese": "申込書",
+      "pronunciation": "もうしこみしょ",
+      "meaning": "신청서"
+    },
+    {
+      "id": 17,
+      "japanese": "目標",
+      "pronunciation": "もくひょう",
+      "meaning": "목표"
+    },
+    {
+      "id": 18,
+      "japanese": "文句",
+      "pronunciation": "もんく",
+      "meaning": "불평, 불만"
+    },
+    {
+      "id": 19,
+      "japanese": "家賃",
+      "pronunciation": "やちん",
+      "meaning": "집세"
+    },
+    {
+      "id": 20,
+      "japanese": "翌日",
+      "pronunciation": "よくじつ",
+      "meaning": "다음날, 익일"
+    },
+    {
+      "id": 21,
+      "japanese": "料金",
+      "pronunciation": "りょうきん",
+      "meaning": "요금"
+    },
+    {
+      "id": 22,
+      "japanese": "わがまま",
+      "pronunciation": "わがまま",
+      "meaning": "제멋대로"
+    },
+    {
+      "id": 23,
+      "japanese": "割合",
+      "pronunciation": "わりあい",
+      "meaning": "비율"
+    },
+    {
+      "id": 24,
+      "japanese": "アクセス",
+      "pronunciation": "アクセス",
+      "meaning": "접근성, 액세스"
+    },
+    {
+      "id": 25,
+      "japanese": "アドバイス",
+      "pronunciation": "アドバイス",
+      "meaning": "충고"
+    },
+    {
+      "id": 26,
+      "japanese": "イメージ",
+      "pronunciation": "イメージ",
+      "meaning": "이미지, 인상"
+    },
+    {
+      "id": 27,
+      "japanese": "インタビュー",
+      "pronunciation": "インタビュー",
+      "meaning": "인터뷰"
+    },
+    {
+      "id": 28,
+      "japanese": "インフルエンザ",
+      "pronunciation": "インフルエンザ",
+      "meaning": "인플루엔자, 유행성 감기"
+    },
+    {
+      "id": 29,
+      "japanese": "エネルギー",
+      "pronunciation": "エネルギー",
+      "meaning": "에너지"
+    },
+    {
+      "id": 30,
+      "japanese": "エプロン",
+      "pronunciation": "エプロン",
+      "meaning": "앞치마"
+    },
+    {
+      "id": 31,
+      "japanese": "エンジン",
+      "pronunciation": "エンジン",
+      "meaning": "엔진"
+    },
+    {
+      "id": 32,
+      "japanese": "カーブ",
+      "pronunciation": "カーブ",
+      "meaning": "커브"
+    },
+    {
+      "id": 33,
+      "japanese": "カタログ",
+      "pronunciation": "カタログ",
+      "meaning": "카탈로그"
+    },
+    {
+      "id": 34,
+      "japanese": "カット",
+      "pronunciation": "カット",
+      "meaning": "자름, 커트"
+    },
+    {
+      "id": 35,
+      "japanese": "カバー",
+      "pronunciation": "カバー",
+      "meaning": "커버"
+    },
+    {
+      "id": 36,
+      "japanese": "キャンセル",
+      "pronunciation": "キャンセル",
+      "meaning": "취소, 캔슬"
+    },
+    {
+      "id": 37,
+      "japanese": "キャンパス",
+      "pronunciation": "キャンパス",
+      "meaning": "캠퍼스"
+    },
+    {
+      "id": 38,
+      "japanese": "コミュニケーション",
+      "pronunciation": "コミュニケーション",
+      "meaning": "커뮤니케이션"
+    },
+    {
+      "id": 39,
+      "japanese": "サービス",
+      "pronunciation": "サービス",
+      "meaning": "서비스"
+    },
+    {
+      "id": 40,
+      "japanese": "サイン",
+      "pronunciation": "サイン",
+      "meaning": "사인"
+    },
+    {
+      "id": 41,
+      "japanese": "スタート",
+      "pronunciation": "スタート",
+      "meaning": "시작"
+    },
+    {
+      "id": 42,
+      "japanese": "ストップ",
+      "pronunciation": "ストップ",
+      "meaning": "멈춤"
+    },
+    {
+      "id": 43,
+      "japanese": "スピーチ",
+      "pronunciation": "スピーチ",
+      "meaning": "스피치"
+    },
+    {
+      "id": 44,
+      "japanese": "セット",
+      "pronunciation": "セット",
+      "meaning": "세팅, 세트"
+    },
+    {
+      "id": 45,
+      "japanese": "タイトル",
+      "pronunciation": "タイトル",
+      "meaning": "제목, 타이틀"
+    },
+    {
+      "id": 46,
+      "japanese": "チャレンジ",
+      "pronunciation": "チャレンジ",
+      "meaning": "도전, 챌린지"
+    },
+    {
+      "id": 47,
+      "japanese": "テーマ",
+      "pronunciation": "テーマ",
+      "meaning": "테마, 주제"
+    }
+  ]
+}

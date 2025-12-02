@@ -1,0 +1,293 @@
+{
+  "fileName": "page_13",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "注射",
+      "pronunciation": "ちゅうしゃ",
+      "meaning": "주사"
+    },
+    {
+      "id": 2,
+      "japanese": "泣き声",
+      "pronunciation": "なきごえ",
+      "meaning": "울음소리"
+    },
+    {
+      "id": 3,
+      "japanese": "泣く",
+      "pronunciation": "なく",
+      "meaning": "울다"
+    },
+    {
+      "id": 4,
+      "japanese": "身長",
+      "pronunciation": "しんちょう",
+      "meaning": "신장"
+    },
+    {
+      "id": 5,
+      "japanese": "変身",
+      "pronunciation": "へんしん",
+      "meaning": "변신"
+    },
+    {
+      "id": 6,
+      "japanese": "発射",
+      "pronunciation": "はっしゃ",
+      "meaning": "발사"
+    },
+    {
+      "id": 7,
+      "japanese": "反射",
+      "pronunciation": "はんしゃ",
+      "meaning": "반사"
+    },
+    {
+      "id": 8,
+      "japanese": "倍",
+      "pronunciation": "ばい",
+      "meaning": "~배, 배수"
+    },
+    {
+      "id": 9,
+      "japanese": "倍率",
+      "pronunciation": "ばいりつ",
+      "meaning": "배율"
+    },
+    {
+      "id": 10,
+      "japanese": "内部",
+      "pronunciation": "ないぶ",
+      "meaning": "내부"
+    },
+    {
+      "id": 11,
+      "japanese": "部",
+      "pronunciation": "ぶ",
+      "meaning": "부"
+    },
+    {
+      "id": 12,
+      "japanese": "追う",
+      "pronunciation": "おう",
+      "meaning": "좇다, 따르다"
+    },
+    {
+      "id": 13,
+      "japanese": "共通",
+      "pronunciation": "きょうつう",
+      "meaning": "공통"
+    },
+    {
+      "id": 14,
+      "japanese": "通勤",
+      "pronunciation": "つうきん",
+      "meaning": "통근"
+    },
+    {
+      "id": 15,
+      "japanese": "血液",
+      "pronunciation": "けつえき",
+      "meaning": "혈액"
+    },
+    {
+      "id": 16,
+      "japanese": "血",
+      "pronunciation": "ち",
+      "meaning": "피"
+    },
+    {
+      "id": 17,
+      "japanese": "皿",
+      "pronunciation": "さら",
+      "meaning": "접시"
+    },
+    {
+      "id": 18,
+      "japanese": "灰皿",
+      "pronunciation": "はいざら",
+      "meaning": "재떨이"
+    },
+    {
+      "id": 19,
+      "japanese": "投資",
+      "pronunciation": "とうし",
+      "meaning": "투자"
+    },
+    {
+      "id": 20,
+      "japanese": "投げる",
+      "pronunciation": "なげる",
+      "meaning": "던지다"
+    },
+    {
+      "id": 21,
+      "japanese": "役立つ",
+      "pronunciation": "やくだつ",
+      "meaning": "도움이 되다"
+    },
+    {
+      "id": 22,
+      "japanese": "役割",
+      "pronunciation": "やくわり",
+      "meaning": "역할"
+    },
+    {
+      "id": 23,
+      "japanese": "依頼",
+      "pronunciation": "いらい",
+      "meaning": "의뢰"
+    },
+    {
+      "id": 24,
+      "japanese": "頼む",
+      "pronunciation": "たのむ",
+      "meaning": "부탁하다"
+    },
+    {
+      "id": 25,
+      "japanese": "預ける",
+      "pronunciation": "あずける",
+      "meaning": "맡기다"
+    },
+    {
+      "id": 26,
+      "japanese": "預金",
+      "pronunciation": "よきん",
+      "meaning": "예금"
+    },
+    {
+      "id": 27,
+      "japanese": "順位",
+      "pronunciation": "じゅんい",
+      "meaning": "순위"
+    },
+    {
+      "id": 28,
+      "japanese": "順番",
+      "pronunciation": "じゅんばん",
+      "meaning": "순번, 차례"
+    },
+    {
+      "id": 29,
+      "japanese": "範囲",
+      "pronunciation": "はんい",
+      "meaning": "범위"
+    },
+    {
+      "id": 30,
+      "japanese": "雰囲気",
+      "pronunciation": "ふんいき",
+      "meaning": "분위기"
+    },
+    {
+      "id": 31,
+      "japanese": "困る",
+      "pronunciation": "こまる",
+      "meaning": "곤란하다"
+    },
+    {
+      "id": 32,
+      "japanese": "困難",
+      "pronunciation": "こんなん",
+      "meaning": "곤란"
+    },
+    {
+      "id": 33,
+      "japanese": "貧困",
+      "pronunciation": "ひんこん",
+      "meaning": "빈곤"
+    },
+    {
+      "id": 34,
+      "japanese": "貧しい",
+      "pronunciation": "まずしい",
+      "meaning": "가난하다"
+    },
+    {
+      "id": 35,
+      "japanese": "性質",
+      "pronunciation": "せいしつ",
+      "meaning": "성질"
+    },
+    {
+      "id": 36,
+      "japanese": "物質",
+      "pronunciation": "ぶっしつ",
+      "meaning": "물질"
+    },
+    {
+      "id": 37,
+      "japanese": "睡眠",
+      "pronunciation": "すいみん",
+      "meaning": "수면"
+    },
+    {
+      "id": 38,
+      "japanese": "眠る",
+      "pronunciation": "ねむる",
+      "meaning": "자다"
+    },
+    {
+      "id": 39,
+      "japanese": "眼科",
+      "pronunciation": "がんか",
+      "meaning": "안과"
+    },
+    {
+      "id": 40,
+      "japanese": "眼鏡",
+      "pronunciation": "めがね",
+      "meaning": "안경"
+    },
+    {
+      "id": 41,
+      "japanese": "寺院",
+      "pronunciation": "じいん",
+      "meaning": "사원, 사찰"
+    },
+    {
+      "id": 42,
+      "japanese": "寺",
+      "pronunciation": "てら",
+      "meaning": "절"
+    },
+    {
+      "id": 43,
+      "japanese": "期待",
+      "pronunciation": "きたい",
+      "meaning": "기대"
+    },
+    {
+      "id": 44,
+      "japanese": "待ち合わせ",
+      "pronunciation": "まちあわせ",
+      "meaning": "만나기로 함"
+    },
+    {
+      "id": 45,
+      "japanese": "拡大",
+      "pronunciation": "かくだい",
+      "meaning": "확대"
+    },
+    {
+      "id": 46,
+      "japanese": "大量",
+      "pronunciation": "たいりょう",
+      "meaning": "대량"
+    },
+    {
+      "id": 47,
+      "japanese": "多様だ",
+      "pronunciation": "たよう",
+      "meaning": "다양하다"
+    },
+    {
+      "id": 48,
+      "japanese": "多量",
+      "pronunciation": "たりょう",
+      "meaning": "다량"
+    }
+  ]
+}

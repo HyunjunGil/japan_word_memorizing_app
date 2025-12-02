@@ -1,0 +1,293 @@
+{
+  "fileName": "page_11",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "直線",
+      "pronunciation": "ちょくせん",
+      "meaning": "직선"
+    },
+    {
+      "id": 2,
+      "japanese": "相談",
+      "pronunciation": "そうだん",
+      "meaning": "상담"
+    },
+    {
+      "id": 3,
+      "japanese": "首相",
+      "pronunciation": "しゅしょう",
+      "meaning": "수상, 총리"
+    },
+    {
+      "id": 4,
+      "japanese": "感想",
+      "pronunciation": "かんそう",
+      "meaning": "감상"
+    },
+    {
+      "id": 5,
+      "japanese": "予想",
+      "pronunciation": "よそう",
+      "meaning": "예상"
+    },
+    {
+      "id": 6,
+      "japanese": "競争",
+      "pronunciation": "きょうそう",
+      "meaning": "경쟁"
+    },
+    {
+      "id": 7,
+      "japanese": "戦",
+      "pronunciation": "せん",
+      "meaning": "전쟁"
+    },
+    {
+      "id": 8,
+      "japanese": "接続",
+      "pronunciation": "せつぞく",
+      "meaning": "접속"
+    },
+    {
+      "id": 9,
+      "japanese": "連続",
+      "pronunciation": "れんぞく",
+      "meaning": "연속"
+    },
+    {
+      "id": 10,
+      "japanese": "不足",
+      "pronunciation": "ふそく",
+      "meaning": "부족"
+    },
+    {
+      "id": 11,
+      "japanese": "満足",
+      "pronunciation": "まんぞく",
+      "meaning": "만족"
+    },
+    {
+      "id": 12,
+      "japanese": "欠点",
+      "pronunciation": "けってん",
+      "meaning": "결점"
+    },
+    {
+      "id": 13,
+      "japanese": "点数",
+      "pronunciation": "てんすう",
+      "meaning": "점수"
+    },
+    {
+      "id": 14,
+      "japanese": "伝説",
+      "pronunciation": "でんせつ",
+      "meaning": "전설"
+    },
+    {
+      "id": 15,
+      "japanese": "伝統",
+      "pronunciation": "でんとう",
+      "meaning": "전통"
+    },
+    {
+      "id": 16,
+      "japanese": "都市",
+      "pronunciation": "とし",
+      "meaning": "도시"
+    },
+    {
+      "id": 17,
+      "japanese": "都心",
+      "pronunciation": "としん",
+      "meaning": "도심"
+    },
+    {
+      "id": 18,
+      "japanese": "鉄道",
+      "pronunciation": "てつどう",
+      "meaning": "철도"
+    },
+    {
+      "id": 19,
+      "japanese": "道路",
+      "pronunciation": "どうろ",
+      "meaning": "도로"
+    },
+    {
+      "id": 20,
+      "japanese": "違反",
+      "pronunciation": "いはん",
+      "meaning": "위반"
+    },
+    {
+      "id": 21,
+      "japanese": "反対",
+      "pronunciation": "はんたい",
+      "meaning": "반대"
+    },
+    {
+      "id": 22,
+      "japanese": "犯罪",
+      "pronunciation": "はんざい",
+      "meaning": "범죄"
+    },
+    {
+      "id": 23,
+      "japanese": "防犯",
+      "pronunciation": "ぼうはん",
+      "meaning": "방범"
+    },
+    {
+      "id": 24,
+      "japanese": "逮捕",
+      "pronunciation": "たいほ",
+      "meaning": "체포"
+    },
+    {
+      "id": 25,
+      "japanese": "捕獲",
+      "pronunciation": "ほかく",
+      "meaning": "포획"
+    },
+    {
+      "id": 26,
+      "japanese": "情報",
+      "pronunciation": "じょうほう",
+      "meaning": "정보"
+    },
+    {
+      "id": 27,
+      "japanese": "予報",
+      "pronunciation": "よほう",
+      "meaning": "예보"
+    },
+    {
+      "id": 28,
+      "japanese": "容易だ",
+      "pronunciation": "ようい",
+      "meaning": "용이하다"
+    },
+    {
+      "id": 29,
+      "japanese": "容器",
+      "pronunciation": "ようき",
+      "meaning": "용기, 그릇"
+    },
+    {
+      "id": 30,
+      "japanese": "応用",
+      "pronunciation": "おうよう",
+      "meaning": "응용"
+    },
+    {
+      "id": 31,
+      "japanese": "活用",
+      "pronunciation": "かつよう",
+      "meaning": "활용"
+    },
+    {
+      "id": 32,
+      "japanese": "規律",
+      "pronunciation": "きりつ",
+      "meaning": "규율"
+    },
+    {
+      "id": 33,
+      "japanese": "法律",
+      "pronunciation": "ほうりつ",
+      "meaning": "법률"
+    },
+    {
+      "id": 34,
+      "japanese": "公立",
+      "pronunciation": "こうりつ",
+      "meaning": "공립"
+    },
+    {
+      "id": 35,
+      "japanese": "国立",
+      "pronunciation": "こくりつ",
+      "meaning": "국립"
+    },
+    {
+      "id": 36,
+      "japanese": "給料",
+      "pronunciation": "きゅうりょう",
+      "meaning": "급료"
+    },
+    {
+      "id": 37,
+      "japanese": "材料",
+      "pronunciation": "ざいりょう",
+      "meaning": "재료"
+    },
+    {
+      "id": 38,
+      "japanese": "大量",
+      "pronunciation": "たいりょう",
+      "meaning": "대량"
+    },
+    {
+      "id": 39,
+      "japanese": "分量",
+      "pronunciation": "ぶんりょう",
+      "meaning": "분량"
+    },
+    {
+      "id": 40,
+      "japanese": "高齢者",
+      "pronunciation": "こうれいしゃ",
+      "meaning": "고령자"
+    },
+    {
+      "id": 41,
+      "japanese": "年齢",
+      "pronunciation": "ねんれい",
+      "meaning": "연령"
+    },
+    {
+      "id": 42,
+      "japanese": "冷蔵庫",
+      "pronunciation": "れいぞうこ",
+      "meaning": "냉장고"
+    },
+    {
+      "id": 43,
+      "japanese": "冷凍",
+      "pronunciation": "れいとう",
+      "meaning": "냉동"
+    },
+    {
+      "id": 44,
+      "japanese": "痛い",
+      "pronunciation": "いたい",
+      "meaning": "아프다"
+    },
+    {
+      "id": 45,
+      "japanese": "苦痛",
+      "pronunciation": "くつう",
+      "meaning": "고통"
+    },
+    {
+      "id": 46,
+      "japanese": "疲れ",
+      "pronunciation": "つか",
+      "meaning": "피로"
+    },
+    {
+      "id": 47,
+      "japanese": "疲れる",
+      "pronunciation": "つか",
+      "meaning": "지치다"
+    },
+    {
+      "id": 48,
+      "japanese": "案内",
+      "pronunciation": "あんない",
+      "meaning": "안내"
+    }
+  ]
+}

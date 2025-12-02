@@ -1,0 +1,305 @@
+{
+  "fileName": "page_09",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "包丁",
+      "pronunciation": "ほうちょう",
+      "meaning": "식칼"
+    },
+    {
+      "id": 2,
+      "japanese": "申し込み",
+      "pronunciation": "もうしこみ",
+      "meaning": "신청"
+    },
+    {
+      "id": 3,
+      "japanese": "横",
+      "pronunciation": "よこ",
+      "meaning": "옆, 가로"
+    },
+    {
+      "id": 4,
+      "japanese": "両替",
+      "pronunciation": "りょうがえ",
+      "meaning": "환전"
+    },
+    {
+      "id": 5,
+      "japanese": "泡",
+      "pronunciation": "あわ",
+      "meaning": "거품"
+    },
+    {
+      "id": 6,
+      "japanese": "池",
+      "pronunciation": "いけ",
+      "meaning": "연못"
+    },
+    {
+      "id": 7,
+      "japanese": "庭",
+      "pronunciation": "にわ",
+      "meaning": "정원, 마당"
+    },
+    {
+      "id": 8,
+      "japanese": "根",
+      "pronunciation": "ね",
+      "meaning": "뿌리"
+    },
+    {
+      "id": 9,
+      "japanese": "星",
+      "pronunciation": "ほし",
+      "meaning": "별"
+    },
+    {
+      "id": 10,
+      "japanese": "湖",
+      "pronunciation": "みずうみ",
+      "meaning": "호수"
+    },
+    {
+      "id": 11,
+      "japanese": "港",
+      "pronunciation": "みなと",
+      "meaning": "항구"
+    },
+    {
+      "id": 12,
+      "japanese": "紅葉",
+      "pronunciation": "もみじ",
+      "meaning": "단풍"
+    },
+    {
+      "id": 13,
+      "japanese": "森",
+      "pronunciation": "もり",
+      "meaning": "수풀, 삼림"
+    },
+    {
+      "id": 14,
+      "japanese": "夕日",
+      "pronunciation": "ゆうひ",
+      "meaning": "석양"
+    },
+    {
+      "id": 15,
+      "japanese": "妹",
+      "pronunciation": "いもうと",
+      "meaning": "여동생"
+    },
+    {
+      "id": 16,
+      "japanese": "夫",
+      "pronunciation": "おっと",
+      "meaning": "남편"
+    },
+    {
+      "id": 17,
+      "japanese": "弟",
+      "pronunciation": "おとうと",
+      "meaning": "남동생"
+    },
+    {
+      "id": 18,
+      "japanese": "妻",
+      "pronunciation": "つま",
+      "meaning": "아내"
+    },
+    {
+      "id": 19,
+      "japanese": "父母",
+      "pronunciation": "ふぼ",
+      "meaning": "부모"
+    },
+    {
+      "id": 20,
+      "japanese": "孫",
+      "pronunciation": "まご",
+      "meaning": "손자"
+    },
+    {
+      "id": 21,
+      "japanese": "息子",
+      "pronunciation": "むすこ",
+      "meaning": "아들"
+    },
+    {
+      "id": 22,
+      "japanese": "娘",
+      "pronunciation": "むすめ",
+      "meaning": "딸"
+    },
+    {
+      "id": 23,
+      "japanese": "青",
+      "pronunciation": "あお",
+      "meaning": "파랑"
+    },
+    {
+      "id": 24,
+      "japanese": "赤",
+      "pronunciation": "あか",
+      "meaning": "빨강"
+    },
+    {
+      "id": 25,
+      "japanese": "黄色",
+      "pronunciation": "きいろ",
+      "meaning": "노랑"
+    },
+    {
+      "id": 26,
+      "japanese": "黒",
+      "pronunciation": "くろ",
+      "meaning": "검정"
+    },
+    {
+      "id": 27,
+      "japanese": "白",
+      "pronunciation": "しろ",
+      "meaning": "하양"
+    },
+    {
+      "id": 28,
+      "japanese": "緑",
+      "pronunciation": "みどり",
+      "meaning": "초록"
+    },
+    {
+      "id": 29,
+      "japanese": "油",
+      "pronunciation": "あぶら",
+      "meaning": "기름"
+    },
+    {
+      "id": 30,
+      "japanese": "芋",
+      "pronunciation": "いも",
+      "meaning": "감자, 고구마"
+    },
+    {
+      "id": 31,
+      "japanese": "貝",
+      "pronunciation": "かい",
+      "meaning": "조개"
+    },
+    {
+      "id": 32,
+      "japanese": "粉",
+      "pronunciation": "こな",
+      "meaning": "가루, 분말"
+    },
+    {
+      "id": 33,
+      "japanese": "米",
+      "pronunciation": "こめ",
+      "meaning": "쌀"
+    },
+    {
+      "id": 34,
+      "japanese": "塩",
+      "pronunciation": "しお",
+      "meaning": "소금"
+    },
+    {
+      "id": 35,
+      "japanese": "卵",
+      "pronunciation": "たまご",
+      "meaning": "달걀"
+    },
+    {
+      "id": 36,
+      "japanese": "豆",
+      "pronunciation": "まめ",
+      "meaning": "콩"
+    },
+    {
+      "id": 37,
+      "japanese": "足",
+      "pronunciation": "あし",
+      "meaning": "발"
+    },
+    {
+      "id": 38,
+      "japanese": "汗",
+      "pronunciation": "あせ",
+      "meaning": "땀"
+    },
+    {
+      "id": 39,
+      "japanese": "息",
+      "pronunciation": "いき",
+      "meaning": "숨"
+    },
+    {
+      "id": 40,
+      "japanese": "笑顔",
+      "pronunciation": "えがお",
+      "meaning": "웃는 얼굴"
+    },
+    {
+      "id": 41,
+      "japanese": "顔",
+      "pronunciation": "かお",
+      "meaning": "얼굴"
+    },
+    {
+      "id": 42,
+      "japanese": "肩",
+      "pronunciation": "かた",
+      "meaning": "어깨"
+    },
+    {
+      "id": 43,
+      "japanese": "皮",
+      "pronunciation": "かわ",
+      "meaning": "껍질, 가죽"
+    },
+    {
+      "id": 44,
+      "japanese": "首",
+      "pronunciation": "くび",
+      "meaning": "목"
+    },
+    {
+      "id": 45,
+      "japanese": "腰",
+      "pronunciation": "こし",
+      "meaning": "허리"
+    },
+    {
+      "id": 46,
+      "japanese": "背中",
+      "pronunciation": "せなか",
+      "meaning": "등"
+    },
+    {
+      "id": 47,
+      "japanese": "涙",
+      "pronunciation": "なみだ",
+      "meaning": "눈물"
+    },
+    {
+      "id": 48,
+      "japanese": "歯",
+      "pronunciation": "は",
+      "meaning": "이, 이빨"
+    },
+    {
+      "id": 49,
+      "japanese": "胸",
+      "pronunciation": "むね",
+      "meaning": "가슴"
+    },
+    {
+      "id": 50,
+      "japanese": "指",
+      "pronunciation": "ゆび",
+      "meaning": "손가락"
+    }
+  ]
+}

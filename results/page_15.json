@@ -1,0 +1,305 @@
+{
+  "fileName": "page_15",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "後悔",
+      "pronunciation": "こうかい",
+      "meaning": "후회"
+    },
+    {
+      "id": 2,
+      "japanese": "最後",
+      "pronunciation": "さいご",
+      "meaning": "최후"
+    },
+    {
+      "id": 3,
+      "japanese": "最終",
+      "pronunciation": "さいしゅう",
+      "meaning": "최종"
+    },
+    {
+      "id": 4,
+      "japanese": "終了",
+      "pronunciation": "しゅうりょう",
+      "meaning": "종료"
+    },
+    {
+      "id": 5,
+      "japanese": "家庭",
+      "pronunciation": "かてい",
+      "meaning": "가정"
+    },
+    {
+      "id": 6,
+      "japanese": "庭",
+      "pronunciation": "にわ",
+      "meaning": "정원"
+    },
+    {
+      "id": 7,
+      "japanese": "遊園地",
+      "pronunciation": "ゆうえんち",
+      "meaning": "유원지"
+    },
+    {
+      "id": 8,
+      "japanese": "幼稚園",
+      "pronunciation": "ようちえん",
+      "meaning": "유치원"
+    },
+    {
+      "id": 9,
+      "japanese": "屋上",
+      "pronunciation": "おくじょう",
+      "meaning": "옥상"
+    },
+    {
+      "id": 10,
+      "japanese": "部屋",
+      "pronunciation": "へや",
+      "meaning": "방"
+    },
+    {
+      "id": 11,
+      "japanese": "教室",
+      "pronunciation": "きょうしつ",
+      "meaning": "교실"
+    },
+    {
+      "id": 12,
+      "japanese": "室内",
+      "pronunciation": "しつない",
+      "meaning": "실내"
+    },
+    {
+      "id": 13,
+      "japanese": "日焼け",
+      "pronunciation": "ひやけ",
+      "meaning": "볕에 탐"
+    },
+    {
+      "id": 14,
+      "japanese": "焼く",
+      "pronunciation": "やく",
+      "meaning": "굽다"
+    },
+    {
+      "id": 15,
+      "japanese": "燃料",
+      "pronunciation": "ねんりょう",
+      "meaning": "연료"
+    },
+    {
+      "id": 16,
+      "japanese": "波",
+      "pronunciation": "なみ",
+      "meaning": "파도"
+    },
+    {
+      "id": 17,
+      "japanese": "泉",
+      "pronunciation": "いずみ",
+      "meaning": "샘"
+    },
+    {
+      "id": 18,
+      "japanese": "温泉",
+      "pronunciation": "おんせん",
+      "meaning": "온천"
+    },
+    {
+      "id": 19,
+      "japanese": "確保",
+      "pronunciation": "かくほ",
+      "meaning": "확보"
+    },
+    {
+      "id": 20,
+      "japanese": "保存",
+      "pronunciation": "ほぞん",
+      "meaning": "보존"
+    },
+    {
+      "id": 21,
+      "japanese": "守る",
+      "pronunciation": "まもる",
+      "meaning": "지키다"
+    },
+    {
+      "id": 22,
+      "japanese": "留守",
+      "pronunciation": "るす",
+      "meaning": "부재중"
+    },
+    {
+      "id": 23,
+      "japanese": "拡充",
+      "pronunciation": "かくじゅう",
+      "meaning": "확충"
+    },
+    {
+      "id": 24,
+      "japanese": "拡張",
+      "pronunciation": "かくちょう",
+      "meaning": "확장"
+    },
+    {
+      "id": 25,
+      "japanese": "主張",
+      "pronunciation": "しゅちょう",
+      "meaning": "주장"
+    },
+    {
+      "id": 26,
+      "japanese": "出張",
+      "pronunciation": "しゅっちょう",
+      "meaning": "출장"
+    },
+    {
+      "id": 27,
+      "japanese": "降りる",
+      "pronunciation": "おりる",
+      "meaning": "(탈것에서) 내리다"
+    },
+    {
+      "id": 28,
+      "japanese": "降る",
+      "pronunciation": "ふる",
+      "meaning": "(눈, 비 등이) 내리다"
+    },
+    {
+      "id": 29,
+      "japanese": "落ちる",
+      "pronunciation": "おちる",
+      "meaning": "떨어지다"
+    },
+    {
+      "id": 30,
+      "japanese": "落下",
+      "pronunciation": "らっか",
+      "meaning": "낙하"
+    },
+    {
+      "id": 31,
+      "japanese": "当たる",
+      "pronunciation": "あたる",
+      "meaning": "맞다"
+    },
+    {
+      "id": 32,
+      "japanese": "当選",
+      "pronunciation": "とうせん",
+      "meaning": "당선"
+    },
+    {
+      "id": 33,
+      "japanese": "打ち合わせ",
+      "pronunciation": "うちあわせ",
+      "meaning": "협의"
+    },
+    {
+      "id": 34,
+      "japanese": "打つ",
+      "pronunciation": "うつ",
+      "meaning": "치다"
+    },
+    {
+      "id": 35,
+      "japanese": "金額",
+      "pronunciation": "きんがく",
+      "meaning": "금액"
+    },
+    {
+      "id": 36,
+      "japanese": "現金",
+      "pronunciation": "げんきん",
+      "meaning": "현금"
+    },
+    {
+      "id": 37,
+      "japanese": "銀色",
+      "pronunciation": "ぎんいろ",
+      "meaning": "은색"
+    },
+    {
+      "id": 38,
+      "japanese": "銀行",
+      "pronunciation": "ぎんこう",
+      "meaning": "은행"
+    },
+    {
+      "id": 39,
+      "japanese": "必ず",
+      "pronunciation": "かならず",
+      "meaning": "반드시"
+    },
+    {
+      "id": 40,
+      "japanese": "必要",
+      "pronunciation": "ひつよう",
+      "meaning": "필요"
+    },
+    {
+      "id": 41,
+      "japanese": "確実だ",
+      "pronunciation": "かくじつだ",
+      "meaning": "확실하다"
+    },
+    {
+      "id": 42,
+      "japanese": "確認",
+      "pronunciation": "かくにん",
+      "meaning": "확인"
+    },
+    {
+      "id": 43,
+      "japanese": "信じる",
+      "pronunciation": "しんじる",
+      "meaning": "믿다"
+    },
+    {
+      "id": 44,
+      "japanese": "信用",
+      "pronunciation": "しんよう",
+      "meaning": "신용"
+    },
+    {
+      "id": 45,
+      "japanese": "頼み",
+      "pronunciation": "たのみ",
+      "meaning": "부탁"
+    },
+    {
+      "id": 46,
+      "japanese": "頼る",
+      "pronunciation": "たよる",
+      "meaning": "의지하다"
+    },
+    {
+      "id": 47,
+      "japanese": "育てる",
+      "pronunciation": "そだてる",
+      "meaning": "키우다"
+    },
+    {
+      "id": 48,
+      "japanese": "体育",
+      "pronunciation": "たいいく",
+      "meaning": "체육"
+    },
+    {
+      "id": 49,
+      "japanese": "教える",
+      "pronunciation": "おしえる",
+      "meaning": "가르치다"
+    },
+    {
+      "id": 50,
+      "japanese": "教育",
+      "pronunciation": "きょういく",
+      "meaning": "교육"
+    }
+  ]
+}

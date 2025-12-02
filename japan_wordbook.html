@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일본어 단어장</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .header-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        
+        .header-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .file-selection {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .mode-selection {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 12px;
+        }
+        
+        .mode-option {
+            flex: 1;
+            padding: 20px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .mode-option:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .mode-option.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8e9ff 100%);
+        }
+        
+        .mode-option input[type="radio"] {
+            display: none;
+        }
+        
+        .mode-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .mode-description {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .mode-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .upload-section {
+            border: 2px dashed #667eea;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .upload-section:hover {
+            background: #f8f9ff;
+            border-color: #764ba2;
+        }
+        
+        .upload-section input {
+            display: none;
+        }
+        
+        .file-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .file-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9ff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .file-item:hover {
+            background: #e8e9ff;
+        }
+        
+        .file-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        .file-item-info {
+            flex: 1;
+        }
+        
+        .file-item-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .file-item-count {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .selection-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            flex: 1;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+        
+        .flashcard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .card {
+            width: 100%;
+            min-height: 300px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8e9ff 100%);
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .weight-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .weight-value {
+            font-size: 14px;
+            color: #764ba2;
+        }
+        
+        .card-question {
+            font-size: 14px;
+            color: #667eea;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .card-content {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+        
+        .card-answer {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .card-answer-item {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .card-answer-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .card-answer-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .study-mode-card {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+        
+        .study-item {
+            padding: 25px 30px;
+            background: white;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .study-item-label {
+            font-size: 12px;
+            color: #667eea;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .study-item-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .study-item.main {
+            background: white;
+        }
+        
+        .study-item.main .study-item-label {
+            color: #667eea;
+        }
+        
+        .study-item.main .study-item-value {
+            color: #333;
+            font-size: 40px;
+        }
+        
+        .card-controls {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+        }
+        
+        .card-controls .btn {
+            flex: 1;
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        
+        .empty-state h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .study-table-container {
+            width: 100%;
+            max-height: 600px;
+            overflow-y: auto;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            background: white;
+        }
+        
+        .study-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .study-table thead {
+            position: sticky;
+            top: 0;
+            background: #f5f5f5;
+            color: #333;
+            z-index: 10;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .study-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .study-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 16px;
+        }
+        
+        .study-table tbody tr:hover {
+            background: #f8f9ff;
+        }
+        
+        .study-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .study-table .id-cell {
+            width: 60px;
+            text-align: center;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .study-table .japanese-cell {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .study-table .pronunciation-cell {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .study-table .meaning-cell {
+            color: #333;
+        }
+        
+        /* 모바일 반응형 스타일 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                max-width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            }
+            
+            .header {
+                padding: 12px 15px;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+            
+            .header h1 {
+                font-size: 18px;
+                flex: 0 1 auto;
+                min-width: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-right: 10px;
+            }
+            
+            .header-buttons {
+                flex: 0 0 auto;
+                gap: 6px;
+                margin-top: 0;
+                width: auto;
+            }
+            
+            .header-btn {
+                padding: 6px 10px;
+                font-size: 11px;
+                flex: 0 0 auto;
+                min-width: auto;
+                white-space: nowrap;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            .mode-selection {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
+            }
+            
+            .mode-option {
+                padding: 15px;
+            }
+            
+            .mode-title {
+                font-size: 16px;
+            }
+            
+            .mode-description {
+                font-size: 12px;
+            }
+            
+            .mode-icon {
+                font-size: 28px;
+                margin-bottom: 8px;
+            }
+            
+            .upload-section {
+                padding: 20px 15px;
+            }
+            
+            .file-list {
+                max-height: 50vh;
+            }
+            
+            .file-item {
+                padding: 12px;
+            }
+            
+            .file-item input[type="checkbox"] {
+                width: 18px;
+                height: 18px;
+                margin-right: 12px;
+            }
+            
+            .file-item-name {
+                font-size: 14px;
+            }
+            
+            .file-item-count {
+                font-size: 11px;
+            }
+            
+            .btn {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+            
+            .card {
+                min-height: 250px;
+                padding: 25px 15px;
+                gap: 15px;
+            }
+            
+            .weight-badge {
+                top: 10px;
+                right: 10px;
+                padding: 4px 10px;
+                font-size: 11px;
+            }
+            
+            .card-question {
+                font-size: 12px;
+            }
+            
+            .card-content {
+                font-size: 32px;
+                word-break: break-word;
+            }
+            
+            .card-answer-item {
+                padding: 12px;
+            }
+            
+            .card-answer-value {
+                font-size: 20px;
+            }
+            
+            .card-controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .card-controls .btn {
+                width: 100%;
+            }
+            
+            .study-item {
+                padding: 20px 15px;
+            }
+            
+            .study-item-value {
+                font-size: 24px;
+            }
+            
+            .study-item.main .study-item-value {
+                font-size: 28px;
+            }
+            
+            .study-table-container {
+                max-height: 70vh;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .study-table {
+                min-width: 100%;
+                font-size: 14px;
+            }
+            
+            .study-table th {
+                padding: 10px 8px;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+            
+            .study-table td {
+                padding: 10px 8px;
+                font-size: 14px;
+            }
+            
+            .study-table .id-cell {
+                width: 40px;
+                font-size: 12px;
+            }
+            
+            .study-table .japanese-cell {
+                font-size: 16px;
+            }
+            
+            .study-table .pronunciation-cell {
+                font-size: 13px;
+            }
+            
+            .study-table .meaning-cell {
+                font-size: 14px;
+            }
+            
+            .selection-controls {
+                flex-direction: column;
+            }
+            
+            .selection-controls .btn-secondary {
+                width: 100%;
+            }
+        }
+        
+        /* 작은 모바일 화면 (세로 모드) */
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px 12px;
+            }
+            
+            .header h1 {
+                font-size: 16px;
+                margin-right: 8px;
+            }
+            
+            .header-btn {
+                padding: 5px 8px;
+                font-size: 10px;
+            }
+            
+            .content {
+                padding: 15px 10px;
+            }
+            
+            .card-content {
+                font-size: 28px;
+            }
+            
+            .study-table th,
+            .study-table td {
+                padding: 8px 6px;
+                font-size: 12px;
+            }
+            
+            .study-table .japanese-cell {
+                font-size: 14px;
+            }
+            
+            .study-table .pronunciation-cell {
+                font-size: 11px;
+            }
+            
+            .study-table .meaning-cell {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 일본어 단어장</h1>
+            <div class="header-buttons">
+                <button class="header-btn hidden" id="homeBtn" onclick="goHome()">처음으로</button>
+                <button class="header-btn hidden" id="changeSetBtn" onclick="changeWordSet()">단어셋 변경</button>
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- 파일 선택 화면 -->
+            <div id="fileSelectionScreen">
+                <div class="file-selection">
+                    <!-- 모드 선택 -->
+                    <div class="mode-selection">
+                        <label class="mode-option selected" onclick="selectMode('quiz')">
+                            <input type="radio" name="studyMode" value="quiz" checked>
+                            <div class="mode-icon">📝</div>
+                            <div class="mode-title">평가하기</div>
+                            <div class="mode-description">랜덤 문제로 암기 테스트</div>
+                        </label>
+                        <label class="mode-option" onclick="selectMode('study')">
+                            <input type="radio" name="studyMode" value="study">
+                            <div class="mode-icon">📚</div>
+                            <div class="mode-title">공부하기</div>
+                            <div class="mode-description">모든 정보를 보며 학습</div>
+                        </label>
+                    </div>
+                    
+                    <div class="upload-section" onclick="document.getElementById('fileInput').click()">
+                        <h3>📁 JSON 파일 업로드</h3>
+                        <p style="margin-top: 10px; color: #666;">클릭하여 단어묶음 파일을 추가하세요</p>
+                        <input type="file" id="fileInput" accept=".json" multiple onchange="handleFileUpload(event)">
+                    </div>
+                    
+                    <div id="fileListContainer" class="hidden">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3>단어묶음 목록</h3>
+                            <div>
+                                <button class="btn-secondary" style="padding: 8px 16px; margin-right: 10px;" onclick="selectAll()">전체선택</button>
+                                <button class="btn-secondary" style="padding: 8px 16px;" onclick="deselectAll()">전체해제</button>
+                            </div>
+                        </div>
+                        <div class="file-list" id="fileList"></div>
+                        <div class="selection-controls" style="margin-top: 20px;">
+                            <button class="btn btn-primary" onclick="startStudy()">학습 시작</button>
+                        </div>
+                    </div>
+                    
+                    <div id="emptyState" class="empty-state">
+                        <h2>단어묶음이 없습니다</h2>
+                        <p>위의 업로드 버튼을 클릭하여 JSON 파일을 추가해주세요</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 플래시카드 화면 -->
+            <div id="flashcardScreen" class="hidden">
+                <div class="flashcard">
+                    <div class="card">
+                        <div class="weight-badge" id="weightBadge">
+                            가중치: <span class="weight-value" id="weightValue">1</span>
+                        </div>
+                        <div class="card-question" id="questionType"></div>
+                        <div class="card-content" id="cardContent"></div>
+                        <div class="card-answer hidden" id="cardAnswer"></div>
+                    </div>
+                    <div class="card-controls">
+                        <button class="btn btn-secondary" id="prevBtn" onclick="previousCard()" disabled>이전으로</button>
+                        <button class="btn btn-primary" id="showAnswerBtn" onclick="showAnswer()">정답 확인</button>
+                        <button class="btn btn-primary" id="nextBtn" onclick="nextCard()">다음으로</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 공부하기 테이블 화면 -->
+            <div id="studyTableScreen" class="hidden">
+                <div class="study-table-container" id="studyTableContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let wordSets = [];
+        let selectedWords = [];
+        let currentWordIndex = -1;
+        let wordHistory = [];
+        let currentQuestion = null;
+        let answerShown = false;
+        let weights = {};
+        let studyMode = 'quiz'; // 'quiz' or 'study'
+        
+        // LocalStorage 키
+        const STORAGE_KEYS = {
+            WORD_SETS: 'japanese_word_sets',
+            WEIGHTS: 'japanese_word_weights'
+        };
+        
+        // 기본 단어 데이터 (results 폴더의 JSON 파일들)
+        const DEFAULT_WORD_SETS = [
+            {
+                        "fileName": "page_01",
+                        "words": [
+                                    {
+                                                "id": 1,
+                                                "japanese": "改札",
+                                                "pronunciation": "かいさつ",
+                                                "meaning": "개찰"
+                                    },
+                                    {
+                                                "id": 2,
+                                                "japanese": "価格",
+                                                "pronunciation": "かかく",
+                                                "meaning": "가격"
+                                    },
+                                    {
+                                                "id": 3,
+                                                "japanese": "各駅",
+                                                "pronunciation": "かくえき",
+                                                "meaning": "각역"
+                                    },
+                                    {
+                                                "id": 4,
+                                                "japanese": "観客",
+                                                "pronunciation": "かんきゃく",
+                                                "meaning": "관객"
+                                    },
+                                    {
+                                                "id": 5,
+                                                "japanese": "完成",
+                                                "pronunciation": "かんせい",
+                                                "meaning": "완성"
+                                    },
+                                    {
+                                                "id": 6,
+                                                "japanese": "血液型",
+                                                "pronunciation": "けつえきがた",
+                                                "meaning": "혈액형"
+                                    },
+                                    {
+                                                "id": 7,
+                                                "japanese": "方角",
+                                                "pronunciation": "ほうがく",
+                                                "meaning": "방향"
+                                    },
+                                    {
+                                                "id": 8,
+                                                "japanese": "録画",
+                                                "pronunciation": "ろくが",
+                                                "meaning": "녹화"
+                                    },
+                                    {
+                                                "id": 9,
+                                                "japanese": "延期",
+                                                "pronunciation": "えんき",
+                                                "meaning": "연기"
+                                    },
+                                    {
+                                                "id": 10,
+                                                "japanese": "気温",
+                                                "pronunciation": "きおん",
+                                                "meaning": "기온"
+                                    },
+                                    {
+                                                "id": 11,
+                                                "japanese": "機械",
+                                                "pronunciation": "きかい",
+                                                "meaning": "기계"
+                                    },
+                                    {
+                                                "id": 12,
+                                                "japanese": "議会",
+                                                "pronunciation": "ぎかい",
+                                                "meaning": "의회"
+                                    },
+                                    {
+                                                "id": 13,
+                                                "japanese": "疑問",
+                                                "pronunciation": "ぎもん",
+                                                "meaning": "의문"
+                                    },
+                                    {
+                                                "id": 14,
+                                                "japanese": "行事",
+                                                "pronunciation": "ぎょうじ",
+                                                "meaning": "행사"
+                                    },
+                                    {
+                                                "id": 15,
+                                                "japanese": "訓練",
+                                                "pronunciation": "くんれん",
+                                                "meaning": "훈련"
+                                    },
+                                    {
+                                                "id": 16,
+                                                "japanese": "予約",
+                                                "pronunciation": "よやく",
+                                                "meaning": "예약"
+                                    },
+                                    {
+                                                "id": 17,
+                                                "japanese": "家具",
+                                                "pronunciation": "かぐ",
+                                                "meaning": "가구"
+                                    },
+                                    {
+                                                "id": 18,
+                                                "japanese": "偶然",
+                                                "pronunciation": "ぐうぜん",
+                                                "meaning": "우연"
+                                    },
+                                    {
+                                                "id": 19,
+                                                "japanese": "会計",
+                                                "pronunciation": "かいけい",
+                                                "meaning": "(대금)계산"
+                                    },
+                                    {
+                                                "id": 20,
+                                                "japanese": "経営",
+                                                "pronunciation": "けいえい",
+                                                "meaning": "경영"
+                                    },
+                                    {
+                                                "id": 21,
+                                                "japanese": "外科",
+                                                "pronunciation": "げか",
+                                                "meaning": "외과"
+                                    },
+                                    {
+                                                "id": 22,
+                                                "japanese": "月末",
+                                                "pronunciation": "げつまつ",
+                                                "meaning": "월말"
+                                    },
+                                    {
+                                                "id": 23,
+                                                "japanese": "現象",
+                                                "pronunciation": "げんしょう",
+                                                "meaning": "현상"
+                                    },
+                                    {
+                                                "id": 24,
+                                                "japanese": "上下",
+                                                "pronunciation": "じょうげ",
+                                                "meaning": "상하"
+                                    },
+                                    {
+                                                "id": 25,
+                                                "japanese": "講義",
+                                                "pronunciation": "こうぎ",
+                                                "meaning": "강의"
+                                    },
+                                    {
+                                                "id": 26,
+                                                "japanese": "工事",
+                                                "pronunciation": "こうじ",
+                                                "meaning": "공사"
+                                    },
+                                    {
+                                                "id": 27,
+                                                "japanese": "敬語",
+                                                "pronunciation": "けいご",
+                                                "meaning": "경어"
+                                    },
+                                    {
+                                                "id": 28,
+                                                "japanese": "集合",
+                                                "pronunciation": "しゅうごう",
+                                                "meaning": "집합"
+                                    },
+                                    {
+                                                "id": 29,
+                                                "japanese": "単語",
+                                                "pronunciation": "たんご",
+                                                "meaning": "단어"
+                                    },
+                                    {
+                                                "id": 30,
+                                                "japanese": "団子",
+                                                "pronunciation": "だんご",
+                                                "meaning": "경단"
+                                    },
+                                    {
+                                                "id": 31,
+                                                "japanese": "削除",
+                                                "pronunciation": "さくじょ",
+                                                "meaning": "삭제"
+                                    },
+                                    {
+                                                "id": 32,
+                                                "japanese": "制作",
+                                                "pronunciation": "せいさく",
+                                                "meaning": "제작"
+                                    },
+                                    {
+                                                "id": 33,
+                                                "japanese": "残業",
+                                                "pronunciation": "ざんぎょう",
+                                                "meaning": "잔업"
+                                    },
+                                    {
+                                                "id": 34,
+                                                "japanese": "存在",
+                                                "pronunciation": "そんざい",
+                                                "meaning": "존재"
+                                    },
+                                    {
+                                                "id": 35,
+                                                "japanese": "指示",
+                                                "pronunciation": "しじ",
+                                                "meaning": "지시"
+                                    },
+                                    {
+                                                "id": 36,
+                                                "japanese": "指導",
+                                                "pronunciation": "しどう",
+                                                "meaning": "지도"
+                                    },
+                                    {
+                                                "id": 37,
+                                                "japanese": "首都",
+                                                "pronunciation": "しゅと",
+                                                "meaning": "수도"
+                                    },
+                                    {
+                                                "id": 38,
+                                                "japanese": "維持",
+                                                "pronunciation": "いじ",
+                                                "meaning": "유지"
+                                    },
+                                    {
+                                                "id": 39,
+                                                "japanese": "個人",
+                                                "pronunciation": "こじん",
+                                                "meaning": "개인"
+                                    },
+                                    {
+                                                "id": 40,
+                                                "japanese": "文字",
+                                                "pronunciation": "もじ",
+                                                "meaning": "문자"
+                                    },
+                                    {
+                                                "id": 41,
+                                                "japanese": "睡眠",
+                                                "pronunciation": "すいみん",
+                                                "meaning": "수면"
+                                    },
+                                    {
+                                                "id": 42,
+                                                "japanese": "数字",
+                                                "pronunciation": "すうじ",
+                                                "meaning": "숫자"
+                                    },
+                                    {
+                                                "id": 43,
+                                                "japanese": "合図",
+                                                "pronunciation": "あいず",
+                                                "meaning": "신호"
+                                    },
+                                    {
+                                                "id": 44,
+                                                "japanese": "図",
+                                                "pronunciation": "ず",
+                                                "meaning": "그림"
+                                    },
+                                    {
+                                                "id": 45,
+                                                "japanese": "頭痛",
+                                                "pronunciation": "ずつう",
+                                                "meaning": "두통"
+                                    },
+                                    {
+                                                "id": 46,
+                                                "japanese": "地図",
+                                                "pronunciation": "ちず",
+                                                "meaning": "지도"
+                                    },
+                                    {
+                                                "id": 47,
+                                                "japanese": "成績",
+                                                "pronunciation": "せいせき",
+                                                "meaning": "성적"
+                                    },
+                                    {
+                                                "id": 48,
+                                                "japanese": "節約",
+                                                "pronunciation": "せつやく",
+                                                "meaning": "절약"
+                                    },
+                                    {
+                                                "id": 49,
+                                                "japanese": "専門家",
+                                                "pronunciation": "せんもんか",
+                                                "meaning": "전문가"
+                                    }
+                        ]
+            },
+            {
+                        "fileName": "page_02",
+                        "words": [
+                                    {
+                                                "id": 1,
+                                                "japanese": "以前",
+                                                "pronunciation": "いぜん",
+                                                "meaning": "이전"
+                                    },
+                                    {
+                                                "id": 2,
+                                                "japanese": "完全",
+                                                "pronunciation": "かんぜん",
+                                                "meaning": "완전"
+                                    },
+                                    {
+                                                "id": 3,
+                                                "japanese": "税金",
+                                                "pronunciation": "ぜいきん",
+                                                "meaning": "세금"
+                                    },
+                                    {
+                                                "id": 4,
+                                                "japanese": "想像",
+                                                "pronunciation": "そうぞう",
+                                                "meaning": "상상"
+                                    },
+                                    {
+                                                "id": 5,
+                                                "japanese": "相談",
+                                                "pronunciation": "そうだん",
+                                                "meaning": "상담"
+                                    },
+                                    {
+                                                "id": 6,
+                                                "japanese": "製造",
+                                                "pronunciation": "せいぞう",
+                                                "meaning": "제조"
+                                    },
+                                    {
+                                                "id": 7,
+                                                "japanese": "増加",
+                                                "pronunciation": "ぞうか",
+                                                "meaning": "증가"
+                                    },
+                                    {
+                                                "id": 8,
+                                                "japanese": "保存",
+                                                "pronunciation": "ほぞん",
+                                                "meaning": "보존"
+                                    },
+                                    {
+                                                "id": 9,
+                                                "japanese": "連続",
+                                                "pronunciation": "れんぞく",
+                                                "meaning": "연속"
+                                    },
+                                    {
+                                                "id": 10,
+                                                "japanese": "洗濯",
+                                                "pronunciation": "せんたく",
+                                                "meaning": "세탁"
+                                    },
+                                    {
+                                                "id": 11,
+                                                "japanese": "横断",
+                                                "pronunciation": "おうだん",
+                                                "meaning": "횡단"
+                                    },
+                                    {
+                                                "id": 12,
+                                                "japanese": "温暖だ",
+                                                "pronunciation": "おんだんだ",
+                                                "meaning": "온난하다"
+                                    },
+                                    {
+                                                "id": 13,
+                                                "japanese": "手段",
+                                                "pronunciation": "しゅだん",
+                                                "meaning": "수단"
+                                    },
+                                    {
+                                                "id": 14,
+                                                "japanese": "相手",
+                                                "pronunciation": "あいて",
+                                                "meaning": "상대"
+                                    },
+                                    {
+                                                "id": 15,
+                                                "japanese": "指定",
+                                                "pronunciation": "してい",
+                                                "meaning": "지정"
+                                    },
+                                    {
+                                                "id": 16,
+                                                "japanese": "停電",
+                                                "pronunciation": "ていでん",
+                                                "meaning": "정전"
+                                    },
+                                    {
+                                                "id": 17,
+                                                "japanese": "電源",
+                                                "pronunciation": "でんげん",
+                                                "meaning": "전원"
+                                    },
+                                    {
+                                                "id": 18,
+                                                "japanese": "伝言",
+                                                "pronunciation": "でんごん",
+                                                "meaning": "전언"
+                                    },
+                                    {
+                                                "id": 19,
+                                                "japanese": "伝達",
+                                                "pronunciation": "でんたつ",
+                                                "meaning": "전달"
+                                    },
+                                    {
+                                                "id": 20,
+                                                "japanese": "土地",
+                                                "pronunciation": "とち",
+                                                "meaning": "토지"
+                                    },
+                                    {
+                                                "id": 21,
+                                                "japanese": "冷凍",
+                                                "pronunciation": "れいとう",
+                                                "meaning": "냉동"
+                                    },
+                                    {
+                                                "id": 22,
+                                                "japanese": "同意",
+                                                "pronunciation": "どうい",
+                                                "meaning": "동의"
+                                    },
+                                    {
+                                                "id": 23,
+                                                "japanese": "独身",
+                                                "pronunciation": "どくしん",
+                                                "meaning": "독신"
+                                    },
+                                    {
+                                                "id": 24,
+                                                "japanese": "独立",
+                                                "pronunciation": "どくりつ",
+                                                "meaning": "독립"
+                                    },
+                                    {
+                                                "id": 25,
+                                                "japanese": "努力",
+                                                "pronunciation": "どりょく",
+                                                "meaning": "노력"
+                                    },
+                                    {
+                                                "id": 26,
+                                                "japanese": "配達",
+                                                "pronunciation": "はいたつ",
+                                                "meaning": "배달"
+                                    },
+                                    {
+                                                "id": 27,
+                                                "japanese": "発売",
+                                                "pronunciation": "はつばい",
+                                                "meaning": "발매"
+                                    },
+                                    {
+                                                "id": 28,
+                                                "japanese": "範囲",
+                                                "pronunciation": "はんい",
+                                                "meaning": "범위"
+                                    },
+                                    {
+                                                "id": 29,
+                                                "japanese": "看板",
+                                                "pronunciation": "かんばん",
+                                                "meaning": "간판"
+                                    },
+                                    {
+                                                "id": 30,
+                                                "japanese": "順番",
+                                                "pronunciation": "じゅんばん",
+                                                "meaning": "순번, 차례"
+                                    },
+                                    {
+                                                "id": 31,
+                                                "japanese": "売買",
+                                                "pronunciation": "ばいばい",
+                                                "meaning": "매매"
+                                    },
+                                    {
+                                                "id": 32,
+                                                "japanese": "失敗",
+                                                "pronunciation": "しっぱい",
+                                                "meaning": "실패, 실수"
+                                    },
+                                    {
+                                                "id": 33,
+                                                "japanese": "心配",
+                                                "pronunciation": "しんぱい",
+                                                "meaning": "걱정"
+                                    },
+                                    {
+                                                "id": 34,
+                                                "japanese": "消費",
+                                                "pronunciation": "しょうひ",
+                                                "meaning": "소비"
+                                    },
+                                    {
+                                                "id": 35,
+                                                "japanese": "一般",
+                                                "pronunciation": "いっぱん",
+                                                "meaning": "일반"
+                                    },
+                                    {
+                                                "id": 36,
+                                                "japanese": "一方",
+                                                "pronunciation": "いっぽう",
+                                                "meaning": "한쪽, 한편"
+                                    },
+                                    {
+                                                "id": 37,
+                                                "japanese": "学科",
+                                                "pronunciation": "がっか",
+                                                "meaning": "학과"
+                                    },
+                                    {
+                                                "id": 38,
+                                                "japanese": "活気",
+                                                "pronunciation": "かっき",
+                                                "meaning": "활기"
+                                    },
+                                    {
+                                                "id": 39,
+                                                "japanese": "楽器",
+                                                "pronunciation": "がっき",
+                                                "meaning": "악기"
+                                    },
+                                    {
+                                                "id": 40,
+                                                "japanese": "各国",
+                                                "pronunciation": "かっこく",
+                                                "meaning": "각국"
+                                    },
+                                    {
+                                                "id": 41,
+                                                "japanese": "結果",
+                                                "pronunciation": "けっか",
+                                                "meaning": "결과"
+                                    },
+                                    {
+                                                "id": 42,
+                                                "japanese": "決心",
+                                                "pronunciation": "けっしん",
+                                                "meaning": "결심"
+                                    },
+                                    {
+                                                "id": 43,
+                                                "japanese": "国会",
+                                                "pronunciation": "こっかい",
+                                                "meaning": "국회"
+                                    },
+                                    {
+                                                "id": 44,
+                                                "japanese": "作曲",
+                                                "pronunciation": "さっきょく",
+                                                "meaning": "작곡"
+                                    },
+                                    {
+                                                "id": 45,
+                                                "japanese": "実家",
+                                                "pronunciation": "じっか",
+                                                "meaning": "본가, 친정"
+                                    },
+                                    {
+                                                "id": 46,
+                                                "japanese": "実験",
+                                                "pronunciation": "じっけん",
+                                                "meaning": "실험"
+                                    },
+                                    {
+                                                "id": 47,
+                                                "japanese": "借金",
+                                                "pronunciation": "しゃっきん",
+                                                "meaning": "차금, 빛"
+                                    },
+                                    {
+                                                "id": 48,
+                                                "japanese": "出身",
+                                                "pronunciation": "しゅっしん",
+                                                "meaning": "출신"
+                                    }
+                        ]
+            }
+];
+        // 초기화
+        function init() {
+            loadFromStorage();
+            
+            // DEFAULT_WORD_SETS의 파일명 목록
+            const defaultFileNames = new Set(DEFAULT_WORD_SETS.map(set => set.fileName));
+            
+            // LocalStorage에 저장된 파일명 목록
+            const storedFileNames = new Set(wordSets.map(set => set.fileName));
+            
+            // DEFAULT_WORD_SETS에 있는 모든 파일이 LocalStorage에 있는지 확인
+            let allDefaultFilesExist = true;
+            for (const fileName of defaultFileNames) {
+                if (!storedFileNames.has(fileName)) {
+                    allDefaultFilesExist = false;
+                    break;
+                }
+            }
+            
+            // LocalStorage에 데이터가 없거나, DEFAULT_WORD_SETS와 개수가 다르거나,
+            // DEFAULT_WORD_SETS에 있는 파일이 LocalStorage에 없으면 업데이트
+            const needsUpdate = wordSets.length === 0 || 
+                               DEFAULT_WORD_SETS.length !== wordSets.length ||
+                               !allDefaultFilesExist;
+            
+            if (needsUpdate) {
+                // DEFAULT_WORD_SETS를 기준으로 업데이트
+                // 기존 가중치는 유지하고, 새 단어만 가중치 초기화
+                DEFAULT_WORD_SETS.forEach(set => {
+                    const existingIndex = wordSets.findIndex(s => s.fileName === set.fileName);
+                    if (existingIndex >= 0) {
+                        // 기존 데이터 업데이트 (가중치는 유지)
+                        wordSets[existingIndex] = set;
+                    } else {
+                        // 새 데이터 추가
+                        wordSets.push(set);
+                    }
+                    
+                    // 새 단어들의 가중치 초기화
+                    set.words.forEach(word => {
+                        const key = `${set.fileName}_${word.id}`;
+                        if (!weights[key]) {
+                            weights[key] = 1;
+                        }
+                    });
+                });
+                
+                // DEFAULT_WORD_SETS에 없는 파일은 제거
+                wordSets = wordSets.filter(set => defaultFileNames.has(set.fileName));
+                
+                saveToStorage();
+            }
+            
+            renderFileList();
+        }
+        
+        // LocalStorage에서 데이터 로드
+        function loadFromStorage() {
+            const savedSets = localStorage.getItem(STORAGE_KEYS.WORD_SETS);
+            const savedWeights = localStorage.getItem(STORAGE_KEYS.WEIGHTS);
+            
+            if (savedSets) {
+                wordSets = JSON.parse(savedSets);
+            }
+            
+            if (savedWeights) {
+                weights = JSON.parse(savedWeights);
+            }
+        }
+        
+        // LocalStorage에 저장
+        function saveToStorage() {
+            localStorage.setItem(STORAGE_KEYS.WORD_SETS, JSON.stringify(wordSets));
+            localStorage.setItem(STORAGE_KEYS.WEIGHTS, JSON.stringify(weights));
+        }
+        
+        // 파일 업로드 처리
+        async function handleFileUpload(event) {
+            const files = event.target.files;
+            
+            for (let file of files) {
+                try {
+                    const text = await file.text();
+                    const data = JSON.parse(text);
+                    
+                    // 중복 체크 (파일명으로)
+                    const existingIndex = wordSets.findIndex(set => set.fileName === data.fileName);
+                    if (existingIndex >= 0) {
+                        wordSets[existingIndex] = data;
+                    } else {
+                        wordSets.push(data);
+                    }
+                    
+                    // 새 단어들의 가중치 초기화
+                    data.words.forEach(word => {
+                        const key = `${data.fileName}_${word.id}`;
+                        if (!weights[key]) {
+                            weights[key] = 1;
+                        }
+                    });
+                } catch (error) {
+                    alert(`파일 "${file.name}" 로드 실패: ${error.message}`);
+                }
+            }
+            
+            saveToStorage();
+            renderFileList();
+            event.target.value = ''; // 같은 파일 재선택 가능하도록
+        }
+        
+        // 모드 선택
+        function selectMode(mode) {
+            studyMode = mode;
+            document.querySelectorAll('.mode-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+            
+            // 공부하기 모드로 바뀌면 모든 체크박스 해제
+            if (mode === 'study') {
+                deselectAll();
+            }
+        }
+        
+        // 파일 목록 렌더링
+        function renderFileList() {
+            const fileList = document.getElementById('fileList');
+            const fileListContainer = document.getElementById('fileListContainer');
+            const emptyState = document.getElementById('emptyState');
+            
+            if (wordSets.length === 0) {
+                fileListContainer.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            
+            fileListContainer.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+            
+            // fileName 순으로 정렬 (숫자 부분을 고려한 자연 정렬)
+            const sortedWordSets = [...wordSets].sort((a, b) => {
+                // fileName에서 숫자 부분 추출
+                const numA = parseInt(a.fileName.match(/\d+/)?.[0] || '0', 10);
+                const numB = parseInt(b.fileName.match(/\d+/)?.[0] || '0', 10);
+                return numA - numB;
+            });
+            
+            fileList.innerHTML = sortedWordSets.map((set, index) => {
+                // 원본 배열에서의 인덱스 찾기
+                const originalIndex = wordSets.findIndex(s => s.fileName === set.fileName);
+                return `
+                <div class="file-item" onclick="toggleFileSelection(${originalIndex}, event)">
+                    <input type="checkbox" id="file_${originalIndex}" onclick="event.stopPropagation()">
+                    <div class="file-item-info">
+                        <div class="file-item-name">${set.fileName}</div>
+                        <div class="file-item-count">${set.words.length}개 단어</div>
+                    </div>
+                </div>
+            `;
+            }).join('');
+        }
+        
+        // 파일 선택 토글
+        function toggleFileSelection(index, event) {
+            // 체크박스 직접 클릭한 경우는 이미 토글되어 있으므로 아무것도 안함
+            if (event && event.target.type === 'checkbox') {
+                // 공부하기 모드일 때는 하나만 선택되도록
+                if (studyMode === 'study') {
+                    const checkbox = event.target;
+                    if (checkbox.checked) {
+                        // 다른 모든 체크박스 해제
+                        wordSets.forEach((_, i) => {
+                            if (i !== index) {
+                                document.getElementById(`file_${i}`).checked = false;
+                            }
+                        });
+                    }
+                }
+                return;
+            }
+            
+            const checkbox = document.getElementById(`file_${index}`);
+            
+            // 공부하기 모드일 때는 하나만 선택되도록
+            if (studyMode === 'study') {
+                if (checkbox.checked) {
+                    // 이미 선택되어 있으면 해제
+                    checkbox.checked = false;
+                } else {
+                    // 다른 모든 체크박스 해제 후 현재 것만 선택
+                    wordSets.forEach((_, i) => {
+                        document.getElementById(`file_${i}`).checked = false;
+                    });
+                    checkbox.checked = true;
+                }
+            } else {
+                // 평가하기 모드일 때는 기존대로 토글
+            checkbox.checked = !checkbox.checked;
+            }
+        }
+        
+        // 전체 선택
+        function selectAll() {
+            // 공부하기 모드일 때는 전체 선택 불가
+            if (studyMode === 'study') {
+                alert('공부하기 모드에서는 하나의 단어묶음만 선택할 수 있습니다.');
+                return;
+            }
+            wordSets.forEach((_, index) => {
+                document.getElementById(`file_${index}`).checked = true;
+            });
+        }
+        
+        // 전체 해제
+        function deselectAll() {
+            wordSets.forEach((_, index) => {
+                document.getElementById(`file_${index}`).checked = false;
+            });
+        }
+        
+        // 학습 시작
+        function startStudy() {
+            selectedWords = [];
+            let selectedFileCount = 0;
+            let selectedSet = null;
+            
+            wordSets.forEach((set, index) => {
+                const checkbox = document.getElementById(`file_${index}`);
+                if (checkbox && checkbox.checked) {
+                    selectedFileCount++;
+                    selectedSet = set;
+                    set.words.forEach(word => {
+                        selectedWords.push({
+                            ...word,
+                            fileName: set.fileName,
+                            weightKey: `${set.fileName}_${word.id}`
+                        });
+                    });
+                }
+            });
+            
+            if (selectedWords.length === 0) {
+                alert('최소 하나의 단어묶음을 선택해주세요.');
+                return;
+            }
+            
+            // 공부하기 모드일 때는 하나의 파일만 선택되어야 함
+            if (studyMode === 'study' && selectedFileCount > 1) {
+                alert('공부하기 모드에서는 하나의 단어묶음만 선택할 수 있습니다.');
+                return;
+            }
+            
+            currentWordIndex = -1;
+            wordHistory = [];
+            
+            document.getElementById('fileSelectionScreen').classList.add('hidden');
+            document.getElementById('homeBtn').classList.remove('hidden');
+            document.getElementById('changeSetBtn').classList.remove('hidden');
+            
+            if (studyMode === 'study') {
+                // 공부하기 모드: 테이블 화면 표시
+                displayStudyTable(selectedSet);
+                document.getElementById('studyTableScreen').classList.remove('hidden');
+            } else {
+                // 평가하기 모드: 플래시카드 화면 표시
+                document.getElementById('flashcardScreen').classList.remove('hidden');
+            nextCard();
+            }
+        }
+        
+        // 가중치 기반 랜덤 단어 선택
+        function getWeightedRandomWord() {
+            const totalWeight = selectedWords.reduce((sum, word) => {
+                return sum + (weights[word.weightKey] || 1);
+            }, 0);
+            
+            let random = Math.random() * totalWeight;
+            
+            for (let word of selectedWords) {
+                const weight = weights[word.weightKey] || 1;
+                random -= weight;
+                if (random <= 0) {
+                    return word;
+                }
+            }
+            
+            return selectedWords[0];
+        }
+        
+        // 다음 카드
+        function nextCard() {
+            // 가중치 업데이트
+            if (currentWordIndex >= 0) {
+                const currentWord = wordHistory[currentWordIndex];
+                if (studyMode === 'study') {
+                    // 공부하기 모드: 항상 가중치 증가
+                    weights[currentWord.weightKey] = Math.min(5, (weights[currentWord.weightKey] || 1) + 1);
+                } else if (!answerShown) {
+                    // 평가하기 모드: 정답 확인 안하고 넘어감
+                    weights[currentWord.weightKey] = Math.max(1, (weights[currentWord.weightKey] || 1) - 1);
+                }
+                saveToStorage();
+            }
+            
+            const newWord = getWeightedRandomWord();
+            wordHistory.push(newWord);
+            currentWordIndex = wordHistory.length - 1;
+            
+            displayCard();
+            updateButtons();
+        }
+        
+        // 이전 카드
+        function previousCard() {
+            if (currentWordIndex > 0) {
+                currentWordIndex--;
+                displayCard();
+                updateButtons();
+            }
+        }
+        
+        // 카드 표시
+        function displayCard() {
+            const word = wordHistory[currentWordIndex];
+            answerShown = false;
+            
+            // 현재 단어의 가중치 표시
+            const currentWeight = weights[word.weightKey] || 1;
+            document.getElementById('weightValue').textContent = currentWeight;
+            
+            if (studyMode === 'study') {
+                // 공부하기 모드: 모든 정보 표시
+                displayStudyMode(word);
+            } else {
+                // 평가하기 모드: 랜덤 문제
+                displayQuizMode(word);
+            }
+        }
+        
+        // 평가하기 모드 표시
+        function displayQuizMode(word) {
+            // 발음이 있는지 확인 (빈 문자열이거나 없는 경우 제외)
+            const hasPronunciation = word.pronunciation && word.pronunciation.trim() !== '';
+            
+            // 랜덤으로 문제 유형 선택 (발음이 없으면 발음 문제 제외)
+            const questionTypes = [
+                { type: 'japanese', label: '일본어 표기', value: word.japanese },
+                { type: 'meaning', label: '뜻', value: word.meaning }
+            ];
+            
+            // 발음이 있는 경우에만 발음 문제 추가
+            if (hasPronunciation) {
+                questionTypes.splice(1, 0, { type: 'pronunciation', label: '발음', value: word.pronunciation });
+            }
+            
+            const randomIndex = Math.floor(Math.random() * questionTypes.length);
+            currentQuestion = questionTypes[randomIndex];
+            
+            document.getElementById('questionType').textContent = currentQuestion.label;
+            document.getElementById('cardContent').textContent = currentQuestion.value;
+            document.getElementById('cardContent').style.fontSize = '48px';
+            document.getElementById('cardAnswer').classList.add('hidden');
+            document.getElementById('showAnswerBtn').classList.remove('hidden');
+            document.getElementById('nextBtn').textContent = '다음으로';
+        }
+        
+        // 공부하기 테이블 표시
+        function displayStudyTable(wordSet) {
+            const container = document.getElementById('studyTableContainer');
+            
+            const tableHTML = `
+                <table class="study-table">
+                    <thead>
+                        <tr>
+                            <th class="id-cell">ID</th>
+                            <th class="japanese-cell">일본어 표기</th>
+                            <th class="pronunciation-cell">발음</th>
+                            <th class="meaning-cell">의미</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${wordSet.words.map(word => `
+                            <tr>
+                                <td class="id-cell">${word.id}</td>
+                                <td class="japanese-cell">${word.japanese}</td>
+                                <td class="pronunciation-cell">${word.pronunciation}</td>
+                                <td class="meaning-cell">${word.meaning}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+            
+            container.innerHTML = tableHTML;
+        }
+        
+        // 공부하기 모드 표시 (평가하기 모드에서 사용하는 함수 - 유지)
+        function displayStudyMode(word) {
+            currentQuestion = { type: 'all' }; // 모든 정보 표시
+            
+            document.getElementById('questionType').textContent = '공부하기';
+            
+            const studyHTML = `
+                <div class="study-mode-card">
+                    <div class="study-item main">
+                        <div class="study-item-label">일본어 표기</div>
+                        <div class="study-item-value">${word.japanese}</div>
+                    </div>
+                    <div class="study-item">
+                        <div class="study-item-label">발음</div>
+                        <div class="study-item-value">${word.pronunciation}</div>
+                    </div>
+                    <div class="study-item">
+                        <div class="study-item-label">뜻</div>
+                        <div class="study-item-value">${word.meaning}</div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('cardContent').innerHTML = studyHTML;
+            document.getElementById('cardContent').style.fontSize = 'inherit';
+            document.getElementById('cardAnswer').classList.add('hidden');
+            document.getElementById('showAnswerBtn').classList.add('hidden');
+            document.getElementById('nextBtn').textContent = '다음으로';
+        }
+        
+        // 정답 확인
+        function showAnswer() {
+            const word = wordHistory[currentWordIndex];
+            answerShown = true;
+            
+            // 가중치 증가
+            weights[word.weightKey] = Math.min(5, (weights[word.weightKey] || 1) + 1);
+            saveToStorage();
+            
+            // 발음이 있는지 확인
+            const hasPronunciation = word.pronunciation && word.pronunciation.trim() !== '';
+            
+            // 나머지 정보 표시
+            const answers = [];
+            if (currentQuestion.type !== 'japanese') {
+                answers.push({ label: '일본어 표기', value: word.japanese });
+            }
+            if (currentQuestion.type !== 'pronunciation' && hasPronunciation) {
+                answers.push({ label: '발음', value: word.pronunciation });
+            }
+            if (currentQuestion.type !== 'meaning') {
+                answers.push({ label: '뜻', value: word.meaning });
+            }
+            
+            const answerHTML = answers.map(ans => `
+                <div class="card-answer-item">
+                    <div class="card-answer-label">${ans.label}</div>
+                    <div class="card-answer-value">${ans.value}</div>
+                </div>
+            `).join('');
+            
+            document.getElementById('cardAnswer').innerHTML = answerHTML;
+            document.getElementById('cardAnswer').classList.remove('hidden');
+            document.getElementById('showAnswerBtn').classList.add('hidden');
+        }
+        
+        // 버튼 상태 업데이트
+        function updateButtons() {
+            document.getElementById('prevBtn').disabled = currentWordIndex === 0;
+        }
+        
+        // 처음으로
+        function goHome() {
+            if (confirm('학습을 종료하고 처음으로 돌아가시겠습니까?')) {
+                document.getElementById('flashcardScreen').classList.add('hidden');
+                document.getElementById('studyTableScreen').classList.add('hidden');
+                document.getElementById('fileSelectionScreen').classList.remove('hidden');
+                document.getElementById('homeBtn').classList.add('hidden');
+                document.getElementById('changeSetBtn').classList.add('hidden');
+            }
+        }
+        
+        // 단어셋 변경
+        function changeWordSet() {
+            if (confirm('현재 학습을 중단하고 단어셋을 변경하시겠습니까?')) {
+                document.getElementById('flashcardScreen').classList.add('hidden');
+                document.getElementById('studyTableScreen').classList.add('hidden');
+                document.getElementById('fileSelectionScreen').classList.remove('hidden');
+                document.getElementById('changeSetBtn').classList.add('hidden');
+            }
+        }
+        
+        // 페이지 로드 시 초기화
+        window.onload = init;
+    </script>
+</body>
+</html>

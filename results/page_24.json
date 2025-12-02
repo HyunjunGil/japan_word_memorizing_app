@@ -1,0 +1,293 @@
+{
+  "fileName": "page_24",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "まずしい",
+      "pronunciation": "",
+      "meaning": "가난하다"
+    },
+    {
+      "id": 2,
+      "japanese": "お金がない",
+      "pronunciation": "おかねがない",
+      "meaning": "돈이 없다"
+    },
+    {
+      "id": 3,
+      "japanese": "眩しい",
+      "pronunciation": "まぶしい",
+      "meaning": "눈부시다"
+    },
+    {
+      "id": 4,
+      "japanese": "明るすぎる",
+      "pronunciation": "あかるすぎる",
+      "meaning": "너무 밝다"
+    },
+    {
+      "id": 5,
+      "japanese": "めずらしい",
+      "pronunciation": "",
+      "meaning": "희귀하다, 드물다"
+    },
+    {
+      "id": 6,
+      "japanese": "めったにない",
+      "pronunciation": "",
+      "meaning": "좀처럼 없다"
+    },
+    {
+      "id": 7,
+      "japanese": "もったいない",
+      "pronunciation": "",
+      "meaning": "아깝다"
+    },
+    {
+      "id": 8,
+      "japanese": "捨てたくない",
+      "pronunciation": "すてたくない",
+      "meaning": "버리고 싶지 않다"
+    },
+    {
+      "id": 9,
+      "japanese": "ゆるい",
+      "pronunciation": "",
+      "meaning": "느슨하다, 헐렁하다"
+    },
+    {
+      "id": 10,
+      "japanese": "大きい",
+      "pronunciation": "おおきい",
+      "meaning": "크다"
+    },
+    {
+      "id": 11,
+      "japanese": "あいまいだ",
+      "pronunciation": "",
+      "meaning": "애매하다"
+    },
+    {
+      "id": 12,
+      "japanese": "はっきりしない",
+      "pronunciation": "",
+      "meaning": "분명치 않다"
+    },
+    {
+      "id": 13,
+      "japanese": "からからだ",
+      "pronunciation": "",
+      "meaning": "바싹 마르다"
+    },
+    {
+      "id": 14,
+      "japanese": "かわく",
+      "pronunciation": "",
+      "meaning": "마르다"
+    },
+    {
+      "id": 15,
+      "japanese": "がらがらだ",
+      "pronunciation": "",
+      "meaning": "텅 비다"
+    },
+    {
+      "id": 16,
+      "japanese": "すく",
+      "pronunciation": "",
+      "meaning": "비다"
+    },
+    {
+      "id": 17,
+      "japanese": "簡単だ",
+      "pronunciation": "かんたんだ",
+      "meaning": "간단하다"
+    },
+    {
+      "id": 18,
+      "japanese": "容易だ",
+      "pronunciation": "よういだ",
+      "meaning": "용이하다"
+    },
+    {
+      "id": 19,
+      "japanese": "さまざまだ",
+      "pronunciation": "",
+      "meaning": "다양하다"
+    },
+    {
+      "id": 20,
+      "japanese": "いろいろだ",
+      "pronunciation": "",
+      "meaning": "여러가지이다"
+    },
+    {
+      "id": 21,
+      "japanese": "真剣だ",
+      "pronunciation": "しんけんだ",
+      "meaning": "진지하다"
+    },
+    {
+      "id": 22,
+      "japanese": "まじめだ",
+      "pronunciation": "",
+      "meaning": "진지하다, 성실하다"
+    },
+    {
+      "id": 23,
+      "japanese": "そっくりだ",
+      "pronunciation": "",
+      "meaning": "꼭 닮다"
+    },
+    {
+      "id": 24,
+      "japanese": "似ている",
+      "pronunciation": "にている",
+      "meaning": "닮았다"
+    },
+    {
+      "id": 25,
+      "japanese": "退屈だ",
+      "pronunciation": "たいくつだ",
+      "meaning": "지루하다"
+    },
+    {
+      "id": 26,
+      "japanese": "つまらない",
+      "pronunciation": "",
+      "meaning": "재미없다"
+    },
+    {
+      "id": 27,
+      "japanese": "短気だ",
+      "pronunciation": "たんきだ",
+      "meaning": "성미가 급하다"
+    },
+    {
+      "id": 28,
+      "japanese": "すぐ怒る",
+      "pronunciation": "すぐおこる",
+      "meaning": "바로 화내다"
+    },
+    {
+      "id": 29,
+      "japanese": "単純だ",
+      "pronunciation": "たんじゅんだ",
+      "meaning": "단순하다"
+    },
+    {
+      "id": 30,
+      "japanese": "分かりやすい",
+      "pronunciation": "わかりやすい",
+      "meaning": "알기 쉽다"
+    },
+    {
+      "id": 31,
+      "japanese": "得意だ",
+      "pronunciation": "とくいだ",
+      "meaning": "특히 잘하다"
+    },
+    {
+      "id": 32,
+      "japanese": "とても上手だ",
+      "pronunciation": "とてもじょうずだ",
+      "meaning": "매우 능숙하다"
+    },
+    {
+      "id": 33,
+      "japanese": "不安だ",
+      "pronunciation": "ふあんだ",
+      "meaning": "불안하다"
+    },
+    {
+      "id": 34,
+      "japanese": "心配だ",
+      "pronunciation": "しんぱいだ",
+      "meaning": "걱정스럽다"
+    },
+    {
+      "id": 35,
+      "japanese": "ベストだ",
+      "pronunciation": "",
+      "meaning": "베스트다, 가장 좋다"
+    },
+    {
+      "id": 36,
+      "japanese": "最もよい",
+      "pronunciation": "もっともよい",
+      "meaning": "가장 좋다"
+    },
+    {
+      "id": 37,
+      "japanese": "ぺらぺらだ",
+      "pronunciation": "",
+      "meaning": "술술 말하다"
+    },
+    {
+      "id": 38,
+      "japanese": "上手に話せる",
+      "pronunciation": "じょうずにはなせる",
+      "meaning": "능숙하게 말할 수 있다"
+    },
+    {
+      "id": 39,
+      "japanese": "むだだ",
+      "pronunciation": "",
+      "meaning": "쓸데없다"
+    },
+    {
+      "id": 40,
+      "japanese": "役に立たない",
+      "pronunciation": "やくにたたない",
+      "meaning": "도움이 되지 않다"
+    },
+    {
+      "id": 41,
+      "japanese": "楽だ",
+      "pronunciation": "らくだ",
+      "meaning": "편하다, 쉽다"
+    },
+    {
+      "id": 42,
+      "japanese": "簡単だ",
+      "pronunciation": "かんたんだ",
+      "meaning": "간단하다"
+    },
+    {
+      "id": 43,
+      "japanese": "立派だ",
+      "pronunciation": "りっぱだ",
+      "meaning": "훌륭하다"
+    },
+    {
+      "id": 44,
+      "japanese": "すぐれる",
+      "pronunciation": "",
+      "meaning": "뛰어나다"
+    },
+    {
+      "id": 45,
+      "japanese": "冷静だ",
+      "pronunciation": "れいせいだ",
+      "meaning": "냉정하다"
+    },
+    {
+      "id": 46,
+      "japanese": "落ち着く",
+      "pronunciation": "おちつく",
+      "meaning": "침착하다"
+    },
+    {
+      "id": 47,
+      "japanese": "わがままだ",
+      "pronunciation": "",
+      "meaning": "제멋대로다"
+    },
+    {
+      "id": 48,
+      "japanese": "他人のことを考えない",
+      "pronunciation": "たにんのことをかんがえない",
+      "meaning": "타인을 생각하지 않다"
+    }
+  ]
+}

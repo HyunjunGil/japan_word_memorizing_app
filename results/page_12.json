@@ -1,0 +1,305 @@
+{
+  "fileName": "page_12",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "提案",
+      "pronunciation": "ていあん",
+      "meaning": "제안"
+    },
+    {
+      "id": 2,
+      "japanese": "家具",
+      "pronunciation": "かぐ",
+      "meaning": "가구"
+    },
+    {
+      "id": 3,
+      "japanese": "家内",
+      "pronunciation": "かない",
+      "meaning": "아내"
+    },
+    {
+      "id": 4,
+      "japanese": "健康",
+      "pronunciation": "けんこう",
+      "meaning": "건강"
+    },
+    {
+      "id": 5,
+      "japanese": "保健",
+      "pronunciation": "ほけん",
+      "meaning": "보건"
+    },
+    {
+      "id": 6,
+      "japanese": "建設",
+      "pronunciation": "けんせつ",
+      "meaning": "건설"
+    },
+    {
+      "id": 7,
+      "japanese": "建てる",
+      "pronunciation": "たてる",
+      "meaning": "세우다"
+    },
+    {
+      "id": 8,
+      "japanese": "温める",
+      "pronunciation": "あたためる",
+      "meaning": "데우다"
+    },
+    {
+      "id": 9,
+      "japanese": "気温",
+      "pronunciation": "きおん",
+      "meaning": "기온"
+    },
+    {
+      "id": 10,
+      "japanese": "混む",
+      "pronunciation": "こむ",
+      "meaning": "붐비다"
+    },
+    {
+      "id": 11,
+      "japanese": "混雑",
+      "pronunciation": "こんざつ",
+      "meaning": "혼잡"
+    },
+    {
+      "id": 12,
+      "japanese": "組合",
+      "pronunciation": "くみあい",
+      "meaning": "조합"
+    },
+    {
+      "id": 13,
+      "japanese": "組む",
+      "pronunciation": "くむ",
+      "meaning": "짜다, 끼다"
+    },
+    {
+      "id": 14,
+      "japanese": "結論",
+      "pronunciation": "けつろん",
+      "meaning": "결론"
+    },
+    {
+      "id": 15,
+      "japanese": "結ぶ",
+      "pronunciation": "むすぶ",
+      "meaning": "묶다"
+    },
+    {
+      "id": 16,
+      "japanese": "経由",
+      "pronunciation": "けいゆ",
+      "meaning": "경유"
+    },
+    {
+      "id": 17,
+      "japanese": "経つ",
+      "pronunciation": "たつ",
+      "meaning": "경과하다"
+    },
+    {
+      "id": 18,
+      "japanese": "続き",
+      "pronunciation": "つづき",
+      "meaning": "다음"
+    },
+    {
+      "id": 19,
+      "japanese": "手続き",
+      "pronunciation": "てつづき",
+      "meaning": "수속, 절차"
+    },
+    {
+      "id": 20,
+      "japanese": "検査",
+      "pronunciation": "けんさ",
+      "meaning": "검사"
+    },
+    {
+      "id": 21,
+      "japanese": "検討",
+      "pronunciation": "けんとう",
+      "meaning": "검토"
+    },
+    {
+      "id": 22,
+      "japanese": "危険",
+      "pronunciation": "きけん",
+      "meaning": "위험"
+    },
+    {
+      "id": 23,
+      "japanese": "険しい",
+      "pronunciation": "けわしい",
+      "meaning": "험하다"
+    },
+    {
+      "id": 24,
+      "japanese": "左右",
+      "pronunciation": "さゆう",
+      "meaning": "좌우"
+    },
+    {
+      "id": 25,
+      "japanese": "左側",
+      "pronunciation": "ひだりがわ",
+      "meaning": "좌측"
+    },
+    {
+      "id": 26,
+      "japanese": "存在",
+      "pronunciation": "そんざい",
+      "meaning": "존재"
+    },
+    {
+      "id": 27,
+      "japanese": "保存",
+      "pronunciation": "ほぞん",
+      "meaning": "보존"
+    },
+    {
+      "id": 28,
+      "japanese": "現在",
+      "pronunciation": "げんざい",
+      "meaning": "현재"
+    },
+    {
+      "id": 29,
+      "japanese": "滞在",
+      "pronunciation": "たいざい",
+      "meaning": "체재, 체류"
+    },
+    {
+      "id": 30,
+      "japanese": "複雑",
+      "pronunciation": "ふくざつ",
+      "meaning": "복잡"
+    },
+    {
+      "id": 31,
+      "japanese": "複数",
+      "pronunciation": "ふくすう",
+      "meaning": "복수"
+    },
+    {
+      "id": 32,
+      "japanese": "往復",
+      "pronunciation": "おうふく",
+      "meaning": "왕복"
+    },
+    {
+      "id": 33,
+      "japanese": "回復",
+      "pronunciation": "かいふく",
+      "meaning": "회복하다"
+    },
+    {
+      "id": 34,
+      "japanese": "制服",
+      "pronunciation": "せいふく",
+      "meaning": "제복"
+    },
+    {
+      "id": 35,
+      "japanese": "服装",
+      "pronunciation": "ふくそう",
+      "meaning": "복장"
+    },
+    {
+      "id": 36,
+      "japanese": "情報",
+      "pronunciation": "じょうほう",
+      "meaning": "정보"
+    },
+    {
+      "id": 37,
+      "japanese": "報告",
+      "pronunciation": "ほうこく",
+      "meaning": "보고"
+    },
+    {
+      "id": 38,
+      "japanese": "業績",
+      "pronunciation": "ぎょうせき",
+      "meaning": "업적"
+    },
+    {
+      "id": 39,
+      "japanese": "成績",
+      "pronunciation": "せいせき",
+      "meaning": "성적"
+    },
+    {
+      "id": 40,
+      "japanese": "積極的だ",
+      "pronunciation": "せっきょくてき",
+      "meaning": "적극적이다"
+    },
+    {
+      "id": 41,
+      "japanese": "積もる",
+      "pronunciation": "つもる",
+      "meaning": "쌓이다"
+    },
+    {
+      "id": 42,
+      "japanese": "原因",
+      "pronunciation": "げんいん",
+      "meaning": "원인"
+    },
+    {
+      "id": 43,
+      "japanese": "原料",
+      "pronunciation": "げんりょう",
+      "meaning": "원료"
+    },
+    {
+      "id": 44,
+      "japanese": "資源",
+      "pronunciation": "しげん",
+      "meaning": "자원"
+    },
+    {
+      "id": 45,
+      "japanese": "電源",
+      "pronunciation": "でんげん",
+      "meaning": "전원"
+    },
+    {
+      "id": 46,
+      "japanese": "比べる",
+      "pronunciation": "くらべる",
+      "meaning": "비교하다"
+    },
+    {
+      "id": 47,
+      "japanese": "比較",
+      "pronunciation": "ひかく",
+      "meaning": "비교"
+    },
+    {
+      "id": 48,
+      "japanese": "批判",
+      "pronunciation": "ひはん",
+      "meaning": "비판"
+    },
+    {
+      "id": 49,
+      "japanese": "批評",
+      "pronunciation": "ひひょう",
+      "meaning": "비평"
+    },
+    {
+      "id": 50,
+      "japanese": "注ぐ",
+      "pronunciation": "そそぐ",
+      "meaning": "쏟다"
+    }
+  ]
+}

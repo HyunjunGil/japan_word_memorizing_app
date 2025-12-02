@@ -1,0 +1,293 @@
+{
+  "fileName": "page_07",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "回す",
+      "pronunciation": "まわす",
+      "meaning": "돌리다"
+    },
+    {
+      "id": 2,
+      "japanese": "汚す",
+      "pronunciation": "よごす",
+      "meaning": "더럽히다"
+    },
+    {
+      "id": 3,
+      "japanese": "勝つ",
+      "pronunciation": "かつ",
+      "meaning": "이기다"
+    },
+    {
+      "id": 4,
+      "japanese": "経つ",
+      "pronunciation": "たつ",
+      "meaning": "경과하다"
+    },
+    {
+      "id": 5,
+      "japanese": "遊ぶ",
+      "pronunciation": "あそぶ",
+      "meaning": "놀다"
+    },
+    {
+      "id": 6,
+      "japanese": "転ぶ",
+      "pronunciation": "ころぶ",
+      "meaning": "넘어지다"
+    },
+    {
+      "id": 7,
+      "japanese": "運ぶ",
+      "pronunciation": "はこぶ",
+      "meaning": "옮기다"
+    },
+    {
+      "id": 8,
+      "japanese": "結ぶ",
+      "pronunciation": "むすぶ",
+      "meaning": "묶다"
+    },
+    {
+      "id": 9,
+      "japanese": "決まる",
+      "pronunciation": "きまる",
+      "meaning": "정해지다"
+    },
+    {
+      "id": 10,
+      "japanese": "泊まる",
+      "pronunciation": "とまる",
+      "meaning": "묵다"
+    },
+    {
+      "id": 11,
+      "japanese": "編む",
+      "pronunciation": "あむ",
+      "meaning": "엮다, 짜다"
+    },
+    {
+      "id": 12,
+      "japanese": "組む",
+      "pronunciation": "くむ",
+      "meaning": "짜다, 끼다"
+    },
+    {
+      "id": 13,
+      "japanese": "包む",
+      "pronunciation": "つつむ",
+      "meaning": "포장하다"
+    },
+    {
+      "id": 14,
+      "japanese": "悩む",
+      "pronunciation": "なやむ",
+      "meaning": "괴로워하다"
+    },
+    {
+      "id": 15,
+      "japanese": "配る",
+      "pronunciation": "くばる",
+      "meaning": "나누어 주다"
+    },
+    {
+      "id": 16,
+      "japanese": "困る",
+      "pronunciation": "こまる",
+      "meaning": "곤란하다"
+    },
+    {
+      "id": 17,
+      "japanese": "叱る",
+      "pronunciation": "しかる",
+      "meaning": "야단치다"
+    },
+    {
+      "id": 18,
+      "japanese": "黙る",
+      "pronunciation": "だまる",
+      "meaning": "말을 하지 않다"
+    },
+    {
+      "id": 19,
+      "japanese": "握る",
+      "pronunciation": "にぎる",
+      "meaning": "잡다, 쥐다"
+    },
+    {
+      "id": 20,
+      "japanese": "割る",
+      "pronunciation": "わる",
+      "meaning": "깨다"
+    },
+    {
+      "id": 21,
+      "japanese": "終える",
+      "pronunciation": "おえる",
+      "meaning": "끝마치다"
+    },
+    {
+      "id": 22,
+      "japanese": "覚える",
+      "pronunciation": "おぼえる",
+      "meaning": "기억하다"
+    },
+    {
+      "id": 23,
+      "japanese": "替える",
+      "pronunciation": "かえる",
+      "meaning": "교체하다"
+    },
+    {
+      "id": 24,
+      "japanese": "換える",
+      "pronunciation": "かえる",
+      "meaning": "교환하다"
+    },
+    {
+      "id": 25,
+      "japanese": "加える",
+      "pronunciation": "くわえる",
+      "meaning": "더하다"
+    },
+    {
+      "id": 26,
+      "japanese": "並べる",
+      "pronunciation": "ならべる",
+      "meaning": "늘어놓다"
+    },
+    {
+      "id": 27,
+      "japanese": "述べる",
+      "pronunciation": "のべる",
+      "meaning": "진술하다"
+    },
+    {
+      "id": 28,
+      "japanese": "冷める",
+      "pronunciation": "さめる",
+      "meaning": "식다"
+    },
+    {
+      "id": 29,
+      "japanese": "閉める",
+      "pronunciation": "しめる",
+      "meaning": "닫다"
+    },
+    {
+      "id": 30,
+      "japanese": "勧める",
+      "pronunciation": "すすめる",
+      "meaning": "권하다"
+    },
+    {
+      "id": 31,
+      "japanese": "進める",
+      "pronunciation": "すすめる",
+      "meaning": "나아가게 하다"
+    },
+    {
+      "id": 32,
+      "japanese": "求める",
+      "pronunciation": "もとめる",
+      "meaning": "바라다"
+    },
+    {
+      "id": 33,
+      "japanese": "辞める",
+      "pronunciation": "やめる",
+      "meaning": "그만두다"
+    },
+    {
+      "id": 34,
+      "japanese": "現れる",
+      "pronunciation": "あらわれる",
+      "meaning": "나타나다"
+    },
+    {
+      "id": 35,
+      "japanese": "遅れる",
+      "pronunciation": "おくれる",
+      "meaning": "늦다, 더디다"
+    },
+    {
+      "id": 36,
+      "japanese": "折れる",
+      "pronunciation": "おれる",
+      "meaning": "부러지다"
+    },
+    {
+      "id": 37,
+      "japanese": "隠れる",
+      "pronunciation": "かくれる",
+      "meaning": "숨다"
+    },
+    {
+      "id": 38,
+      "japanese": "壊れる",
+      "pronunciation": "こわれる",
+      "meaning": "부서지다"
+    },
+    {
+      "id": 39,
+      "japanese": "倒れる",
+      "pronunciation": "たおれる",
+      "meaning": "쓰러지다"
+    },
+    {
+      "id": 40,
+      "japanese": "汚れる",
+      "pronunciation": "よごれる",
+      "meaning": "더러워지다"
+    },
+    {
+      "id": 41,
+      "japanese": "割れる",
+      "pronunciation": "われる",
+      "meaning": "갈라지다"
+    },
+    {
+      "id": 42,
+      "japanese": "怪しい",
+      "pronunciation": "あやしい",
+      "meaning": "수상하다"
+    },
+    {
+      "id": 43,
+      "japanese": "美しい",
+      "pronunciation": "うつくしい",
+      "meaning": "아름답다"
+    },
+    {
+      "id": 44,
+      "japanese": "羨ましい",
+      "pronunciation": "うらやましい",
+      "meaning": "부럽다"
+    },
+    {
+      "id": 45,
+      "japanese": "嬉しい",
+      "pronunciation": "うれしい",
+      "meaning": "기쁘다"
+    },
+    {
+      "id": 46,
+      "japanese": "惜しい",
+      "pronunciation": "おしい",
+      "meaning": "아깝다"
+    },
+    {
+      "id": 47,
+      "japanese": "恐ろしい",
+      "pronunciation": "おそろしい",
+      "meaning": "두렵다"
+    },
+    {
+      "id": 48,
+      "japanese": "悲しい",
+      "pronunciation": "かなしい",
+      "meaning": "슬프다"
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "fileName": "page_06",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "選手",
+      "pronunciation": "せんしゅ",
+      "meaning": "선수"
+    },
+    {
+      "id": 2,
+      "japanese": "選択",
+      "pronunciation": "せんたく",
+      "meaning": "선택"
+    },
+    {
+      "id": 3,
+      "japanese": "配達",
+      "pronunciation": "はいたつ",
+      "meaning": "배달"
+    },
+    {
+      "id": 4,
+      "japanese": "発達",
+      "pronunciation": "はったつ",
+      "meaning": "발달"
+    },
+    {
+      "id": 5,
+      "japanese": "冗談",
+      "pronunciation": "じょうだん",
+      "meaning": "농담"
+    },
+    {
+      "id": 6,
+      "japanese": "相談",
+      "pronunciation": "そうだん",
+      "meaning": "상담"
+    },
+    {
+      "id": 7,
+      "japanese": "各地",
+      "pronunciation": "かくち",
+      "meaning": "각지"
+    },
+    {
+      "id": 8,
+      "japanese": "基地",
+      "pronunciation": "きち",
+      "meaning": "기지"
+    },
+    {
+      "id": 9,
+      "japanese": "地域",
+      "pronunciation": "ちいき",
+      "meaning": "지역"
+    },
+    {
+      "id": 10,
+      "japanese": "地区",
+      "pronunciation": "ちく",
+      "meaning": "지구"
+    },
+    {
+      "id": 11,
+      "japanese": "共通",
+      "pronunciation": "きょうつう",
+      "meaning": "공통"
+    },
+    {
+      "id": 12,
+      "japanese": "交通",
+      "pronunciation": "こうつう",
+      "meaning": "교통"
+    },
+    {
+      "id": 13,
+      "japanese": "宣伝",
+      "pronunciation": "せんでん",
+      "meaning": "선전"
+    },
+    {
+      "id": 14,
+      "japanese": "伝言",
+      "pronunciation": "でんごん",
+      "meaning": "전언"
+    },
+    {
+      "id": 15,
+      "japanese": "伝染",
+      "pronunciation": "でんせん",
+      "meaning": "전염"
+    },
+    {
+      "id": 16,
+      "japanese": "伝統",
+      "pronunciation": "でんとう",
+      "meaning": "전통"
+    },
+    {
+      "id": 17,
+      "japanese": "商売",
+      "pronunciation": "しょうばい",
+      "meaning": "장사"
+    },
+    {
+      "id": 18,
+      "japanese": "売店",
+      "pronunciation": "ばいてん",
+      "meaning": "매점"
+    },
+    {
+      "id": 19,
+      "japanese": "発売",
+      "pronunciation": "はつばい",
+      "meaning": "발매"
+    },
+    {
+      "id": 20,
+      "japanese": "販売",
+      "pronunciation": "はんばい",
+      "meaning": "판매"
+    },
+    {
+      "id": 21,
+      "japanese": "方角",
+      "pronunciation": "ほうがく",
+      "meaning": "방향"
+    },
+    {
+      "id": 22,
+      "japanese": "方向",
+      "pronunciation": "ほうこう",
+      "meaning": "방향"
+    },
+    {
+      "id": 23,
+      "japanese": "正面",
+      "pronunciation": "しょうめん",
+      "meaning": "정면"
+    },
+    {
+      "id": 24,
+      "japanese": "表面",
+      "pronunciation": "ひょうめん",
+      "meaning": "표면"
+    },
+    {
+      "id": 25,
+      "japanese": "面接",
+      "pronunciation": "めんせつ",
+      "meaning": "면접"
+    },
+    {
+      "id": 26,
+      "japanese": "面倒だ",
+      "pronunciation": "めんどうだ",
+      "meaning": "번잡하고 성가시다"
+    },
+    {
+      "id": 27,
+      "japanese": "輸出",
+      "pronunciation": "ゆしゅつ",
+      "meaning": "수출"
+    },
+    {
+      "id": 28,
+      "japanese": "輸入",
+      "pronunciation": "ゆにゅう",
+      "meaning": "수입"
+    },
+    {
+      "id": 29,
+      "japanese": "協力",
+      "pronunciation": "きょうりょく",
+      "meaning": "협력"
+    },
+    {
+      "id": 30,
+      "japanese": "実力",
+      "pronunciation": "じつりょく",
+      "meaning": "실력"
+    },
+    {
+      "id": 31,
+      "japanese": "体力",
+      "pronunciation": "たいりょく",
+      "meaning": "체력"
+    },
+    {
+      "id": 32,
+      "japanese": "努力",
+      "pronunciation": "どりょく",
+      "meaning": "노력"
+    },
+    {
+      "id": 33,
+      "japanese": "疑う",
+      "pronunciation": "うたがう",
+      "meaning": "의심하다"
+    },
+    {
+      "id": 34,
+      "japanese": "嫌う",
+      "pronunciation": "きらう",
+      "meaning": "싫어하다"
+    },
+    {
+      "id": 35,
+      "japanese": "吸う",
+      "pronunciation": "すう",
+      "meaning": "들이마시다"
+    },
+    {
+      "id": 36,
+      "japanese": "払う",
+      "pronunciation": "はらう",
+      "meaning": "지불하다"
+    },
+    {
+      "id": 37,
+      "japanese": "拾う",
+      "pronunciation": "ひろう",
+      "meaning": "줍다"
+    },
+    {
+      "id": 38,
+      "japanese": "笑う",
+      "pronunciation": "わらう",
+      "meaning": "웃다"
+    },
+    {
+      "id": 39,
+      "japanese": "預かる",
+      "pronunciation": "あずかる",
+      "meaning": "보관하다"
+    },
+    {
+      "id": 40,
+      "japanese": "受かる",
+      "pronunciation": "うかる",
+      "meaning": "합격하다"
+    },
+    {
+      "id": 41,
+      "japanese": "掛かる",
+      "pronunciation": "かかる",
+      "meaning": "걸리다"
+    },
+    {
+      "id": 42,
+      "japanese": "助かる",
+      "pronunciation": "たすかる",
+      "meaning": "살아나다"
+    },
+    {
+      "id": 43,
+      "japanese": "上がる",
+      "pronunciation": "あがる",
+      "meaning": "오르다"
+    },
+    {
+      "id": 44,
+      "japanese": "怖がる",
+      "pronunciation": "こわがる",
+      "meaning": "무서워하다"
+    },
+    {
+      "id": 45,
+      "japanese": "表す",
+      "pronunciation": "あらわす",
+      "meaning": "표현하다"
+    },
+    {
+      "id": 46,
+      "japanese": "返す",
+      "pronunciation": "かえす",
+      "meaning": "돌려주다"
+    },
+    {
+      "id": 47,
+      "japanese": "隠す",
+      "pronunciation": "かくす",
+      "meaning": "숨기다"
+    },
+    {
+      "id": 48,
+      "japanese": "示す",
+      "pronunciation": "しめす",
+      "meaning": "나타내다"
+    }
+  ]
+}

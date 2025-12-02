@@ -1,0 +1,293 @@
+{
+  "fileName": "page_08",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "悔しい",
+      "pronunciation": "くやしい",
+      "meaning": "분하다"
+    },
+    {
+      "id": 2,
+      "japanese": "苦しい",
+      "pronunciation": "くるしい",
+      "meaning": "괴롭다"
+    },
+    {
+      "id": 3,
+      "japanese": "険しい",
+      "pronunciation": "けわしい",
+      "meaning": "험하다"
+    },
+    {
+      "id": 4,
+      "japanese": "恋しい",
+      "pronunciation": "こいしい",
+      "meaning": "그립다"
+    },
+    {
+      "id": 5,
+      "japanese": "寂しい",
+      "pronunciation": "さびしい",
+      "meaning": "쓸쓸하다"
+    },
+    {
+      "id": 6,
+      "japanese": "騒がしい",
+      "pronunciation": "さわがしい",
+      "meaning": "시끄럽다"
+    },
+    {
+      "id": 7,
+      "japanese": "親しい",
+      "pronunciation": "したしい",
+      "meaning": "친하다"
+    },
+    {
+      "id": 8,
+      "japanese": "図々しい",
+      "pronunciation": "ずうずうしい",
+      "meaning": "뻔뻔스럽다"
+    },
+    {
+      "id": 9,
+      "japanese": "涼しい",
+      "pronunciation": "すずしい",
+      "meaning": "시원하다"
+    },
+    {
+      "id": 10,
+      "japanese": "正しい",
+      "pronunciation": "ただしい",
+      "meaning": "옳다"
+    },
+    {
+      "id": 11,
+      "japanese": "楽しい",
+      "pronunciation": "たのしい",
+      "meaning": "즐겁다"
+    },
+    {
+      "id": 12,
+      "japanese": "懐かしい",
+      "pronunciation": "なつかしい",
+      "meaning": "그립다"
+    },
+    {
+      "id": 13,
+      "japanese": "激しい",
+      "pronunciation": "はげしい",
+      "meaning": "격심하다"
+    },
+    {
+      "id": 14,
+      "japanese": "貧しい",
+      "pronunciation": "まずしい",
+      "meaning": "가난하다"
+    },
+    {
+      "id": 15,
+      "japanese": "眩しい",
+      "pronunciation": "まぶしい",
+      "meaning": "눈부시다"
+    },
+    {
+      "id": 16,
+      "japanese": "軽い",
+      "pronunciation": "かるい",
+      "meaning": "가볍다"
+    },
+    {
+      "id": 17,
+      "japanese": "汚い",
+      "pronunciation": "きたない",
+      "meaning": "더럽다"
+    },
+    {
+      "id": 18,
+      "japanese": "怖い",
+      "pronunciation": "こわい",
+      "meaning": "무섭다"
+    },
+    {
+      "id": 19,
+      "japanese": "強い",
+      "pronunciation": "つよい",
+      "meaning": "강하다"
+    },
+    {
+      "id": 20,
+      "japanese": "遠い",
+      "pronunciation": "とおい",
+      "meaning": "멀다"
+    },
+    {
+      "id": 21,
+      "japanese": "深い",
+      "pronunciation": "ふかい",
+      "meaning": "깊다"
+    },
+    {
+      "id": 22,
+      "japanese": "細い",
+      "pronunciation": "ほそい",
+      "meaning": "가늘다"
+    },
+    {
+      "id": 23,
+      "japanese": "丸い",
+      "pronunciation": "まるい",
+      "meaning": "둥글다"
+    },
+    {
+      "id": 24,
+      "japanese": "短い",
+      "pronunciation": "みじかい",
+      "meaning": "짧다"
+    },
+    {
+      "id": 25,
+      "japanese": "若い",
+      "pronunciation": "わかい",
+      "meaning": "젊다"
+    },
+    {
+      "id": 26,
+      "japanese": "新ただ",
+      "pronunciation": "あらただ",
+      "meaning": "새롭다"
+    },
+    {
+      "id": 27,
+      "japanese": "快適だ",
+      "pronunciation": "かいてきだ",
+      "meaning": "쾌적하다"
+    },
+    {
+      "id": 28,
+      "japanese": "下品だ",
+      "pronunciation": "げひんだ",
+      "meaning": "품위가 없다"
+    },
+    {
+      "id": 29,
+      "japanese": "重要だ",
+      "pronunciation": "じゅうようだ",
+      "meaning": "중요하다"
+    },
+    {
+      "id": 30,
+      "japanese": "上品だ",
+      "pronunciation": "じょうひんだ",
+      "meaning": "고상하다"
+    },
+    {
+      "id": 31,
+      "japanese": "素直だ",
+      "pronunciation": "すなおだ",
+      "meaning": "솔직하다"
+    },
+    {
+      "id": 32,
+      "japanese": "適当だ",
+      "pronunciation": "てきとうだ",
+      "meaning": "적당하다"
+    },
+    {
+      "id": 33,
+      "japanese": "得意だ",
+      "pronunciation": "とくいだ",
+      "meaning": "잘하다"
+    },
+    {
+      "id": 34,
+      "japanese": "苦手だ",
+      "pronunciation": "にがてだ",
+      "meaning": "서툴다"
+    },
+    {
+      "id": 35,
+      "japanese": "不安だ",
+      "pronunciation": "ふあんだ",
+      "meaning": "불안하다"
+    },
+    {
+      "id": 36,
+      "japanese": "一般的だ",
+      "pronunciation": "いっぱんてきだ",
+      "meaning": "일반적이다"
+    },
+    {
+      "id": 37,
+      "japanese": "感情的だ",
+      "pronunciation": "かんじょうてきだ",
+      "meaning": "감정적이다"
+    },
+    {
+      "id": 38,
+      "japanese": "効果的だ",
+      "pronunciation": "こうかてきだ",
+      "meaning": "효과적이다"
+    },
+    {
+      "id": 39,
+      "japanese": "自動的だ",
+      "pronunciation": "じどうてきだ",
+      "meaning": "자동적이다"
+    },
+    {
+      "id": 40,
+      "japanese": "消極的だ",
+      "pronunciation": "しょうきょくてきだ",
+      "meaning": "소극적이다"
+    },
+    {
+      "id": 41,
+      "japanese": "裏",
+      "pronunciation": "うら",
+      "meaning": "뒤"
+    },
+    {
+      "id": 42,
+      "japanese": "角",
+      "pronunciation": "かど",
+      "meaning": "모서리, 모퉁이"
+    },
+    {
+      "id": 43,
+      "japanese": "小型",
+      "pronunciation": "こがた",
+      "meaning": "소형"
+    },
+    {
+      "id": 44,
+      "japanese": "石油",
+      "pronunciation": "せきゆ",
+      "meaning": "석유"
+    },
+    {
+      "id": 45,
+      "japanese": "荷物",
+      "pronunciation": "にもつ",
+      "meaning": "짐, 화물"
+    },
+    {
+      "id": 46,
+      "japanese": "値段",
+      "pronunciation": "ねだん",
+      "meaning": "가격, 값"
+    },
+    {
+      "id": 47,
+      "japanese": "残り",
+      "pronunciation": "のこり",
+      "meaning": "나머지"
+    },
+    {
+      "id": 48,
+      "japanese": "広場",
+      "pronunciation": "ひろば",
+      "meaning": "광장"
+    }
+  ]
+}

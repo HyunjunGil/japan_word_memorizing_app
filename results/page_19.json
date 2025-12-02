@@ -1,0 +1,299 @@
+{
+  "fileName": "page_19",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "深まる",
+      "pronunciation": "ふかまる",
+      "meaning": "깊어지다"
+    },
+    {
+      "id": 2,
+      "japanese": "ぶつける",
+      "pronunciation": "ぶつける",
+      "meaning": "부딪치다"
+    },
+    {
+      "id": 3,
+      "japanese": "振る",
+      "pronunciation": "ふる",
+      "meaning": "흔들다"
+    },
+    {
+      "id": 4,
+      "japanese": "吠える",
+      "pronunciation": "ほえる",
+      "meaning": "짖다"
+    },
+    {
+      "id": 5,
+      "japanese": "干す",
+      "pronunciation": "ほす",
+      "meaning": "말리다"
+    },
+    {
+      "id": 6,
+      "japanese": "褒める",
+      "pronunciation": "ほめる",
+      "meaning": "칭찬하다"
+    },
+    {
+      "id": 7,
+      "japanese": "任せる",
+      "pronunciation": "まかせる",
+      "meaning": "맡기다"
+    },
+    {
+      "id": 8,
+      "japanese": "交じる",
+      "pronunciation": "まじる",
+      "meaning": "섞이다"
+    },
+    {
+      "id": 9,
+      "japanese": "待ち合わせる",
+      "pronunciation": "まちあわせる",
+      "meaning": "만나기로 하다"
+    },
+    {
+      "id": 10,
+      "japanese": "まとめる",
+      "pronunciation": "まとめる",
+      "meaning": "정리하다, 통합하다"
+    },
+    {
+      "id": 11,
+      "japanese": "守る",
+      "pronunciation": "まもる",
+      "meaning": "지키다"
+    },
+    {
+      "id": 12,
+      "japanese": "迷う",
+      "pronunciation": "まよう",
+      "meaning": "망설이다, 헤매다"
+    },
+    {
+      "id": 13,
+      "japanese": "見返す",
+      "pronunciation": "みかえす",
+      "meaning": "다시 보다, 되돌아보다"
+    },
+    {
+      "id": 14,
+      "japanese": "向かう",
+      "pronunciation": "むかう",
+      "meaning": "향하다"
+    },
+    {
+      "id": 15,
+      "japanese": "剥く",
+      "pronunciation": "むく",
+      "meaning": "(껍질을) 벗기다, 까다"
+    },
+    {
+      "id": 16,
+      "japanese": "燃える",
+      "pronunciation": "もえる",
+      "meaning": "타다"
+    },
+    {
+      "id": 17,
+      "japanese": "雇う",
+      "pronunciation": "やとう",
+      "meaning": "고용하다"
+    },
+    {
+      "id": 18,
+      "japanese": "やぶる",
+      "pronunciation": "やぶる",
+      "meaning": "(약속을) 깨다, 찢다"
+    },
+    {
+      "id": 19,
+      "japanese": "破れる",
+      "pronunciation": "やぶれる",
+      "meaning": "찢어지다, 깨지다"
+    },
+    {
+      "id": 20,
+      "japanese": "許す",
+      "pronunciation": "ゆるす",
+      "meaning": "용서하다, 허가하다"
+    },
+    {
+      "id": 21,
+      "japanese": "呼びかける",
+      "pronunciation": "よびかける",
+      "meaning": "호소하다"
+    },
+    {
+      "id": 22,
+      "japanese": "わかる",
+      "pronunciation": "わかる",
+      "meaning": "이해하다"
+    },
+    {
+      "id": 23,
+      "japanese": "分ける",
+      "pronunciation": "わける",
+      "meaning": "나누다"
+    },
+    {
+      "id": 24,
+      "japanese": "渡す",
+      "pronunciation": "わたす",
+      "meaning": "건네주다"
+    },
+    {
+      "id": 25,
+      "japanese": "わる",
+      "pronunciation": "わる",
+      "meaning": "나누다, 깨트리다, 깨다"
+    },
+    {
+      "id": 26,
+      "japanese": "あやしい",
+      "pronunciation": "あやしい",
+      "meaning": "수상하다"
+    },
+    {
+      "id": 27,
+      "japanese": "おかしい",
+      "pronunciation": "おかしい",
+      "meaning": "이상하다"
+    },
+    {
+      "id": 28,
+      "japanese": "おそろしい",
+      "pronunciation": "おそろしい",
+      "meaning": "무섭다, 두렵다"
+    },
+    {
+      "id": 29,
+      "japanese": "おとなしい",
+      "pronunciation": "おとなしい",
+      "meaning": "얌전하다, 조용하다"
+    },
+    {
+      "id": 30,
+      "japanese": "きつい",
+      "pronunciation": "きつい",
+      "meaning": "꼭 끼다, 심하다"
+    },
+    {
+      "id": 31,
+      "japanese": "悔しい",
+      "pronunciation": "くやしい",
+      "meaning": "분하다"
+    },
+    {
+      "id": 32,
+      "japanese": "親しい",
+      "pronunciation": "したしい",
+      "meaning": "친하다"
+    },
+    {
+      "id": 33,
+      "japanese": "しつこい",
+      "pronunciation": "しつこい",
+      "meaning": "끈질기다"
+    },
+    {
+      "id": 34,
+      "japanese": "頼もしい",
+      "pronunciation": "たのもしい",
+      "meaning": "믿음직스럽다"
+    },
+    {
+      "id": 35,
+      "japanese": "懐かしい",
+      "pronunciation": "なつかしい",
+      "meaning": "그립다"
+    },
+    {
+      "id": 36,
+      "japanese": "ぬるい",
+      "pronunciation": "ぬるい",
+      "meaning": "미지근하다"
+    },
+    {
+      "id": 37,
+      "japanese": "まぶしい",
+      "pronunciation": "まぶしい",
+      "meaning": "눈부시다"
+    },
+    {
+      "id": 38,
+      "japanese": "めずらしい",
+      "pronunciation": "めずらしい",
+      "meaning": "희귀하다, 드물다"
+    },
+    {
+      "id": 39,
+      "japanese": "めんどうくさい",
+      "pronunciation": "めんどうくさい",
+      "meaning": "귀찮다"
+    },
+    {
+      "id": 40,
+      "japanese": "もったいない",
+      "pronunciation": "もったいない",
+      "meaning": "아깝다"
+    },
+    {
+      "id": 41,
+      "japanese": "ゆるい",
+      "pronunciation": "ゆるい",
+      "meaning": "느슨하다, 완만하다"
+    },
+    {
+      "id": 42,
+      "japanese": "意外だ",
+      "pronunciation": "いがいだ",
+      "meaning": "의외다"
+    },
+    {
+      "id": 43,
+      "japanese": "穏やかだ",
+      "pronunciation": "おだやかだ",
+      "meaning": "온화하다"
+    },
+    {
+      "id": 44,
+      "japanese": "確実だ",
+      "pronunciation": "かくじつだ",
+      "meaning": "확실하다"
+    },
+    {
+      "id": 45,
+      "japanese": "からからだ",
+      "pronunciation": "からからだ",
+      "meaning": "바싹 마르다"
+    },
+    {
+      "id": 46,
+      "japanese": "がらがらだ",
+      "pronunciation": "がらがらだ",
+      "meaning": "텅 비다"
+    },
+    {
+      "id": 47,
+      "japanese": "感情的だ",
+      "pronunciation": "かんじょうてきだ",
+      "meaning": "감정적이다"
+    },
+    {
+      "id": 48,
+      "japanese": "急だ",
+      "pronunciation": "きゅうだ",
+      "meaning": "갑작스럽다, 위급하다"
+    },
+    {
+      "id": 49,
+      "japanese": "効果的だ",
+      "pronunciation": "こうかてきだ",
+      "meaning": "효과적이다"
+    }
+  ]
+}

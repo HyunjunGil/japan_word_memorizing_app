@@ -1,0 +1,293 @@
+{
+  "fileName": "page_21",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "アドバイス",
+      "pronunciation": "アドバイス",
+      "meaning": "충고"
+    },
+    {
+      "id": 2,
+      "japanese": "助言",
+      "pronunciation": "じょげん",
+      "meaning": "조언"
+    },
+    {
+      "id": 3,
+      "japanese": "案",
+      "pronunciation": "あん",
+      "meaning": "안"
+    },
+    {
+      "id": 4,
+      "japanese": "アイデア/アイディア",
+      "pronunciation": "アイデア/アイディア",
+      "meaning": "아이디어"
+    },
+    {
+      "id": 5,
+      "japanese": "位置",
+      "pronunciation": "いち",
+      "meaning": "위치"
+    },
+    {
+      "id": 6,
+      "japanese": "場所",
+      "pronunciation": "ばしょ",
+      "meaning": "장소"
+    },
+    {
+      "id": 7,
+      "japanese": "売り切れ",
+      "pronunciation": "うりきれ",
+      "meaning": "품절"
+    },
+    {
+      "id": 8,
+      "japanese": "全て売る",
+      "pronunciation": "すべてうる",
+      "meaning": "전부 팔다"
+    },
+    {
+      "id": 9,
+      "japanese": "おい",
+      "pronunciation": "おい",
+      "meaning": "(남자) 조카"
+    },
+    {
+      "id": 10,
+      "japanese": "姉の息子",
+      "pronunciation": "あねのむすこ",
+      "meaning": "누나의 아들"
+    },
+    {
+      "id": 11,
+      "japanese": "横断禁止",
+      "pronunciation": "おうだんきんし",
+      "meaning": "횡단 금지"
+    },
+    {
+      "id": 12,
+      "japanese": "渡ってはいけない",
+      "pronunciation": "わたってはいけない",
+      "meaning": "건너서는 안 된다"
+    },
+    {
+      "id": 13,
+      "japanese": "おこづかい",
+      "pronunciation": "おこづかい",
+      "meaning": "용돈"
+    },
+    {
+      "id": 14,
+      "japanese": "お金",
+      "pronunciation": "おかね",
+      "meaning": "돈"
+    },
+    {
+      "id": 15,
+      "japanese": "おしまい",
+      "pronunciation": "おしまい",
+      "meaning": "끝"
+    },
+    {
+      "id": 16,
+      "japanese": "終わり",
+      "pronunciation": "おわり",
+      "meaning": "끝"
+    },
+    {
+      "id": 17,
+      "japanese": "かおり",
+      "pronunciation": "かおり",
+      "meaning": "향기"
+    },
+    {
+      "id": 18,
+      "japanese": "におい",
+      "pronunciation": "におい",
+      "meaning": "냄새"
+    },
+    {
+      "id": 19,
+      "japanese": "機会",
+      "pronunciation": "きかい",
+      "meaning": "기회"
+    },
+    {
+      "id": 20,
+      "japanese": "チャンス",
+      "pronunciation": "チャンス",
+      "meaning": "찬스, 기회"
+    },
+    {
+      "id": 21,
+      "japanese": "企業",
+      "pronunciation": "きぎょう",
+      "meaning": "기업"
+    },
+    {
+      "id": 22,
+      "japanese": "会社",
+      "pronunciation": "かいしゃ",
+      "meaning": "회사"
+    },
+    {
+      "id": 23,
+      "japanese": "規則",
+      "pronunciation": "きそく",
+      "meaning": "규칙"
+    },
+    {
+      "id": 24,
+      "japanese": "決まり",
+      "pronunciation": "きまり",
+      "meaning": "규칙"
+    },
+    {
+      "id": 25,
+      "japanese": "キッチン",
+      "pronunciation": "キッチン",
+      "meaning": "주방"
+    },
+    {
+      "id": 26,
+      "japanese": "台所",
+      "pronunciation": "だいどころ",
+      "meaning": "부엌"
+    },
+    {
+      "id": 27,
+      "japanese": "逆",
+      "pronunciation": "ぎゃく",
+      "meaning": "반대, 거꾸로"
+    },
+    {
+      "id": 28,
+      "japanese": "反対",
+      "pronunciation": "はんたい",
+      "meaning": "반대"
+    },
+    {
+      "id": 29,
+      "japanese": "共通点",
+      "pronunciation": "きょうつうてん",
+      "meaning": "공통점"
+    },
+    {
+      "id": 30,
+      "japanese": "同じところ",
+      "pronunciation": "おなじところ",
+      "meaning": "같은 점"
+    },
+    {
+      "id": 31,
+      "japanese": "苦情",
+      "pronunciation": "くじょう",
+      "meaning": "불평"
+    },
+    {
+      "id": 32,
+      "japanese": "不満",
+      "pronunciation": "ふまん",
+      "meaning": "불만"
+    },
+    {
+      "id": 33,
+      "japanese": "グラウンド",
+      "pronunciation": "グラウンド",
+      "meaning": "그라운드, 운동장"
+    },
+    {
+      "id": 34,
+      "japanese": "運動場",
+      "pronunciation": "うんどうじょう",
+      "meaning": "운동장"
+    },
+    {
+      "id": 35,
+      "japanese": "グループ",
+      "pronunciation": "グループ",
+      "meaning": "그룹"
+    },
+    {
+      "id": 36,
+      "japanese": "団体",
+      "pronunciation": "だんたい",
+      "meaning": "단체"
+    },
+    {
+      "id": 37,
+      "japanese": "欠点",
+      "pronunciation": "けってん",
+      "meaning": "결점"
+    },
+    {
+      "id": 38,
+      "japanese": "よくないところ",
+      "pronunciation": "よくないところ",
+      "meaning": "좋지 않은 점"
+    },
+    {
+      "id": 39,
+      "japanese": "この頃",
+      "pronunciation": "このごろ",
+      "meaning": "요즘"
+    },
+    {
+      "id": 40,
+      "japanese": "最近",
+      "pronunciation": "さいきん",
+      "meaning": "최근"
+    },
+    {
+      "id": 41,
+      "japanese": "サイズ",
+      "pronunciation": "サイズ",
+      "meaning": "사이즈"
+    },
+    {
+      "id": 42,
+      "japanese": "大きさ",
+      "pronunciation": "おおきさ",
+      "meaning": "크기"
+    },
+    {
+      "id": 43,
+      "japanese": "さっき",
+      "pronunciation": "さっき",
+      "meaning": "아까, 조금 전"
+    },
+    {
+      "id": 44,
+      "japanese": "少し前に",
+      "pronunciation": "すこし まえに",
+      "meaning": "조금 전에"
+    },
+    {
+      "id": 45,
+      "japanese": "指定",
+      "pronunciation": "してい",
+      "meaning": "지정"
+    },
+    {
+      "id": 46,
+      "japanese": "決める",
+      "pronunciation": "きめる",
+      "meaning": "정하다"
+    },
+    {
+      "id": 47,
+      "japanese": "手段",
+      "pronunciation": "しゅだん",
+      "meaning": "수단"
+    },
+    {
+      "id": 48,
+      "japanese": "やり方",
+      "pronunciation": "やりかた",
+      "meaning": "하는 방식"
+    }
+  ]
+}

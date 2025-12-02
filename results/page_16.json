@@ -1,0 +1,299 @@
+{
+  "fileName": "page_16",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "合図",
+      "pronunciation": "あいず",
+      "meaning": "신호, 손짓"
+    },
+    {
+      "id": 2,
+      "japanese": "愛用者",
+      "pronunciation": "あいようしゃ",
+      "meaning": "애용자"
+    },
+    {
+      "id": 3,
+      "japanese": "あくび",
+      "pronunciation": "あくび",
+      "meaning": "하품"
+    },
+    {
+      "id": 4,
+      "japanese": "汗",
+      "pronunciation": "あせ",
+      "meaning": "땀"
+    },
+    {
+      "id": 5,
+      "japanese": "印象",
+      "pronunciation": "いんしょう",
+      "meaning": "인상"
+    },
+    {
+      "id": 6,
+      "japanese": "うわさ",
+      "pronunciation": "うわさ",
+      "meaning": "소문"
+    },
+    {
+      "id": 7,
+      "japanese": "運休",
+      "pronunciation": "うんきゅう",
+      "meaning": "운휴"
+    },
+    {
+      "id": 8,
+      "japanese": "栄養",
+      "pronunciation": "えいよう",
+      "meaning": "영양"
+    },
+    {
+      "id": 9,
+      "japanese": "演奏",
+      "pronunciation": "えんそう",
+      "meaning": "연주"
+    },
+    {
+      "id": 10,
+      "japanese": "お祝い",
+      "pronunciation": "いわい",
+      "meaning": "축하"
+    },
+    {
+      "id": 11,
+      "japanese": "香り",
+      "pronunciation": "かおり",
+      "meaning": "향기"
+    },
+    {
+      "id": 12,
+      "japanese": "片方",
+      "pronunciation": "かたほう",
+      "meaning": "한쪽"
+    },
+    {
+      "id": 13,
+      "japanese": "可能",
+      "pronunciation": "かのう",
+      "meaning": "가능"
+    },
+    {
+      "id": 14,
+      "japanese": "我慢",
+      "pronunciation": "がまん",
+      "meaning": "참음, 견딤"
+    },
+    {
+      "id": 15,
+      "japanese": "間隔",
+      "pronunciation": "かんかく",
+      "meaning": "간격"
+    },
+    {
+      "id": 16,
+      "japanese": "観察",
+      "pronunciation": "かんさつ",
+      "meaning": "관찰"
+    },
+    {
+      "id": 17,
+      "japanese": "乾燥",
+      "pronunciation": "かんそう",
+      "meaning": "건조"
+    },
+    {
+      "id": 18,
+      "japanese": "傷",
+      "pronunciation": "きず",
+      "meaning": "상처"
+    },
+    {
+      "id": 19,
+      "japanese": "期待",
+      "pronunciation": "きたい",
+      "meaning": "기대"
+    },
+    {
+      "id": 20,
+      "japanese": "禁止",
+      "pronunciation": "きんし",
+      "meaning": "금지"
+    },
+    {
+      "id": 21,
+      "japanese": "くしゃみ",
+      "pronunciation": "くしゃみ",
+      "meaning": "재채기"
+    },
+    {
+      "id": 22,
+      "japanese": "癖",
+      "pronunciation": "くせ",
+      "meaning": "버릇"
+    },
+    {
+      "id": 23,
+      "japanese": "経営",
+      "pronunciation": "けいえい",
+      "meaning": "경영"
+    },
+    {
+      "id": 24,
+      "japanese": "芸術",
+      "pronunciation": "げいじゅつ",
+      "meaning": "예술"
+    },
+    {
+      "id": 25,
+      "japanese": "原料",
+      "pronunciation": "げんりょう",
+      "meaning": "원료"
+    },
+    {
+      "id": 26,
+      "japanese": "このあいだ",
+      "pronunciation": "このあいだ",
+      "meaning": "요전, 지난번"
+    },
+    {
+      "id": 27,
+      "japanese": "混雑",
+      "pronunciation": "こんざつ",
+      "meaning": "혼잡"
+    },
+    {
+      "id": 28,
+      "japanese": "差",
+      "pronunciation": "さ",
+      "meaning": "차이, 차"
+    },
+    {
+      "id": 29,
+      "japanese": "資源",
+      "pronunciation": "しげん",
+      "meaning": "자원"
+    },
+    {
+      "id": 30,
+      "japanese": "事情",
+      "pronunciation": "じじょう",
+      "meaning": "사정"
+    },
+    {
+      "id": 31,
+      "japanese": "姿勢",
+      "pronunciation": "しせい",
+      "meaning": "자세"
+    },
+    {
+      "id": 32,
+      "japanese": "自慢",
+      "pronunciation": "じまん",
+      "meaning": "자랑"
+    },
+    {
+      "id": 33,
+      "japanese": "しみ",
+      "pronunciation": "しみ",
+      "meaning": "얼룩"
+    },
+    {
+      "id": 34,
+      "japanese": "就職",
+      "pronunciation": "しゅうしょく",
+      "meaning": "취직"
+    },
+    {
+      "id": 35,
+      "japanese": "渋滞",
+      "pronunciation": "じゅうたい",
+      "meaning": "정체"
+    },
+    {
+      "id": 36,
+      "japanese": "集中",
+      "pronunciation": "しゅうちゅう",
+      "meaning": "집중"
+    },
+    {
+      "id": 37,
+      "japanese": "主張",
+      "pronunciation": "しゅちょう",
+      "meaning": "주장"
+    },
+    {
+      "id": 38,
+      "japanese": "順番",
+      "pronunciation": "じゅんばん",
+      "meaning": "차례, 순번"
+    },
+    {
+      "id": 39,
+      "japanese": "冗談",
+      "pronunciation": "じょうだん",
+      "meaning": "농담"
+    },
+    {
+      "id": 40,
+      "japanese": "親戚",
+      "pronunciation": "しんせき",
+      "meaning": "친척"
+    },
+    {
+      "id": 41,
+      "japanese": "制限",
+      "pronunciation": "せいげん",
+      "meaning": "제한"
+    },
+    {
+      "id": 42,
+      "japanese": "咳",
+      "pronunciation": "せき",
+      "meaning": "기침"
+    },
+    {
+      "id": 43,
+      "japanese": "席",
+      "pronunciation": "せき",
+      "meaning": "자리, 좌석"
+    },
+    {
+      "id": 44,
+      "japanese": "線",
+      "pronunciation": "せん",
+      "meaning": "선"
+    },
+    {
+      "id": 45,
+      "japanese": "前後",
+      "pronunciation": "ぜんご",
+      "meaning": "전후"
+    },
+    {
+      "id": 46,
+      "japanese": "想像",
+      "pronunciation": "そうぞう",
+      "meaning": "상상"
+    },
+    {
+      "id": 47,
+      "japanese": "底",
+      "pronunciation": "そこ",
+      "meaning": "바닥, 속"
+    },
+    {
+      "id": 48,
+      "japanese": "中古",
+      "pronunciation": "ちゅうこ",
+      "meaning": "중고"
+    },
+    {
+      "id": 49,
+      "japanese": "調子",
+      "pronunciation": "ちょうし",
+      "meaning": "상태"
+    }
+  ]
+}

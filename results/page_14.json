@@ -1,0 +1,305 @@
+{
+  "fileName": "page_14",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "高速",
+      "pronunciation": "こうそく",
+      "meaning": "고속"
+    },
+    {
+      "id": 2,
+      "japanese": "速い",
+      "pronunciation": "はやい",
+      "meaning": "빠르다"
+    },
+    {
+      "id": 3,
+      "japanese": "早速",
+      "pronunciation": "さっそく",
+      "meaning": "즉시"
+    },
+    {
+      "id": 4,
+      "japanese": "早い",
+      "pronunciation": "はやい",
+      "meaning": "이르다"
+    },
+    {
+      "id": 5,
+      "japanese": "急ぐ",
+      "pronunciation": "いそぐ",
+      "meaning": "서두르다"
+    },
+    {
+      "id": 6,
+      "japanese": "急激だ",
+      "pronunciation": "きゅうげきだ",
+      "meaning": "な형] 급격하다"
+    },
+    {
+      "id": 7,
+      "japanese": "進学",
+      "pronunciation": "しんがく",
+      "meaning": "진학"
+    },
+    {
+      "id": 8,
+      "japanese": "進む",
+      "pronunciation": "すすむ",
+      "meaning": "나아가다"
+    },
+    {
+      "id": 9,
+      "japanese": "移動",
+      "pronunciation": "いどう",
+      "meaning": "이동"
+    },
+    {
+      "id": 10,
+      "japanese": "移る",
+      "pronunciation": "うつる",
+      "meaning": "이동하다"
+    },
+    {
+      "id": 11,
+      "japanese": "出勤",
+      "pronunciation": "しゅっきん",
+      "meaning": "출근"
+    },
+    {
+      "id": 12,
+      "japanese": "勤める",
+      "pronunciation": "つとめる",
+      "meaning": "근무하다"
+    },
+    {
+      "id": 13,
+      "japanese": "事務室",
+      "pronunciation": "じむしつ",
+      "meaning": "사무실"
+    },
+    {
+      "id": 14,
+      "japanese": "務める",
+      "pronunciation": "つとめる",
+      "meaning": "임무를 맡다"
+    },
+    {
+      "id": 15,
+      "japanese": "共働き",
+      "pronunciation": "ともばたらき",
+      "meaning": "맞벌이"
+    },
+    {
+      "id": 16,
+      "japanese": "働く",
+      "pronunciation": "はたらく",
+      "meaning": "일하다"
+    },
+    {
+      "id": 17,
+      "japanese": "回数券",
+      "pronunciation": "かいすうけん",
+      "meaning": "회수권"
+    },
+    {
+      "id": 18,
+      "japanese": "特急券",
+      "pronunciation": "とっきゅうけん",
+      "meaning": "특급권"
+    },
+    {
+      "id": 19,
+      "japanese": "投票",
+      "pronunciation": "とうひょう",
+      "meaning": "투표"
+    },
+    {
+      "id": 20,
+      "japanese": "得票",
+      "pronunciation": "とくひょう",
+      "meaning": "득표"
+    },
+    {
+      "id": 21,
+      "japanese": "詳細",
+      "pronunciation": "しょうさい",
+      "meaning": "상세"
+    },
+    {
+      "id": 22,
+      "japanese": "細い",
+      "pronunciation": "ほそい",
+      "meaning": "가늘다"
+    },
+    {
+      "id": 23,
+      "japanese": "浅い",
+      "pronunciation": "あさい",
+      "meaning": "얕다"
+    },
+    {
+      "id": 24,
+      "japanese": "浅海",
+      "pronunciation": "せんかい",
+      "meaning": "얕은 바다"
+    },
+    {
+      "id": 25,
+      "japanese": "映る",
+      "pronunciation": "うつる",
+      "meaning": "비치다"
+    },
+    {
+      "id": 26,
+      "japanese": "反映",
+      "pronunciation": "はんえい",
+      "meaning": "반영"
+    },
+    {
+      "id": 27,
+      "japanese": "写る",
+      "pronunciation": "うつる",
+      "meaning": "찍히다"
+    },
+    {
+      "id": 28,
+      "japanese": "写真",
+      "pronunciation": "しゃしん",
+      "meaning": "사진"
+    },
+    {
+      "id": 29,
+      "japanese": "独身",
+      "pronunciation": "どくしん",
+      "meaning": "독신"
+    },
+    {
+      "id": 30,
+      "japanese": "独特",
+      "pronunciation": "どくとく",
+      "meaning": "독특"
+    },
+    {
+      "id": 31,
+      "japanese": "単語",
+      "pronunciation": "たんご",
+      "meaning": "단어"
+    },
+    {
+      "id": 32,
+      "japanese": "単身",
+      "pronunciation": "たんしん",
+      "meaning": "단신"
+    },
+    {
+      "id": 33,
+      "japanese": "借りる",
+      "pronunciation": "かりる",
+      "meaning": "빌리다"
+    },
+    {
+      "id": 34,
+      "japanese": "借金",
+      "pronunciation": "しゃっきん",
+      "meaning": "빚"
+    },
+    {
+      "id": 35,
+      "japanese": "貸出し",
+      "pronunciation": "かしだし",
+      "meaning": "대출"
+    },
+    {
+      "id": 36,
+      "japanese": "貸す",
+      "pronunciation": "かす",
+      "meaning": "빌려 주다"
+    },
+    {
+      "id": 37,
+      "japanese": "右折",
+      "pronunciation": "うせつ",
+      "meaning": "우회전"
+    },
+    {
+      "id": 38,
+      "japanese": "折る",
+      "pronunciation": "おる",
+      "meaning": "접다"
+    },
+    {
+      "id": 39,
+      "japanese": "曲線",
+      "pronunciation": "きょくせん",
+      "meaning": "곡선"
+    },
+    {
+      "id": 40,
+      "japanese": "曲げる",
+      "pronunciation": "まげる",
+      "meaning": "굽히다"
+    },
+    {
+      "id": 41,
+      "japanese": "学習",
+      "pronunciation": "がくしゅう",
+      "meaning": "학습"
+    },
+    {
+      "id": 42,
+      "japanese": "復習",
+      "pronunciation": "ふくしゅう",
+      "meaning": "복습"
+    },
+    {
+      "id": 43,
+      "japanese": "見学",
+      "pronunciation": "けんがく",
+      "meaning": "견학"
+    },
+    {
+      "id": 44,
+      "japanese": "復学",
+      "pronunciation": "ふくがく",
+      "meaning": "복학"
+    },
+    {
+      "id": 45,
+      "japanese": "夕刊",
+      "pronunciation": "ゆうかん",
+      "meaning": "석간"
+    },
+    {
+      "id": 46,
+      "japanese": "夕飯",
+      "pronunciation": "ゆうはん",
+      "meaning": "저녁밥"
+    },
+    {
+      "id": 47,
+      "japanese": "深夜",
+      "pronunciation": "しんや",
+      "meaning": "심야"
+    },
+    {
+      "id": 48,
+      "japanese": "徹夜",
+      "pronunciation": "てつや",
+      "meaning": "철야"
+    },
+    {
+      "id": 49,
+      "japanese": "翌週",
+      "pronunciation": "よくしゅう",
+      "meaning": "다음주, 익주"
+    },
+    {
+      "id": 50,
+      "japanese": "翌年",
+      "pronunciation": "よくねん",
+      "meaning": "이듬해, 내년"
+    }
+  ]
+}

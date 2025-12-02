@@ -1,0 +1,293 @@
+{
+  "fileName": "page_05",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "景気",
+      "pronunciation": "けいき",
+      "meaning": "경기"
+    },
+    {
+      "id": 2,
+      "japanese": "雰囲気",
+      "pronunciation": "ふんいき",
+      "meaning": "분위기"
+    },
+    {
+      "id": 3,
+      "japanese": "気配",
+      "pronunciation": "けはい",
+      "meaning": "낌새, 느낌"
+    },
+    {
+      "id": 4,
+      "japanese": "湿気",
+      "pronunciation": "しっけ",
+      "meaning": "습기"
+    },
+    {
+      "id": 5,
+      "japanese": "大会",
+      "pronunciation": "たいかい",
+      "meaning": "대회"
+    },
+    {
+      "id": 6,
+      "japanese": "大量",
+      "pronunciation": "たいりょう",
+      "meaning": "대량"
+    },
+    {
+      "id": 7,
+      "japanese": "拡大",
+      "pronunciation": "かくだい",
+      "meaning": "확대"
+    },
+    {
+      "id": 8,
+      "japanese": "大部分",
+      "pronunciation": "だいぶぶん",
+      "meaning": "대부분"
+    },
+    {
+      "id": 9,
+      "japanese": "生地",
+      "pronunciation": "きじ",
+      "meaning": "옷감, 반죽"
+    },
+    {
+      "id": 10,
+      "japanese": "地震",
+      "pronunciation": "じしん",
+      "meaning": "지진"
+    },
+    {
+      "id": 11,
+      "japanese": "地面",
+      "pronunciation": "じめん",
+      "meaning": "지면, 땅"
+    },
+    {
+      "id": 12,
+      "japanese": "地球",
+      "pronunciation": "ちきゅう",
+      "meaning": "지구"
+    },
+    {
+      "id": 13,
+      "japanese": "地図",
+      "pronunciation": "ちず",
+      "meaning": "지도"
+    },
+    {
+      "id": 14,
+      "japanese": "地方",
+      "pronunciation": "ちほう",
+      "meaning": "지방"
+    },
+    {
+      "id": 15,
+      "japanese": "工夫",
+      "pronunciation": "くふう",
+      "meaning": "궁리함"
+    },
+    {
+      "id": 16,
+      "japanese": "大工",
+      "pronunciation": "だいく",
+      "meaning": "목수"
+    },
+    {
+      "id": 17,
+      "japanese": "工業",
+      "pronunciation": "こうぎょう",
+      "meaning": "공업"
+    },
+    {
+      "id": 18,
+      "japanese": "工事",
+      "pronunciation": "こうじ",
+      "meaning": "공사"
+    },
+    {
+      "id": 19,
+      "japanese": "後日",
+      "pronunciation": "ごじつ",
+      "meaning": "후일"
+    },
+    {
+      "id": 20,
+      "japanese": "直後",
+      "pronunciation": "ちょくご",
+      "meaning": "직후"
+    },
+    {
+      "id": 21,
+      "japanese": "後期",
+      "pronunciation": "こうき",
+      "meaning": "후기"
+    },
+    {
+      "id": 22,
+      "japanese": "後輩",
+      "pronunciation": "こうはい",
+      "meaning": "후배"
+    },
+    {
+      "id": 23,
+      "japanese": "加熱",
+      "pronunciation": "かねつ",
+      "meaning": "가열"
+    },
+    {
+      "id": 24,
+      "japanese": "参加",
+      "pronunciation": "さんか",
+      "meaning": "참가"
+    },
+    {
+      "id": 25,
+      "japanese": "増加",
+      "pronunciation": "ぞうか",
+      "meaning": "증가"
+    },
+    {
+      "id": 26,
+      "japanese": "追加",
+      "pronunciation": "ついか",
+      "meaning": "추가"
+    },
+    {
+      "id": 27,
+      "japanese": "超過",
+      "pronunciation": "ちょうか",
+      "meaning": "초과"
+    },
+    {
+      "id": 28,
+      "japanese": "通過",
+      "pronunciation": "つうか",
+      "meaning": "통과"
+    },
+    {
+      "id": 29,
+      "japanese": "支給",
+      "pronunciation": "しきゅう",
+      "meaning": "지급"
+    },
+    {
+      "id": 30,
+      "japanese": "時給",
+      "pronunciation": "じきゅう",
+      "meaning": "시급"
+    },
+    {
+      "id": 31,
+      "japanese": "産業",
+      "pronunciation": "さんぎょう",
+      "meaning": "산업"
+    },
+    {
+      "id": 32,
+      "japanese": "残業",
+      "pronunciation": "ざんぎょう",
+      "meaning": "잔업"
+    },
+    {
+      "id": 33,
+      "japanese": "商業",
+      "pronunciation": "しょうぎょう",
+      "meaning": "상업"
+    },
+    {
+      "id": 34,
+      "japanese": "卒業",
+      "pronunciation": "そつぎょう",
+      "meaning": "졸업"
+    },
+    {
+      "id": 35,
+      "japanese": "現金",
+      "pronunciation": "げんきん",
+      "meaning": "현금"
+    },
+    {
+      "id": 36,
+      "japanese": "税金",
+      "pronunciation": "ぜいきん",
+      "meaning": "세금"
+    },
+    {
+      "id": 37,
+      "japanese": "貯金",
+      "pronunciation": "ちょきん",
+      "meaning": "저금"
+    },
+    {
+      "id": 38,
+      "japanese": "料金",
+      "pronunciation": "りょうきん",
+      "meaning": "요금"
+    },
+    {
+      "id": 39,
+      "japanese": "血圧",
+      "pronunciation": "けつあつ",
+      "meaning": "혈압"
+    },
+    {
+      "id": 40,
+      "japanese": "血液",
+      "pronunciation": "けつえき",
+      "meaning": "혈액"
+    },
+    {
+      "id": 41,
+      "japanese": "敬語",
+      "pronunciation": "けいご",
+      "meaning": "경어"
+    },
+    {
+      "id": 42,
+      "japanese": "言語",
+      "pronunciation": "げんご",
+      "meaning": "언어"
+    },
+    {
+      "id": 43,
+      "japanese": "語学",
+      "pronunciation": "ごがく",
+      "meaning": "어학"
+    },
+    {
+      "id": 44,
+      "japanese": "単語",
+      "pronunciation": "たんご",
+      "meaning": "단어"
+    },
+    {
+      "id": 45,
+      "japanese": "少食",
+      "pronunciation": "しょうしょく",
+      "meaning": "소식"
+    },
+    {
+      "id": 46,
+      "japanese": "昼食",
+      "pronunciation": "ちゅうしょく",
+      "meaning": "점심식사"
+    },
+    {
+      "id": 47,
+      "japanese": "朝食",
+      "pronunciation": "ちょうしょく",
+      "meaning": "아침식사"
+    },
+    {
+      "id": 48,
+      "japanese": "夕食",
+      "pronunciation": "ゆうしょく",
+      "meaning": "저녁식사"
+    }
+  ]
+}

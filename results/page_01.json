@@ -1,0 +1,299 @@
+{
+  "fileName": "page_01",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "改札",
+      "pronunciation": "かいさつ",
+      "meaning": "개찰"
+    },
+    {
+      "id": 2,
+      "japanese": "価格",
+      "pronunciation": "かかく",
+      "meaning": "가격"
+    },
+    {
+      "id": 3,
+      "japanese": "各駅",
+      "pronunciation": "かくえき",
+      "meaning": "각역"
+    },
+    {
+      "id": 4,
+      "japanese": "観客",
+      "pronunciation": "かんきゃく",
+      "meaning": "관객"
+    },
+    {
+      "id": 5,
+      "japanese": "完成",
+      "pronunciation": "かんせい",
+      "meaning": "완성"
+    },
+    {
+      "id": 6,
+      "japanese": "血液型",
+      "pronunciation": "けつえきがた",
+      "meaning": "혈액형"
+    },
+    {
+      "id": 7,
+      "japanese": "方角",
+      "pronunciation": "ほうがく",
+      "meaning": "방향"
+    },
+    {
+      "id": 8,
+      "japanese": "録画",
+      "pronunciation": "ろくが",
+      "meaning": "녹화"
+    },
+    {
+      "id": 9,
+      "japanese": "延期",
+      "pronunciation": "えんき",
+      "meaning": "연기"
+    },
+    {
+      "id": 10,
+      "japanese": "気温",
+      "pronunciation": "きおん",
+      "meaning": "기온"
+    },
+    {
+      "id": 11,
+      "japanese": "機械",
+      "pronunciation": "きかい",
+      "meaning": "기계"
+    },
+    {
+      "id": 12,
+      "japanese": "議会",
+      "pronunciation": "ぎかい",
+      "meaning": "의회"
+    },
+    {
+      "id": 13,
+      "japanese": "疑問",
+      "pronunciation": "ぎもん",
+      "meaning": "의문"
+    },
+    {
+      "id": 14,
+      "japanese": "行事",
+      "pronunciation": "ぎょうじ",
+      "meaning": "행사"
+    },
+    {
+      "id": 15,
+      "japanese": "訓練",
+      "pronunciation": "くんれん",
+      "meaning": "훈련"
+    },
+    {
+      "id": 16,
+      "japanese": "予約",
+      "pronunciation": "よやく",
+      "meaning": "예약"
+    },
+    {
+      "id": 17,
+      "japanese": "家具",
+      "pronunciation": "かぐ",
+      "meaning": "가구"
+    },
+    {
+      "id": 18,
+      "japanese": "偶然",
+      "pronunciation": "ぐうぜん",
+      "meaning": "우연"
+    },
+    {
+      "id": 19,
+      "japanese": "会計",
+      "pronunciation": "かいけい",
+      "meaning": "(대금)계산"
+    },
+    {
+      "id": 20,
+      "japanese": "経営",
+      "pronunciation": "けいえい",
+      "meaning": "경영"
+    },
+    {
+      "id": 21,
+      "japanese": "外科",
+      "pronunciation": "げか",
+      "meaning": "외과"
+    },
+    {
+      "id": 22,
+      "japanese": "月末",
+      "pronunciation": "げつまつ",
+      "meaning": "월말"
+    },
+    {
+      "id": 23,
+      "japanese": "現象",
+      "pronunciation": "げんしょう",
+      "meaning": "현상"
+    },
+    {
+      "id": 24,
+      "japanese": "上下",
+      "pronunciation": "じょうげ",
+      "meaning": "상하"
+    },
+    {
+      "id": 25,
+      "japanese": "講義",
+      "pronunciation": "こうぎ",
+      "meaning": "강의"
+    },
+    {
+      "id": 26,
+      "japanese": "工事",
+      "pronunciation": "こうじ",
+      "meaning": "공사"
+    },
+    {
+      "id": 27,
+      "japanese": "敬語",
+      "pronunciation": "けいご",
+      "meaning": "경어"
+    },
+    {
+      "id": 28,
+      "japanese": "集合",
+      "pronunciation": "しゅうごう",
+      "meaning": "집합"
+    },
+    {
+      "id": 29,
+      "japanese": "単語",
+      "pronunciation": "たんご",
+      "meaning": "단어"
+    },
+    {
+      "id": 30,
+      "japanese": "団子",
+      "pronunciation": "だんご",
+      "meaning": "경단"
+    },
+    {
+      "id": 31,
+      "japanese": "削除",
+      "pronunciation": "さくじょ",
+      "meaning": "삭제"
+    },
+    {
+      "id": 32,
+      "japanese": "制作",
+      "pronunciation": "せいさく",
+      "meaning": "제작"
+    },
+    {
+      "id": 33,
+      "japanese": "残業",
+      "pronunciation": "ざんぎょう",
+      "meaning": "잔업"
+    },
+    {
+      "id": 34,
+      "japanese": "存在",
+      "pronunciation": "そんざい",
+      "meaning": "존재"
+    },
+    {
+      "id": 35,
+      "japanese": "指示",
+      "pronunciation": "しじ",
+      "meaning": "지시"
+    },
+    {
+      "id": 36,
+      "japanese": "指導",
+      "pronunciation": "しどう",
+      "meaning": "지도"
+    },
+    {
+      "id": 37,
+      "japanese": "首都",
+      "pronunciation": "しゅと",
+      "meaning": "수도"
+    },
+    {
+      "id": 38,
+      "japanese": "維持",
+      "pronunciation": "いじ",
+      "meaning": "유지"
+    },
+    {
+      "id": 39,
+      "japanese": "個人",
+      "pronunciation": "こじん",
+      "meaning": "개인"
+    },
+    {
+      "id": 40,
+      "japanese": "文字",
+      "pronunciation": "もじ",
+      "meaning": "문자"
+    },
+    {
+      "id": 41,
+      "japanese": "睡眠",
+      "pronunciation": "すいみん",
+      "meaning": "수면"
+    },
+    {
+      "id": 42,
+      "japanese": "数字",
+      "pronunciation": "すうじ",
+      "meaning": "숫자"
+    },
+    {
+      "id": 43,
+      "japanese": "合図",
+      "pronunciation": "あいず",
+      "meaning": "신호"
+    },
+    {
+      "id": 44,
+      "japanese": "図",
+      "pronunciation": "ず",
+      "meaning": "그림"
+    },
+    {
+      "id": 45,
+      "japanese": "頭痛",
+      "pronunciation": "ずつう",
+      "meaning": "두통"
+    },
+    {
+      "id": 46,
+      "japanese": "地図",
+      "pronunciation": "ちず",
+      "meaning": "지도"
+    },
+    {
+      "id": 47,
+      "japanese": "成績",
+      "pronunciation": "せいせき",
+      "meaning": "성적"
+    },
+    {
+      "id": 48,
+      "japanese": "節約",
+      "pronunciation": "せつやく",
+      "meaning": "절약"
+    },
+    {
+      "id": 49,
+      "japanese": "専門家",
+      "pronunciation": "せんもんか",
+      "meaning": "전문가"
+    }
+  ]
+}

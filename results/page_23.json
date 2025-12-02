@@ -1,0 +1,281 @@
+{
+  "fileName": "page_23",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "済ませる",
+      "pronunciation": "すませる",
+      "meaning": "끝내다"
+    },
+    {
+      "id": 2,
+      "japanese": "終わらせる",
+      "pronunciation": "おわらせる",
+      "meaning": "끝내다"
+    },
+    {
+      "id": 3,
+      "japanese": "整理する",
+      "pronunciation": "せいりする",
+      "meaning": "정리하다"
+    },
+    {
+      "id": 4,
+      "japanese": "片付ける",
+      "pronunciation": "かたづける",
+      "meaning": "정리하다"
+    },
+    {
+      "id": 5,
+      "japanese": "確かめる",
+      "pronunciation": "たしかめる",
+      "meaning": "확인하다"
+    },
+    {
+      "id": 6,
+      "japanese": "チェックする",
+      "pronunciation": "",
+      "meaning": "확인하다"
+    },
+    {
+      "id": 7,
+      "japanese": "経つ",
+      "pronunciation": "たつ",
+      "meaning": "(시간이) 지나다"
+    },
+    {
+      "id": 8,
+      "japanese": "過ぎる",
+      "pronunciation": "すぎる",
+      "meaning": "지나다"
+    },
+    {
+      "id": 9,
+      "japanese": "黙る",
+      "pronunciation": "だまる",
+      "meaning": "말을 하지 않다"
+    },
+    {
+      "id": 10,
+      "japanese": "何も話さない",
+      "pronunciation": "なにもはなさない",
+      "meaning": "아무 말도 하지 않다"
+    },
+    {
+      "id": 11,
+      "japanese": "注文する",
+      "pronunciation": "ちゅうもんする",
+      "meaning": "주문하다"
+    },
+    {
+      "id": 12,
+      "japanese": "頼む",
+      "pronunciation": "たのむ",
+      "meaning": "의뢰하다"
+    },
+    {
+      "id": 13,
+      "japanese": "通勤する",
+      "pronunciation": "つうきんする",
+      "meaning": "통근하다"
+    },
+    {
+      "id": 14,
+      "japanese": "仕事に行く",
+      "pronunciation": "しごとにいく",
+      "meaning": "일하러 가다"
+    },
+    {
+      "id": 15,
+      "japanese": "怒鳴る",
+      "pronunciation": "どなる",
+      "meaning": "큰소리치다"
+    },
+    {
+      "id": 16,
+      "japanese": "大声で怒る",
+      "pronunciation": "おおごえでおこる",
+      "meaning": "큰소리로 화내다"
+    },
+    {
+      "id": 17,
+      "japanese": "配達する",
+      "pronunciation": "はいたつする",
+      "meaning": "배달하다"
+    },
+    {
+      "id": 18,
+      "japanese": "届ける",
+      "pronunciation": "とどける",
+      "meaning": "보내어 주다, 배달하다"
+    },
+    {
+      "id": 19,
+      "japanese": "バックする",
+      "pronunciation": "",
+      "meaning": "물러가다"
+    },
+    {
+      "id": 20,
+      "japanese": "後に下がる",
+      "pronunciation": "うしろにさがる",
+      "meaning": "뒤로 물러나다"
+    },
+    {
+      "id": 21,
+      "japanese": "はやる",
+      "pronunciation": "",
+      "meaning": "유행하다"
+    },
+    {
+      "id": 22,
+      "japanese": "流行する",
+      "pronunciation": "りゅうこうする",
+      "meaning": "유행하다"
+    },
+    {
+      "id": 23,
+      "japanese": "避難する",
+      "pronunciation": "ひなんする",
+      "meaning": "피난하다"
+    },
+    {
+      "id": 24,
+      "japanese": "逃げる",
+      "pronunciation": "にげる",
+      "meaning": "도망치다"
+    },
+    {
+      "id": 25,
+      "japanese": "減る",
+      "pronunciation": "へる",
+      "meaning": "줄다"
+    },
+    {
+      "id": 26,
+      "japanese": "少なくなる",
+      "pronunciation": "すくなくなる",
+      "meaning": "적어지다"
+    },
+    {
+      "id": 27,
+      "japanese": "触れる",
+      "pronunciation": "ふれる",
+      "meaning": "닿다, 접촉하다"
+    },
+    {
+      "id": 28,
+      "japanese": "触る",
+      "pronunciation": "さわる",
+      "meaning": "닿다, 손을 대다"
+    },
+    {
+      "id": 29,
+      "japanese": "報告する",
+      "pronunciation": "ほうこくする",
+      "meaning": "보고하다"
+    },
+    {
+      "id": 30,
+      "japanese": "知らせる",
+      "pronunciation": "しらせる",
+      "meaning": "알리다"
+    },
+    {
+      "id": 31,
+      "japanese": "待ち合わせる",
+      "pronunciation": "まちあわせる",
+      "meaning": "만나기로 하다"
+    },
+    {
+      "id": 32,
+      "japanese": "会う約束をする",
+      "pronunciation": "あうやくそくをする",
+      "meaning": "만날 약속을 하다"
+    },
+    {
+      "id": 33,
+      "japanese": "まとめる",
+      "pronunciation": "",
+      "meaning": "정리하다"
+    },
+    {
+      "id": 34,
+      "japanese": "整理する",
+      "pronunciation": "せいりする",
+      "meaning": "정리하다"
+    },
+    {
+      "id": 35,
+      "japanese": "やり直す",
+      "pronunciation": "やりなおす",
+      "meaning": "다시 하다"
+    },
+    {
+      "id": 36,
+      "japanese": "もう一度やる",
+      "pronunciation": "もういちどやる",
+      "meaning": "다시 한 번 하다"
+    },
+    {
+      "id": 37,
+      "japanese": "用心する",
+      "pronunciation": "ようじんする",
+      "meaning": "조심하다"
+    },
+    {
+      "id": 38,
+      "japanese": "気を付ける",
+      "pronunciation": "きをつける",
+      "meaning": "조심하다"
+    },
+    {
+      "id": 39,
+      "japanese": "しかたない",
+      "pronunciation": "",
+      "meaning": "어쩔 수 없다"
+    },
+    {
+      "id": 40,
+      "japanese": "方法がない",
+      "pronunciation": "ほうほうがない",
+      "meaning": "방법이 없다"
+    },
+    {
+      "id": 41,
+      "japanese": "すばらしい",
+      "pronunciation": "",
+      "meaning": "훌륭하다"
+    },
+    {
+      "id": 42,
+      "japanese": "一流の",
+      "pronunciation": "いちりゅうの",
+      "meaning": "일류의"
+    },
+    {
+      "id": 43,
+      "japanese": "つらい",
+      "pronunciation": "",
+      "meaning": "괴롭다"
+    },
+    {
+      "id": 44,
+      "japanese": "くるしい",
+      "pronunciation": "",
+      "meaning": "괴롭다"
+    },
+    {
+      "id": 45,
+      "japanese": "激しい",
+      "pronunciation": "はげしい",
+      "meaning": "격하다"
+    },
+    {
+      "id": 46,
+      "japanese": "強い",
+      "pronunciation": "つよい",
+      "meaning": "강하다"
+    }
+  ]
+}

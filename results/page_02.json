@@ -1,0 +1,293 @@
+{
+  "fileName": "page_02",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "以前",
+      "pronunciation": "いぜん",
+      "meaning": "이전"
+    },
+    {
+      "id": 2,
+      "japanese": "完全",
+      "pronunciation": "かんぜん",
+      "meaning": "완전"
+    },
+    {
+      "id": 3,
+      "japanese": "税金",
+      "pronunciation": "ぜいきん",
+      "meaning": "세금"
+    },
+    {
+      "id": 4,
+      "japanese": "想像",
+      "pronunciation": "そうぞう",
+      "meaning": "상상"
+    },
+    {
+      "id": 5,
+      "japanese": "相談",
+      "pronunciation": "そうだん",
+      "meaning": "상담"
+    },
+    {
+      "id": 6,
+      "japanese": "製造",
+      "pronunciation": "せいぞう",
+      "meaning": "제조"
+    },
+    {
+      "id": 7,
+      "japanese": "増加",
+      "pronunciation": "ぞうか",
+      "meaning": "증가"
+    },
+    {
+      "id": 8,
+      "japanese": "保存",
+      "pronunciation": "ほぞん",
+      "meaning": "보존"
+    },
+    {
+      "id": 9,
+      "japanese": "連続",
+      "pronunciation": "れんぞく",
+      "meaning": "연속"
+    },
+    {
+      "id": 10,
+      "japanese": "洗濯",
+      "pronunciation": "せんたく",
+      "meaning": "세탁"
+    },
+    {
+      "id": 11,
+      "japanese": "横断",
+      "pronunciation": "おうだん",
+      "meaning": "횡단"
+    },
+    {
+      "id": 12,
+      "japanese": "温暖だ",
+      "pronunciation": "おんだんだ",
+      "meaning": "온난하다"
+    },
+    {
+      "id": 13,
+      "japanese": "手段",
+      "pronunciation": "しゅだん",
+      "meaning": "수단"
+    },
+    {
+      "id": 14,
+      "japanese": "相手",
+      "pronunciation": "あいて",
+      "meaning": "상대"
+    },
+    {
+      "id": 15,
+      "japanese": "指定",
+      "pronunciation": "してい",
+      "meaning": "지정"
+    },
+    {
+      "id": 16,
+      "japanese": "停電",
+      "pronunciation": "ていでん",
+      "meaning": "정전"
+    },
+    {
+      "id": 17,
+      "japanese": "電源",
+      "pronunciation": "でんげん",
+      "meaning": "전원"
+    },
+    {
+      "id": 18,
+      "japanese": "伝言",
+      "pronunciation": "でんごん",
+      "meaning": "전언"
+    },
+    {
+      "id": 19,
+      "japanese": "伝達",
+      "pronunciation": "でんたつ",
+      "meaning": "전달"
+    },
+    {
+      "id": 20,
+      "japanese": "土地",
+      "pronunciation": "とち",
+      "meaning": "토지"
+    },
+    {
+      "id": 21,
+      "japanese": "冷凍",
+      "pronunciation": "れいとう",
+      "meaning": "냉동"
+    },
+    {
+      "id": 22,
+      "japanese": "同意",
+      "pronunciation": "どうい",
+      "meaning": "동의"
+    },
+    {
+      "id": 23,
+      "japanese": "独身",
+      "pronunciation": "どくしん",
+      "meaning": "독신"
+    },
+    {
+      "id": 24,
+      "japanese": "独立",
+      "pronunciation": "どくりつ",
+      "meaning": "독립"
+    },
+    {
+      "id": 25,
+      "japanese": "努力",
+      "pronunciation": "どりょく",
+      "meaning": "노력"
+    },
+    {
+      "id": 26,
+      "japanese": "配達",
+      "pronunciation": "はいたつ",
+      "meaning": "배달"
+    },
+    {
+      "id": 27,
+      "japanese": "発売",
+      "pronunciation": "はつばい",
+      "meaning": "발매"
+    },
+    {
+      "id": 28,
+      "japanese": "範囲",
+      "pronunciation": "はんい",
+      "meaning": "범위"
+    },
+    {
+      "id": 29,
+      "japanese": "看板",
+      "pronunciation": "かんばん",
+      "meaning": "간판"
+    },
+    {
+      "id": 30,
+      "japanese": "順番",
+      "pronunciation": "じゅんばん",
+      "meaning": "순번, 차례"
+    },
+    {
+      "id": 31,
+      "japanese": "売買",
+      "pronunciation": "ばいばい",
+      "meaning": "매매"
+    },
+    {
+      "id": 32,
+      "japanese": "失敗",
+      "pronunciation": "しっぱい",
+      "meaning": "실패, 실수"
+    },
+    {
+      "id": 33,
+      "japanese": "心配",
+      "pronunciation": "しんぱい",
+      "meaning": "걱정"
+    },
+    {
+      "id": 34,
+      "japanese": "消費",
+      "pronunciation": "しょうひ",
+      "meaning": "소비"
+    },
+    {
+      "id": 35,
+      "japanese": "一般",
+      "pronunciation": "いっぱん",
+      "meaning": "일반"
+    },
+    {
+      "id": 36,
+      "japanese": "一方",
+      "pronunciation": "いっぽう",
+      "meaning": "한쪽, 한편"
+    },
+    {
+      "id": 37,
+      "japanese": "学科",
+      "pronunciation": "がっか",
+      "meaning": "학과"
+    },
+    {
+      "id": 38,
+      "japanese": "活気",
+      "pronunciation": "かっき",
+      "meaning": "활기"
+    },
+    {
+      "id": 39,
+      "japanese": "楽器",
+      "pronunciation": "がっき",
+      "meaning": "악기"
+    },
+    {
+      "id": 40,
+      "japanese": "各国",
+      "pronunciation": "かっこく",
+      "meaning": "각국"
+    },
+    {
+      "id": 41,
+      "japanese": "結果",
+      "pronunciation": "けっか",
+      "meaning": "결과"
+    },
+    {
+      "id": 42,
+      "japanese": "決心",
+      "pronunciation": "けっしん",
+      "meaning": "결심"
+    },
+    {
+      "id": 43,
+      "japanese": "国会",
+      "pronunciation": "こっかい",
+      "meaning": "국회"
+    },
+    {
+      "id": 44,
+      "japanese": "作曲",
+      "pronunciation": "さっきょく",
+      "meaning": "작곡"
+    },
+    {
+      "id": 45,
+      "japanese": "実家",
+      "pronunciation": "じっか",
+      "meaning": "본가, 친정"
+    },
+    {
+      "id": 46,
+      "japanese": "実験",
+      "pronunciation": "じっけん",
+      "meaning": "실험"
+    },
+    {
+      "id": 47,
+      "japanese": "借金",
+      "pronunciation": "しゃっきん",
+      "meaning": "차금, 빛"
+    },
+    {
+      "id": 48,
+      "japanese": "出身",
+      "pronunciation": "しゅっしん",
+      "meaning": "출신"
+    }
+  ]
+}
