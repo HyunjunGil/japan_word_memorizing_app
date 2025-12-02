@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일본어 단어장</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .header-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        
+        .header-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        #settingsBtn {
+            font-size: 28px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .file-selection {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .mode-selection {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 12px;
+        }
+        
+        .mode-option {
+            flex: 1;
+            padding: 20px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .mode-option:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .mode-option.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8e9ff 100%);
+        }
+        
+        .mode-option input[type="radio"] {
+            display: none;
+        }
+        
+        .mode-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .mode-description {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .mode-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .upload-section {
+            border: 2px dashed #667eea;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .upload-section:hover {
+            background: #f8f9ff;
+            border-color: #764ba2;
+        }
+        
+        .upload-section input {
+            display: none;
+        }
+        
+        .file-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .file-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9ff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .file-item:hover {
+            background: #e8e9ff;
+        }
+        
+        .file-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        .file-item-info {
+            flex: 1;
+        }
+        
+        .file-item-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .file-item-count {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .selection-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .btn-icon {
+            width: 56px;
+            height: 56px;
+            padding: 0;
+            border-radius: 50%;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            flex: 1;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-icon.btn-primary {
+            flex: 0 0 auto;
+        }
+        
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+        
+        .flashcard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .card {
+            width: 100%;
+            min-height: 300px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8e9ff 100%);
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .weight-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .progress-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(118, 75, 162, 0.2);
+            color: #764ba2;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .weight-value {
+            font-size: 14px;
+            color: #764ba2;
+        }
+        
+        .progress-value {
+            font-size: 14px;
+            color: #667eea;
+        }
+        
+        .card-question {
+            font-size: 14px;
+            color: #667eea;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .card-content {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+        
+        .card-answer {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .card-answer-item {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .card-answer-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .card-answer-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .study-mode-card {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+        
+        .study-item {
+            padding: 25px 30px;
+            background: white;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .study-item-label {
+            font-size: 12px;
+            color: #667eea;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .study-item-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .study-item.main {
+            background: white;
+        }
+        
+        .study-item.main .study-item-label {
+            color: #667eea;
+        }
+        
+        .study-item.main .study-item-value {
+            color: #333;
+            font-size: 40px;
+        }
+        
+        .card-controls {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .card-controls.align-left {
+            justify-content: flex-start;
+        }
+        
+        .card-controls.align-center {
+            justify-content: center;
+        }
+        
+        .card-controls.align-right {
+            justify-content: flex-end;
+        }
+        
+        .alignment-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 10px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            padding: 10px;
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 20;
+            min-width: 120px;
+        }
+        
+        .alignment-menu.show {
+            display: flex;
+        }
+        
+        .alignment-option {
+            padding: 10px 15px;
+            border: none;
+            background: #f8f9ff;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: left;
+            transition: all 0.2s;
+        }
+        
+        .alignment-option:hover {
+            background: #e8e9ff;
+        }
+        
+        .alignment-option.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .card-controls .btn:not(.btn-icon) {
+            flex: 1;
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .card-answer.hidden {
+            display: flex;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        
+        .empty-state h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .study-table-container {
+            width: 100%;
+            max-height: 600px;
+            overflow-y: auto;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            background: white;
+        }
+        
+        .study-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .study-table thead {
+            position: sticky;
+            top: 0;
+            background: #f5f5f5;
+            color: #333;
+            z-index: 10;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .study-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .study-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 16px;
+        }
+        
+        .study-table tbody tr:hover {
+            background: #f8f9ff;
+        }
+        
+        .study-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .study-table .id-cell {
+            width: 60px;
+            text-align: center;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .study-table .japanese-cell {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .study-table .pronunciation-cell {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .study-table .meaning-cell {
+            color: #333;
+        }
+        
+        /* 모바일 반응형 스타일 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                max-width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            }
+            
+            .header {
+                padding: 12px 15px;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+            
+            .header h1 {
+                font-size: 18px;
+                flex: 0 1 auto;
+                min-width: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-right: 10px;
+            }
+            
+            .header-buttons {
+                flex: 0 0 auto;
+                gap: 6px;
+                margin-top: 0;
+                width: auto;
+            }
+            
+            .header-btn {
+                padding: 6px 10px;
+                font-size: 11px;
+                flex: 0 0 auto;
+                min-width: auto;
+                white-space: nowrap;
+            }
+            
+            #settingsBtn {
+                font-size: 22px;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            .mode-selection {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
+            }
+            
+            .mode-option {
+                padding: 15px;
+            }
+            
+            .mode-title {
+                font-size: 16px;
+            }
+            
+            .mode-description {
+                font-size: 12px;
+            }
+            
+            .mode-icon {
+                font-size: 28px;
+                margin-bottom: 8px;
+            }
+            
+            .upload-section {
+                padding: 20px 15px;
+            }
+            
+            .file-list {
+                max-height: 50vh;
+            }
+            
+            .file-item {
+                padding: 12px;
+            }
+            
+            .file-item input[type="checkbox"] {
+                width: 18px;
+                height: 18px;
+                margin-right: 12px;
+            }
+            
+            .file-item-name {
+                font-size: 14px;
+            }
+            
+            .file-item-count {
+                font-size: 11px;
+            }
+            
+            .btn {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+            
+            .card {
+                min-height: 250px;
+                padding: 25px 15px;
+                gap: 15px;
+            }
+            
+            .progress-badge {
+                top: 10px;
+                left: 10px;
+                padding: 4px 10px;
+                font-size: 11px;
+            }
+            
+            .weight-badge {
+                top: 10px;
+                right: 10px;
+                padding: 4px 10px;
+                font-size: 11px;
+            }
+            
+            .card-question {
+                font-size: 12px;
+            }
+            
+            .card-content {
+                font-size: 32px;
+                word-break: break-word;
+            }
+            
+            .card-answer-item {
+                padding: 12px;
+            }
+            
+            .card-answer-value {
+                font-size: 20px;
+            }
+            
+            .card-controls {
+                flex-direction: row;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .card-controls .btn {
+                width: auto;
+            }
+            
+            .card-controls .btn-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .alignment-menu {
+                top: 100%;
+                right: 0;
+                margin-top: 5px;
+                min-width: 100px;
+                padding: 8px;
+            }
+            
+            .alignment-option {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+            .study-item {
+                padding: 20px 15px;
+            }
+            
+            .study-item-value {
+                font-size: 24px;
+            }
+            
+            .study-item.main .study-item-value {
+                font-size: 28px;
+            }
+            
+            .study-table-container {
+                max-height: 70vh;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .study-table {
+                min-width: 100%;
+                font-size: 14px;
+            }
+            
+            .study-table th {
+                padding: 10px 8px;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+            
+            .study-table td {
+                padding: 10px 8px;
+                font-size: 14px;
+            }
+            
+            .study-table .id-cell {
+                width: 40px;
+                font-size: 12px;
+            }
+            
+            .study-table .japanese-cell {
+                font-size: 16px;
+            }
+            
+            .study-table .pronunciation-cell {
+                font-size: 13px;
+            }
+            
+            .study-table .meaning-cell {
+                font-size: 14px;
+            }
+            
+            .selection-controls {
+                flex-direction: column;
+            }
+            
+            .selection-controls .btn-secondary {
+                width: 100%;
+            }
+        }
+        
+        /* 작은 모바일 화면 (세로 모드) */
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px 12px;
+            }
+            
+            .header h1 {
+                font-size: 16px;
+                margin-right: 8px;
+            }
+            
+            .header-btn {
+                padding: 5px 8px;
+                font-size: 10px;
+            }
+            
+            #settingsBtn {
+                font-size: 20px;
+            }
+            
+            .content {
+                padding: 15px 10px;
+            }
+            
+            .card-content {
+                font-size: 28px;
+            }
+            
+            .study-table th,
+            .study-table td {
+                padding: 8px 6px;
+                font-size: 12px;
+            }
+            
+            .study-table .japanese-cell {
+                font-size: 14px;
+            }
+            
+            .study-table .pronunciation-cell {
+                font-size: 11px;
+            }
+            
+            .study-table .meaning-cell {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 일본어 단어장</h1>
+            <div class="header-buttons">
+                <button class="header-btn hidden" id="homeBtn" onclick="goHome()">처음으로</button>
+                <button class="header-btn hidden" id="changeSetBtn" onclick="changeWordSet()">단어셋 변경</button>
+                <button class="header-btn hidden" id="settingsBtn" onclick="toggleAlignmentMenu()">⚙</button>
+            </div>
+            <div class="alignment-menu" id="alignmentMenu">
+                <button class="alignment-option" onclick="setButtonAlignment('left')">⬅ 왼쪽</button>
+                <button class="alignment-option active" onclick="setButtonAlignment('center')">⬌ 중앙</button>
+                <button class="alignment-option" onclick="setButtonAlignment('right')">➡ 오른쪽</button>
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- 파일 선택 화면 -->
+            <div id="fileSelectionScreen">
+                <div class="file-selection">
+                    <!-- 모드 선택 -->
+                    <div class="mode-selection">
+                        <label class="mode-option selected" onclick="selectMode('quiz')">
+                            <input type="radio" name="studyMode" value="quiz" checked>
+                            <div class="mode-icon">📝</div>
+                            <div class="mode-title">평가하기</div>
+                            <div class="mode-description">랜덤 문제로 암기 테스트</div>
+                        </label>
+                        <label class="mode-option" onclick="selectMode('study')">
+                            <input type="radio" name="studyMode" value="study">
+                            <div class="mode-icon">📚</div>
+                            <div class="mode-title">공부하기</div>
+                            <div class="mode-description">모든 정보를 보며 학습</div>
+                        </label>
+                    </div>
+                    
+                    <div class="upload-section" onclick="document.getElementById('fileInput').click()">
+                        <h3>📁 JSON 파일 업로드</h3>
+                        <p style="margin-top: 10px; color: #666;">클릭하여 단어묶음 파일을 추가하세요</p>
+                        <input type="file" id="fileInput" accept=".json" multiple onchange="handleFileUpload(event)">
+                    </div>
+                    
+                    <div id="fileListContainer" class="hidden">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3>단어묶음 목록</h3>
+                            <div>
+                                <button class="btn-secondary" style="padding: 8px 16px; margin-right: 10px;" onclick="selectAll()">전체선택</button>
+                                <button class="btn-secondary" style="padding: 8px 16px;" onclick="deselectAll()">전체해제</button>
+                            </div>
+                        </div>
+                        <div class="file-list" id="fileList"></div>
+                        <div class="selection-controls" style="margin-top: 20px;">
+                            <button class="btn btn-primary" onclick="startStudy()">학습 시작</button>
+                        </div>
+                    </div>
+                    
+                    <div id="emptyState" class="empty-state">
+                        <h2>단어묶음이 없습니다</h2>
+                        <p>위의 업로드 버튼을 클릭하여 JSON 파일을 추가해주세요</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 플래시카드 화면 -->
+            <div id="flashcardScreen" class="hidden">
+                <div class="flashcard">
+                    <div class="card">
+                        <div class="progress-badge" id="progressBadge">
+                            진행도: <span class="progress-value" id="progressValue">0 / 0</span>
+                        </div>
+                        <div class="weight-badge" id="weightBadge">
+                            가중치: <span class="weight-value" id="weightValue">1</span>
+                        </div>
+                        <div class="card-question" id="questionType"></div>
+                        <div class="card-content" id="cardContent"></div>
+                        <div class="card-answer hidden" id="cardAnswer"></div>
+                    </div>
+                    <div class="card-controls align-center" id="cardControls">
+                        <button class="btn btn-icon btn-secondary" id="prevBtn" onclick="previousCard()" disabled>◀</button>
+                        <button class="btn btn-icon btn-primary" id="showAnswerBtn" onclick="showAnswer()">?</button>
+                        <button class="btn btn-icon btn-primary" id="nextBtn" onclick="nextCard()">▶</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 공부하기 테이블 화면 -->
+            <div id="studyTableScreen" class="hidden">
+                <div class="study-table-container" id="studyTableContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let wordSets = [];
+        let selectedWords = [];
+        let selectedQuestions = []; // 평가하기 모드용 문제 배열
+        let currentWordIndex = -1;
+        let wordHistory = [];
+        let currentQuestion = null;
+        let answerShown = false;
+        let weights = {};
+        let studyMode = 'quiz'; // 'quiz' or 'study'
+        let buttonAlignment = 'center'; // 'left', 'center', 'right'
+        
+        // 기본 단어 데이터 (results 폴더의 JSON 파일들)
+        const DEFAULT_WORD_SETS = [
+            {
+                        "fileName": "page_01",
+                        "words": [
+                                    {
+                                                "id": 1,
+                                                "japanese": "改札",
+                                                "pronunciation": "かいさつ",
+                                                "meaning": "개찰"
+                                    },
+                                    {
+                                                "id": 2,
+                                                "japanese": "価格",
+                                                "pronunciation": "かかく",
+                                                "meaning": "가격"
+                                    }
+                        ]
+            },
+            {
+                        "fileName": "page_02",
+                        "words": [
+                                    {
+                                                "id": 1,
+                                                "japanese": "以前",
+                                                "pronunciation": "いぜん",
+                                                "meaning": "이전"
+                                    },
+                                    {
+                                                "id": 2,
+                                                "japanese": "完全",
+                                                "pronunciation": "かんぜん",
+                                                "meaning": "완전"
+                                    }
+                        ]
+            }
+];
+        // 초기화
+        function init() {
+            // DEFAULT_WORD_SETS를 그대로 사용
+            wordSets = [...DEFAULT_WORD_SETS];
+            
+            renderFileList();
+        }
+        
+        // 파일 업로드 처리
+        async function handleFileUpload(event) {
+            const files = event.target.files;
+            
+            for (let file of files) {
+                try {
+                    const text = await file.text();
+                    const data = JSON.parse(text);
+                    
+                    // 중복 체크 (파일명으로)
+                    const existingIndex = wordSets.findIndex(set => set.fileName === data.fileName);
+                    if (existingIndex >= 0) {
+                        wordSets[existingIndex] = data;
+                    } else {
+                        wordSets.push(data);
+                    }
+                    
+                } catch (error) {
+                    alert(`파일 "${file.name}" 로드 실패: ${error.message}`);
+                }
+            }
+            
+            renderFileList();
+            event.target.value = ''; // 같은 파일 재선택 가능하도록
+        }
+        
+        // 모드 선택
+        function selectMode(mode) {
+            studyMode = mode;
+            document.querySelectorAll('.mode-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+            
+            // 공부하기 모드로 바뀌면 모든 체크박스 해제
+            if (mode === 'study') {
+                deselectAll();
+            }
+        }
+        
+        // 파일 목록 렌더링
+        function renderFileList() {
+            const fileList = document.getElementById('fileList');
+            const fileListContainer = document.getElementById('fileListContainer');
+            const emptyState = document.getElementById('emptyState');
+            
+            if (wordSets.length === 0) {
+                fileListContainer.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            
+            fileListContainer.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+            
+            // fileName 순으로 정렬 (숫자 부분을 고려한 자연 정렬)
+            const sortedWordSets = [...wordSets].sort((a, b) => {
+                // fileName에서 숫자 부분 추출
+                const numA = parseInt(a.fileName.match(/\d+/)?.[0] || '0', 10);
+                const numB = parseInt(b.fileName.match(/\d+/)?.[0] || '0', 10);
+                return numA - numB;
+            });
+            
+            fileList.innerHTML = sortedWordSets.map((set, index) => {
+                // 원본 배열에서의 인덱스 찾기
+                const originalIndex = wordSets.findIndex(s => s.fileName === set.fileName);
+                return `
+                <div class="file-item" onclick="toggleFileSelection(${originalIndex}, event)">
+                    <input type="checkbox" id="file_${originalIndex}" onclick="event.stopPropagation()">
+                    <div class="file-item-info">
+                        <div class="file-item-name">${set.fileName}</div>
+                        <div class="file-item-count">${set.words.length}개 단어</div>
+                    </div>
+                </div>
+            `;
+            }).join('');
+        }
+        
+        // 파일 선택 토글
+        function toggleFileSelection(index, event) {
+            // 체크박스 직접 클릭한 경우는 이미 토글되어 있으므로 아무것도 안함
+            if (event && event.target.type === 'checkbox') {
+                // 공부하기 모드일 때는 하나만 선택되도록
+                if (studyMode === 'study') {
+                    const checkbox = event.target;
+                    if (checkbox.checked) {
+                        // 다른 모든 체크박스 해제
+                        wordSets.forEach((_, i) => {
+                            if (i !== index) {
+                                document.getElementById(`file_${i}`).checked = false;
+                            }
+                        });
+                    }
+                }
+                return;
+            }
+            
+            const checkbox = document.getElementById(`file_${index}`);
+            
+            // 공부하기 모드일 때는 하나만 선택되도록
+            if (studyMode === 'study') {
+                if (checkbox.checked) {
+                    // 이미 선택되어 있으면 해제
+                    checkbox.checked = false;
+                } else {
+                    // 다른 모든 체크박스 해제 후 현재 것만 선택
+                    wordSets.forEach((_, i) => {
+                        document.getElementById(`file_${i}`).checked = false;
+                    });
+                    checkbox.checked = true;
+                }
+            } else {
+                // 평가하기 모드일 때는 기존대로 토글
+            checkbox.checked = !checkbox.checked;
+            }
+        }
+        
+        // 전체 선택
+        function selectAll() {
+            // 공부하기 모드일 때는 전체 선택 불가
+            if (studyMode === 'study') {
+                alert('공부하기 모드에서는 하나의 단어묶음만 선택할 수 있습니다.');
+                return;
+            }
+            wordSets.forEach((_, index) => {
+                document.getElementById(`file_${index}`).checked = true;
+            });
+        }
+        
+        // 전체 해제
+        function deselectAll() {
+            wordSets.forEach((_, index) => {
+                document.getElementById(`file_${index}`).checked = false;
+            });
+        }
+        
+        // 학습 시작
+        function startStudy() {
+            selectedWords = [];
+            selectedQuestions = [];
+            let selectedFileCount = 0;
+            let selectedSet = null;
+            
+            wordSets.forEach((set, index) => {
+                const checkbox = document.getElementById(`file_${index}`);
+                if (checkbox && checkbox.checked) {
+                    selectedFileCount++;
+                    selectedSet = set;
+                    set.words.forEach(word => {
+                        const wordData = {
+                            ...word,
+                            fileName: set.fileName,
+                            weightKey: `${set.fileName}_${word.id}`
+                        };
+                        selectedWords.push(wordData);
+                        
+                        // 평가하기 모드일 때 각 단어에 대해 2개의 문제 생성
+                        if (studyMode === 'quiz') {
+                            // 일본어 표기 문제
+                            selectedQuestions.push({
+                                word: wordData,
+                                questionType: 'japanese',
+                                questionLabel: '일본어 표기',
+                                weightKey: `${set.fileName}_${word.id}_japanese`
+                            });
+                            // 의미 문제
+                            selectedQuestions.push({
+                                word: wordData,
+                                questionType: 'meaning',
+                                questionLabel: '뜻',
+                                weightKey: `${set.fileName}_${word.id}_meaning`
+                            });
+                        }
+                    });
+                }
+            });
+            
+            if (selectedWords.length === 0) {
+                alert('최소 하나의 단어묶음을 선택해주세요.');
+                return;
+            }
+            
+            // 공부하기 모드일 때는 하나의 파일만 선택되어야 함
+            if (studyMode === 'study' && selectedFileCount > 1) {
+                alert('공부하기 모드에서는 하나의 단어묶음만 선택할 수 있습니다.');
+                return;
+            }
+            
+            currentWordIndex = -1;
+            wordHistory = [];
+            weights = {}; // 가중치 초기화 (세션 중에만 사용)
+            
+            if (studyMode === 'quiz') {
+                // 평가하기 모드: 각 문제의 가중치를 1로 초기화
+                selectedQuestions.forEach(question => {
+                    weights[question.weightKey] = 1;
+                });
+            } else {
+                // 공부하기 모드: 선택된 단어들의 가중치를 1로 초기화
+                selectedWords.forEach(word => {
+                    weights[word.weightKey] = 1;
+                });
+            }
+            
+            document.getElementById('fileSelectionScreen').classList.add('hidden');
+            document.getElementById('homeBtn').classList.remove('hidden');
+            document.getElementById('changeSetBtn').classList.remove('hidden');
+            
+            if (studyMode === 'study') {
+                // 공부하기 모드: 테이블 화면 표시
+                displayStudyTable(selectedSet);
+                document.getElementById('studyTableScreen').classList.remove('hidden');
+                document.getElementById('settingsBtn').classList.add('hidden');
+            } else {
+                // 평가하기 모드: 플래시카드 화면 표시
+                document.getElementById('flashcardScreen').classList.remove('hidden');
+                document.getElementById('settingsBtn').classList.remove('hidden');
+                updateProgress(); // 초기 진행도 설정
+                nextCard();
+            }
+        }
+        
+        // 가중치 기반 랜덤 문제 선택 (평가하기 모드)
+        function getWeightedRandomQuestion() {
+            // 가중치가 1 이상인 문제만 선택 대상에 포함
+            const availableQuestions = selectedQuestions.filter(question => {
+                const weight = weights[question.weightKey];
+                return weight !== undefined && weight > 0;
+            });
+            
+            if (availableQuestions.length === 0) {
+                return null; // 모든 문제가 완료됨
+            }
+            
+            const totalWeight = availableQuestions.reduce((sum, question) => {
+                return sum + weights[question.weightKey];
+            }, 0);
+            
+            if (totalWeight === 0) {
+                return null; // 모든 문제가 완료됨
+            }
+            
+            let random = Math.random() * totalWeight;
+            
+            for (let question of availableQuestions) {
+                const weight = weights[question.weightKey];
+                random -= weight;
+                if (random <= 0) {
+                    return question;
+                }
+            }
+            
+            return availableQuestions[0];
+        }
+        
+        // 가중치 기반 랜덤 단어 선택 (공부하기 모드)
+        function getWeightedRandomWord() {
+            const totalWeight = selectedWords.reduce((sum, word) => {
+                return sum + (weights[word.weightKey] || 1);
+            }, 0);
+            
+            let random = Math.random() * totalWeight;
+            
+            for (let word of selectedWords) {
+                const weight = weights[word.weightKey] || 1;
+                random -= weight;
+                if (random <= 0) {
+                    return word;
+                }
+            }
+            
+            return selectedWords[0];
+        }
+        
+        // 다음 카드
+        function nextCard() {
+            // 스택 방식: 현재 위치 이후의 히스토리 제거 (이전으로 갔다가 다시 다음을 누른 경우)
+            const isGoingBackThenForward = currentWordIndex < wordHistory.length - 1;
+            
+            // 가중치 업데이트 (이전에서 다음으로 가는 경우는 가중치 변화 없음)
+            if (currentWordIndex >= 0 && !isGoingBackThenForward) {
+                const currentItem = wordHistory[currentWordIndex];
+                if (studyMode === 'study') {
+                    // 공부하기 모드: 항상 가중치 증가
+                    weights[currentItem.weightKey] = Math.min(5, (weights[currentItem.weightKey] || 1) + 1);
+                } else {
+                    // 평가하기 모드
+                    if (!answerShown) {
+                        // 정답 확인 없이 넘어감: 가중치 -1 (최소 0)
+                        weights[currentItem.weightKey] = Math.max(0, (weights[currentItem.weightKey] || 1) - 1);
+                    } else {
+                        // 정답 확인 후 넘어감: 가중치 +1 (최대 5)
+                        weights[currentItem.weightKey] = Math.min(5, (weights[currentItem.weightKey] || 1) + 1);
+                    }
+                }
+            }
+            
+            // 스택 방식: 현재 위치 이후의 히스토리 제거
+            if (isGoingBackThenForward) {
+                wordHistory = wordHistory.slice(0, currentWordIndex + 1);
+            }
+            
+            if (studyMode === 'quiz') {
+                // 평가하기 모드: 문제 선택
+                const newQuestion = getWeightedRandomQuestion();
+                if (!newQuestion) {
+                    // 모든 문제 완료 시 알람 없이 바로 처음으로 이동
+                    goHome();
+                    return;
+                }
+                
+                // 문제 객체 생성
+                const questionItem = {
+                    ...newQuestion.word,
+                    questionType: newQuestion.questionType,
+                    questionLabel: newQuestion.questionLabel,
+                    weightKey: newQuestion.weightKey
+                };
+                
+                wordHistory.push(questionItem);
+                currentWordIndex = wordHistory.length - 1;
+            } else {
+                // 공부하기 모드: 단어 선택
+                const newWord = getWeightedRandomWord();
+                wordHistory.push(newWord);
+                currentWordIndex = wordHistory.length - 1;
+            }
+            
+            displayCard();
+            updateButtons();
+            updateProgress();
+        }
+        
+        // 이전 카드
+        function previousCard() {
+            if (currentWordIndex > 0) {
+                currentWordIndex--;
+                displayCard();
+                updateButtons();
+            }
+        }
+        
+        // 카드 표시
+        function displayCard() {
+            const item = wordHistory[currentWordIndex];
+            answerShown = false;
+            
+            // 현재 항목의 가중치 표시
+            const weightKey = item.weightKey;
+            const currentWeight = weights[weightKey] || 1;
+            document.getElementById('weightValue').textContent = currentWeight;
+            
+            if (studyMode === 'study') {
+                // 공부하기 모드: 모든 정보 표시
+                displayStudyMode(item);
+            } else {
+                // 평가하기 모드: 저장된 문제 표시
+                displayQuizMode(item);
+            }
+            
+            updateProgress();
+        }
+        
+        // 평가하기 모드 표시
+        function displayQuizMode(word) {
+            // 발음이 있는지 확인 (빈 문자열이거나 없는 경우 제외)
+            const hasPronunciation = word.pronunciation && word.pronunciation.trim() !== '';
+            
+            // 히스토리에 저장된 문제 유형이 있으면 사용, 없으면 랜덤 선택
+            if (word.questionType && word.questionLabel) {
+                // 저장된 문제 유형 사용
+                currentQuestion = {
+                    type: word.questionType,
+                    label: word.questionLabel,
+                    value: word[word.questionType] // word.japanese 또는 word.meaning
+                };
+            } else {
+                // 랜덤으로 문제 유형 선택 (발음 문제는 제외)
+                const questionTypes = [
+                    { type: 'japanese', label: '일본어 표기', value: word.japanese },
+                    { type: 'meaning', label: '뜻', value: word.meaning }
+                ];
+                
+                const randomIndex = Math.floor(Math.random() * questionTypes.length);
+                currentQuestion = questionTypes[randomIndex];
+                
+                // 저장 (다음에 같은 단어를 볼 때 사용)
+                word.questionType = currentQuestion.type;
+                word.questionLabel = currentQuestion.label;
+            }
+            
+            document.getElementById('questionType').textContent = currentQuestion.label;
+            document.getElementById('cardContent').textContent = currentQuestion.value;
+            document.getElementById('cardContent').style.fontSize = '48px';
+            
+            // 답 부분도 미리 렌더링하되 hidden으로 설정 (카드 높이 유지)
+            const answers = [];
+            if (currentQuestion.type !== 'japanese') {
+                answers.push({ label: '일본어 표기', value: word.japanese });
+            }
+            if (currentQuestion.type !== 'pronunciation' && hasPronunciation) {
+                answers.push({ label: '발음', value: word.pronunciation });
+            }
+            if (currentQuestion.type !== 'meaning') {
+                answers.push({ label: '뜻', value: word.meaning });
+            }
+            
+            const answerHTML = answers.map(ans => `
+                <div class="card-answer-item">
+                    <div class="card-answer-label">${ans.label}</div>
+                    <div class="card-answer-value">${ans.value}</div>
+                </div>
+            `).join('');
+            
+            document.getElementById('cardAnswer').innerHTML = answerHTML;
+            document.getElementById('cardAnswer').classList.add('hidden');
+            document.getElementById('showAnswerBtn').classList.remove('hidden');
+            document.getElementById('showAnswerBtn').textContent = '?';
+            answerShown = false; // 정답 표시 상태 초기화
+        }
+        
+        // 공부하기 테이블 표시
+        function displayStudyTable(wordSet) {
+            const container = document.getElementById('studyTableContainer');
+            
+            const tableHTML = `
+                <table class="study-table">
+                    <thead>
+                        <tr>
+                            <th class="id-cell">ID</th>
+                            <th class="japanese-cell">일본어 표기</th>
+                            <th class="pronunciation-cell">발음</th>
+                            <th class="meaning-cell">의미</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${wordSet.words.map(word => `
+                            <tr>
+                                <td class="id-cell">${word.id}</td>
+                                <td class="japanese-cell">${word.japanese}</td>
+                                <td class="pronunciation-cell">${word.pronunciation}</td>
+                                <td class="meaning-cell">${word.meaning}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+            
+            container.innerHTML = tableHTML;
+        }
+        
+        // 공부하기 모드 표시 (평가하기 모드에서 사용하는 함수 - 유지)
+        function displayStudyMode(word) {
+            currentQuestion = { type: 'all' }; // 모든 정보 표시
+            
+            document.getElementById('questionType').textContent = '공부하기';
+            
+            const studyHTML = `
+                <div class="study-mode-card">
+                    <div class="study-item main">
+                        <div class="study-item-label">일본어 표기</div>
+                        <div class="study-item-value">${word.japanese}</div>
+                    </div>
+                    <div class="study-item">
+                        <div class="study-item-label">발음</div>
+                        <div class="study-item-value">${word.pronunciation}</div>
+                    </div>
+                    <div class="study-item">
+                        <div class="study-item-label">뜻</div>
+                        <div class="study-item-value">${word.meaning}</div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('cardContent').innerHTML = studyHTML;
+            document.getElementById('cardContent').style.fontSize = 'inherit';
+            document.getElementById('cardAnswer').classList.add('hidden');
+            document.getElementById('showAnswerBtn').classList.add('hidden');
+            document.getElementById('nextBtn').textContent = '다음으로';
+        }
+        
+        // 진행도 업데이트
+        function updateProgress() {
+            if (studyMode !== 'quiz' || selectedQuestions.length === 0) {
+                return;
+            }
+            
+            const totalQuestions = selectedQuestions.length;
+            const completedQuestions = selectedQuestions.filter(question => {
+                const weight = weights[question.weightKey];
+                return weight !== undefined && weight === 0;
+            }).length;
+            
+            document.getElementById('progressValue').textContent = `${completedQuestions} / ${totalQuestions}`;
+        }
+        
+        // 정답 확인/숨기기 토글
+        function showAnswer() {
+            const cardAnswer = document.getElementById('cardAnswer');
+            const showAnswerBtn = document.getElementById('showAnswerBtn');
+            
+            if (answerShown) {
+                // 정답이 보여져 있으면 숨기기
+                cardAnswer.classList.add('hidden');
+                showAnswerBtn.textContent = '?';
+                answerShown = false;
+            } else {
+                // 정답이 숨겨져 있으면 보여주기
+                cardAnswer.classList.remove('hidden');
+                showAnswerBtn.textContent = '✓';
+                answerShown = true;
+                // 가중치는 nextCard()에서만 변경
+            }
+        }
+        
+        // 버튼 상태 업데이트
+        function updateButtons() {
+            document.getElementById('prevBtn').disabled = currentWordIndex === 0;
+        }
+        
+        // 처음으로
+        function goHome() {
+            if (confirm('학습을 완료하였습니다!')) {
+                document.getElementById('flashcardScreen').classList.add('hidden');
+                document.getElementById('studyTableScreen').classList.add('hidden');
+                document.getElementById('fileSelectionScreen').classList.remove('hidden');
+                document.getElementById('homeBtn').classList.add('hidden');
+                document.getElementById('changeSetBtn').classList.add('hidden');
+                document.getElementById('settingsBtn').classList.add('hidden');
+            }
+        }
+        
+        // 단어셋 변경
+        function changeWordSet() {
+            if (confirm('현재 학습을 중단하고 단어셋을 변경하시겠습니까?')) {
+                document.getElementById('flashcardScreen').classList.add('hidden');
+                document.getElementById('studyTableScreen').classList.add('hidden');
+                document.getElementById('fileSelectionScreen').classList.remove('hidden');
+                document.getElementById('changeSetBtn').classList.add('hidden');
+                document.getElementById('settingsBtn').classList.add('hidden');
+            }
+        }
+        
+        // 버튼 정렬 메뉴 토글
+        function toggleAlignmentMenu() {
+            const menu = document.getElementById('alignmentMenu');
+            menu.classList.toggle('show');
+        }
+        
+        // 버튼 정렬 설정
+        function setButtonAlignment(alignment) {
+            buttonAlignment = alignment;
+            const cardControls = document.getElementById('cardControls');
+            const menu = document.getElementById('alignmentMenu');
+            const options = menu.querySelectorAll('.alignment-option');
+            
+            // 모든 옵션에서 active 클래스 제거
+            options.forEach(option => option.classList.remove('active'));
+            
+            // 선택한 옵션에 active 클래스 추가
+            if (alignment === 'left') {
+                cardControls.className = 'card-controls align-left';
+                options[0].classList.add('active');
+            } else if (alignment === 'center') {
+                cardControls.className = 'card-controls align-center';
+                options[1].classList.add('active');
+            } else if (alignment === 'right') {
+                cardControls.className = 'card-controls align-right';
+                options[2].classList.add('active');
+            }
+            
+            // 메뉴 닫기
+            menu.classList.remove('show');
+        }
+        
+        // 메뉴 외부 클릭 시 닫기
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('alignmentMenu');
+            const settingsBtn = document.getElementById('settingsBtn');
+            
+            if (menu && settingsBtn && !menu.contains(event.target) && !settingsBtn.contains(event.target)) {
+                menu.classList.remove('show');
+            }
+        });
+        
+        // 페이지 로드 시 초기화
+        window.onload = init;
+    </script>
+</body>
+</html>
