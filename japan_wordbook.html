@@ -1728,7 +1728,25 @@
                 }
             }
             
+            // 스택 방식: 현재 위치 이후의 히스토리 제거 (이전으로 갔다가 다시 다음을 누른 경우)
+            if (currentWordIndex < wordHistory.length - 1) {
+                wordHistory = wordHistory.slice(0, currentWordIndex + 1);
+            }
+            
             const newWord = getWeightedRandomWord();
+            
+            // 문제 유형 랜덤 선택 (발음 문제는 제외)
+            const questionTypes = [
+                { type: 'japanese', label: '일본어 표기', value: newWord.japanese },
+                { type: 'meaning', label: '뜻', value: newWord.meaning }
+            ];
+            const randomIndex = Math.floor(Math.random() * questionTypes.length);
+            const selectedQuestion = questionTypes[randomIndex];
+            
+            // 단어 객체에 문제 유형 저장
+            newWord.questionType = selectedQuestion.type;
+            newWord.questionLabel = selectedQuestion.label;
+            
             wordHistory.push(newWord);
             currentWordIndex = wordHistory.length - 1;
             
@@ -1768,19 +1786,28 @@
             // 발음이 있는지 확인 (빈 문자열이거나 없는 경우 제외)
             const hasPronunciation = word.pronunciation && word.pronunciation.trim() !== '';
             
-            // 랜덤으로 문제 유형 선택 (발음이 없으면 발음 문제 제외)
-            const questionTypes = [
-                { type: 'japanese', label: '일본어 표기', value: word.japanese },
-                { type: 'meaning', label: '뜻', value: word.meaning }
-            ];
-            
-            // 발음이 있는 경우에만 발음 문제 추가
-            if (hasPronunciation) {
-                questionTypes.splice(1, 0, { type: 'pronunciation', label: '발음', value: word.pronunciation });
+            // 히스토리에 저장된 문제 유형이 있으면 사용, 없으면 랜덤 선택
+            if (word.questionType && word.questionLabel) {
+                // 저장된 문제 유형 사용
+                currentQuestion = {
+                    type: word.questionType,
+                    label: word.questionLabel,
+                    value: word[word.questionType] // word.japanese 또는 word.meaning
+                };
+            } else {
+                // 랜덤으로 문제 유형 선택 (발음 문제는 제외)
+                const questionTypes = [
+                    { type: 'japanese', label: '일본어 표기', value: word.japanese },
+                    { type: 'meaning', label: '뜻', value: word.meaning }
+                ];
+                
+                const randomIndex = Math.floor(Math.random() * questionTypes.length);
+                currentQuestion = questionTypes[randomIndex];
+                
+                // 저장 (다음에 같은 단어를 볼 때 사용)
+                word.questionType = currentQuestion.type;
+                word.questionLabel = currentQuestion.label;
             }
-            
-            const randomIndex = Math.floor(Math.random() * questionTypes.length);
-            currentQuestion = questionTypes[randomIndex];
             
             document.getElementById('questionType').textContent = currentQuestion.label;
             document.getElementById('cardContent').textContent = currentQuestion.value;
