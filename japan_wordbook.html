@@ -9537,7 +9537,8 @@
                 // 평가하기 모드: 문제 선택
                 const newQuestion = getWeightedRandomQuestion();
                 if (!newQuestion) {
-                    // 모든 문제 완료 시 알람 없이 바로 처음으로 이동
+                    // 모든 문제 완료 시 알림 표시 후 처음으로 이동
+                    alert('학습을 완료하였습니다!');
                     goHome();
                     return;
                 }
@@ -9759,15 +9760,32 @@
         
         // 처음으로
         function goHome() {
-            if (confirm('학습을 완료하였습니다!')) {
-                document.getElementById('flashcardScreen').classList.add('hidden');
-                document.getElementById('studyTableScreen').classList.add('hidden');
-                document.getElementById('fileSelectionScreen').classList.remove('hidden');
-                document.getElementById('homeBtn').classList.add('hidden');
-                document.getElementById('changeSetBtn').classList.add('hidden');
-                document.getElementById('startQuizBtn').classList.add('hidden');
-                document.getElementById('settingsBtn').classList.add('hidden');
+            document.getElementById('flashcardScreen').classList.add('hidden');
+            document.getElementById('studyTableScreen').classList.add('hidden');
+            document.getElementById('fileSelectionScreen').classList.remove('hidden');
+            document.getElementById('homeBtn').classList.add('hidden');
+            document.getElementById('changeSetBtn').classList.add('hidden');
+            document.getElementById('startQuizBtn').classList.add('hidden');
+            document.getElementById('settingsBtn').classList.add('hidden');
+            
+            // 모드 초기화
+            studyMode = 'quiz';
+            document.querySelectorAll('.mode-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            // 평가하기 모드가 기본 선택되도록 설정
+            const quizOption = document.querySelector('.mode-option[onclick*="quiz"]');
+            if (quizOption) {
+                quizOption.classList.add('selected');
             }
+            // 라디오 버튼도 초기화
+            const quizRadio = document.querySelector('input[value="quiz"]');
+            const studyRadio = document.querySelector('input[value="study"]');
+            if (quizRadio) quizRadio.checked = true;
+            if (studyRadio) studyRadio.checked = false;
+            
+            // 체크박스 해제
+            deselectAll();
         }
         
         // 공부하기에서 평가하기로 전환
