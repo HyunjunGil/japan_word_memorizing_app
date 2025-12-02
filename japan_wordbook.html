@@ -34,6 +34,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
         
         .header h1 {
@@ -61,6 +62,10 @@
         
         .header-btn:hover {
             background: rgba(255,255,255,0.3);
+        }
+        
+        #settingsBtn {
+            font-size: 28px;
         }
         
         .content {
@@ -370,6 +375,58 @@
             align-items: center;
         }
         
+        .card-controls.align-left {
+            justify-content: flex-start;
+        }
+        
+        .card-controls.align-center {
+            justify-content: center;
+        }
+        
+        .card-controls.align-right {
+            justify-content: flex-end;
+        }
+        
+        .alignment-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 10px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            padding: 10px;
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 20;
+            min-width: 120px;
+        }
+        
+        .alignment-menu.show {
+            display: flex;
+        }
+        
+        .alignment-option {
+            padding: 10px 15px;
+            border: none;
+            background: #f8f9ff;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: left;
+            transition: all 0.2s;
+        }
+        
+        .alignment-option:hover {
+            background: #e8e9ff;
+        }
+        
+        .alignment-option.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
         .card-controls .btn:not(.btn-icon) {
             flex: 1;
         }
@@ -512,6 +569,10 @@
                 white-space: nowrap;
             }
             
+            #settingsBtn {
+                font-size: 22px;
+            }
+            
             .content {
                 padding: 20px 15px;
             }
@@ -616,6 +677,19 @@
                 font-size: 20px;
             }
             
+            .alignment-menu {
+                top: 100%;
+                right: 0;
+                margin-top: 5px;
+                min-width: 100px;
+                padding: 8px;
+            }
+            
+            .alignment-option {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
             .study-item {
                 padding: 20px 15px;
             }
@@ -692,6 +766,10 @@
                 font-size: 10px;
             }
             
+            #settingsBtn {
+                font-size: 20px;
+            }
+            
             .content {
                 padding: 15px 10px;
             }
@@ -727,6 +805,12 @@
             <div class="header-buttons">
                 <button class="header-btn hidden" id="homeBtn" onclick="goHome()">처음으로</button>
                 <button class="header-btn hidden" id="changeSetBtn" onclick="changeWordSet()">단어셋 변경</button>
+                <button class="header-btn hidden" id="settingsBtn" onclick="toggleAlignmentMenu()">⚙</button>
+            </div>
+            <div class="alignment-menu" id="alignmentMenu">
+                <button class="alignment-option" onclick="setButtonAlignment('left')">⬅ 왼쪽</button>
+                <button class="alignment-option active" onclick="setButtonAlignment('center')">⬌ 중앙</button>
+                <button class="alignment-option" onclick="setButtonAlignment('right')">➡ 오른쪽</button>
             </div>
         </div>
         
@@ -788,7 +872,7 @@
                         <div class="card-content" id="cardContent"></div>
                         <div class="card-answer hidden" id="cardAnswer"></div>
                     </div>
-                    <div class="card-controls">
+                    <div class="card-controls align-center" id="cardControls">
                         <button class="btn btn-icon btn-secondary" id="prevBtn" onclick="previousCard()" disabled>◀</button>
                         <button class="btn btn-icon btn-primary" id="showAnswerBtn" onclick="showAnswer()">?</button>
                         <button class="btn btn-icon btn-primary" id="nextBtn" onclick="nextCard()">▶</button>
@@ -812,6 +896,7 @@
         let answerShown = false;
         let weights = {};
         let studyMode = 'quiz'; // 'quiz' or 'study'
+        let buttonAlignment = 'center'; // 'left', 'center', 'right'
         
         // 기본 단어 데이터 (results 폴더의 JSON 파일들)
         const DEFAULT_WORD_SETS = [
@@ -1601,9 +1686,11 @@
                 // 공부하기 모드: 테이블 화면 표시
                 displayStudyTable(selectedSet);
                 document.getElementById('studyTableScreen').classList.remove('hidden');
+                document.getElementById('settingsBtn').classList.add('hidden');
             } else {
                 // 평가하기 모드: 플래시카드 화면 표시
                 document.getElementById('flashcardScreen').classList.remove('hidden');
+                document.getElementById('settingsBtn').classList.remove('hidden');
             nextCard();
             }
         }
@@ -1820,6 +1907,7 @@
                 document.getElementById('fileSelectionScreen').classList.remove('hidden');
                 document.getElementById('homeBtn').classList.add('hidden');
                 document.getElementById('changeSetBtn').classList.add('hidden');
+                document.getElementById('settingsBtn').classList.add('hidden');
             }
         }
         
@@ -1830,8 +1918,51 @@
                 document.getElementById('studyTableScreen').classList.add('hidden');
                 document.getElementById('fileSelectionScreen').classList.remove('hidden');
                 document.getElementById('changeSetBtn').classList.add('hidden');
+                document.getElementById('settingsBtn').classList.add('hidden');
             }
         }
+        
+        // 버튼 정렬 메뉴 토글
+        function toggleAlignmentMenu() {
+            const menu = document.getElementById('alignmentMenu');
+            menu.classList.toggle('show');
+        }
+        
+        // 버튼 정렬 설정
+        function setButtonAlignment(alignment) {
+            buttonAlignment = alignment;
+            const cardControls = document.getElementById('cardControls');
+            const menu = document.getElementById('alignmentMenu');
+            const options = menu.querySelectorAll('.alignment-option');
+            
+            // 모든 옵션에서 active 클래스 제거
+            options.forEach(option => option.classList.remove('active'));
+            
+            // 선택한 옵션에 active 클래스 추가
+            if (alignment === 'left') {
+                cardControls.className = 'card-controls align-left';
+                options[0].classList.add('active');
+            } else if (alignment === 'center') {
+                cardControls.className = 'card-controls align-center';
+                options[1].classList.add('active');
+            } else if (alignment === 'right') {
+                cardControls.className = 'card-controls align-right';
+                options[2].classList.add('active');
+            }
+            
+            // 메뉴 닫기
+            menu.classList.remove('show');
+        }
+        
+        // 메뉴 외부 클릭 시 닫기
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('alignmentMenu');
+            const settingsBtn = document.getElementById('settingsBtn');
+            
+            if (menu && settingsBtn && !menu.contains(event.target) && !settingsBtn.contains(event.target)) {
+                menu.classList.remove('show');
+            }
+        });
         
         // 페이지 로드 시 초기화
         window.onload = init;

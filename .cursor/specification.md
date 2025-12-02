@@ -75,6 +75,7 @@ let currentQuestion = null;  // 현재 문제 정보
 let answerShown = false;     // 정답 표시 여부
 let weights = {};           // 가중치 객체
 let studyMode = 'quiz';     // 'quiz' or 'study'
+let buttonAlignment = 'center'; // 'left', 'center', 'right'
 ```
 
 ## 데이터 저장 방식
@@ -188,7 +189,18 @@ let studyMode = 'quiz';     // 'quiz' or 'study'
   - 확인 다이얼로그
   - 파일 선택 화면으로 복귀
 
-### 9. 유틸리티
+### 9. 버튼 정렬 설정
+- **`toggleAlignmentMenu()`**: 정렬 메뉴 표시/숨김 토글
+  - 설정 버튼 클릭 시 메뉴 표시/숨김
+  
+- **`setButtonAlignment(alignment)`**: 버튼 정렬 설정
+  - `'left'`: 왼쪽 정렬
+  - `'center'`: 중앙 정렬 (기본값)
+  - `'right'`: 오른쪽 정렬
+  - 선택한 옵션에 따라 `card-controls` 클래스 변경
+  - 메뉴 외부 클릭 시 자동으로 닫힘
+
+### 10. 유틸리티
 - **`updateButtons()`**: 버튼 상태 업데이트 (이전 버튼 활성화/비활성화)
 - **`init()`**: 페이지 로드 시 초기화
   - `DEFAULT_WORD_SETS`를 `wordSets`에 복사
@@ -212,6 +224,9 @@ let studyMode = 'quiz';     // 'quiz' or 'study'
 - `.card-answer.hidden`: 답 영역 숨김 처리 (공간은 유지, visibility: hidden 사용)
 - `.btn-primary`, `.btn-secondary`: 버튼 스타일
 - `.btn-icon`: 동그라미 아이콘 버튼 (이전: ◀, 정답 확인: ?, 다음: ▶)
+- `.card-controls.align-left`, `.card-controls.align-center`, `.card-controls.align-right`: 버튼 정렬 클래스
+- `.settings-button`: 설정 버튼 (카드 왼쪽 상단)
+- `.alignment-menu`: 버튼 정렬 선택 메뉴
 
 ## 학습 흐름
 
@@ -242,6 +257,7 @@ let studyMode = 'quiz';     // 'quiz' or 'study'
 - ✅ 카드 높이 일정 유지 (정답 확인 전후 동일한 높이)
 - ✅ 정답 확인/숨기기 토글 기능 (버튼을 여러 번 클릭하여 정답 표시/숨김 가능)
 - ✅ 동그라미 아이콘 버튼 디자인 (이전: ◀, 정답 확인: ?/✓, 다음: ▶)
+- ✅ 버튼 정렬 선택 기능 (왼쪽/중앙/오른쪽 정렬 선택 가능)
 
 ### 제약사항
 - ⚠️ 단일 HTML 파일 구조 (코드 분리 없음)
