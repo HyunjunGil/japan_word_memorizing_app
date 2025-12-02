@@ -890,6 +890,7 @@
     <script>
         let wordSets = [];
         let selectedWords = [];
+        let selectedQuestions = []; // 평가하기 모드용 문제 배열
         let currentWordIndex = -1;
         let wordHistory = [];
         let currentQuestion = null;
@@ -1640,6 +1641,7 @@
         // 학습 시작
         function startStudy() {
             selectedWords = [];
+            selectedQuestions = [];
             let selectedFileCount = 0;
             let selectedSet = null;
             
@@ -1649,11 +1651,30 @@
                     selectedFileCount++;
                     selectedSet = set;
                     set.words.forEach(word => {
-                        selectedWords.push({
+                        const wordData = {
                             ...word,
                             fileName: set.fileName,
                             weightKey: `${set.fileName}_${word.id}`
-                        });
+                        };
+                        selectedWords.push(wordData);
+                        
+                        // 평가하기 모드일 때 각 단어에 대해 2개의 문제 생성
+                        if (studyMode === 'quiz') {
+                            // 일본어 표기 문제
+                            selectedQuestions.push({
+                                word: wordData,
+                                questionType: 'japanese',
+                                questionLabel: '일본어 표기',
+                                weightKey: `${set.fileName}_${word.id}_japanese`
+                            });
+                            // 의미 문제
+                            selectedQuestions.push({
+                                word: wordData,
+                                questionType: 'meaning',
+                                questionLabel: '뜻',
+                                weightKey: `${set.fileName}_${word.id}_meaning`
+                            });
+                        }
                     });
                 }
             });
@@ -1673,10 +1694,17 @@
             wordHistory = [];
             weights = {}; // 가중치 초기화 (세션 중에만 사용)
             
-            // 선택된 단어들의 가중치를 1로 초기화
-            selectedWords.forEach(word => {
-                weights[word.weightKey] = 1;
-            });
+            if (studyMode === 'quiz') {
+                // 평가하기 모드: 각 문제의 가중치를 1로 초기화
+                selectedQuestions.forEach(question => {
+                    weights[question.weightKey] = 1;
+                });
+            } else {
+                // 공부하기 모드: 선택된 단어들의 가중치를 1로 초기화
+                selectedWords.forEach(word => {
+                    weights[word.weightKey] = 1;
+                });
+            }
             
             document.getElementById('fileSelectionScreen').classList.add('hidden');
             document.getElementById('homeBtn').classList.remove('hidden');
@@ -1695,7 +1723,40 @@
             }
         }
         
-        // 가중치 기반 랜덤 단어 선택
+        // 가중치 기반 랜덤 문제 선택 (평가하기 모드)
+        function getWeightedRandomQuestion() {
+            // 가중치가 1 이상인 문제만 선택 대상에 포함
+            const availableQuestions = selectedQuestions.filter(question => {
+                const weight = weights[question.weightKey];
+                return weight !== undefined && weight > 0;
+            });
+            
+            if (availableQuestions.length === 0) {
+                return null; // 모든 문제가 완료됨
+            }
+            
+            const totalWeight = availableQuestions.reduce((sum, question) => {
+                return sum + weights[question.weightKey];
+            }, 0);
+            
+            if (totalWeight === 0) {
+                return null; // 모든 문제가 완료됨
+            }
+            
+            let random = Math.random() * totalWeight;
+            
+            for (let question of availableQuestions) {
+                const weight = weights[question.weightKey];
+                random -= weight;
+                if (random <= 0) {
+                    return question;
+                }
+            }
+            
+            return availableQuestions[0];
+        }
+        
+        // 가중치 기반 랜덤 단어 선택 (공부하기 모드)
         function getWeightedRandomWord() {
             const totalWeight = selectedWords.reduce((sum, word) => {
                 return sum + (weights[word.weightKey] || 1);
@@ -1716,39 +1777,57 @@
         
         // 다음 카드
         function nextCard() {
-            // 가중치 업데이트
-            if (currentWordIndex >= 0) {
-                const currentWord = wordHistory[currentWordIndex];
+            // 스택 방식: 현재 위치 이후의 히스토리 제거 (이전으로 갔다가 다시 다음을 누른 경우)
+            const isGoingBackThenForward = currentWordIndex < wordHistory.length - 1;
+            
+            // 가중치 업데이트 (이전에서 다음으로 가는 경우는 가중치 변화 없음)
+            if (currentWordIndex >= 0 && !isGoingBackThenForward) {
+                const currentItem = wordHistory[currentWordIndex];
                 if (studyMode === 'study') {
                     // 공부하기 모드: 항상 가중치 증가
-                    weights[currentWord.weightKey] = Math.min(5, (weights[currentWord.weightKey] || 1) + 1);
-                } else if (!answerShown) {
-                    // 평가하기 모드: 정답 확인 안하고 넘어감
-                    weights[currentWord.weightKey] = Math.max(1, (weights[currentWord.weightKey] || 1) - 1);
+                    weights[currentItem.weightKey] = Math.min(5, (weights[currentItem.weightKey] || 1) + 1);
+                } else {
+                    // 평가하기 모드
+                    if (!answerShown) {
+                        // 정답 확인 없이 넘어감: 가중치 -1 (최소 0)
+                        weights[currentItem.weightKey] = Math.max(0, (weights[currentItem.weightKey] || 1) - 1);
+                    } else {
+                        // 정답 확인 후 넘어감: 가중치 +1 (최대 5)
+                        weights[currentItem.weightKey] = Math.min(5, (weights[currentItem.weightKey] || 1) + 1);
+                    }
                 }
             }
             
-            // 스택 방식: 현재 위치 이후의 히스토리 제거 (이전으로 갔다가 다시 다음을 누른 경우)
-            if (currentWordIndex < wordHistory.length - 1) {
+            // 스택 방식: 현재 위치 이후의 히스토리 제거
+            if (isGoingBackThenForward) {
                 wordHistory = wordHistory.slice(0, currentWordIndex + 1);
             }
             
-            const newWord = getWeightedRandomWord();
-            
-            // 문제 유형 랜덤 선택 (발음 문제는 제외)
-            const questionTypes = [
-                { type: 'japanese', label: '일본어 표기', value: newWord.japanese },
-                { type: 'meaning', label: '뜻', value: newWord.meaning }
-            ];
-            const randomIndex = Math.floor(Math.random() * questionTypes.length);
-            const selectedQuestion = questionTypes[randomIndex];
-            
-            // 단어 객체에 문제 유형 저장
-            newWord.questionType = selectedQuestion.type;
-            newWord.questionLabel = selectedQuestion.label;
-            
-            wordHistory.push(newWord);
-            currentWordIndex = wordHistory.length - 1;
+            if (studyMode === 'quiz') {
+                // 평가하기 모드: 문제 선택
+                const newQuestion = getWeightedRandomQuestion();
+                if (!newQuestion) {
+                    alert('모든 문제를 완료했습니다!');
+                    goHome();
+                    return;
+                }
+                
+                // 문제 객체 생성
+                const questionItem = {
+                    ...newQuestion.word,
+                    questionType: newQuestion.questionType,
+                    questionLabel: newQuestion.questionLabel,
+                    weightKey: newQuestion.weightKey
+                };
+                
+                wordHistory.push(questionItem);
+                currentWordIndex = wordHistory.length - 1;
+            } else {
+                // 공부하기 모드: 단어 선택
+                const newWord = getWeightedRandomWord();
+                wordHistory.push(newWord);
+                currentWordIndex = wordHistory.length - 1;
+            }
             
             displayCard();
             updateButtons();
@@ -1765,19 +1844,20 @@
         
         // 카드 표시
         function displayCard() {
-            const word = wordHistory[currentWordIndex];
+            const item = wordHistory[currentWordIndex];
             answerShown = false;
             
-            // 현재 단어의 가중치 표시
-            const currentWeight = weights[word.weightKey] || 1;
+            // 현재 항목의 가중치 표시
+            const weightKey = item.weightKey;
+            const currentWeight = weights[weightKey] || 1;
             document.getElementById('weightValue').textContent = currentWeight;
             
             if (studyMode === 'study') {
                 // 공부하기 모드: 모든 정보 표시
-                displayStudyMode(word);
+                displayStudyMode(item);
             } else {
-                // 평가하기 모드: 랜덤 문제
-                displayQuizMode(word);
+                // 평가하기 모드: 저장된 문제 표시
+                displayQuizMode(item);
             }
         }
         
@@ -1901,7 +1981,6 @@
         
         // 정답 확인/숨기기 토글
         function showAnswer() {
-            const word = wordHistory[currentWordIndex];
             const cardAnswer = document.getElementById('cardAnswer');
             const showAnswerBtn = document.getElementById('showAnswerBtn');
             
@@ -1915,9 +1994,7 @@
                 cardAnswer.classList.remove('hidden');
                 showAnswerBtn.textContent = '✓';
                 answerShown = true;
-                
-                // 가중치 증가 (정답을 처음 보여줄 때만)
-                weights[word.weightKey] = Math.min(5, (weights[word.weightKey] || 1) + 1);
+                // 가중치는 nextCard()에서만 변경
             }
         }
         
