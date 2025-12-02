@@ -1696,7 +1696,9 @@
             document.getElementById('cardAnswer').innerHTML = answerHTML;
             document.getElementById('cardAnswer').classList.add('hidden');
             document.getElementById('showAnswerBtn').classList.remove('hidden');
+            document.getElementById('showAnswerBtn').textContent = '정답 확인';
             document.getElementById('nextBtn').textContent = '다음으로';
+            answerShown = false; // 정답 표시 상태 초기화
         }
         
         // 공부하기 테이블 표시
@@ -1759,17 +1761,26 @@
             document.getElementById('nextBtn').textContent = '다음으로';
         }
         
-        // 정답 확인
+        // 정답 확인/숨기기 토글
         function showAnswer() {
             const word = wordHistory[currentWordIndex];
-            answerShown = true;
+            const cardAnswer = document.getElementById('cardAnswer');
+            const showAnswerBtn = document.getElementById('showAnswerBtn');
             
-            // 가중치 증가
-            weights[word.weightKey] = Math.min(5, (weights[word.weightKey] || 1) + 1);
-            
-            // 답은 이미 displayQuizMode에서 렌더링되었으므로 hidden 클래스만 제거
-            document.getElementById('cardAnswer').classList.remove('hidden');
-            document.getElementById('showAnswerBtn').classList.add('hidden');
+            if (answerShown) {
+                // 정답이 보여져 있으면 숨기기
+                cardAnswer.classList.add('hidden');
+                showAnswerBtn.textContent = '정답 확인';
+                answerShown = false;
+            } else {
+                // 정답이 숨겨져 있으면 보여주기
+                cardAnswer.classList.remove('hidden');
+                showAnswerBtn.textContent = '정답 숨기기';
+                answerShown = true;
+                
+                // 가중치 증가 (정답을 처음 보여줄 때만)
+                weights[word.weightKey] = Math.min(5, (weights[word.weightKey] || 1) + 1);
+            }
         }
         
         // 버튼 상태 업데이트
