@@ -781,12 +781,6 @@
         let weights = {};
         let studyMode = 'quiz'; // 'quiz' or 'study'
         
-        // LocalStorage 키
-        const STORAGE_KEYS = {
-            WORD_SETS: 'japanese_word_sets',
-            WEIGHTS: 'japanese_word_weights'
-        };
-        
         // 기본 단어 데이터 (results 폴더의 JSON 파일들)
         const DEFAULT_WORD_SETS = [
             {
@@ -1384,78 +1378,10 @@
 ];
         // 초기화
         function init() {
-            loadFromStorage();
-            
-            // DEFAULT_WORD_SETS의 파일명 목록
-            const defaultFileNames = new Set(DEFAULT_WORD_SETS.map(set => set.fileName));
-            
-            // LocalStorage에 저장된 파일명 목록
-            const storedFileNames = new Set(wordSets.map(set => set.fileName));
-            
-            // DEFAULT_WORD_SETS에 있는 모든 파일이 LocalStorage에 있는지 확인
-            let allDefaultFilesExist = true;
-            for (const fileName of defaultFileNames) {
-                if (!storedFileNames.has(fileName)) {
-                    allDefaultFilesExist = false;
-                    break;
-                }
-            }
-            
-            // LocalStorage에 데이터가 없거나, DEFAULT_WORD_SETS와 개수가 다르거나,
-            // DEFAULT_WORD_SETS에 있는 파일이 LocalStorage에 없으면 업데이트
-            const needsUpdate = wordSets.length === 0 || 
-                               DEFAULT_WORD_SETS.length !== wordSets.length ||
-                               !allDefaultFilesExist;
-            
-            if (needsUpdate) {
-                // DEFAULT_WORD_SETS를 기준으로 업데이트
-                // 기존 가중치는 유지하고, 새 단어만 가중치 초기화
-                DEFAULT_WORD_SETS.forEach(set => {
-                    const existingIndex = wordSets.findIndex(s => s.fileName === set.fileName);
-                    if (existingIndex >= 0) {
-                        // 기존 데이터 업데이트 (가중치는 유지)
-                        wordSets[existingIndex] = set;
-                    } else {
-                        // 새 데이터 추가
-                        wordSets.push(set);
-                    }
-                    
-                    // 새 단어들의 가중치 초기화
-                    set.words.forEach(word => {
-                        const key = `${set.fileName}_${word.id}`;
-                        if (!weights[key]) {
-                            weights[key] = 1;
-                        }
-                    });
-                });
-                
-                // DEFAULT_WORD_SETS에 없는 파일은 제거
-                wordSets = wordSets.filter(set => defaultFileNames.has(set.fileName));
-                
-                saveToStorage();
-            }
+            // DEFAULT_WORD_SETS를 그대로 사용
+            wordSets = [...DEFAULT_WORD_SETS];
             
             renderFileList();
-        }
-        
-        // LocalStorage에서 데이터 로드
-        function loadFromStorage() {
-            const savedSets = localStorage.getItem(STORAGE_KEYS.WORD_SETS);
-            const savedWeights = localStorage.getItem(STORAGE_KEYS.WEIGHTS);
-            
-            if (savedSets) {
-                wordSets = JSON.parse(savedSets);
-            }
-            
-            if (savedWeights) {
-                weights = JSON.parse(savedWeights);
-            }
-        }
-        
-        // LocalStorage에 저장
-        function saveToStorage() {
-            localStorage.setItem(STORAGE_KEYS.WORD_SETS, JSON.stringify(wordSets));
-            localStorage.setItem(STORAGE_KEYS.WEIGHTS, JSON.stringify(weights));
         }
         
         // 파일 업로드 처리
@@ -1475,19 +1401,11 @@
                         wordSets.push(data);
                     }
                     
-                    // 새 단어들의 가중치 초기화
-                    data.words.forEach(word => {
-                        const key = `${data.fileName}_${word.id}`;
-                        if (!weights[key]) {
-                            weights[key] = 1;
-                        }
-                    });
                 } catch (error) {
                     alert(`파일 "${file.name}" 로드 실패: ${error.message}`);
                 }
             }
             
-            saveToStorage();
             renderFileList();
             event.target.value = ''; // 같은 파일 재선택 가능하도록
         }
@@ -1636,6 +1554,12 @@
             
             currentWordIndex = -1;
             wordHistory = [];
+            weights = {}; // 가중치 초기화 (세션 중에만 사용)
+            
+            // 선택된 단어들의 가중치를 1로 초기화
+            selectedWords.forEach(word => {
+                weights[word.weightKey] = 1;
+            });
             
             document.getElementById('fileSelectionScreen').classList.add('hidden');
             document.getElementById('homeBtn').classList.remove('hidden');
@@ -1683,7 +1607,6 @@
                     // 평가하기 모드: 정답 확인 안하고 넘어감
                     weights[currentWord.weightKey] = Math.max(1, (weights[currentWord.weightKey] || 1) - 1);
                 }
-                saveToStorage();
             }
             
             const newWord = getWeightedRandomWord();
@@ -1815,7 +1738,6 @@
             
             // 가중치 증가
             weights[word.weightKey] = Math.min(5, (weights[word.weightKey] || 1) + 1);
-            saveToStorage();
             
             // 발음이 있는지 확인
             const hasPronunciation = word.pronunciation && word.pronunciation.trim() !== '';
