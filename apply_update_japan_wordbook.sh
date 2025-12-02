@@ -1,2 +1,2 @@
-cp japan_wordbook_no_words.html japan_wordbook.html
-python word_init_script.py japan_wordbook.html results
+cp japan_wordbook_no_words.html index.html
+python word_init_script.py index.html results
