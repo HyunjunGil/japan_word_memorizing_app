@@ -118,13 +118,13 @@
     {
       "id": 20,
       "japanese": "暗記する",
-      "pronunciation": "あんき",
+      "pronunciation": "あんきする",
       "meaning": "암기하다"
     },
     {
       "id": 21,
       "japanese": "カーブする",
-      "pronunciation": "",
+      "pronunciation": "カーブする",
       "meaning": "구부러지다"
     },
     {
@@ -136,7 +136,7 @@
     {
       "id": 23,
       "japanese": "回収する",
-      "pronunciation": "かいしゅう",
+      "pronunciation": "かいしゅうする",
       "meaning": "회수하다"
     },
     {
@@ -160,7 +160,7 @@
     {
       "id": 27,
       "japanese": "協力する",
-      "pronunciation": "きょうりょく",
+      "pronunciation": "きょうりょくする",
       "meaning": "협력하다"
     },
     {
@@ -226,13 +226,13 @@
     {
       "id": 38,
       "japanese": "疲れる",
-      "pronunciation": "つか",
+      "pronunciation": "つかれる",
       "meaning": "피로하다"
     },
     {
       "id": 39,
       "japanese": "検討する",
-      "pronunciation": "けんとう",
+      "pronunciation": "けんとうする",
       "meaning": "검토하다"
     },
     {
@@ -244,7 +244,7 @@
     {
       "id": 41,
       "japanese": "混雑する",
-      "pronunciation": "こんざつ",
+      "pronunciation": "こんざつする",
       "meaning": "혼잡하다"
     },
     {
@@ -256,7 +256,7 @@
     {
       "id": 43,
       "japanese": "指導する",
-      "pronunciation": "しどう",
+      "pronunciation": "しどうする",
       "meaning": "지도하다"
     },
     {

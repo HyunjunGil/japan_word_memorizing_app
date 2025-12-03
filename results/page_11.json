@@ -166,7 +166,7 @@
     {
       "id": 28,
       "japanese": "容易だ",
-      "pronunciation": "ようい",
+      "pronunciation": "よういだ",
       "meaning": "용이하다"
     },
     {
@@ -274,13 +274,13 @@
     {
       "id": 46,
       "japanese": "疲れ",
-      "pronunciation": "つか",
+      "pronunciation": "つかれ",
       "meaning": "피로"
     },
     {
       "id": 47,
       "japanese": "疲れる",
-      "pronunciation": "つか",
+      "pronunciation": "つかれる",
       "meaning": "지치다"
     },
     {
