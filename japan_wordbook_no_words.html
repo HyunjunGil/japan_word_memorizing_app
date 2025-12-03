@@ -537,16 +537,41 @@
             color: #333;
         }
         
-        .study-table .japanese-link {
-            color: #333;
-            text-decoration: none;
-            cursor: pointer;
-            transition: color 0.2s;
+        .study-table .play-cell {
+            width: 60px;
+            text-align: center;
         }
         
-        .study-table .japanese-link:hover {
+        .study-table .play-button {
+            background: transparent;
+            color: #667eea;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            width: 32px;
+            height: 32px;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            padding: 0;
+        }
+        
+        .study-table .play-button:hover {
+            background: #f8f9ff;
+            border-color: #667eea;
+            color: #764ba2;
+        }
+        
+        .study-table .play-button:active {
+            background: #e8e9ff;
+        }
+        
+        .study-table .japanese-cell {
+            font-size: 20px;
+            font-weight: bold;
             color: #333;
-            text-decoration: underline;
         }
         
         .study-table .pronunciation-cell {
@@ -768,6 +793,16 @@
                 font-size: 12px;
             }
             
+            .study-table .play-cell {
+                width: 50px;
+            }
+            
+            .study-table .play-button {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+            
             .study-table .japanese-cell {
                 font-size: 16px;
             }
@@ -821,6 +856,16 @@
             .study-table td {
                 padding: 8px 6px;
                 font-size: 12px;
+            }
+            
+            .study-table .play-cell {
+                width: 45px;
+            }
+            
+            .study-table .play-button {
+                width: 26px;
+                height: 26px;
+                font-size: 11px;
             }
             
             .study-table .japanese-cell {
@@ -1497,6 +1542,7 @@
                     <thead>
                         <tr>
                             <th class="id-cell">ID</th>
+                            <th class="play-cell">재생</th>
                             <th class="japanese-cell">일본어 표기</th>
                             <th class="pronunciation-cell">발음</th>
                             <th class="meaning-cell">의미</th>
@@ -1511,9 +1557,10 @@
                             return `
                             <tr>
                                 <td class="id-cell">${word.id}</td>
-                                <td class="japanese-cell">
-                                    <span class="japanese-link" onclick="playPronunciation('${textToSpeak.replace(/'/g, "\\'")}')" style="cursor: pointer;">${word.japanese}</span>
+                                <td class="play-cell">
+                                    <button class="play-button" onclick="playPronunciation('${textToSpeak.replace(/'/g, "\\'")}')" title="발음 재생">▶</button>
                                 </td>
+                                <td class="japanese-cell">${word.japanese}</td>
                                 <td class="pronunciation-cell">${word.pronunciation}</td>
                                 <td class="meaning-cell">${word.meaning}</td>
                             </tr>
