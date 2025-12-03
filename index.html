@@ -9457,13 +9457,45 @@
         // 가중치 기반 랜덤 문제 선택 (평가하기 모드)
         function getWeightedRandomQuestion() {
             // 가중치가 1 이상인 문제만 선택 대상에 포함
-            const availableQuestions = selectedQuestions.filter(question => {
+            let availableQuestions = selectedQuestions.filter(question => {
                 const weight = weights[question.weightKey];
                 return weight !== undefined && weight > 0;
             });
             
             if (availableQuestions.length === 0) {
                 return null; // 모든 문제가 완료됨
+            }
+            
+            // 최근 5개 단어 제외 로직 (남은 단어가 5개 초과일 때만 적용)
+            const RECENT_WORD_COUNT = 5;
+            if (availableQuestions.length > RECENT_WORD_COUNT && wordHistory.length > 0) {
+                // wordHistory에서 최근 5개 항목의 단어 식별자 추출
+                const recentWords = new Set();
+                const recentHistory = wordHistory.slice(-RECENT_WORD_COUNT);
+                
+                recentHistory.forEach(item => {
+                    // fileName과 id를 조합하여 단어 식별자 생성
+                    if (item.fileName && item.id !== undefined) {
+                        const wordKey = `${item.fileName}_${item.id}`;
+                        recentWords.add(wordKey);
+                    }
+                });
+                
+                // 최근 5개 단어에 해당하는 문제들을 제외
+                const filteredQuestions = availableQuestions.filter(question => {
+                    if (question.word && question.word.fileName && question.word.id !== undefined) {
+                        const wordKey = `${question.word.fileName}_${question.word.id}`;
+                        return !recentWords.has(wordKey);
+                    }
+                    return true; // fileName이나 id가 없으면 포함
+                });
+                
+                // 필터링 후 남은 문제가 5개 초과이면 필터링된 결과 사용
+                // 5개 이하면 원래 availableQuestions 사용 (중복 방지 비활성화)
+                if (filteredQuestions.length > RECENT_WORD_COUNT) {
+                    availableQuestions = filteredQuestions;
+                }
+                // filteredQuestions.length <= RECENT_WORD_COUNT인 경우는 원래 availableQuestions 사용
             }
             
             const totalWeight = availableQuestions.reduce((sum, question) => {
