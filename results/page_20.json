@@ -1,293 +1,293 @@
 {
-  "fileName": "page_20",
-  "words": [
-    {
-      "id": 1,
-      "japanese": "盛んだ",
-      "pronunciation": "さかんだ",
-      "meaning": "활발하다, 왕성하다"
-    },
-    {
-      "id": 2,
-      "japanese": "静かだ",
-      "pronunciation": "しずかだ",
-      "meaning": "조용하다"
-    },
-    {
-      "id": 3,
-      "japanese": "自動的だ",
-      "pronunciation": "じどうてきだ",
-      "meaning": "자동적이다"
-    },
-    {
-      "id": 4,
-      "japanese": "重大だ",
-      "pronunciation": "じゅうだいだ",
-      "meaning": "중대하다"
-    },
-    {
-      "id": 5,
-      "japanese": "清潔だ",
-      "pronunciation": "せいけつだ",
-      "meaning": "청결하다"
-    },
-    {
-      "id": 6,
-      "japanese": "積極的だ",
-      "pronunciation": "せっきょくてきだ",
-      "meaning": "적극적이다"
-    },
-    {
-      "id": 7,
-      "japanese": "そっくりだ",
-      "pronunciation": "そっくりだ",
-      "meaning": "꼭 닮다"
-    },
-    {
-      "id": 8,
-      "japanese": "代表的だ",
-      "pronunciation": "だいひょうてきだ",
-      "meaning": "대표적이다"
-    },
-    {
-      "id": 9,
-      "japanese": "派手だ",
-      "pronunciation": "はでだ",
-      "meaning": "화려하다"
-    },
-    {
-      "id": 10,
-      "japanese": "複雑だ",
-      "pronunciation": "ふくざつだ",
-      "meaning": "복잡하다"
-    },
-    {
-      "id": 11,
-      "japanese": "無駄だ",
-      "pronunciation": "むだ",
-      "meaning": "헛되다, 쓸데없다"
-    },
-    {
-      "id": 12,
-      "japanese": "豊かだ",
-      "pronunciation": "ゆたかだ",
-      "meaning": "풍부하다"
-    },
-    {
-      "id": 13,
-      "japanese": "いちおう",
-      "pronunciation": "",
-      "meaning": "일단"
-    },
-    {
-      "id": 14,
-      "japanese": "一度に",
-      "pronunciation": "いちど",
-      "meaning": "한 번에"
-    },
-    {
-      "id": 15,
-      "japanese": "うっかり",
-      "pronunciation": "",
-      "meaning": "깜빡, 무심코"
-    },
-    {
-      "id": 16,
-      "japanese": "うろうろ",
-      "pronunciation": "",
-      "meaning": "우왕좌왕"
-    },
-    {
-      "id": 17,
-      "japanese": "おたがいに",
-      "pronunciation": "",
-      "meaning": "서로"
-    },
-    {
-      "id": 18,
-      "japanese": "主に",
-      "pronunciation": "おも",
-      "meaning": "주로"
-    },
-    {
-      "id": 19,
-      "japanese": "がっかり",
-      "pronunciation": "",
-      "meaning": "실망한 모양"
-    },
-    {
-      "id": 20,
-      "japanese": "きちんと",
-      "pronunciation": "",
-      "meaning": "정확히, 깔끔히"
-    },
-    {
-      "id": 21,
-      "japanese": "偶然",
-      "pronunciation": "ぐうぜん",
-      "meaning": "우연히"
-    },
-    {
-      "id": 22,
-      "japanese": "ぐっすり",
-      "pronunciation": "",
-      "meaning": "푹(깊이 잠든 모양)"
-    },
-    {
-      "id": 23,
-      "japanese": "ぐらぐら",
-      "pronunciation": "",
-      "meaning": "흔들흔들"
-    },
-    {
-      "id": 24,
-      "japanese": "さっそく",
-      "pronunciation": "",
-      "meaning": "즉시, 곧"
-    },
-    {
-      "id": 25,
-      "japanese": "しっかり",
-      "pronunciation": "",
-      "meaning": "단단히, 확실히"
-    },
-    {
-      "id": 26,
-      "japanese": "しばらく",
-      "pronunciation": "",
-      "meaning": "잠시"
-    },
-    {
-      "id": 27,
-      "japanese": "ずいぶん",
-      "pronunciation": "",
-      "meaning": "대단히, 몹시"
-    },
-    {
-      "id": 28,
-      "japanese": "ずきずき",
-      "pronunciation": "",
-      "meaning": "욱신욱신"
-    },
-    {
-      "id": 29,
-      "japanese": "絶対に",
-      "pronunciation": "ぜったい",
-      "meaning": "절대로"
-    },
-    {
-      "id": 30,
-      "japanese": "そっと",
-      "pronunciation": "",
-      "meaning": "살짝"
-    },
-    {
-      "id": 31,
-      "japanese": "たまたま",
-      "pronunciation": "",
-      "meaning": "우연히, 때마침"
-    },
-    {
-      "id": 32,
-      "japanese": "ついに",
-      "pronunciation": "",
-      "meaning": "드디어"
-    },
-    {
-      "id": 33,
-      "japanese": "どきどき",
-      "pronunciation": "",
-      "meaning": "두근두근"
-    },
-    {
-      "id": 34,
-      "japanese": "突然",
-      "pronunciation": "とつぜん",
-      "meaning": "돌연, 갑자기"
-    },
-    {
-      "id": 35,
-      "japanese": "とんとん",
-      "pronunciation": "",
-      "meaning": "순조로이, 척척"
-    },
-    {
-      "id": 36,
-      "japanese": "なるべく",
-      "pronunciation": "",
-      "meaning": "가능한 한, 되도록"
-    },
-    {
-      "id": 37,
-      "japanese": "はきはき",
-      "pronunciation": "",
-      "meaning": "시원시원"
-    },
-    {
-      "id": 38,
-      "japanese": "はっきり",
-      "pronunciation": "",
-      "meaning": "똑똑히, 명확히"
-    },
-    {
-      "id": 39,
-      "japanese": "早めに",
-      "pronunciation": "はや",
-      "meaning": "빨리, 일찌감치"
-    },
-    {
-      "id": 40,
-      "japanese": "ばらばら",
-      "pronunciation": "",
-      "meaning": "뿔뿔이"
-    },
-    {
-      "id": 41,
-      "japanese": "ぴかぴか",
-      "pronunciation": "",
-      "meaning": "반짝반짝"
-    },
-    {
-      "id": 42,
-      "japanese": "ぶつぶつ",
-      "pronunciation": "",
-      "meaning": "투덜투덜"
-    },
-    {
-      "id": 43,
-      "japanese": "ふらふら",
-      "pronunciation": "",
-      "meaning": "휘청휘청"
-    },
-    {
-      "id": 44,
-      "japanese": "ぶらぶら",
-      "pronunciation": "",
-      "meaning": "어슬렁어슬렁"
-    },
-    {
-      "id": 45,
-      "japanese": "別々",
-      "pronunciation": "べつべつ",
-      "meaning": "따로따로"
-    },
-    {
-      "id": 46,
-      "japanese": "ぺらぺら",
-      "pronunciation": "",
-      "meaning": "술술"
-    },
-    {
-      "id": 47,
-      "japanese": "まったく",
-      "pronunciation": "",
-      "meaning": "전혀"
-    },
-    {
-      "id": 48,
-      "japanese": "無理に",
-      "pronunciation": "むり",
-      "meaning": "무리하게"
-    }
-  ]
+   "fileName": "page_20",
+   "words": [
+      {
+         "id": 1,
+         "japanese": "盛んだ",
+         "pronunciation": "さかんだ",
+         "meaning": "활발하다, 왕성하다"
+      },
+      {
+         "id": 2,
+         "japanese": "静かだ",
+         "pronunciation": "しずかだ",
+         "meaning": "조용하다"
+      },
+      {
+         "id": 3,
+         "japanese": "自動的だ",
+         "pronunciation": "じどうてきだ",
+         "meaning": "자동적이다"
+      },
+      {
+         "id": 4,
+         "japanese": "重大だ",
+         "pronunciation": "じゅうだいだ",
+         "meaning": "중대하다"
+      },
+      {
+         "id": 5,
+         "japanese": "清潔だ",
+         "pronunciation": "せいけつだ",
+         "meaning": "청결하다"
+      },
+      {
+         "id": 6,
+         "japanese": "積極的だ",
+         "pronunciation": "せっきょくてきだ",
+         "meaning": "적극적이다"
+      },
+      {
+         "id": 7,
+         "japanese": "そっくりだ",
+         "pronunciation": "そっくりだ",
+         "meaning": "꼭 닮다"
+      },
+      {
+         "id": 8,
+         "japanese": "代表的だ",
+         "pronunciation": "だいひょうてきだ",
+         "meaning": "대표적이다"
+      },
+      {
+         "id": 9,
+         "japanese": "派手だ",
+         "pronunciation": "はでだ",
+         "meaning": "화려하다"
+      },
+      {
+         "id": 10,
+         "japanese": "複雑だ",
+         "pronunciation": "ふくざつだ",
+         "meaning": "복잡하다"
+      },
+      {
+         "id": 11,
+         "japanese": "無駄だ",
+         "pronunciation": "むだだ",
+         "meaning": "헛되다, 쓸데없다"
+      },
+      {
+         "id": 12,
+         "japanese": "豊かだ",
+         "pronunciation": "ゆたかだ",
+         "meaning": "풍부하다"
+      },
+      {
+         "id": 13,
+         "japanese": "いちおう",
+         "pronunciation": "いちおう",
+         "meaning": "일단"
+      },
+      {
+         "id": 14,
+         "japanese": "一度に",
+         "pronunciation": "いちどに",
+         "meaning": "한 번에"
+      },
+      {
+         "id": 15,
+         "japanese": "うっかり",
+         "pronunciation": "うっかり",
+         "meaning": "깜빡, 무심코"
+      },
+      {
+         "id": 16,
+         "japanese": "うろうろ",
+         "pronunciation": "うろうろ",
+         "meaning": "우왕좌왕"
+      },
+      {
+         "id": 17,
+         "japanese": "おたがいに",
+         "pronunciation": "おたがいに",
+         "meaning": "서로"
+      },
+      {
+         "id": 18,
+         "japanese": "主に",
+         "pronunciation": "おもに",
+         "meaning": "주로"
+      },
+      {
+         "id": 19,
+         "japanese": "がっかり",
+         "pronunciation": "がっかり",
+         "meaning": "실망한 모양"
+      },
+      {
+         "id": 20,
+         "japanese": "きちんと",
+         "pronunciation": "きちんと",
+         "meaning": "정확히, 깔끔히"
+      },
+      {
+         "id": 21,
+         "japanese": "偶然",
+         "pronunciation": "ぐうぜん",
+         "meaning": "우연히"
+      },
+      {
+         "id": 22,
+         "japanese": "ぐっすり",
+         "pronunciation": "ぐっすり",
+         "meaning": "푹(깊이 잠든 모양)"
+      },
+      {
+         "id": 23,
+         "japanese": "ぐらぐら",
+         "pronunciation": "ぐらぐら",
+         "meaning": "흔들흔들"
+      },
+      {
+         "id": 24,
+         "japanese": "さっそく",
+         "pronunciation": "さっそく",
+         "meaning": "즉시, 곧"
+      },
+      {
+         "id": 25,
+         "japanese": "しっかり",
+         "pronunciation": "しっかり",
+         "meaning": "단단히, 확실히"
+      },
+      {
+         "id": 26,
+         "japanese": "しばらく",
+         "pronunciation": "しばらく",
+         "meaning": "잠시"
+      },
+      {
+         "id": 27,
+         "japanese": "ずいぶん",
+         "pronunciation": "ずいぶん",
+         "meaning": "대단히, 몹시"
+      },
+      {
+         "id": 28,
+         "japanese": "ずきずき",
+         "pronunciation": "ずきずき",
+         "meaning": "욱신욱신"
+      },
+      {
+         "id": 29,
+         "japanese": "絶対に",
+         "pronunciation": "ぜったいに",
+         "meaning": "절대로"
+      },
+      {
+         "id": 30,
+         "japanese": "そっと",
+         "pronunciation": "そっと",
+         "meaning": "살짝"
+      },
+      {
+         "id": 31,
+         "japanese": "たまたま",
+         "pronunciation": "たまたま",
+         "meaning": "우연히, 때마침"
+      },
+      {
+         "id": 32,
+         "japanese": "ついに",
+         "pronunciation": "ついに",
+         "meaning": "드디어"
+      },
+      {
+         "id": 33,
+         "japanese": "どきどき",
+         "pronunciation": "どきどき",
+         "meaning": "두근두근"
+      },
+      {
+         "id": 34,
+         "japanese": "突然",
+         "pronunciation": "とつぜん",
+         "meaning": "돌연, 갑자기"
+      },
+      {
+         "id": 35,
+         "japanese": "とんとん",
+         "pronunciation": "とんとん",
+         "meaning": "순조로이, 척척"
+      },
+      {
+         "id": 36,
+         "japanese": "なるべく",
+         "pronunciation": "なるべく",
+         "meaning": "가능한 한, 되도록"
+      },
+      {
+         "id": 37,
+         "japanese": "はきはき",
+         "pronunciation": "はきはき",
+         "meaning": "시원시원"
+      },
+      {
+         "id": 38,
+         "japanese": "はっきり",
+         "pronunciation": "はっきり",
+         "meaning": "똑똑히, 명확히"
+      },
+      {
+         "id": 39,
+         "japanese": "早めに",
+         "pronunciation": "はやめに",
+         "meaning": "빨리, 일찌감치"
+      },
+      {
+         "id": 40,
+         "japanese": "ばらばら",
+         "pronunciation": "ばらばら",
+         "meaning": "뿔뿔이"
+      },
+      {
+         "id": 41,
+         "japanese": "ぴかぴか",
+         "pronunciation": "ぴかぴか",
+         "meaning": "반짝반짝"
+      },
+      {
+         "id": 42,
+         "japanese": "ぶつぶつ",
+         "pronunciation": "ぶつぶつ",
+         "meaning": "투덜투덜"
+      },
+      {
+         "id": 43,
+         "japanese": "ふらふら",
+         "pronunciation": "ふらふら",
+         "meaning": "휘청휘청"
+      },
+      {
+         "id": 44,
+         "japanese": "ぶらぶら",
+         "pronunciation": "ぶらぶら",
+         "meaning": "어슬렁어슬렁"
+      },
+      {
+         "id": 45,
+         "japanese": "別々",
+         "pronunciation": "べつべつ",
+         "meaning": "따로따로"
+      },
+      {
+         "id": 46,
+         "japanese": "ぺらぺら",
+         "pronunciation": "ぺらぺら",
+         "meaning": "술술"
+      },
+      {
+         "id": 47,
+         "japanese": "まったく",
+         "pronunciation": "まったく",
+         "meaning": "전혀"
+      },
+      {
+         "id": 48,
+         "japanese": "無理に",
+         "pronunciation": "むりに",
+         "meaning": "무리하게"
+      }
+   ]
 }
