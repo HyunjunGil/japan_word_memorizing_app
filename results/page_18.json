@@ -4,289 +4,289 @@
     {
       "id": 1,
       "japanese": "デザイン",
-      "pronunciation": "",
+      "pronunciation": "デザイン",
       "meaning": "디자인"
     },
     {
       "id": 2,
       "japanese": "ドライヤー",
-      "pronunciation": "",
+      "pronunciation": "ドライヤー",
       "meaning": "드라이어"
     },
     {
       "id": 3,
       "japanese": "ノック",
-      "pronunciation": "",
+      "pronunciation": "ノック",
       "meaning": "노크"
     },
     {
       "id": 4,
       "japanese": "バーゲン",
-      "pronunciation": "",
+      "pronunciation": "バーゲン",
       "meaning": "바겐세일"
     },
     {
       "id": 5,
       "japanese": "バケツ",
-      "pronunciation": "",
+      "pronunciation": "バケツ",
       "meaning": "양동이"
     },
     {
       "id": 6,
       "japanese": "パンフレット",
-      "pronunciation": "",
+      "pronunciation": "パンフレット",
       "meaning": "팸플릿, 소책자"
     },
     {
       "id": 7,
       "japanese": "ヒント",
-      "pronunciation": "",
+      "pronunciation": "ヒント",
       "meaning": "힌트"
     },
     {
       "id": 8,
       "japanese": "マイク",
-      "pronunciation": "",
+      "pronunciation": "マイク",
       "meaning": "마이크"
     },
     {
       "id": 9,
       "japanese": "メッセージ",
-      "pronunciation": "",
+      "pronunciation": "メッセージ",
       "meaning": "메시지"
     },
     {
       "id": 10,
       "japanese": "リサイクル",
-      "pronunciation": "",
+      "pronunciation": "リサイクル",
       "meaning": "재활용, 리사이클"
     },
     {
       "id": 11,
       "japanese": "レシピ",
-      "pronunciation": "",
+      "pronunciation": "レシピ",
       "meaning": "레시피"
     },
     {
       "id": 12,
       "japanese": "ロッカー",
-      "pronunciation": "",
+      "pronunciation": "ロッカー",
       "meaning": "보관함, 로커"
     },
     {
       "id": 13,
       "japanese": "あきらめる",
-      "pronunciation": "",
+      "pronunciation": "あきらめる",
       "meaning": "포기하다"
     },
     {
       "id": 14,
       "japanese": "飽きる",
-      "pronunciation": "あ",
+      "pronunciation": "あきる",
       "meaning": "질리다, 싫증나다"
     },
     {
       "id": 15,
       "japanese": "扱う",
-      "pronunciation": "あつか",
+      "pronunciation": "あつかう",
       "meaning": "취급하다"
     },
     {
       "id": 16,
       "japanese": "あふれる",
-      "pronunciation": "",
+      "pronunciation": "あふれる",
       "meaning": "넘치다"
     },
     {
       "id": 17,
       "japanese": "編む",
-      "pronunciation": "あ",
+      "pronunciation": "あむ",
       "meaning": "뜨다, 엮다"
     },
     {
       "id": 18,
       "japanese": "合わせる",
-      "pronunciation": "あ",
+      "pronunciation": "あわせる",
       "meaning": "합치다"
     },
     {
       "id": 19,
       "japanese": "起きる",
-      "pronunciation": "お",
+      "pronunciation": "おきる",
       "meaning": "일어나다"
     },
     {
       "id": 20,
       "japanese": "溺れる",
-      "pronunciation": "おぼ",
+      "pronunciation": "おぼれる",
       "meaning": "(물에) 빠지다"
     },
     {
       "id": 21,
       "japanese": "隠す",
-      "pronunciation": "かく",
+      "pronunciation": "かくす",
       "meaning": "숨기다, 감추다"
     },
     {
       "id": 22,
       "japanese": "囲む",
-      "pronunciation": "かこ",
+      "pronunciation": "かこむ",
       "meaning": "둘러싸다"
     },
     {
       "id": 23,
       "japanese": "重ねる",
-      "pronunciation": "かさ",
+      "pronunciation": "かさねる",
       "meaning": "포개다"
     },
     {
       "id": 24,
       "japanese": "枯れる",
-      "pronunciation": "か",
+      "pronunciation": "かれる",
       "meaning": "시들다"
     },
     {
       "id": 25,
       "japanese": "繰り返す",
-      "pronunciation": "くかえ",
+      "pronunciation": "くりかえす",
       "meaning": "반복하다, 되풀이하다"
     },
     {
       "id": 26,
       "japanese": "加える",
-      "pronunciation": "くわ",
+      "pronunciation": "くわえる",
       "meaning": "추가하다, 더하다"
     },
     {
       "id": 27,
       "japanese": "畳む",
-      "pronunciation": "たた",
+      "pronunciation": "たたむ",
       "meaning": "접다, 개다"
     },
     {
       "id": 28,
       "japanese": "経つ",
-      "pronunciation": "た",
+      "pronunciation": "たつ",
       "meaning": "(시간이) 지나다"
     },
     {
       "id": 29,
       "japanese": "貯める",
-      "pronunciation": "",
+      "pronunciation": "ためる",
       "meaning": "모으다"
     },
     {
       "id": 30,
       "japanese": "頼る",
-      "pronunciation": "たよ",
+      "pronunciation": "たよる",
       "meaning": "의지하다"
     },
     {
       "id": 31,
       "japanese": "付き合う",
-      "pronunciation": "つあ",
+      "pronunciation": "つきあう",
       "meaning": "사귀다"
     },
     {
       "id": 32,
       "japanese": "つめる",
-      "pronunciation": "",
+      "pronunciation": "つめる",
       "meaning": "채우다, 담다"
     },
     {
       "id": 33,
       "japanese": "積もる",
-      "pronunciation": "つ",
+      "pronunciation": "つもる",
       "meaning": "쌓이다"
     },
     {
       "id": 34,
       "japanese": "連れる",
-      "pronunciation": "つ",
+      "pronunciation": "つれる",
       "meaning": "데리고 가(오)다, 동반하다"
     },
     {
       "id": 35,
       "japanese": "溶ける",
-      "pronunciation": "と",
+      "pronunciation": "とける",
       "meaning": "녹다"
     },
     {
       "id": 36,
       "japanese": "とばす",
-      "pronunciation": "と",
+      "pronunciation": "とばす",
       "meaning": "날리다"
     },
     {
       "id": 37,
       "japanese": "取り消す",
-      "pronunciation": "とけ",
+      "pronunciation": "とりけす",
       "meaning": "취소하다"
     },
     {
       "id": 38,
       "japanese": "取り出す",
-      "pronunciation": "とだ",
+      "pronunciation": "とりだす",
       "meaning": "꺼내다"
     },
     {
       "id": 39,
       "japanese": "流れる",
-      "pronunciation": "なが",
+      "pronunciation": "ながれる",
       "meaning": "흐르다, 흘러가다"
     },
     {
       "id": 40,
       "japanese": "なめる",
-      "pronunciation": "",
+      "pronunciation": "なめる",
       "meaning": "핥다"
     },
     {
       "id": 41,
       "japanese": "にぎる",
-      "pronunciation": "",
+      "pronunciation": "にぎる",
       "meaning": "쥐다"
     },
     {
       "id": 42,
       "japanese": "延ばす",
-      "pronunciation": "の",
+      "pronunciation": "のばす",
       "meaning": "연기하다, 연장시키다"
     },
     {
       "id": 43,
       "japanese": "伸びる",
-      "pronunciation": "の",
+      "pronunciation": "のびる",
       "meaning": "뻗다, 펴지다"
     },
     {
       "id": 44,
       "japanese": "話し合う",
-      "pronunciation": "はな あ",
+      "pronunciation": "はなしあう",
       "meaning": "서로 이야기하다"
     },
     {
       "id": 45,
       "japanese": "ひかれる",
-      "pronunciation": "",
+      "pronunciation": "ひかれる",
       "meaning": "치이다"
     },
     {
       "id": 46,
       "japanese": "引き受ける",
-      "pronunciation": "ひ",
+      "pronunciation": "ひきうける",
       "meaning": "떠맡다"
     },
     {
       "id": 47,
       "japanese": "引き落とす",
-      "pronunciation": "ひ お",
+      "pronunciation": "ひきおとす",
       "meaning": "자동이체하다"
     },
     {
       "id": 48,
       "japanese": "広まる",
-      "pronunciation": "ひろ",
+      "pronunciation": "ひろまる",
       "meaning": "널리 퍼지다, 넓어지다"
     }
   ]
