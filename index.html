@@ -637,6 +637,16 @@
             font-size: 14px;
         }
         
+        .study-table th.id-cell {
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+        
+        .study-table th.id-cell:hover {
+            background-color: #e8e9ff;
+        }
+        
         .study-table .play-cell {
             width: 60px;
             text-align: center;
@@ -1198,6 +1208,7 @@
         let buttonAlignment = 'center'; // 'left', 'center', 'right'
         let longPressTimer = null; // 긴 누름 타이머
         let longPressCompleted = false; // 긴 누름이 완료되어 복사되었는지 여부
+        let idSortOrder = 'asc'; // 'asc', 'desc', 'random' - ID 정렬 순서
         
         // 기본 단어 데이터는 results 폴더에서 동적으로 로드
         const DEFAULT_WORD_SETS = [];
@@ -1478,6 +1489,8 @@
             document.getElementById('changeSetBtn').classList.remove('hidden');
             
             if (studyMode === 'study') {
+                // 공부하기 모드: 정렬 순서 초기화 (오름차순)
+                idSortOrder = 'asc';
                 // 공부하기 모드: 테이블 화면 표시
                 displayStudyTable(selectedSet);
                 document.getElementById('studyTableScreen').classList.remove('hidden');
@@ -1793,9 +1806,52 @@
             speechSynthesis.speak(utterance);
         }
         
+        // ID 정렬 순서 변경
+        function toggleIdSort() {
+            if (idSortOrder === 'asc') {
+                idSortOrder = 'desc';
+            } else if (idSortOrder === 'desc') {
+                idSortOrder = 'random';
+            } else {
+                idSortOrder = 'asc';
+            }
+            // 현재 선택된 단어셋으로 테이블 다시 표시
+            const selectedSet = wordSets.find(set => {
+                const checkbox = document.getElementById(`file_${wordSets.indexOf(set)}`);
+                return checkbox && checkbox.checked;
+            });
+            if (selectedSet) {
+                displayStudyTable(selectedSet);
+            }
+        }
+        
         // 공부하기 테이블 표시
         function displayStudyTable(wordSet) {
             const container = document.getElementById('studyTableContainer');
+            
+            // 정렬된 단어 배열 생성
+            let sortedWords = [...wordSet.words];
+            if (idSortOrder === 'asc') {
+                sortedWords.sort((a, b) => a.id - b.id);
+            } else if (idSortOrder === 'desc') {
+                sortedWords.sort((a, b) => b.id - a.id);
+            } else if (idSortOrder === 'random') {
+                // Fisher-Yates 셔플 알고리즘
+                for (let i = sortedWords.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [sortedWords[i], sortedWords[j]] = [sortedWords[j], sortedWords[i]];
+                }
+            }
+            
+            // 정렬 순서 표시 아이콘
+            let sortIcon = '';
+            if (idSortOrder === 'asc') {
+                sortIcon = ' ↑';
+            } else if (idSortOrder === 'desc') {
+                sortIcon = ' ↓';
+            } else {
+                sortIcon = ' ↕';
+            }
             
             const infoHTML = `
                 <div class="study-table-info">
@@ -1808,7 +1864,7 @@
                 <table class="study-table">
                     <thead>
                         <tr>
-                            <th class="id-cell">ID</th>
+                            <th class="id-cell" onclick="toggleIdSort()" style="cursor: pointer;" title="ID 정렬 변경">ID${sortIcon}</th>
                             <th class="play-cell">재생</th>
                             <th class="japanese-cell" onclick="toggleColumn('japanese')">일본어 표기</th>
                             <th class="pronunciation-cell" onclick="toggleColumn('pronunciation')">발음</th>
@@ -1816,7 +1872,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        ${wordSet.words.map((word, index) => {
+                        ${sortedWords.map((word, index) => {
                             // 발음이 있으면 발음을, 없으면 일본어 표기를 사용
                             const textToSpeak = word.pronunciation && word.pronunciation.trim() !== '' 
                                 ? word.pronunciation 
