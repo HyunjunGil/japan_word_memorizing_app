@@ -381,6 +381,7 @@
             background: white;
             border-radius: 8px;
             text-align: center;
+            position: relative;
         }
         
         .card-answer-label {
@@ -393,6 +394,35 @@
             font-size: 24px;
             font-weight: bold;
             color: #333;
+        }
+        
+        .pronunciation-play-button {
+            background: transparent;
+            color: #667eea;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            width: 32px;
+            height: 32px;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            padding: 0;
+            margin-left: 10px;
+            vertical-align: middle;
+            transform: translateY(-2px);
+        }
+        
+        .pronunciation-play-button:hover {
+            background: #f8f9ff;
+            border-color: #667eea;
+            color: #764ba2;
+        }
+        
+        .pronunciation-play-button:active {
+            background: #e8e9ff;
         }
         
         .study-mode-card {
@@ -864,6 +894,13 @@
                 font-size: 20px;
             }
             
+            .pronunciation-play-button {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+                margin-left: 8px;
+            }
+            
             .card-controls {
                 flex-direction: row;
                 justify-content: center;
@@ -995,6 +1032,13 @@
             
             .card-content {
                 font-size: 28px;
+            }
+            
+            .pronunciation-play-button {
+                width: 26px;
+                height: 26px;
+                font-size: 11px;
+                margin-left: 6px;
             }
             
             .study-table-info {
@@ -1657,23 +1701,47 @@
             document.getElementById('cardContent').style.fontSize = '48px';
             
             // 답 부분도 미리 렌더링하되 hidden으로 설정 (카드 높이 유지)
+            // 순서: 일본어 표기, 뜻, 발음 (발음이 가장 아래)
             const answers = [];
             if (currentQuestion.type !== 'japanese') {
-                answers.push({ label: '일본어 표기', value: word.japanese });
-            }
-            if (currentQuestion.type !== 'pronunciation' && hasPronunciation) {
-                answers.push({ label: '발음', value: word.pronunciation });
+                // 일본어 표기 항목 추가
+                // 발음이 없으면 일본어 표기 항목에 듣기 버튼 추가
+                const hasPlayButtonForJapanese = !hasPronunciation;
+                const playTextForJapanese = word.japanese;
+                answers.push({ 
+                    label: '일본어 표기', 
+                    value: word.japanese, 
+                    hasPlayButton: hasPlayButtonForJapanese,
+                    playText: playTextForJapanese
+                });
             }
             if (currentQuestion.type !== 'meaning') {
-                answers.push({ label: '뜻', value: word.meaning });
+                answers.push({ label: '뜻', value: word.meaning, hasPlayButton: false });
+            }
+            if (currentQuestion.type !== 'pronunciation' && hasPronunciation) {
+                // 발음이 있으면 발음 항목에 듣기 버튼 추가 (가장 아래)
+                const textToSpeak = word.pronunciation && word.pronunciation.trim() !== '' 
+                    ? word.pronunciation 
+                    : word.japanese;
+                answers.push({ 
+                    label: '발음', 
+                    value: word.pronunciation, 
+                    hasPlayButton: true,
+                    playText: textToSpeak
+                });
             }
             
-            const answerHTML = answers.map(ans => `
+            const answerHTML = answers.map(ans => {
+                const playButton = ans.hasPlayButton 
+                    ? `<button class="pronunciation-play-button" onclick="playPronunciation('${ans.playText.replace(/'/g, "\\'")}')" title="발음 재생">▶</button>`
+                    : '';
+                return `
                 <div class="card-answer-item">
                     <div class="card-answer-label">${ans.label}</div>
-                    <div class="card-answer-value">${ans.value}</div>
+                    <div class="card-answer-value">${ans.value}${playButton}</div>
                 </div>
-            `).join('');
+            `;
+            }).join('');
             
             document.getElementById('cardAnswer').innerHTML = answerHTML;
             document.getElementById('cardAnswer').classList.add('hidden');
