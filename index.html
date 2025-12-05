@@ -191,6 +191,55 @@
             color: #666;
         }
         
+        .question-type-selection {
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .question-type-selection h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .question-type-options {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .question-type-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+            user-select: none;
+        }
+        
+        .question-type-option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+        
+        .question-type-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .question-type-option span {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+        
         .selection-controls {
             display: flex;
             gap: 10px;
@@ -750,6 +799,29 @@
                 font-size: 11px;
             }
             
+            .question-type-selection {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .question-type-selection h3 {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+            
+            .question-type-options {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .question-type-option {
+                padding: 8px 12px;
+            }
+            
+            .question-type-option span {
+                font-size: 13px;
+            }
+            
             .btn {
                 padding: 10px 16px;
                 font-size: 14px;
@@ -1005,6 +1077,21 @@
                     </div>
                     
                     <div id="fileListContainer" class="hidden">
+                        <!-- 문제 유형 선택 (평가하기 모드일 때만 표시) -->
+                        <div id="questionTypeSelection" class="question-type-selection hidden">
+                            <h3 style="margin-bottom: 15px;">문제 유형 선택</h3>
+                            <div class="question-type-options">
+                                <label class="question-type-option">
+                                    <input type="checkbox" id="questionTypeJapanese" checked>
+                                    <span>일본어 표기 문제</span>
+                                </label>
+                                <label class="question-type-option">
+                                    <input type="checkbox" id="questionTypeMeaning" checked>
+                                    <span>의미 문제</span>
+                                </label>
+                            </div>
+                        </div>
+                        
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                             <h3>단어묶음 목록</h3>
                             <div>
@@ -1065,6 +1152,8 @@
         let weights = {};
         let studyMode = 'quiz'; // 'quiz' or 'study'
         let buttonAlignment = 'center'; // 'left', 'center', 'right'
+        let longPressTimer = null; // 긴 누름 타이머
+        let longPressCompleted = false; // 긴 누름이 완료되어 복사되었는지 여부
         
         // 기본 단어 데이터는 results 폴더에서 동적으로 로드
         const DEFAULT_WORD_SETS = [];
@@ -1099,6 +1188,12 @@
             const loadedWordSets = await Promise.all(wordSetPromises);
             // null이 아닌 것만 필터링하여 추가
             wordSets = loadedWordSets.filter(set => set !== null);
+            
+            // 초기 모드가 'quiz'이므로 문제 유형 선택 영역 표시
+            const questionTypeSelection = document.getElementById('questionTypeSelection');
+            if (studyMode === 'quiz') {
+                questionTypeSelection.classList.remove('hidden');
+            }
             
             renderFileList();
         }
@@ -1136,6 +1231,14 @@
                 option.classList.remove('selected');
             });
             event.currentTarget.classList.add('selected');
+            
+            // 문제 유형 선택 영역 표시/숨김
+            const questionTypeSelection = document.getElementById('questionTypeSelection');
+            if (mode === 'quiz') {
+                questionTypeSelection.classList.remove('hidden');
+            } else {
+                questionTypeSelection.classList.add('hidden');
+            }
             
             // 공부하기 모드로 바뀌면 모든 체크박스 해제
             if (mode === 'study') {
@@ -1246,6 +1349,31 @@
             let selectedFileCount = 0;
             let selectedSet = null;
             
+            // 평가하기 모드일 때 선택된 문제 유형 확인
+            let selectedQuestionTypes = [];
+            if (studyMode === 'quiz') {
+                const japaneseChecked = document.getElementById('questionTypeJapanese').checked;
+                const meaningChecked = document.getElementById('questionTypeMeaning').checked;
+                
+                if (!japaneseChecked && !meaningChecked) {
+                    alert('최소 하나의 문제 유형을 선택해주세요.');
+                    return;
+                }
+                
+                if (japaneseChecked) {
+                    selectedQuestionTypes.push({
+                        type: 'japanese',
+                        label: '일본어 표기'
+                    });
+                }
+                if (meaningChecked) {
+                    selectedQuestionTypes.push({
+                        type: 'meaning',
+                        label: '뜻'
+                    });
+                }
+            }
+            
             wordSets.forEach((set, index) => {
                 const checkbox = document.getElementById(`file_${index}`);
                 if (checkbox && checkbox.checked) {
@@ -1259,21 +1387,15 @@
                         };
                         selectedWords.push(wordData);
                         
-                        // 평가하기 모드일 때 각 단어에 대해 2개의 문제 생성
+                        // 평가하기 모드일 때 선택된 문제 유형만 문제 생성
                         if (studyMode === 'quiz') {
-                            // 일본어 표기 문제
-                            selectedQuestions.push({
-                                word: wordData,
-                                questionType: 'japanese',
-                                questionLabel: '일본어 표기',
-                                weightKey: `${set.fileName}_${word.id}_japanese`
-                            });
-                            // 의미 문제
-                            selectedQuestions.push({
-                                word: wordData,
-                                questionType: 'meaning',
-                                questionLabel: '뜻',
-                                weightKey: `${set.fileName}_${word.id}_meaning`
+                            selectedQuestionTypes.forEach(questionType => {
+                                selectedQuestions.push({
+                                    word: wordData,
+                                    questionType: questionType.type,
+                                    questionLabel: questionType.label,
+                                    weightKey: `${set.fileName}_${word.id}_${questionType.type}`
+                                });
                             });
                         }
                     });
@@ -1609,7 +1731,8 @@
             
             const infoHTML = `
                 <div class="study-table-info">
-                    각 텍스트를 클릭하여 보임/숨김 처리할 수 있습니다
+                    각 텍스트를 클릭하여 보임/숨김 처리할 수 있습니다<br>
+                    텍스트를 길게 누르면 클립보드에 복사됩니다
                 </div>
             `;
             
@@ -1636,9 +1759,30 @@
                                 <td class="play-cell">
                                     <button class="play-button" onclick="playPronunciation('${textToSpeak.replace(/'/g, "\\'")}')" title="발음 재생">▶</button>
                                 </td>
-                                <td class="japanese-cell" onclick="toggleCell(this)">${word.japanese}</td>
-                                <td class="pronunciation-cell" onclick="toggleCell(this)">${word.pronunciation}</td>
-                                <td class="meaning-cell" onclick="toggleCell(this)">${word.meaning}</td>
+                                <td class="japanese-cell" onclick="toggleCell(this, event)" 
+                                    onmousedown="startLongPress(this, '${word.japanese.replace(/'/g, "\\'")}')" 
+                                    onmouseup="endLongPress()" 
+                                    onmouseleave="endLongPress()"
+                                    ontouchstart="startLongPress(this, '${word.japanese.replace(/'/g, "\\'")}')" 
+                                    ontouchend="endLongPress()" 
+                                    ontouchcancel="endLongPress()"
+                                    ontouchmove="endLongPress()">${word.japanese}</td>
+                                <td class="pronunciation-cell" onclick="toggleCell(this, event)" 
+                                    onmousedown="startLongPress(this, '${word.pronunciation.replace(/'/g, "\\'")}')" 
+                                    onmouseup="endLongPress()" 
+                                    onmouseleave="endLongPress()"
+                                    ontouchstart="startLongPress(this, '${word.pronunciation.replace(/'/g, "\\'")}')" 
+                                    ontouchend="endLongPress()" 
+                                    ontouchcancel="endLongPress()"
+                                    ontouchmove="endLongPress()">${word.pronunciation}</td>
+                                <td class="meaning-cell" onclick="toggleCell(this, event)" 
+                                    onmousedown="startLongPress(this, '${word.meaning.replace(/'/g, "\\'")}')" 
+                                    onmouseup="endLongPress()" 
+                                    onmouseleave="endLongPress()"
+                                    ontouchstart="startLongPress(this, '${word.meaning.replace(/'/g, "\\'")}')" 
+                                    ontouchend="endLongPress()" 
+                                    ontouchcancel="endLongPress()"
+                                    ontouchmove="endLongPress()">${word.meaning}</td>
                             </tr>
                         `;
                         }).join('')}
@@ -1650,8 +1794,152 @@
         }
         
         // 셀 클릭 시 텍스트 표시/숨김 토글
-        function toggleCell(cell) {
-            cell.classList.toggle('hidden-text');
+        let clickTimer = null;
+        function toggleCell(cell, event) {
+            // 이벤트가 전달되지 않으면 기본 동작
+            if (!event) {
+                cell.classList.toggle('hidden-text');
+                return;
+            }
+            
+            // 긴 누름으로 복사가 완료되었으면 토글하지 않음
+            if (longPressCompleted) {
+                longPressCompleted = false; // 플래그 리셋
+                return;
+            }
+            
+            // 클릭 이벤트를 약간 지연시켜서 긴 누름과 구분
+            if (clickTimer) {
+                clearTimeout(clickTimer);
+            }
+            
+            clickTimer = setTimeout(() => {
+                // 긴 누름이 완료되지 않았을 때만 토글
+                if (longPressTimer === null && !longPressCompleted) {
+                    cell.classList.toggle('hidden-text');
+                }
+                clickTimer = null;
+            }, 100);
+        }
+        
+        // 긴 누름 시작
+        function startLongPress(cell, text) {
+            // 기존 타이머가 있으면 취소
+            if (longPressTimer !== null) {
+                clearTimeout(longPressTimer);
+            }
+            
+            // 플래그 초기화
+            longPressCompleted = false;
+            
+            // 클릭 타이머 취소 (긴 누름이 시작되면 클릭 무시)
+            if (clickTimer !== null) {
+                clearTimeout(clickTimer);
+                clickTimer = null;
+            }
+            
+            // 500ms 후 클립보드에 복사
+            longPressTimer = setTimeout(() => {
+                copyToClipboard(text);
+                longPressTimer = null;
+                longPressCompleted = true; // 복사 완료 플래그 설정
+                
+                // 시각적 피드백 (선택 효과)
+                cell.style.backgroundColor = '#d4edda';
+                setTimeout(() => {
+                    cell.style.backgroundColor = '';
+                }, 200);
+            }, 500);
+        }
+        
+        // 긴 누름 종료
+        function endLongPress() {
+            // 타이머가 아직 실행 중이면 취소 (복사되지 않음)
+            if (longPressTimer !== null) {
+                clearTimeout(longPressTimer);
+                longPressTimer = null;
+                longPressCompleted = false; // 복사되지 않았으므로 플래그 리셋
+            }
+            // 타이머가 null이면 이미 복사가 완료된 상태이므로 플래그는 유지
+        }
+        
+        // 클립보드에 복사
+        async function copyToClipboard(text) {
+            try {
+                // Clipboard API 사용 (최신 브라우저)
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(text);
+                    showCopyFeedback('복사되었습니다!');
+                } else {
+                    // 구형 브라우저 지원: 임시 textarea 사용
+                    const textarea = document.createElement('textarea');
+                    textarea.value = text;
+                    textarea.style.position = 'fixed';
+                    textarea.style.opacity = '0';
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                    showCopyFeedback('복사되었습니다!');
+                }
+            } catch (error) {
+                console.error('클립보드 복사 실패:', error);
+                showCopyFeedback('복사 실패', true);
+            }
+        }
+        
+        // 복사 피드백 표시
+        function showCopyFeedback(message, isError = false) {
+            // 기존 피드백이 있으면 제거
+            const existingFeedback = document.getElementById('copyFeedback');
+            if (existingFeedback) {
+                existingFeedback.remove();
+            }
+            
+            // 피드백 요소 생성
+            const feedback = document.createElement('div');
+            feedback.id = 'copyFeedback';
+            feedback.textContent = message;
+            feedback.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: ${isError ? '#f8d7da' : '#d4edda'};
+                color: ${isError ? '#721c24' : '#155724'};
+                padding: 15px 25px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 1000;
+                font-size: 16px;
+                font-weight: bold;
+                pointer-events: none;
+                animation: fadeInOut 1.5s ease-in-out;
+            `;
+            
+            // 애니메이션 스타일 추가 (아직 없으면)
+            if (!document.getElementById('copyFeedbackStyle')) {
+                const style = document.createElement('style');
+                style.id = 'copyFeedbackStyle';
+                style.textContent = `
+                    @keyframes fadeInOut {
+                        0% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+                        20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                        80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                        100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            document.body.appendChild(feedback);
+            
+            // 1.5초 후 제거
+            setTimeout(() => {
+                if (feedback.parentNode) {
+                    feedback.parentNode.removeChild(feedback);
+                }
+            }, 1500);
         }
         
         // 헤더 클릭 시 해당 컬럼 전체 표시/숨김 토글
@@ -1765,6 +2053,14 @@
             if (quizRadio) quizRadio.checked = true;
             if (studyRadio) studyRadio.checked = false;
             
+            // 문제 유형 선택 영역 표시
+            const questionTypeSelection = document.getElementById('questionTypeSelection');
+            questionTypeSelection.classList.remove('hidden');
+            
+            // 문제 유형 체크박스 초기화 (둘 다 체크)
+            document.getElementById('questionTypeJapanese').checked = true;
+            document.getElementById('questionTypeMeaning').checked = true;
+            
             // 체크박스 해제
             deselectAll();
         }
@@ -1774,21 +2070,41 @@
             // 현재 선택된 단어셋으로 평가하기 모드 시작
             selectedQuestions = [];
             
-            // 현재 선택된 단어들로 문제 생성
-            selectedWords.forEach(word => {
-                // 일본어 표기 문제
-                selectedQuestions.push({
-                    word: word,
-                    questionType: 'japanese',
-                    questionLabel: '일본어 표기',
-                    weightKey: `${word.fileName}_${word.id}_japanese`
+            // 선택된 문제 유형 확인 (기본값: 둘 다 체크)
+            const japaneseChecked = document.getElementById('questionTypeJapanese')?.checked !== false;
+            const meaningChecked = document.getElementById('questionTypeMeaning')?.checked !== false;
+            
+            let selectedQuestionTypes = [];
+            if (japaneseChecked) {
+                selectedQuestionTypes.push({
+                    type: 'japanese',
+                    label: '일본어 표기'
                 });
-                // 의미 문제
-                selectedQuestions.push({
-                    word: word,
-                    questionType: 'meaning',
-                    questionLabel: '뜻',
-                    weightKey: `${word.fileName}_${word.id}_meaning`
+            }
+            if (meaningChecked) {
+                selectedQuestionTypes.push({
+                    type: 'meaning',
+                    label: '뜻'
+                });
+            }
+            
+            // 선택된 문제 유형이 없으면 둘 다 사용
+            if (selectedQuestionTypes.length === 0) {
+                selectedQuestionTypes = [
+                    { type: 'japanese', label: '일본어 표기' },
+                    { type: 'meaning', label: '뜻' }
+                ];
+            }
+            
+            // 현재 선택된 단어들로 선택된 문제 유형만 문제 생성
+            selectedWords.forEach(word => {
+                selectedQuestionTypes.forEach(questionType => {
+                    selectedQuestions.push({
+                        word: word,
+                        questionType: questionType.type,
+                        questionLabel: questionType.label,
+                        weightKey: `${word.fileName}_${word.id}_${questionType.type}`
+                    });
                 });
             });
             
