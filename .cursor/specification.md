@@ -264,7 +264,18 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
   
 - **`toggleIdSort()`**: ID 정렬 순서 변경
   - 정렬 순서 순환: `'asc'` → `'desc'` → `'random'` → `'asc'`
+  - 정렬 전에 현재 보임/숨김 상태 저장 (`saveCellVisibilityStates()`)
   - 정렬 순서 변경 후 테이블 자동 재렌더링
+  - 재렌더링 후 저장된 보임/숨김 상태 복원 (`restoreCellVisibilityStates()`)
+  
+- **`saveCellVisibilityStates()`**: 현재 테이블의 보임/숨김 상태 저장
+  - 각 셀의 `hidden-text` 클래스 유무를 확인
+  - 키 형식: `{wordId}_{fieldType}` (예: `1_japanese`, `1_pronunciation`, `1_meaning`)
+  - 상태 객체 반환
+  
+- **`restoreCellVisibilityStates(states)`**: 저장된 보임/숨김 상태 복원
+  - 저장된 상태 객체를 받아 각 셀에 `hidden-text` 클래스 적용/제거
+  - 정렬 후 테이블이 완전히 렌더링된 후 실행 (setTimeout 사용)
   
 - **`toggleCell(cell)`**: 개별 셀 클릭 시 텍스트 보임/숨김 토글
   - `hidden-text` 클래스 토글
@@ -412,6 +423,7 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
 2. 학습 시작 (ID 정렬 순서는 오름차순으로 초기화)
 3. 테이블 형태로 모든 단어 표시 (안내 문구 포함, 기본적으로 ID 오름차순)
 4. ID 열 헤더 클릭하여 정렬 순서 변경 (오름차순 ↑ → 내림차순 ↓ → 랜덤 ↕ → 오름차순 ↑)
+   - 정렬 시 각 텍스트의 보임/숨김 상태가 자동으로 유지됨
 5. 재생 버튼(▶) 클릭 시 해당 단어의 발음 재생
 6. 각 텍스트(일본어 표기, 발음, 의미) 클릭하여 개별 보임/숨김 처리
 7. 컬럼 헤더 클릭하여 해당 컬럼 전체 보임/숨김 처리
@@ -441,6 +453,7 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
   - 공부하기 모드: 각 행의 재생 버튼(▶)으로 발음 재생
 - ✅ **문제 유형 선택**: 평가하기 모드에서 일본어 표기 문제와 의미 문제를 선택적으로 출제 가능
 - ✅ **ID 정렬 기능**: 공부하기 모드에서 ID 열 헤더 클릭 시 정렬 순서 변경 (오름차순 → 내림차순 → 랜덤 → 오름차순)
+  - 정렬 시 각 텍스트의 보임/숨김 상태가 자동으로 유지됨
 - ✅ **텍스트 보임/숨김 기능**: 공부하기 모드에서 각 텍스트(일본어 표기, 발음, 의미)를 클릭하여 개별 보임/숨김 처리 가능
 - ✅ **컬럼 전체 보임/숨김**: 공부하기 모드에서 컬럼 헤더 클릭 시 해당 컬럼 전체 보임/숨김 처리
 - ✅ **가려진 텍스트 표시**: 가려진 텍스트는 배경색과 "•••" 표시로 정보가 있음을 알 수 있음
@@ -520,6 +533,9 @@ results/ 폴더에서 JSON 파일들 fetch (page_01.json ~ page_29.json)
   - ID 정렬 순서 초기화 (오름차순)
   - 테이블 표시 (재생 버튼 포함, ID 오름차순 정렬)
   - ID 헤더 클릭 시 정렬 순서 변경 (toggleIdSort)
+    - 정렬 전 보임/숨김 상태 저장 (saveCellVisibilityStates)
+    - 테이블 재렌더링
+    - 저장된 보임/숨김 상태 복원 (restoreCellVisibilityStates)
   - 텍스트 클릭 시 보임/숨김 토글 (toggleCell)
   - 컬럼 헤더 클릭 시 컬럼 전체 보임/숨김 토글 (toggleColumn)
   - 재생 버튼 클릭 시 발음 재생 (playPronunciation)

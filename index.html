@@ -1806,8 +1806,76 @@
             speechSynthesis.speak(utterance);
         }
         
+        // 현재 테이블의 보임/숨김 상태 저장
+        function saveCellVisibilityStates() {
+            const states = {};
+            const rows = document.querySelectorAll('.study-table tbody tr');
+            rows.forEach(row => {
+                const idCell = row.querySelector('.id-cell');
+                if (!idCell) return;
+                const wordId = idCell.textContent.trim();
+                
+                const japaneseCell = row.querySelector('.japanese-cell');
+                const pronunciationCell = row.querySelector('.pronunciation-cell');
+                const meaningCell = row.querySelector('.meaning-cell');
+                
+                if (japaneseCell) {
+                    states[`${wordId}_japanese`] = japaneseCell.classList.contains('hidden-text');
+                }
+                if (pronunciationCell) {
+                    states[`${wordId}_pronunciation`] = pronunciationCell.classList.contains('hidden-text');
+                }
+                if (meaningCell) {
+                    states[`${wordId}_meaning`] = meaningCell.classList.contains('hidden-text');
+                }
+            });
+            return states;
+        }
+        
+        // 저장된 보임/숨김 상태 복원
+        function restoreCellVisibilityStates(states) {
+            const rows = document.querySelectorAll('.study-table tbody tr');
+            rows.forEach(row => {
+                const idCell = row.querySelector('.id-cell');
+                if (!idCell) return;
+                const wordId = idCell.textContent.trim();
+                
+                const japaneseCell = row.querySelector('.japanese-cell');
+                const pronunciationCell = row.querySelector('.pronunciation-cell');
+                const meaningCell = row.querySelector('.meaning-cell');
+                
+                if (japaneseCell) {
+                    const key = `${wordId}_japanese`;
+                    if (states[key]) {
+                        japaneseCell.classList.add('hidden-text');
+                    } else {
+                        japaneseCell.classList.remove('hidden-text');
+                    }
+                }
+                if (pronunciationCell) {
+                    const key = `${wordId}_pronunciation`;
+                    if (states[key]) {
+                        pronunciationCell.classList.add('hidden-text');
+                    } else {
+                        pronunciationCell.classList.remove('hidden-text');
+                    }
+                }
+                if (meaningCell) {
+                    const key = `${wordId}_meaning`;
+                    if (states[key]) {
+                        meaningCell.classList.add('hidden-text');
+                    } else {
+                        meaningCell.classList.remove('hidden-text');
+                    }
+                }
+            });
+        }
+        
         // ID 정렬 순서 변경
         function toggleIdSort() {
+            // 현재 보임/숨김 상태 저장
+            const visibilityStates = saveCellVisibilityStates();
+            
             if (idSortOrder === 'asc') {
                 idSortOrder = 'desc';
             } else if (idSortOrder === 'desc') {
@@ -1822,6 +1890,10 @@
             });
             if (selectedSet) {
                 displayStudyTable(selectedSet);
+                // 보임/숨김 상태 복원
+                setTimeout(() => {
+                    restoreCellVisibilityStates(visibilityStates);
+                }, 0);
             }
         }
         
