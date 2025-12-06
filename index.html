@@ -19,7 +19,7 @@
         }
         
         .container {
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
@@ -572,6 +572,7 @@
             width: 100%;
             max-height: 600px;
             overflow-y: auto;
+            overflow-x: auto;
             border-radius: 12px;
             border: 1px solid #e0e0e0;
             background: white;
@@ -579,6 +580,7 @@
         
         .study-table {
             width: 100%;
+            min-width: 1000px;
             border-collapse: collapse;
         }
         
@@ -633,8 +635,19 @@
         .study-table th.id-cell,
         .study-table th.play-cell,
         .study-table th.pronunciation-cell,
-        .study-table th.meaning-cell {
+        .study-table th.meaning-cell,
+        .study-table th.sentence-cell {
             font-size: 14px;
+        }
+        
+        .study-table th.sentence-cell {
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+        
+        .study-table th.sentence-cell:hover {
+            background-color: #e8e9ff;
         }
         
         .study-table th.id-cell {
@@ -693,9 +706,29 @@
             color: #333;
         }
         
+        .study-table .sentence-cell {
+            min-width: 300px;
+            max-width: 400px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .study-table .sentence-jp {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .study-table .sentence-kr {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+        
         .study-table .japanese-cell,
         .study-table .pronunciation-cell,
-        .study-table .meaning-cell {
+        .study-table .meaning-cell,
+        .study-table .sentence-cell {
             cursor: pointer;
             user-select: none;
             transition: background-color 0.2s;
@@ -703,13 +736,15 @@
         
         .study-table .japanese-cell:hover,
         .study-table .pronunciation-cell:hover,
-        .study-table .meaning-cell:hover {
+        .study-table .meaning-cell:hover,
+        .study-table .sentence-cell:hover {
             background-color: #f0f0f0;
         }
         
         .study-table .japanese-cell.hidden-text,
         .study-table .pronunciation-cell.hidden-text,
-        .study-table .meaning-cell.hidden-text {
+        .study-table .meaning-cell.hidden-text,
+        .study-table .sentence-cell.hidden-text {
             background-color: #e8e8e8;
             color: transparent;
             position: relative;
@@ -717,7 +752,8 @@
         
         .study-table .japanese-cell.hidden-text::after,
         .study-table .pronunciation-cell.hidden-text::after,
-        .study-table .meaning-cell.hidden-text::after {
+        .study-table .meaning-cell.hidden-text::after,
+        .study-table .sentence-cell.hidden-text::after {
             content: '•••';
             color: #999;
             position: absolute;
@@ -749,6 +785,10 @@
                 max-width: 100%;
                 border-radius: 12px;
                 box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            }
+            
+            .container.study-mode {
+                max-width: 100%;
             }
             
             .header {
@@ -1007,6 +1047,19 @@
                 font-size: 14px;
             }
             
+            .study-table .sentence-cell {
+                min-width: 200px;
+                max-width: 300px;
+            }
+            
+            .study-table .sentence-jp {
+                font-size: 14px;
+            }
+            
+            .study-table .sentence-kr {
+                font-size: 12px;
+            }
+            
             .selection-controls {
                 flex-direction: column;
             }
@@ -1083,6 +1136,19 @@
             
             .study-table .meaning-cell {
                 font-size: 12px;
+            }
+            
+            .study-table .sentence-cell {
+                min-width: 180px;
+                max-width: 250px;
+            }
+            
+            .study-table .sentence-jp {
+                font-size: 12px;
+            }
+            
+            .study-table .sentence-kr {
+                font-size: 11px;
             }
         }
     </style>
@@ -1491,6 +1557,8 @@
             if (studyMode === 'study') {
                 // 공부하기 모드: 정렬 순서 초기화 (오름차순)
                 idSortOrder = 'asc';
+                // 공부하기 모드: 컨테이너 너비 확장
+                document.querySelector('.container').classList.add('study-mode');
                 // 공부하기 모드: 테이블 화면 표시
                 displayStudyTable(selectedSet);
                 document.getElementById('studyTableScreen').classList.remove('hidden');
@@ -1818,6 +1886,7 @@
                 const japaneseCell = row.querySelector('.japanese-cell');
                 const pronunciationCell = row.querySelector('.pronunciation-cell');
                 const meaningCell = row.querySelector('.meaning-cell');
+                const sentenceCell = row.querySelector('.sentence-cell');
                 
                 if (japaneseCell) {
                     states[`${wordId}_japanese`] = japaneseCell.classList.contains('hidden-text');
@@ -1827,6 +1896,9 @@
                 }
                 if (meaningCell) {
                     states[`${wordId}_meaning`] = meaningCell.classList.contains('hidden-text');
+                }
+                if (sentenceCell) {
+                    states[`${wordId}_sentence`] = sentenceCell.classList.contains('hidden-text');
                 }
             });
             return states;
@@ -1843,6 +1915,7 @@
                 const japaneseCell = row.querySelector('.japanese-cell');
                 const pronunciationCell = row.querySelector('.pronunciation-cell');
                 const meaningCell = row.querySelector('.meaning-cell');
+                const sentenceCell = row.querySelector('.sentence-cell');
                 
                 if (japaneseCell) {
                     const key = `${wordId}_japanese`;
@@ -1866,6 +1939,14 @@
                         meaningCell.classList.add('hidden-text');
                     } else {
                         meaningCell.classList.remove('hidden-text');
+                    }
+                }
+                if (sentenceCell) {
+                    const key = `${wordId}_sentence`;
+                    if (states[key]) {
+                        sentenceCell.classList.add('hidden-text');
+                    } else {
+                        sentenceCell.classList.remove('hidden-text');
                     }
                 }
             });
@@ -1941,6 +2022,7 @@
                             <th class="japanese-cell" onclick="toggleColumn('japanese')">일본어 표기</th>
                             <th class="pronunciation-cell" onclick="toggleColumn('pronunciation')">발음</th>
                             <th class="meaning-cell" onclick="toggleColumn('meaning')">의미</th>
+                            <th class="sentence-cell" onclick="toggleColumn('sentence')">예문</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1949,6 +2031,25 @@
                             const textToSpeak = word.pronunciation && word.pronunciation.trim() !== '' 
                                 ? word.pronunciation 
                                 : word.japanese;
+                            
+                            // 예문이 있는지 확인
+                            const hasSentence = word.sent_jp && word.sent_jp.trim() !== '' && word.sent_kr && word.sent_kr.trim() !== '';
+                            const sentenceText = hasSentence ? `${word.sent_jp}\n${word.sent_kr}` : '';
+                            
+                            const sentenceCellHTML = hasSentence ? `
+                                <td class="sentence-cell" onclick="toggleCell(this, event)" 
+                                    onmousedown="startLongPress(this, '${sentenceText.replace(/'/g, "\\'")}')" 
+                                    onmouseup="endLongPress()" 
+                                    onmouseleave="endLongPress()"
+                                    ontouchstart="startLongPress(this, '${sentenceText.replace(/'/g, "\\'")}')" 
+                                    ontouchend="endLongPress()" 
+                                    ontouchcancel="endLongPress()"
+                                    ontouchmove="endLongPress()">
+                                    <div class="sentence-jp">${word.sent_jp}</div>
+                                    <div class="sentence-kr">${word.sent_kr}</div>
+                                </td>
+                            ` : `<td class="sentence-cell">-</td>`;
+                            
                             return `
                             <tr>
                                 <td class="id-cell">${word.id}</td>
@@ -1979,6 +2080,7 @@
                                     ontouchend="endLongPress()" 
                                     ontouchcancel="endLongPress()"
                                     ontouchmove="endLongPress()">${word.meaning}</td>
+                                ${sentenceCellHTML}
                             </tr>
                         `;
                         }).join('')}
@@ -2225,6 +2327,8 @@
         
         // 처음으로
         function goHome() {
+            // 공부하기 모드 클래스 제거
+            document.querySelector('.container').classList.remove('study-mode');
             document.getElementById('flashcardScreen').classList.add('hidden');
             document.getElementById('studyTableScreen').classList.add('hidden');
             document.getElementById('fileSelectionScreen').classList.remove('hidden');
@@ -2263,6 +2367,8 @@
         
         // 공부하기에서 평가하기로 전환
         function startQuizFromStudy() {
+            // 공부하기 모드 클래스 제거
+            document.querySelector('.container').classList.remove('study-mode');
             // 현재 선택된 단어셋으로 평가하기 모드 시작
             selectedQuestions = [];
             
@@ -2332,6 +2438,8 @@
         // 단어셋 변경
         function changeWordSet() {
             if (confirm('현재 학습을 중단하고 단어셋을 변경하시겠습니까?')) {
+                // 공부하기 모드 클래스 제거
+                document.querySelector('.container').classList.remove('study-mode');
                 document.getElementById('flashcardScreen').classList.add('hidden');
                 document.getElementById('studyTableScreen').classList.add('hidden');
                 document.getElementById('fileSelectionScreen').classList.remove('hidden');
