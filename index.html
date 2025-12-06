@@ -535,6 +535,296 @@
             cursor: not-allowed;
         }
         
+        .statistics-container {
+            width: 100%;
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .statistics-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .statistics-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        
+        .statistics-label {
+            min-width: 80px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            user-select: none;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+        
+        .statistics-label:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .statistics-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-direction: column;
+        }
+        
+        .statistics-item-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+        
+        .statistics-detail-container {
+            width: 100%;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .statistics-detail-container.show {
+            display: block;
+        }
+        
+        .statistics-detail-table-container {
+            width: 100%;
+            max-height: 600px;
+            overflow-y: auto;
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            background: white;
+        }
+        
+        .statistics-detail-table {
+            width: 100%;
+            min-width: 1000px;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        .statistics-detail-table thead {
+            position: sticky;
+            top: 0;
+            background: #f5f5f5;
+            color: #333;
+            z-index: 10;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .statistics-detail-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .statistics-detail-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 16px;
+        }
+        
+        .statistics-detail-table tbody tr:hover {
+            background: #f8f9ff;
+        }
+        
+        .statistics-detail-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .statistics-detail-table .id-cell {
+            width: 60px;
+            text-align: center;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .statistics-detail-table .play-cell {
+            width: 60px;
+            text-align: center;
+        }
+        
+        .statistics-detail-table .japanese-cell {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+        
+        .statistics-detail-table .japanese-cell:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .statistics-detail-table .pronunciation-cell {
+            color: #666;
+            font-size: 16px;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+        
+        .statistics-detail-table .pronunciation-cell:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .statistics-detail-table .meaning-cell {
+            color: #333;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+        
+        .statistics-detail-table .meaning-cell:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .statistics-detail-table .sentence-cell {
+            min-width: 300px;
+            max-width: 400px;
+            color: #333;
+            line-height: 1.6;
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+        
+        .statistics-detail-table .sentence-cell:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .statistics-detail-table .sentence-jp {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .statistics-detail-table .sentence-kr {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .statistics-detail-table .japanese-cell.hidden-text,
+        .statistics-detail-table .pronunciation-cell.hidden-text,
+        .statistics-detail-table .meaning-cell.hidden-text,
+        .statistics-detail-table .sentence-cell.hidden-text {
+            background-color: #e8e8e8;
+            color: transparent;
+            position: relative;
+        }
+        
+        .statistics-detail-table .japanese-cell.hidden-text::after,
+        .statistics-detail-table .pronunciation-cell.hidden-text::after,
+        .statistics-detail-table .meaning-cell.hidden-text::after,
+        .statistics-detail-table .sentence-cell.hidden-text::after {
+            content: '•••';
+            color: #999;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .statistics-detail-table th.japanese-cell,
+        .statistics-detail-table th.pronunciation-cell,
+        .statistics-detail-table th.meaning-cell {
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+        
+        .statistics-detail-table th.japanese-cell:hover,
+        .statistics-detail-table th.pronunciation-cell:hover,
+        .statistics-detail-table th.meaning-cell:hover {
+            background-color: #e8e9ff;
+        }
+        
+        .statistics-detail-table .file-name-cell {
+            font-size: 13px;
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .statistics-detail-table .play-button {
+            background: transparent;
+            color: #667eea;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            width: 32px;
+            height: 32px;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            padding: 0;
+        }
+        
+        .statistics-detail-table .play-button:hover {
+            background: #f8f9ff;
+            border-color: #667eea;
+            color: #764ba2;
+        }
+        
+        .statistics-detail-table .play-button:active {
+            background: #e8e9ff;
+        }
+        
+        .statistics-bar-container {
+            flex: 1;
+            height: 24px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .statistics-bar {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .statistics-count {
+            min-width: 60px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            text-align: right;
+        }
+        
+        .statistics-percentage {
+            min-width: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #667eea;
+            text-align: right;
+        }
+        
         .hidden {
             display: none;
         }
@@ -1175,6 +1465,123 @@
             .study-table .sentence-kr {
                 font-size: 11px;
             }
+            
+            .statistics-container {
+                padding: 15px;
+                margin-top: 20px;
+            }
+            
+            .statistics-title {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+            
+            .statistics-item {
+                gap: 10px;
+            }
+            
+            .statistics-label {
+                min-width: 60px;
+                font-size: 12px;
+            }
+            
+            .statistics-bar-container {
+                height: 20px;
+            }
+            
+            .statistics-bar {
+                font-size: 11px;
+                padding-right: 6px;
+            }
+            
+            .statistics-count {
+                min-width: 50px;
+                font-size: 12px;
+            }
+            
+            .statistics-percentage {
+                min-width: 45px;
+                font-size: 12px;
+            }
+            
+            .statistics-detail-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .statistics-detail-table-container {
+                max-height: 70vh;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .statistics-detail-table {
+                min-width: 900px;
+                font-size: 14px;
+            }
+            
+            .statistics-detail-table th {
+                padding: 10px 8px;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+            
+            .statistics-detail-table td {
+                padding: 10px 8px;
+                font-size: 14px;
+            }
+            
+            .statistics-detail-table .id-cell {
+                width: 50px;
+                min-width: 50px;
+                font-size: 12px;
+            }
+            
+            .statistics-detail-table .play-cell {
+                width: 60px;
+                min-width: 60px;
+            }
+            
+            .statistics-detail-table .japanese-cell {
+                min-width: 72px;
+                font-size: 16px;
+                white-space: nowrap;
+            }
+            
+            .statistics-detail-table .pronunciation-cell {
+                min-width: 60px;
+                font-size: 13px;
+                white-space: nowrap;
+            }
+            
+            .statistics-detail-table .meaning-cell {
+                min-width: 60px;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+            
+            .statistics-detail-table .sentence-cell {
+                min-width: 250px;
+                max-width: 350px;
+            }
+            
+            .statistics-detail-table .sentence-jp {
+                font-size: 14px;
+            }
+            
+            .statistics-detail-table .sentence-kr {
+                font-size: 12px;
+            }
+            
+            .statistics-detail-table .play-button {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+            
+            .statistics-item-row {
+                gap: 8px;
+            }
         }
     </style>
 </head>
@@ -1269,6 +1676,11 @@
                         <button class="btn btn-icon btn-primary" id="showAnswerBtn" onclick="showAnswer()">?</button>
                         <button class="btn btn-icon btn-primary" id="nextBtn" onclick="nextCard()">▶</button>
                     </div>
+                    <!-- 통계 영역 -->
+                    <div class="statistics-container" id="statisticsContainer">
+                        <h3 class="statistics-title">트라이 횟수 통계</h3>
+                        <div class="statistics-content" id="statisticsContent"></div>
+                    </div>
                 </div>
             </div>
             
@@ -1293,6 +1705,8 @@
         let longPressTimer = null; // 긴 누름 타이머
         let longPressCompleted = false; // 긴 누름이 완료되어 복사되었는지 여부
         let idSortOrder = 'asc'; // 'asc', 'desc', 'random' - ID 정렬 순서
+        let questionTryCounts = {}; // 각 문제별 트라이 횟수 추적 (키: weightKey, 값: 트라이 횟수)
+        let completedTryCounts = {}; // 완료된 문제의 트라이 횟수 (키: weightKey, 값: 완료 시 트라이 횟수)
         
         // 기본 단어 데이터는 results 폴더에서 동적으로 로드
         const DEFAULT_WORD_SETS = [];
@@ -1561,11 +1975,14 @@
             currentWordIndex = -1;
             wordHistory = [];
             weights = {}; // 가중치 초기화 (세션 중에만 사용)
+            questionTryCounts = {}; // 트라이 횟수 추적 초기화
+            completedTryCounts = {}; // 완료된 문제의 트라이 횟수 초기화
             
             if (studyMode === 'quiz') {
                 // 평가하기 모드: 각 문제의 가중치를 1로 초기화
                 selectedQuestions.forEach(question => {
                     weights[question.weightKey] = 1;
+                    questionTryCounts[question.weightKey] = 0; // 트라이 횟수 초기화
                 });
             } else {
                 // 공부하기 모드: 선택된 단어들의 가중치를 1로 초기화
@@ -1595,6 +2012,7 @@
                 document.getElementById('settingsBtn').classList.remove('hidden');
                 document.getElementById('startQuizBtn').classList.add('hidden');
                 updateProgress(); // 초기 진행도 설정
+                updateStatistics(); // 초기 통계 설정
                 nextCard();
             }
         }
@@ -1696,12 +2114,32 @@
                     weights[currentItem.weightKey] = Math.min(5, (weights[currentItem.weightKey] || 1) + 1);
                 } else {
                     // 평가하기 모드
+                    const weightKey = currentItem.weightKey;
+                    
+                    // 트라이 횟수 증가
+                    if (!questionTryCounts[weightKey]) {
+                        questionTryCounts[weightKey] = 0;
+                    }
+                    questionTryCounts[weightKey]++;
+                    
                     if (!answerShown) {
                         // 정답 확인 없이 넘어감: 가중치 -1 (최소 0)
-                        weights[currentItem.weightKey] = Math.max(0, (weights[currentItem.weightKey] || 1) - 1);
+                        const newWeight = Math.max(0, (weights[weightKey] || 1) - 1);
+                        weights[weightKey] = newWeight;
+                        
+                        // 가중치가 0이 되면 완료된 것으로 기록
+                        if (newWeight === 0 && !completedTryCounts[weightKey]) {
+                            completedTryCounts[weightKey] = questionTryCounts[weightKey];
+                        }
                     } else {
                         // 정답 확인 후 넘어감: 가중치 +1 (최대 5)
-                        weights[currentItem.weightKey] = Math.min(5, (weights[currentItem.weightKey] || 1) + 1);
+                        const newWeight = Math.min(5, (weights[weightKey] || 1) + 1);
+                        weights[weightKey] = newWeight;
+                        
+                        // 가중치가 0이 되면 완료된 것으로 기록
+                        if (newWeight === 0 && !completedTryCounts[weightKey]) {
+                            completedTryCounts[weightKey] = questionTryCounts[weightKey];
+                        }
                     }
                 }
             }
@@ -1729,6 +2167,13 @@
                     weightKey: newQuestion.weightKey
                 };
                 
+                // 새로운 문제가 처음 나타날 때 트라이 횟수 초기화 (이미 완료되지 않은 문제인 경우)
+                if (!completedTryCounts[newQuestion.weightKey]) {
+                    if (questionTryCounts[newQuestion.weightKey] === undefined) {
+                        questionTryCounts[newQuestion.weightKey] = 0;
+                    }
+                }
+                
                 wordHistory.push(questionItem);
                 currentWordIndex = wordHistory.length - 1;
             } else {
@@ -1741,6 +2186,7 @@
             displayCard();
             updateButtons();
             updateProgress();
+            updateStatistics();
         }
         
         // 이전 카드
@@ -1771,6 +2217,7 @@
             }
             
             updateProgress();
+            updateStatistics();
         }
         
         // 평가하기 모드 표시
@@ -2323,6 +2770,256 @@
             }).length;
             
             document.getElementById('progressValue').textContent = `${completedQuestions} / ${totalQuestions}`;
+        }
+        
+        // 통계 업데이트
+        function updateStatistics() {
+            if (studyMode !== 'quiz' || selectedQuestions.length === 0) {
+                return;
+            }
+            
+            const statisticsContainer = document.getElementById('statisticsContainer');
+            if (!statisticsContainer) {
+                console.error('statisticsContainer not found');
+                return;
+            }
+            
+            // 완료된 문제들의 트라이 횟수 분포 계산
+            const tryCountDistribution = {}; // {횟수: 개수}
+            const tryCountQuestions = {}; // {횟수: [문제 배열]}
+            let totalCompleted = 0;
+            
+            // 완료된 문제들의 트라이 횟수 수집
+            selectedQuestions.forEach(question => {
+                const weightKey = question.weightKey;
+                if (completedTryCounts[weightKey]) {
+                    const tryCount = completedTryCounts[weightKey];
+                    if (!tryCountDistribution[tryCount]) {
+                        tryCountDistribution[tryCount] = 0;
+                        tryCountQuestions[tryCount] = [];
+                    }
+                    tryCountDistribution[tryCount]++;
+                    tryCountQuestions[tryCount].push(question);
+                    totalCompleted++;
+                }
+            });
+            
+            // 통계가 없으면 간단한 메시지 표시
+            if (totalCompleted === 0) {
+                statisticsContainer.style.display = 'block';
+                document.getElementById('statisticsContent').innerHTML = `
+                    <div style="text-align: center; padding: 20px; color: #666; font-size: 14px;">
+                        아직 완료된 문제가 없습니다. 문제를 풀어보세요!
+                    </div>
+                `;
+                return;
+            }
+            
+            statisticsContainer.style.display = 'block';
+            
+            // 트라이 횟수별로 정렬 (1회부터 최대값까지)
+            const sortedCounts = Object.keys(tryCountDistribution)
+                .map(Number)
+                .sort((a, b) => a - b);
+            
+            const maxCount = Math.max(...sortedCounts, 1);
+            const totalQuestions = selectedQuestions.length;
+            
+            // 통계 HTML 생성
+            let statisticsHTML = '';
+            
+            // 1회부터 4회까지 개별 표시
+            for (let i = 1; i <= Math.min(4, maxCount); i++) {
+                const count = tryCountDistribution[i] || 0;
+                if (count === 0) continue;
+                
+                const percentage = totalCompleted > 0 ? ((count / totalCompleted) * 100).toFixed(1) : 0;
+                const barWidth = totalCompleted > 0 ? (count / totalCompleted) * 100 : 0;
+                const questions = tryCountQuestions[i] || [];
+                
+                statisticsHTML += `
+                    <div class="statistics-item" data-try-count="${i}">
+                        <div class="statistics-item-row">
+                            <div class="statistics-label" onclick="toggleStatisticsDetail(${i})">${i}회</div>
+                            <div class="statistics-bar-container">
+                                <div class="statistics-bar" style="width: ${barWidth}%">
+                                    ${count > 0 ? count : ''}
+                                </div>
+                            </div>
+                            <div class="statistics-count">${count}개</div>
+                            <div class="statistics-percentage">${percentage}%</div>
+                        </div>
+                        ${generateStatisticsDetailTable(i, questions)}
+                    </div>
+                `;
+            }
+            
+            // 5회 이상은 "5+"로 묶어서 표시
+            let over5Count = 0;
+            const over5Questions = [];
+            for (let i = 5; i <= maxCount; i++) {
+                if (tryCountDistribution[i]) {
+                    over5Count += tryCountDistribution[i];
+                    if (tryCountQuestions[i]) {
+                        over5Questions.push(...tryCountQuestions[i]);
+                    }
+                }
+            }
+            
+            if (over5Count > 0) {
+                const percentage = ((over5Count / totalCompleted) * 100).toFixed(1);
+                const barWidth = (over5Count / totalCompleted) * 100;
+                statisticsHTML += `
+                    <div class="statistics-item" data-try-count="5+">
+                        <div class="statistics-item-row">
+                            <div class="statistics-label" onclick="toggleStatisticsDetail('5+')">5회+</div>
+                            <div class="statistics-bar-container">
+                                <div class="statistics-bar" style="width: ${barWidth}%">
+                                    ${over5Count}
+                                </div>
+                            </div>
+                            <div class="statistics-count">${over5Count}개</div>
+                            <div class="statistics-percentage">${percentage}%</div>
+                        </div>
+                        ${generateStatisticsDetailTable('5+', over5Questions)}
+                    </div>
+                `;
+            }
+            
+            // 전체 요약 정보 추가
+            const avgTryCount = totalCompleted > 0 
+                ? (Object.keys(completedTryCounts).reduce((sum, key) => sum + completedTryCounts[key], 0) / totalCompleted).toFixed(1)
+                : 0;
+            
+            statisticsHTML = `
+                <div style="margin-bottom: 15px; padding: 10px; background: #f8f9ff; border-radius: 8px; text-align: center; font-size: 14px; color: #666;">
+                    완료된 문제: ${totalCompleted}개 / 전체: ${totalQuestions}개 | 평균 트라이 횟수: ${avgTryCount}회
+                </div>
+            ` + statisticsHTML;
+            
+            document.getElementById('statisticsContent').innerHTML = statisticsHTML;
+        }
+        
+        // 통계 상세 테이블 생성
+        function generateStatisticsDetailTable(tryCount, questions) {
+            if (!questions || questions.length === 0) {
+                return '';
+            }
+            
+            const tableRows = questions.map(question => {
+                const word = question.word;
+                
+                // 발음이 있으면 발음을, 없으면 일본어 표기를 사용
+                const textToSpeak = word.pronunciation && word.pronunciation.trim() !== '' 
+                    ? word.pronunciation 
+                    : word.japanese;
+                
+                // 예문이 있는지 확인
+                const hasSentence = word.sent_jp && word.sent_jp.trim() !== '' && word.sent_kr && word.sent_kr.trim() !== '';
+                const sentenceText = hasSentence ? word.sent_jp : '';
+                
+                const sentenceCellHTML = hasSentence ? `
+                    <td class="sentence-cell" 
+                        onmousedown="startLongPress(this, '${sentenceText.replace(/'/g, "\\'")}')" 
+                        onmouseup="endLongPress()" 
+                        onmouseleave="endLongPress()"
+                        ontouchstart="startLongPress(this, '${sentenceText.replace(/'/g, "\\'")}')" 
+                        ontouchend="endLongPress()" 
+                        ontouchcancel="endLongPress()"
+                        ontouchmove="endLongPress()">
+                        <div class="sentence-jp">${word.sent_jp}</div>
+                        <div class="sentence-kr">${word.sent_kr}</div>
+                    </td>
+                ` : `<td class="sentence-cell">-</td>`;
+                
+                return `
+                    <tr>
+                        <td class="file-name-cell">${word.fileName}</td>
+                        <td class="id-cell">${word.id}</td>
+                        <td class="play-cell">
+                            <button class="play-button" onclick="playPronunciation('${textToSpeak.replace(/'/g, "\\'")}')" title="발음 재생">▶</button>
+                        </td>
+                        <td class="japanese-cell" onclick="toggleCell(this, event)" 
+                            onmousedown="startLongPress(this, '${word.japanese.replace(/'/g, "\\'")}')" 
+                            onmouseup="endLongPress()" 
+                            onmouseleave="endLongPress()"
+                            ontouchstart="startLongPress(this, '${word.japanese.replace(/'/g, "\\'")}')" 
+                            ontouchend="endLongPress()" 
+                            ontouchcancel="endLongPress()"
+                            ontouchmove="endLongPress()">${word.japanese}</td>
+                        <td class="pronunciation-cell" onclick="toggleCell(this, event)" 
+                            onmousedown="startLongPress(this, '${word.pronunciation.replace(/'/g, "\\'")}')" 
+                            onmouseup="endLongPress()" 
+                            onmouseleave="endLongPress()"
+                            ontouchstart="startLongPress(this, '${word.pronunciation.replace(/'/g, "\\'")}')" 
+                            ontouchend="endLongPress()" 
+                            ontouchcancel="endLongPress()"
+                            ontouchmove="endLongPress()">${word.pronunciation}</td>
+                        <td class="meaning-cell" onclick="toggleCell(this, event)" 
+                            onmousedown="startLongPress(this, '${word.meaning.replace(/'/g, "\\'")}')" 
+                            onmouseup="endLongPress()" 
+                            onmouseleave="endLongPress()"
+                            ontouchstart="startLongPress(this, '${word.meaning.replace(/'/g, "\\'")}')" 
+                            ontouchend="endLongPress()" 
+                            ontouchcancel="endLongPress()"
+                            ontouchmove="endLongPress()">${word.meaning}</td>
+                        ${sentenceCellHTML}
+                    </tr>
+                `;
+            }).join('');
+            
+            return `
+                <div class="statistics-detail-container" id="statisticsDetail_${tryCount}">
+                    <div class="study-table-info" style="margin-bottom: 10px;">
+                        각 텍스트를 클릭하여 보임/숨김 처리할 수 있습니다<br>
+                        텍스트를 길게 누르면 클립보드에 복사됩니다
+                    </div>
+                    <div class="statistics-detail-table-container">
+                        <table class="statistics-detail-table">
+                            <thead>
+                                <tr>
+                                    <th class="file-name-cell">파일명</th>
+                                    <th class="id-cell">ID</th>
+                                    <th class="play-cell">재생</th>
+                                    <th class="japanese-cell" onclick="toggleStatisticsColumn(this, 'japanese')">일본어 표기</th>
+                                    <th class="pronunciation-cell" onclick="toggleStatisticsColumn(this, 'pronunciation')">발음</th>
+                                    <th class="meaning-cell" onclick="toggleStatisticsColumn(this, 'meaning')">의미</th>
+                                    <th class="sentence-cell">예문</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${tableRows}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // 통계 상세 테이블의 컬럼 전체 보임/숨김 토글
+        function toggleStatisticsColumn(header, columnType) {
+            const table = header.closest('table');
+            if (!table) return;
+            
+            const cells = table.querySelectorAll(`tbody .${columnType}-cell`);
+            const allHidden = Array.from(cells).every(cell => cell.classList.contains('hidden-text'));
+            
+            cells.forEach(cell => {
+                if (allHidden) {
+                    cell.classList.remove('hidden-text');
+                } else {
+                    cell.classList.add('hidden-text');
+                }
+            });
+        }
+        
+        // 통계 상세 테이블 토글
+        function toggleStatisticsDetail(tryCount) {
+            const containerId = `statisticsDetail_${tryCount}`;
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.classList.toggle('show');
+            }
         }
         
         // 정답 확인/숨기기 토글
