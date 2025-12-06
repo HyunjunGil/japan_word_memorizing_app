@@ -59,17 +59,15 @@
                             </div>
                         </div>
                         
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <div class="file-list-header">
                             <h3>단어묶음 목록</h3>
-                            <div>
-                                <button class="btn-secondary" style="padding: 8px 16px; margin-right: 10px;" id="selectAllBtn">전체선택</button>
-                                <button class="btn-secondary" style="padding: 8px 16px;" id="deselectAllBtn">전체해제</button>
+                            <div class="selection-buttons">
+                                <button class="btn btn-secondary" id="selectAllBtn">✓ 전체선택</button>
+                                <button class="btn btn-secondary" id="deselectAllBtn">✗ 전체해제</button>
+                                <button class="btn btn-primary" id="startStudyBtn">▶ 학습 시작</button>
                             </div>
                         </div>
                         <div class="file-list" id="fileList"></div>
-                        <div class="selection-controls" style="margin-top: 20px;">
-                            <button class="btn btn-primary" id="startStudyBtn">학습 시작</button>
-                        </div>
                     </div>
                     
                     <div id="emptyState" class="empty-state">
