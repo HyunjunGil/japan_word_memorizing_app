@@ -29,8 +29,7 @@ index.html (메인 HTML 파일)
 ### 1. 파일 선택 화면 (`fileSelectionScreen`)
 - **모드 선택**: 평가하기 / 공부하기
 - **문제 유형 선택** (평가하기 모드만 표시): 일본어 표기 문제, 의미 문제 체크박스 (기본값: 둘 다 선택)
-- **파일 업로드**: JSON 파일 다중 업로드
-- **단어묶음 목록**: 체크박스로 선택
+- **단어묶음 목록**: 체크박스로 선택 (알파벳순 정렬)
 - **전체선택/전체해제** 버튼
 - **학습 시작** 버튼
 
@@ -48,12 +47,13 @@ index.html (메인 HTML 파일)
 ### 3. 공부하기 테이블 화면 (`studyTableScreen`)
 - **공부하기 모드 전용**
 - 테이블 형태로 모든 단어 표시
-- ID, 재생, 일본어 표기, 발음, 의미 컬럼
-- 스크롤 가능한 고정 헤더
+- ID, 재생, 일본어 표기, 발음, 의미, 예문 컬럼
+- 스크롤 가능한 고정 헤더 (가로/세로 스크롤 지원)
 - **안내 문구**: 테이블 위에 "각 텍스트를 클릭하여 보임/숨김 처리할 수 있습니다" 문구 표시
 - **ID 정렬 기능**: ID 열 헤더 클릭 시 정렬 순서 변경 (오름차순 ↑ → 내림차순 ↓ → 랜덤 ↕ → 오름차순 ↑)
 - **재생 버튼**: 각 행에 재생 버튼(▶)이 있어 클릭 시 해당 단어의 발음 재생
-- **텍스트 보임/숨김**: 각 텍스트(일본어 표기, 발음, 의미)를 클릭하여 개별 보임/숨김 처리 가능
+- **예문 표시**: 단어 데이터에 `sent_jp`와 `sent_kr`가 있으면 예문 열에 일본어 예문과 한국어 번역 표시
+- **텍스트 보임/숨김**: 각 텍스트(일본어 표기, 발음, 의미, 예문)를 클릭하여 개별 보임/숨김 처리 가능
 - **컬럼 전체 보임/숨김**: 컬럼 헤더 클릭 시 해당 컬럼 전체 보임/숨김 처리
 
 ## 데이터 구조
@@ -67,7 +67,9 @@ index.html (메인 HTML 파일)
             "id": 1,                    // 단어 ID
             "japanese": "改札",         // 일본어 표기
             "pronunciation": "かいさつ", // 발음 (히라가나/가타카나)
-            "meaning": "개찰"           // 한국어 의미
+            "meaning": "개찰",         // 한국어 의미
+            "sent_jp": "改札口を通る", // 일본어 예문 (선택사항)
+            "sent_kr": "개찰구를 통과하다" // 한국어 예문 번역 (선택사항)
         },
         // ...
     ]
@@ -125,10 +127,11 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
 
 ### 초기화 로직
 1. 페이지 로드 시 `init()` 함수 실행:
-   - `results/` 폴더에서 `page_01.json` ~ `page_29.json` 파일들을 fetch하여 로드
+   - `results/` 폴더에서 `page_01.json` ~ `page_99.json` 파일들을 fetch하여 로드 시도
+   - `results/` 폴더에서 `grammar_01.json` ~ `grammar_99.json` 파일들을 fetch하여 로드 시도
    - `loadWordSet(fileName)` 함수로 각 파일을 비동기적으로 로드
    - 로드 성공한 파일만 `wordSets` 배열에 추가
-   - 파일이 없거나 로드 실패해도 오류 없이 동작
+   - 파일이 없거나 로드 실패해도 오류 없이 동작 (존재하지 않는 파일은 자동으로 무시)
 2. 학습 시작 시:
    - **평가하기 모드**: 각 단어에 대해 2개의 문제 생성 (일본어 표기, 의미), 각 문제의 가중치를 1로 초기화
    - **공부하기 모드**: 선택된 단어들의 가중치를 모두 1로 초기화
@@ -137,12 +140,8 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
 ## 주요 기능
 
 ### 1. 파일 관리
-- **`handleFileUpload(event)`**: JSON 파일 업로드 및 파싱
-  - 중복 파일명 체크 (덮어쓰기)
-  - 메모리에만 저장 (세션 중에만 유지)
-  
 - **`renderFileList()`**: 파일 목록 렌더링
-  - 숫자 기반 자연 정렬 (page_01, page_02, ...)
+  - 알파벳순 정렬 (`localeCompare` 사용, 숫자 부분 자연 정렬)
   - 단어 개수 표시
   - 체크박스 상태 관리
 
@@ -250,8 +249,8 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
 
 ### 7. 공부하기 모드
 - **`displayStudyTable(wordSet)`**: 테이블 형태로 모든 단어 표시
-  - ID, 재생, 일본어 표기, 발음, 의미 컬럼
-  - 스크롤 가능한 고정 헤더
+  - ID, 재생, 일본어 표기, 발음, 의미, 예문 컬럼
+  - 스크롤 가능한 고정 헤더 (가로/세로 스크롤 지원)
   - **안내 문구**: 테이블 위에 사용 안내 문구 표시
   - **ID 정렬**: `idSortOrder` 상태에 따라 단어 배열 정렬
     - `'asc'`: ID 오름차순 정렬
@@ -259,6 +258,7 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
     - `'random'`: Fisher-Yates 셔플 알고리즘으로 랜덤 정렬
   - **ID 헤더**: 클릭 가능하며 현재 정렬 상태를 아이콘으로 표시 (↑, ↓, ↕)
   - **재생 버튼**: 각 행에 재생 버튼(▶) 추가, 클릭 시 `playPronunciation()` 호출
+  - **예문 표시**: 단어 데이터에 `sent_jp`와 `sent_kr`가 있으면 예문 열에 표시 (없으면 "-" 표시)
   - **텍스트 보임/숨김**: 각 텍스트 셀에 `onclick="toggleCell(this)"` 추가
   - **컬럼 헤더 클릭**: 헤더에 `onclick="toggleColumn('columnType')"` 추가
   
@@ -270,7 +270,7 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
   
 - **`saveCellVisibilityStates()`**: 현재 테이블의 보임/숨김 상태 저장
   - 각 셀의 `hidden-text` 클래스 유무를 확인
-  - 키 형식: `{wordId}_{fieldType}` (예: `1_japanese`, `1_pronunciation`, `1_meaning`)
+  - 키 형식: `{wordId}_{fieldType}` (예: `1_japanese`, `1_pronunciation`, `1_meaning`, `1_sentence`)
   - 상태 객체 반환
   
 - **`restoreCellVisibilityStates(states)`**: 저장된 보임/숨김 상태 복원
@@ -360,10 +360,11 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
   - 에러 처리 포함
 - **`init()`**: 페이지 로드 시 초기화 (async 함수)
   - `initVoices()` 호출하여 일본어 음성 초기화
-  - `results/` 폴더에서 `page_01.json` ~ `page_29.json` 파일들을 동적으로 로드
+  - `results/` 폴더에서 `page_01.json` ~ `page_99.json` 파일들을 동적으로 로드 시도
+  - `results/` 폴더에서 `grammar_01.json` ~ `grammar_99.json` 파일들을 동적으로 로드 시도
   - `Promise.all`을 사용하여 병렬 로드
-  - 로드 성공한 파일만 `wordSets` 배열에 추가
-  - 파일 목록 렌더링
+  - 로드 성공한 파일만 `wordSets` 배열에 추가 (존재하지 않는 파일은 자동으로 필터링)
+  - 파일 목록 렌더링 (알파벳순 정렬)
 
 ## CSS 구조
 
@@ -371,11 +372,11 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
 - **그라데이션 배경**: 보라색 계열 (`#667eea` → `#764ba2`)
 - **카드 디자인**: 둥근 모서리, 그림자 효과
 - **반응형 디자인**: 
-  - 모바일 (≤768px): 세로 레이아웃, 작은 폰트
-  - 작은 모바일 (≤480px): 더 작은 폰트, 패딩 축소
+  - 모바일 (≤768px): 세로 레이아웃, 작은 폰트, 가로 스크롤 지원
+  - 작은 모바일 (≤480px): 더 작은 폰트, 패딩 축소, 가로 스크롤 지원
 
 ### 주요 클래스
-- `.container`: 메인 컨테이너 (최대 너비 600px)
+- `.container`: 메인 컨테이너 (최대 너비 1200px)
 - `.header`: 상단 헤더 (그라데이션 배경)
 - `.card`: 플래시카드 컨테이너
 - `.study-table`: 공부하기 테이블
@@ -384,7 +385,10 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
 - `.study-table .play-button`: 재생 버튼 (미니멀 스타일, ▶ 아이콘)
 - `.pronunciation-play-button`: 평가하기 모드의 발음 듣기 버튼 (공부하기 모드와 동일한 스타일)
 - `.study-table th.id-cell`: ID 헤더 (클릭 가능, 호버 효과, 정렬 아이콘 표시)
-- `.study-table .japanese-cell`, `.study-table .pronunciation-cell`, `.study-table .meaning-cell`: 클릭 가능한 텍스트 셀
+- `.study-table .japanese-cell`, `.study-table .pronunciation-cell`, `.study-table .meaning-cell`, `.study-table .sentence-cell`: 클릭 가능한 텍스트 셀
+- `.study-table .sentence-cell`: 예문 셀 (일본어 예문과 한국어 번역 표시)
+- `.study-table .sentence-jp`: 일본어 예문 스타일
+- `.study-table .sentence-kr`: 한국어 예문 번역 스타일
 - `.study-table .hidden-text`: 가려진 텍스트 (배경색 변경, "•••" 표시)
 - `.question-type-selection`: 문제 유형 선택 영역 (평가하기 모드만 표시)
 - `.hidden`: 숨김 처리 (display: none)
@@ -437,8 +441,7 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
 - ✅ 두 가지 학습 모드 제공
 - ✅ **유한 문제 방식** (평가하기 모드): 각 단어당 2문제 생성, 총 문제 수 = 단어 수 × 2
 - ✅ 반응형 디자인 (모바일 최적화)
-- ✅ **기본 단어셋 동적 로드**: `results/` 폴더의 JSON 파일들을 페이지 로드 시 자동으로 fetch하여 로드
-- ✅ JSON 파일 업로드 지원
+- ✅ **기본 단어셋 자동 로드**: `results/` 폴더의 모든 JSON 파일을 페이지 로드 시 자동으로 fetch하여 로드 (page_01~99, grammar_01~99)
 - ✅ 간단한 구조 (영구 저장 없음)
 - ✅ 카드 높이 일정 유지 (정답 확인 전후 동일한 높이)
 - ✅ 정답 확인/숨기기 토글 기능 (버튼을 여러 번 클릭하여 정답 표시/숨김 가능)
@@ -458,6 +461,8 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
 - ✅ **컬럼 전체 보임/숨김**: 공부하기 모드에서 컬럼 헤더 클릭 시 해당 컬럼 전체 보임/숨김 처리
 - ✅ **가려진 텍스트 표시**: 가려진 텍스트는 배경색과 "•••" 표시로 정보가 있음을 알 수 있음
 - ✅ **클립보드 복사 기능**: 공부하기 모드에서 각 칸을 길게 누르면(500ms 이상) 클립보드에 자동 복사
+- ✅ **예문 표시 기능**: 공부하기 모드에서 단어 데이터에 예문(`sent_jp`, `sent_kr`)이 있으면 예문 열에 표시
+- ✅ **알파벳순 정렬**: 단어묶음 목록이 파일명 기준 알파벳순으로 정렬
 
 ### 제약사항
 - ⚠️ 단일 HTML 파일 구조 (코드 분리 없음)
@@ -499,11 +504,11 @@ let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
 ```
 초기화 (init - async)
   ↓
-results/ 폴더에서 JSON 파일들 fetch (page_01.json ~ page_29.json)
+results/ 폴더에서 JSON 파일들 fetch (page_01.json ~ page_99.json, grammar_01.json ~ grammar_99.json)
   ↓
-로드 성공한 파일들을 wordSets에 추가
+로드 성공한 파일들을 wordSets에 추가 (존재하지 않는 파일은 자동으로 무시)
   ↓
-파일 목록 렌더링 (renderFileList)
+파일 목록 렌더링 (renderFileList - 알파벳순 정렬)
   ↓
 [사용자 액션]
   ↓
