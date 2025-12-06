@@ -3,7 +3,7 @@
   "words": [
     {
       "id": 1,
-      "grammar": "~だって",
+      "japanese": "~だって",
       "pronunciation": "~だって",
       "meaning": "~라도",
       "sent_jp": "そのくらいは小学生だって知っているはずだ。",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "grammar": "~でいい",
+      "japanese": "~でいい",
       "pronunciation": "~でいい",
       "meaning": "~면 된다",
       "sent_jp": "おやつは一つでいい。",
@@ -19,7 +19,7 @@
     },
     {
       "id": 3,
-      "grammar": "~でしかない",
+      "japanese": "~でしかない",
       "pronunciation": "~でしかない",
       "meaning": "~에 불과하다",
       "sent_jp": "スマホはただの連絡手段でしかない。",
@@ -27,7 +27,7 @@
     },
     {
       "id": 4,
-      "grammar": "~でなくてもよければ",
+      "japanese": "~でなくてもよければ",
       "pronunciation": "~でなくてもよければ",
       "meaning": "~가 아니라도 좋다면",
       "sent_jp": "今日でなくてもよければ買い物に付き合える。",
@@ -35,7 +35,7 @@
     },
     {
       "id": 5,
-      "grammar": "~として",
+      "japanese": "~として",
       "pronunciation": "~として",
       "meaning": "~로서",
       "sent_jp": "彼は歌手として有名になった。",
@@ -43,7 +43,7 @@
     },
     {
       "id": 6,
-      "grammar": "~としては",
+      "japanese": "~としては",
       "pronunciation": "~としては",
       "meaning": "~의 입장으로서는, ~의 관점으로서는",
       "sent_jp": "私としてはあなたの意見に賛成することができません。",
@@ -51,7 +51,7 @@
     },
     {
       "id": 7,
-      "grammar": "~において",
+      "japanese": "~において",
       "pronunciation": "~において",
       "meaning": "~에 있어서",
       "sent_jp": "人生においてもっとも重要だと思うことは何ですか。",
@@ -59,7 +59,7 @@
     },
     {
       "id": 8,
-      "grammar": "~にかけて",
+      "japanese": "~にかけて",
       "pronunciation": "~にかけて",
       "meaning": "~에 걸쳐",
       "sent_jp": "この仕事は夏休みにかけて特に忙しくなる。",
@@ -67,7 +67,7 @@
     },
     {
       "id": 9,
-      "grammar": "~に比べて",
+      "japanese": "~に比べて",
       "pronunciation": "~にくらべて",
       "meaning": "~에 비하여",
       "sent_jp": "日本に比べてベトナムの方が物価が安い。",
@@ -75,7 +75,7 @@
     },
     {
       "id": 10,
-      "grammar": "~に加えて",
+      "japanese": "~に加えて",
       "pronunciation": "~にくわえて",
       "meaning": "~에 더하여",
       "sent_jp": "彼女は仕事に加えて子育てもしている。",
@@ -83,7 +83,7 @@
     },
     {
       "id": 11,
-      "grammar": "~にしかできない",
+      "japanese": "~にしかできない",
       "pronunciation": "~にしかできない",
       "meaning": "~밖에 할 수 없다(~만이 할 수 있다)",
       "sent_jp": "この仕事はあなたにしかできない。",
@@ -91,7 +91,7 @@
     },
     {
       "id": 12,
-      "grammar": "~にする",
+      "japanese": "~にする",
       "pronunciation": "~にする",
       "meaning": "~로 하다 (결정)",
       "sent_jp": "私はハンバーグにします。",
@@ -99,7 +99,7 @@
     },
     {
       "id": 13,
-      "grammar": "~に対して",
+      "japanese": "~に対して",
       "pronunciation": "~にたいして",
       "meaning": "~에 대하여, ~에 대해",
       "sent_jp": "この美術館は学生に対して割引サービスを行っています。",
@@ -107,7 +107,7 @@
     },
     {
       "id": 14,
-      "grammar": "~について",
+      "japanese": "~について",
       "pronunciation": "~について",
       "meaning": "~에 대해서",
       "sent_jp": "農村について調べている。",
@@ -115,7 +115,7 @@
     },
     {
       "id": 15,
-      "grammar": "~にとって",
+      "japanese": "~にとって",
       "pronunciation": "~にとって",
       "meaning": "~에게 있어서, ~에게는",
       "sent_jp": "私にとって人生でいちばん大切なのは家族の幸せだ。",
@@ -123,7 +123,7 @@
     },
     {
       "id": 16,
-      "grammar": "~に反して",
+      "japanese": "~に反して",
       "pronunciation": "~にはんして",
       "meaning": "~와 달리, ~에 반하여",
       "sent_jp": "予想に反して、今年の試験は難しくなかったそうだ。",
@@ -131,7 +131,7 @@
     },
     {
       "id": 17,
-      "grammar": "~によって / ~により",
+      "japanese": "~によって / ~により",
       "pronunciation": "~によって / ~により",
       "meaning": "~에 따라서, ~에 의해서",
       "sent_jp": "人によって考え方が違う。",
@@ -139,7 +139,7 @@
     },
     {
       "id": 18,
-      "grammar": "~による",
+      "japanese": "~による",
       "pronunciation": "~による",
       "meaning": "~에 의한, ~에 따른",
       "sent_jp": "台風による被害が大きいそうです。",
@@ -147,7 +147,7 @@
     },
     {
       "id": 19,
-      "grammar": "~によると",
+      "japanese": "~によると",
       "pronunciation": "~によると",
       "meaning": "~에 의하면, ~에 따르면",
       "sent_jp": "天気予報によると明日は晴れだそうです。",
@@ -155,7 +155,7 @@
     },
     {
       "id": 20,
-      "grammar": "~にわたって",
+      "japanese": "~にわたって",
       "pronunciation": "~にわたって",
       "meaning": "~에 걸쳐",
       "sent_jp": "中田先生の講義は2時間にわたって続いた。",
@@ -163,7 +163,7 @@
     },
     {
       "id": 21,
-      "grammar": "~のことで",
+      "japanese": "~のことで",
       "pronunciation": "~のことで",
       "meaning": "~에 대해서",
       "sent_jp": "レポートのことで、相談したいことがあるんですが。",
@@ -171,7 +171,7 @@
     },
     {
       "id": 22,
-      "grammar": "~を中心に",
+      "japanese": "~を中心に",
       "pronunciation": "~をちゅうしんに",
       "meaning": "~을 중심으로",
       "sent_jp": "先生を中心に写真を撮りましょう。",
@@ -179,7 +179,7 @@
     },
     {
       "id": 23,
-      "grammar": "~を通じて",
+      "japanese": "~を通じて",
       "pronunciation": "~をつうじて",
       "meaning": "~내내, ~을 통하여",
       "sent_jp": "この国は一年を通じて暖かいので、雪が降らない。",
@@ -187,7 +187,7 @@
     },
     {
       "id": 24,
-      "grammar": "~を抜きにして",
+      "japanese": "~を抜きにして",
       "pronunciation": "~をぬきにして",
       "meaning": "~을 빼고",
       "sent_jp": "松本さんの努力を抜きにして今回のような成果はなかったと思う。",
@@ -195,7 +195,7 @@
     },
     {
       "id": 25,
-      "grammar": "~をめぐって",
+      "japanese": "~をめぐって",
       "pronunciation": "~をめぐって",
       "meaning": "~를 둘러싸고",
       "sent_jp": "そのうわさをめぐっていろんな意見がある。",
@@ -203,7 +203,7 @@
     },
     {
       "id": 26,
-      "grammar": "~をもとに",
+      "japanese": "~をもとに",
       "pronunciation": "~をもとに",
       "meaning": "~를 토대로, 바탕으로",
       "sent_jp": "この小説は実際にあった事件をもとにしている。",
@@ -211,7 +211,7 @@
     },
     {
       "id": 27,
-      "grammar": "A, BといったC",
+      "japanese": "A, BといったC",
       "pronunciation": "A, BといったC",
       "meaning": "A, B와 같은 C",
       "sent_jp": "タイ、ベトナムといった東南アジアに旅行に行きたい。",
@@ -219,7 +219,7 @@
     },
     {
       "id": 28,
-      "grammar": "AほどBはない",
+      "japanese": "AほどBはない",
       "pronunciation": "AほどBはない",
       "meaning": "A만큼 B는 없다",
       "sent_jp": "母が作るケーキほどおいしいものはない。",
@@ -227,7 +227,7 @@
     },
     {
       "id": 29,
-      "grammar": "いまにも~そうだ",
+      "japanese": "いまにも~そうだ",
       "pronunciation": "いまにも~そうだ",
       "meaning": "금세라도 ~(할) 것 같다",
       "sent_jp": "いまにも泣きそうな顔をしている。",
@@ -235,7 +235,7 @@
     },
     {
       "id": 30,
-      "grammar": "~がちだ",
+      "japanese": "~がちだ",
       "pronunciation": "~がちだ",
       "meaning": "~(하)기 쉽다",
       "sent_jp": "子供は好きなものだけ食べがちだ。",
@@ -243,7 +243,7 @@
     },
     {
       "id": 31,
-      "grammar": "~かねない",
+      "japanese": "~かねない",
       "pronunciation": "~かねない",
       "meaning": "~(할)지도 모른다, ~(할) 뻔하다",
       "sent_jp": "そうやって週末も仕事していたら病気になりかねないよ。",
@@ -251,7 +251,7 @@
     },
     {
       "id": 32,
-      "grammar": "~きれない",
+      "japanese": "~きれない",
       "pronunciation": "~きれない",
       "meaning": "다 ~(할) 수 없다",
       "sent_jp": "量が多すぎて食べきれなかった。",
@@ -259,7 +259,7 @@
     },
     {
       "id": 33,
-      "grammar": "~そうもない",
+      "japanese": "~そうもない",
       "pronunciation": "~そうもない",
       "meaning": "~(할) 것 같지도 않다",
       "sent_jp": "いくら頑張っても、できそうもない。",
@@ -267,7 +267,7 @@
     },
     {
       "id": 34,
-      "grammar": "~そうにない",
+      "japanese": "~そうにない",
       "pronunciation": "~そうにない",
       "meaning": "~(할) 것 같지 않다",
       "sent_jp": "雨はまだ降りそうにない。",
@@ -275,7 +275,7 @@
     },
     {
       "id": 35,
-      "grammar": "~そうになる",
+      "japanese": "~そうになる",
       "pronunciation": "~そうになる",
       "meaning": "~(할) 뻔 하다",
       "sent_jp": "事故を起こしそうになったことがある。",
@@ -283,7 +283,7 @@
     },
     {
       "id": 36,
-      "grammar": "~たい",
+      "japanese": "~たい",
       "pronunciation": "~たい",
       "meaning": "~(하)고 싶다",
       "sent_jp": "将来は作家になりたい。",
@@ -291,7 +291,7 @@
     },
     {
       "id": 37,
-      "grammar": "~っぱなし",
+      "japanese": "~っぱなし",
       "pronunciation": "~っぱなし",
       "meaning": "~(한) 채",
       "sent_jp": "エアコンをつけっぱなしにしていると、電気代が高くなる。",
@@ -299,7 +299,7 @@
     },
     {
       "id": 38,
-      "grammar": "~終わる",
+      "japanese": "~終わる",
       "pronunciation": "~おわる",
       "meaning": "다 ~(하)다, ~(하)는 것이 끝나다",
       "sent_jp": "昨日借りたDVDは見終わった。",
@@ -307,7 +307,7 @@
     },
     {
       "id": 39,
-      "grammar": "~直す",
+      "japanese": "~直す",
       "pronunciation": "~なおす",
       "meaning": "다시 ~(하)다",
       "sent_jp": "レポートのテーマを変えたせいで、最初から書き直した。",
@@ -315,7 +315,7 @@
     },
     {
       "id": 40,
-      "grammar": "~にくい",
+      "japanese": "~にくい",
       "pronunciation": "~にくい",
       "meaning": "~(하)기 어렵다",
       "sent_jp": "ここでは話しにくい内容だからあとで話すね。",
@@ -323,7 +323,7 @@
     },
     {
       "id": 41,
-      "grammar": "~始める",
+      "japanese": "~始める",
       "pronunciation": "~はじめる",
       "meaning": "~(하)기 시작하다",
       "sent_jp": "先週からピアノを習い始めた。",
@@ -331,7 +331,7 @@
     },
     {
       "id": 42,
-      "grammar": "~やすい",
+      "japanese": "~やすい",
       "pronunciation": "~やすい",
       "meaning": "~(하)기 쉽다",
       "sent_jp": "日本は韓国から近いので行きやすい。",
@@ -339,7 +339,7 @@
     },
     {
       "id": 43,
-      "grammar": "~てある",
+      "japanese": "~てある",
       "pronunciation": "~てある",
       "meaning": "~되어 있다",
       "sent_jp": "テーブルの上には花が飾ってある。",
@@ -347,7 +347,7 @@
     },
     {
       "id": 44,
-      "grammar": "~ていく",
+      "japanese": "~ていく",
       "pronunciation": "~ていく",
       "meaning": "~(하)고 가다",
       "sent_jp": "今日はお弁当を持っていきます。",
@@ -355,7 +355,7 @@
     },
     {
       "id": 45,
-      "grammar": "~て以来",
+      "japanese": "~て以来",
       "pronunciation": "~ていらい",
       "meaning": "~(한) 이래, ~(한) 이후",
       "sent_jp": "マラソンを始めて以来、初めて大会に出る。",
@@ -363,7 +363,7 @@
     },
     {
       "id": 46,
-      "grammar": "~ている",
+      "japanese": "~ている",
       "pronunciation": "~ている",
       "meaning": "~(하)고 있다, ~(한) 상태이다",
       "sent_jp": "人が多いから待っています。",
@@ -371,7 +371,7 @@
     },
     {
       "id": 47,
-      "grammar": "~ている間に",
+      "japanese": "~ている間に",
       "pronunciation": "~ているあいだに",
       "meaning": "~(하)는 동안에",
       "sent_jp": "友だちを待っている間に、音楽を聞いていた。",
@@ -379,7 +379,7 @@
     },
     {
       "id": 48,
-      "grammar": "~ておく",
+      "japanese": "~ておく",
       "pronunciation": "~ておく",
       "meaning": "~(해) 두다",
       "sent_jp": "暑いから窓は開けておくね。",
@@ -387,7 +387,7 @@
     },
     {
       "id": 49,
-      "grammar": "~てから",
+      "japanese": "~てから",
       "pronunciation": "~てから",
       "meaning": "~(하)고 나서",
       "sent_jp": "遊びに行くのは宿題を終えてからだ。",
@@ -395,7 +395,7 @@
     },
     {
       "id": 50,
-      "grammar": "~てからでないと",
+      "japanese": "~てからでないと",
       "pronunciation": "~てからでないと",
       "meaning": "~(하)지 않고서는",
       "sent_jp": "この仕事が全部終わってからでないと帰れない。",
@@ -403,7 +403,7 @@
     },
     {
       "id": 51,
-      "grammar": "~てごらん",
+      "japanese": "~てごらん",
       "pronunciation": "~てごらん",
       "meaning": "~(해) 보렴",
       "sent_jp": "もう一度ゆっくりやってごらん。",
@@ -411,7 +411,7 @@
     },
     {
       "id": 52,
-      "grammar": "~てしまう(=~ちゃう)",
+      "japanese": "~てしまう(=~ちゃう)",
       "pronunciation": "~てしまう(=~ちゃう)",
       "meaning": "~(해) 버리다",
       "sent_jp": "お皿を割ってしまいました。",
