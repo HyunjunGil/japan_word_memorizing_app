@@ -1214,12 +1214,6 @@
                         </label>
                     </div>
                     
-                    <div class="upload-section" onclick="document.getElementById('fileInput').click()">
-                        <h3>📁 JSON 파일 업로드</h3>
-                        <p style="margin-top: 10px; color: #666;">클릭하여 단어묶음 파일을 추가하세요</p>
-                        <input type="file" id="fileInput" accept=".json" multiple onchange="handleFileUpload(event)">
-                    </div>
-                    
                     <div id="fileListContainer" class="hidden">
                         <!-- 문제 유형 선택 (평가하기 모드일 때만 표시) -->
                         <div id="questionTypeSelection" class="question-type-selection hidden">
@@ -1251,7 +1245,6 @@
                     
                     <div id="emptyState" class="empty-state">
                         <h2>단어묶음이 없습니다</h2>
-                        <p>위의 업로드 버튼을 클릭하여 JSON 파일을 추가해주세요</p>
                     </div>
                 </div>
             </div>
@@ -1326,14 +1319,15 @@
             // results 폴더에서 JSON 파일들 로드
             const wordSetPromises = [];
             
-            // page_01.json ~ page_29.json 로드
-            for (let i = 1; i <= 29; i++) {
+            // 가능한 모든 파일 패턴 시도 (존재하지 않는 파일은 null 반환)
+            // page_01.json ~ page_99.json 시도
+            for (let i = 1; i <= 99; i++) {
                 const pageNum = String(i).padStart(2, '0');
                 wordSetPromises.push(loadWordSet(`page_${pageNum}`));
             }
             
-            // grammar_01.json ~ grammar_03.json 로드
-            for (let i = 1; i <= 3; i++) {
+            // grammar_01.json ~ grammar_99.json 시도
+            for (let i = 1; i <= 99; i++) {
                 const grammarNum = String(i).padStart(2, '0');
                 wordSetPromises.push(loadWordSet(`grammar_${grammarNum}`));
             }
