@@ -22,7 +22,7 @@ https://hyunjungil.github.io/japan_word_memorizing_app/
 - 정답 확인 후 다음: 가중치 +1 (최대 5)
 - 정답 확인 없이 다음: 가중치 -1 (최소 0, 가중치가 0이면 문제 완료)
 - 진행도 표시: 좌측 상단에 "진행도: A / B" 형태로 표시
-- 완료 시 자동 이동: 모든 문제 완료 시 알람 없이 바로 처음 화면으로 이동
+- 완료 시 자동 이동: 모든 문제 완료 시 알림 표시 후 처음 화면으로 이동
 - **발음 듣기 기능**: 답 공개 후 발음 항목 옆에 듣기 버튼(▶)이 표시되어 발음을 들을 수 있습니다
 - **트라이 횟수 통계**: 플래시카드 아래에 실시간 통계 표시
   - 각 문제별로 가중치가 0이 될 때까지의 트라이 횟수 추적
@@ -62,28 +62,24 @@ https://hyunjungil.github.io/japan_word_memorizing_app/
 
 ```
 japan_study/
-├── japan_wordbook.html          # 실제 암기장 용도 (전체 단어셋 포함)
-├── japan_wordbook_no_words.html # 코드 수정용 (DEFAULT_WORD_SETS 축소 버전)
+├── index.html                   # 메인 HTML 파일 (단일 파일 구조)
 ├── results/                     # 단어 데이터 JSON 파일들
 │   ├── page_01.json
 │   ├── page_02.json
+│   ├── grammar_01.json
 │   └── ...
-├── results_tmp/                 # 임시 단어 데이터
-├── word_init_script.py          # 단어 데이터 초기화 스크립트
-├── apply_update_japan_wordbook.sh # 변경사항 자동 반영 스크립트
 └── README.md                    # 이 파일
 ```
 
 ### 파일 설명
 
-- **`japan_wordbook.html`**: 실제 암기장 용도로 사용하는 파일입니다. 전체 단어셋이 내장되어 있어 바로 사용할 수 있습니다.
-- **`japan_wordbook_no_words.html`**: 코드 수정 및 테스트를 위해 `DEFAULT_WORD_SETS`를 작게 줄인 버전입니다. 개발 시 이 파일을 사용하면 로딩이 빠르고 수정이 용이합니다.
+- **`index.html`**: 메인 HTML 파일입니다. 단일 파일 구조로 HTML, CSS, JavaScript가 모두 포함되어 있습니다. `results/` 폴더의 JSON 파일들을 동적으로 로드하여 사용합니다.
 
 ## 🚀 사용 방법
 
 ### 1. 기본 사용
 
-1. `japan_wordbook.html` 파일을 브라우저에서 엽니다.
+1. `index.html` 파일을 브라우저에서 엽니다.
 2. 학습 모드를 선택합니다:
    - **평가하기**: 플래시카드 방식으로 암기 테스트
    - **공부하기**: 테이블 형태로 모든 정보 확인
@@ -197,7 +193,7 @@ japan_study/
 - ✅ 반응형 디자인 (모바일 최적화, 가로 스크롤 지원)
 - ✅ 기본 단어셋 자동 로드 (`results/` 폴더의 모든 JSON 파일)
 - ✅ 진행도 표시
-- ✅ 완료 시 자동 이동
+- ✅ 완료 시 자동 이동 (알림 표시 후)
 - ✅ **발음 재생 기능**: Web Speech API를 사용한 일본어 발음 재생 (Chrome에서 Google 일본어 음성 사용)
   - 평가하기 모드: 답 공개 후 발음 듣기 버튼 제공
   - 공부하기 모드: 각 행의 재생 버튼으로 발음 재생
@@ -220,28 +216,6 @@ japan_study/
 - ⚠️ 공부하기 모드는 단일 파일만 선택 가능
 - ⚠️ 발음 문제 유형 제외 (일본어 표기, 뜻 문제만 출제)
 - ⚠️ 페이지 새로고침 시 모든 학습 데이터 초기화 (가중치, 히스토리 등)
-
-## 🔧 개발
-
-### 코드 수정 시
-
-개발 및 코드 수정 시에는 `japan_wordbook_no_words.html` 파일을 사용하는 것을 권장합니다. 이 파일은 `DEFAULT_WORD_SETS`가 축소되어 있어 로딩이 빠르고 수정이 용이합니다.
-
-### 변경사항 자동 반영
-
-수정 완료 후 변경사항을 `japan_wordbook.html`에 자동으로 반영하려면 다음 스크립트를 실행하세요:
-
-```bash
-./apply_update_japan_wordbook.sh
-```
-
-이 스크립트는 다음 작업을 수행합니다:
-1. `japan_wordbook_no_words.html`을 `japan_wordbook.html`로 복사
-2. `word_init_script.py`를 실행하여 `results/` 폴더의 단어 데이터를 `japan_wordbook.html`에 초기화
-
-수동으로 반영하려면:
-1. `japan_wordbook_no_words.html`의 변경사항을 `japan_wordbook.html`에 복사
-2. `python word_init_script.py japan_wordbook.html results` 명령 실행
 
 ## 📖 상세 명세
 
