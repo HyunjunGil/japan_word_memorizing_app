@@ -641,13 +641,7 @@
         }
         
         .study-table th.sentence-cell {
-            cursor: pointer;
             user-select: none;
-            transition: background-color 0.2s;
-        }
-        
-        .study-table th.sentence-cell:hover {
-            background-color: #e8e9ff;
         }
         
         .study-table th.id-cell {
@@ -727,8 +721,7 @@
         
         .study-table .japanese-cell,
         .study-table .pronunciation-cell,
-        .study-table .meaning-cell,
-        .study-table .sentence-cell {
+        .study-table .meaning-cell {
             cursor: pointer;
             user-select: none;
             transition: background-color 0.2s;
@@ -736,7 +729,15 @@
         
         .study-table .japanese-cell:hover,
         .study-table .pronunciation-cell:hover,
-        .study-table .meaning-cell:hover,
+        .study-table .meaning-cell:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .study-table .sentence-cell {
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+        
         .study-table .sentence-cell:hover {
             background-color: #f0f0f0;
         }
@@ -2045,7 +2046,7 @@
                             <th class="japanese-cell" onclick="toggleColumn('japanese')">일본어 표기</th>
                             <th class="pronunciation-cell" onclick="toggleColumn('pronunciation')">발음</th>
                             <th class="meaning-cell" onclick="toggleColumn('meaning')">의미</th>
-                            <th class="sentence-cell" onclick="toggleColumn('sentence')">예문</th>
+                            <th class="sentence-cell">예문</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -2057,10 +2058,10 @@
                             
                             // 예문이 있는지 확인
                             const hasSentence = word.sent_jp && word.sent_jp.trim() !== '' && word.sent_kr && word.sent_kr.trim() !== '';
-                            const sentenceText = hasSentence ? `${word.sent_jp}\n${word.sent_kr}` : '';
+                            const sentenceText = hasSentence ? word.sent_jp : '';
                             
                             const sentenceCellHTML = hasSentence ? `
-                                <td class="sentence-cell" onclick="toggleCell(this, event)" 
+                                <td class="sentence-cell" 
                                     onmousedown="startLongPress(this, '${sentenceText.replace(/'/g, "\\'")}')" 
                                     onmouseup="endLongPress()" 
                                     onmouseleave="endLongPress()"
