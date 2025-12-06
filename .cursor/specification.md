@@ -1,630 +1,977 @@
-# 일본어 단어장 (index.html) 명세서
+# 일본어 단어장 - 기술 사양서
 
-## 개요
-일본어 단어 학습을 위한 웹 애플리케이션입니다. 플래시카드 방식의 평가 모드와 테이블 방식의 공부 모드를 제공하며, 가중치 기반 반복 학습 시스템을 구현하고 있습니다.
+## 📋 문서 개요
 
-## 기술 스택
-- **HTML5**: 단일 파일 구조
-- **CSS3**: 반응형 디자인 (모바일 최적화)
-- **JavaScript (Vanilla)**: 클라이언트 사이드 로직
-- **세션 기반**: 페이지 새로고침 시 모든 데이터 초기화
+이 문서는 일본어 단어장 애플리케이션의 상세한 기술 사양, 아키텍처 설계, API 명세를 포함합니다.
 
-## 파일 구조
+**작성일**: 2025-12-06  
+**버전**: 2.0.0  
+**상태**: 리팩토링 완료
+
+---
+
+## 🏗 아키텍처 설계
+
+### 전체 구조
+
 ```
-index.html (메인 HTML 파일 - 단일 파일 구조)
-├── <head>
-│   ├── 메타 태그 (UTF-8, viewport)
-│   └── <style> - 인라인 CSS
-├── <body>
-│   ├── HTML 구조
-│   └── <script> - JavaScript 로직
-│       ├── 동적 데이터 로드 (results/ 폴더의 JSON 파일들)
-│       ├── 평가하기 모드 로직
-│       ├── 공부하기 모드 로직
-│       └── 발음 재생 및 텍스트 보임/숨김 기능
+┌─────────────────────────────────────────────────────────┐
+│                      App (main.js)                       │
+│                  애플리케이션 진입점                        │
+└─────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────┐
+│                       App.js                             │
+│              메인 애플리케이션 클래스                        │
+│         (모든 모듈을 통합하고 이벤트 조정)                   │
+└─────────────────────────────────────────────────────────┘
+        │                   │                   │
+        ▼                   ▼                   ▼
+┌──────────────┐   ┌──────────────┐   ┌──────────────┐
+│   Services   │   │   Managers   │   │     Modes    │
+│              │   │              │   │              │
+│ - WordSet    │   │ - Session    │   │ - QuizMode   │
+│ - Weight     │   │ - History    │   │ - StudyMode  │
+│ - Statistics │   │ - Voice      │   │              │
+└──────────────┘   └──────────────┘   └──────────────┘
+        │                   │                   │
+        └───────────────────┼───────────────────┘
+                            ▼
+                    ┌──────────────┐
+                    │      UI      │
+                    │              │
+                    │ - FileSelect │
+                    │ - Flashcard  │
+                    │ - StudyTable │
+                    │ - Statistics │
+                    └──────────────┘
+                            │
+                            ▼
+                    ┌──────────────┐
+                    │    Models    │
+                    │              │
+                    │ - Word       │
+                    │ - WordSet    │
+                    │ - Question   │
+                    └──────────────┘
 ```
 
-## 주요 화면 구성
+### 레이어 구조
 
-### 1. 파일 선택 화면 (`fileSelectionScreen`)
-- **모드 선택**: 평가하기 / 공부하기
-- **문제 유형 선택** (평가하기 모드만 표시): 일본어 표기 문제, 의미 문제 체크박스 (기본값: 둘 다 선택)
-- **단어묶음 목록**: 체크박스로 선택 (알파벳순 정렬)
-- **전체선택/전체해제** 버튼
-- **학습 시작** 버튼
+1. **Presentation Layer (UI)**
+   - 사용자 인터페이스 렌더링
+   - 사용자 입력 처리
+   - 이벤트 리스너 관리
 
-### 2. 플래시카드 화면 (`flashcardScreen`)
-- **평가하기 모드 전용**
-- 카드 형태의 단어 표시
-- **진행도 배지** (좌측 상단): "진행도: A / B" 형태 (A = 가중치가 0이 된 문제 수, B = 전체 문제 수)
-- **가중치 배지** (우측 상단): 현재 문제의 가중치 표시
-- 이전/다음 네비게이션
-- 정답 확인 기능
-- **발음 듣기 버튼**: 답 공개 후 발음 항목 옆에 듣기 버튼(▶) 표시 (공부하기 모드와 동일한 스타일)
-- **답 항목 순서**: 일본어 표기 → 뜻 → 발음 (발음이 가장 아래)
-- **완료 시 자동 이동**: 모든 문제 완료 시 알림 표시 후 처음 화면으로 이동
-- **트라이 횟수 통계 영역** (카드 아래): 실시간 통계 표시
-  - 각 문제별로 가중치가 0이 될 때까지의 트라이 횟수 추적
-  - 트라이 횟수별 분포를 가로 막대 그래프로 표시 (1회, 2회, 3회, 4회, 5회+)
-  - 각 횟수 그룹의 단어 개수와 전체 대비 비율(%) 표시
-  - 완료된 문제 수와 평균 트라이 횟수 표시
-  - 각 횟수 레이블 클릭 시 해당 그룹의 단어 목록을 테이블로 확장 표시
-    - 테이블은 공부하기 모드와 동일한 형태와 기능 제공
-    - 파일명, ID, 재생, 일본어 표기, 발음, 의미, 예문 컬럼
-    - 텍스트 보임/숨김, 클립보드 복사, 발음 재생, 컬럼 전체 보임/숨김 기능 지원
-    - 고정된 영역에서 내부 스크롤 가능
+2. **Business Logic Layer (Modes + Services)**
+   - 학습 모드 로직 (평가하기/공부하기)
+   - 가중치 계산
+   - 통계 분석
 
-### 3. 공부하기 테이블 화면 (`studyTableScreen`)
-- **공부하기 모드 전용**
-- 테이블 형태로 모든 단어 표시
-- ID, 재생, 일본어 표기, 발음, 의미, 예문 컬럼
-- 스크롤 가능한 고정 헤더 (가로/세로 스크롤 지원)
-- **안내 문구**: 테이블 위에 "각 텍스트를 클릭하여 보임/숨김 처리할 수 있습니다" 문구 표시
-- **ID 정렬 기능**: ID 열 헤더 클릭 시 정렬 순서 변경 (오름차순 ↑ → 내림차순 ↓ → 랜덤 ↕ → 오름차순 ↑)
-- **재생 버튼**: 각 행에 재생 버튼(▶)이 있어 클릭 시 해당 단어의 발음 재생
-- **예문 표시**: 단어 데이터에 `sent_jp`와 `sent_kr`가 있으면 예문 열에 일본어 예문과 한국어 번역 표시
-- **텍스트 보임/숨김**: 각 텍스트(일본어 표기, 발음, 의미, 예문)를 클릭하여 개별 보임/숨김 처리 가능
-- **컬럼 전체 보임/숨김**: 컬럼 헤더 클릭 시 해당 컬럼 전체 보임/숨김 처리
+3. **Data Layer (Models + Services)**
+   - 데이터 구조 정의
+   - 데이터 로드 및 관리
+   - 상태 저장/복원
 
-## 데이터 구조
+4. **Utility Layer**
+   - 공통 헬퍼 함수
+   - DOM 조작
+   - 클립보드 처리
 
-### 단어셋 (WordSet)
+---
+
+## 📦 모듈 명세
+
+### 1. Config (config.js)
+
+애플리케이션 전역 상수 정의
+
 ```javascript
-{
-    "fileName": "page_01",  // 파일명 (고유 식별자)
-    "words": [
-        {
-            "id": 1,                    // 단어 ID
-            "japanese": "改札",         // 일본어 표기
-            "pronunciation": "かいさつ", // 발음 (히라가나/가타카나)
-            "meaning": "개찰",         // 한국어 의미
-            "sent_jp": "改札口を通る", // 일본어 예문 (선택사항)
-            "sent_kr": "개찰구를 통과하다" // 한국어 예문 번역 (선택사항)
-        },
-        // ...
-    ]
+export const CONFIG = {
+  WEIGHTS: {
+    MIN_QUIZ: 0,      // 평가하기 최소 가중치
+    MAX: 5,           // 최대 가중치
+    MIN_STUDY: 1,     // 공부하기 최소 가중치
+    DEFAULT: 1        // 기본 가중치
+  },
+  
+  TIMING: {
+    LONG_PRESS: 500,  // 긴 누름 감지 시간 (ms)
+    CLICK_DELAY: 100  // 클릭 지연 시간 (ms)
+  },
+  
+  FILES: {
+    MAX_PAGE: 99,     // 최대 page 파일 번호
+    MAX_GRAMMAR: 99   // 최대 grammar 파일 번호
+  },
+  
+  MODES: {
+    QUIZ: 'quiz',     // 평가하기 모드
+    STUDY: 'study'    // 공부하기 모드
+  },
+  
+  SORT_ORDERS: {
+    ASC: 'asc',       // 오름차순
+    DESC: 'desc',     // 내림차순
+    RANDOM: 'random'  // 랜덤
+  },
+  
+  BUTTON_ALIGNMENT: {
+    LEFT: 'left',
+    CENTER: 'center',
+    RIGHT: 'right'
+  },
+  
+  QUESTION_TYPES: {
+    JAPANESE: 'japanese',
+    MEANING: 'meaning',
+    PRONUNCIATION: 'pronunciation'
+  },
+  
+  RECENT_WORD_EXCLUSION_COUNT: 5,  // 최근 단어 제외 개수
+  
+  SPEECH: {
+    LANG: 'ja-JP',
+    RATE: 0.9,
+    PITCH: 1
+  },
+  
+  FEEDBACK: {
+    DISPLAY_DURATION: 1500
+  }
+};
+```
+
+---
+
+### 2. Models
+
+#### 2.1 Word (models/Word.js)
+
+단어 데이터 모델
+
+**속성**:
+- `id`: number - 고유 식별자
+- `japanese`: string - 일본어 표기
+- `pronunciation`: string - 발음
+- `meaning`: string - 한국어 의미
+- `sent_jp`: string - 일본어 예문 (optional)
+- `sent_kr`: string - 한국어 예문 (optional)
+- `fileName`: string - 출처 파일명
+
+**메서드**:
+```javascript
+hasSentence(): boolean
+  // 예문 존재 여부 확인
+
+getTextToSpeak(): string
+  // 발음 재생용 텍스트 반환 (일본어 또는 발음)
+```
+
+#### 2.2 WordSet (models/WordSet.js)
+
+단어 세트 모델
+
+**속성**:
+- `fileName`: string - 파일명
+- `words`: Word[] - 단어 배열
+
+**메서드**:
+```javascript
+getWord(id: number): Word | undefined
+  // ID로 단어 찾기
+
+getWordCount(): number
+  // 단어 개수 반환
+```
+
+#### 2.3 Question (models/Question.js)
+
+문제 모델
+
+**속성**:
+- `type`: string - 문제 유형 (japanese/meaning)
+- `word`: Word - 단어 객체
+- `weightKey`: string - 가중치 키
+
+**메서드**:
+```javascript
+getQuestion(): string
+  // 문제 텍스트 반환
+
+getAnswer(): object
+  // 정답 객체 반환 { japanese, pronunciation, meaning }
+```
+
+---
+
+### 3. Services
+
+#### 3.1 WordSetService (services/WordSetService.js)
+
+단어셋 로드 및 관리 서비스
+
+**메서드**:
+```javascript
+async loadWordSets(fileNames: string[]): Promise<WordSet[]>
+  // 파일명 배열로부터 단어셋 로드
+  // @param fileNames - 로드할 파일명 배열
+  // @returns 로드된 WordSet 배열
+  // @throws 파일 로드 실패 시 에러
+
+getAvailableFiles(type: 'page'|'grammar', maxCount: number): Promise<string[]>
+  // 사용 가능한 파일 목록 조회
+  // @param type - 파일 유형
+  // @param maxCount - 최대 파일 개수
+  // @returns 존재하는 파일명 배열
+```
+
+**구현 세부사항**:
+- `fetch` API 사용하여 JSON 파일 로드
+- 파일별로 Word 객체 생성
+- 에러 처리 및 로그
+
+#### 3.2 WeightService (services/WeightService.js)
+
+가중치 관리 서비스
+
+**메서드**:
+```javascript
+initializeWeights(questions: Question[]): void
+  // 문제 배열의 가중치 초기화
+
+getWeight(weightKey: string): number
+  // 가중치 조회
+
+increaseWeight(weightKey: string): void
+  // 오답 시 가중치 증가 (MAX까지)
+
+decreaseWeight(weightKey: string, mode: string): void
+  // 정답 시 가중치 감소 (MIN_QUIZ 또는 MIN_STUDY까지)
+
+getTotalWeight(): number
+  // 전체 가중치 합계 반환
+
+clear(): void
+  // 모든 가중치 초기화
+```
+
+**가중치 로직**:
+- 정답: weight - 1 (최소값까지)
+- 오답: weight + 1 (최대값 5까지)
+- 평가하기 최소값: 0
+- 공부하기 최소값: 1
+
+#### 3.3 StatisticsService (services/StatisticsService.js)
+
+통계 계산 및 관리 서비스
+
+**메서드**:
+```javascript
+initializeTryCount(weightKey: string): void
+  // 트라이 횟수 초기화
+
+incrementTryCount(weightKey: string): number
+  // 트라이 횟수 증가
+
+recordCompletion(weightKey: string): void
+  // 완료된 문제의 트라이 횟수 기록
+
+getCompletedTryCount(weightKey: string): number|null
+  // 완료된 문제의 트라이 횟수 조회
+
+calculateStatistics(questions: Question[]): object
+  // 통계 계산
+  // @returns {
+  //   tryCountDistribution: {횟수: 개수},
+  //   tryCountQuestions: {횟수: [문제 배열]},
+  //   totalCompleted: number,
+  //   totalQuestions: number,
+  //   avgTryCount: number
+  // }
+
+groupStatisticsByTryCount(stats: object): array
+  // 트라이 횟수별로 그룹화
+  // @returns 그룹 배열 [{tryCount, label, count, percentage, barWidth, questions}]
+
+clear(): void
+  // 모든 통계 초기화
+```
+
+**트라이 횟수 계산**:
+- 실제 트라이 횟수는 1, 3, 5, 7... (홀수)
+- 표시 횟수 = Math.floor((실제 횟수 + 1) / 2)
+  - 1회 시도 → "1회" 표시
+  - 3회 시도 → "2회" 표시
+  - 5회 시도 → "3회" 표시
+- 5회 이상은 "3회+"로 통합 표시
+
+---
+
+### 4. Managers
+
+#### 4.1 StudySessionManager (managers/StudySessionManager.js)
+
+학습 세션 상태 관리
+
+**속성**:
+- `isActive`: boolean - 세션 활성화 상태
+- `mode`: string - 현재 모드 (quiz/study)
+- `selectedFiles`: string[] - 선택된 파일
+- `startTime`: Date - 세션 시작 시간
+
+**메서드**:
+```javascript
+startSession(mode: string, files: string[]): void
+  // 새 세션 시작
+
+endSession(): void
+  // 세션 종료
+
+isSessionActive(): boolean
+  // 세션 활성화 여부
+
+getMode(): string
+  // 현재 모드 반환
+
+getSessionDuration(): number
+  // 세션 진행 시간 (ms)
+```
+
+#### 4.2 HistoryManager (managers/HistoryManager.js)
+
+단어 히스토리 관리 (앞으로/뒤로 네비게이션)
+
+**메서드**:
+```javascript
+push(question: Question): void
+  // 히스토리에 문제 추가
+
+canGoBack(): boolean
+  // 뒤로 갈 수 있는지 확인
+
+canGoForward(): boolean
+  // 앞으로 갈 수 있는지 확인
+
+goBack(): Question
+  // 이전 문제로 이동
+
+goForward(): Question
+  // 다음 문제로 이동
+
+getCurrentIndex(): number
+  // 현재 인덱스 반환
+
+clear(): void
+  // 히스토리 초기화
+```
+
+**구현 세부사항**:
+- 배열 기반 히스토리 스택
+- 현재 위치 인덱스 관리
+- 앞으로/뒤로 네비게이션 지원
+
+#### 4.3 VoiceManager (managers/VoiceManager.js)
+
+Web Speech API 관리
+
+**메서드**:
+```javascript
+async initialize(): Promise<void>
+  // 일본어 음성 초기화
+  // Web Speech API의 voices 로드 대기
+
+play(text: string): void
+  // 텍스트 발음 재생
+  // @param text - 발음할 일본어 텍스트
+
+isAvailable(): boolean
+  // 음성 기능 사용 가능 여부
+```
+
+**구현 세부사항**:
+- Web Speech API의 SpeechSynthesis 사용
+- 일본어 음성 (ja-JP) 자동 선택
+- 음성이 없을 경우 graceful fallback
+
+---
+
+### 5. Modes
+
+#### 5.1 QuizMode (modes/QuizMode.js)
+
+평가하기 모드 로직
+
+**메서드**:
+```javascript
+initialize(wordSets: WordSet[], questionTypes: string[]): void
+  // 모드 초기화 및 문제 생성
+  // @param wordSets - 단어셋 배열
+  // @param questionTypes - 문제 유형 배열
+
+selectNextQuestion(): Question
+  // 다음 문제 선택 (가중치 기반 랜덤)
+  // 최근 5개 단어 중복 방지
+
+getCurrentQuestion(): Question
+  // 현재 문제 반환
+
+markCorrect(): void
+  // 정답 처리 (가중치 감소, 완료 기록)
+
+markIncorrect(): void
+  // 오답 처리 (가중치 증가, 트라이 횟수 증가)
+
+goBack(): Question
+  // 이전 문제로 이동
+
+canGoBack(): boolean
+  // 뒤로 갈 수 있는지 확인
+
+getProgress(): object
+  // 진행률 반환 { completed, total }
+
+calculateStatistics(): object
+  // 통계 계산
+
+groupStatistics(stats: object): array
+  // 통계 그룹화
+
+reset(): void
+  // 모드 초기화
+```
+
+**문제 선택 알고리즘**:
+1. 가중치 합계 계산
+2. 0 ~ 합계 범위의 랜덤 값 생성
+3. 누적 가중치로 문제 선택
+4. 최근 5개 단어에 포함되면 재선택
+5. 히스토리에 추가
+
+#### 5.2 StudyMode (modes/StudyMode.js)
+
+공부하기 모드 로직
+
+**메서드**:
+```javascript
+initialize(wordSets: WordSet[]): void
+  // 모드 초기화
+
+getWords(): Word[]
+  // 모든 단어 반환
+
+sortWords(order: 'asc'|'desc'): void
+  // ID 기준 정렬
+
+toggleSortOrder(): string
+  // 정렬 순서 토글 (asc ↔ desc)
+
+getCurrentSortOrder(): string
+  // 현재 정렬 순서 반환
+
+reset(): void
+  // 모드 초기화
+```
+
+---
+
+### 6. UI Components
+
+#### 6.1 FileSelectionUI (ui/FileSelectionUI.js)
+
+파일 선택 화면 UI
+
+**메서드**:
+```javascript
+show(): void
+  // 화면 표시
+
+hide(): void
+  // 화면 숨김
+
+renderFiles(files: string[], wordCounts: object): void
+  // 파일 목록 렌더링
+  // @param files - 파일명 배열
+  // @param wordCounts - {fileName: count} 객체
+
+getSelectedFiles(): string[]
+  // 선택된 파일 반환
+
+getSelectedMode(): string
+  // 선택된 모드 반환 (quiz/study)
+
+getSelectedQuestionTypes(): string[]
+  // 선택된 문제 유형 반환
+```
+
+#### 6.2 FlashcardUI (ui/FlashcardUI.js)
+
+플래시카드 화면 UI
+
+**메서드**:
+```javascript
+show(): void
+hide(): void
+
+showQuestion(question: Question): void
+  // 문제 표시
+  // @param question - 표시할 문제
+
+showAnswer(answer: object): void
+  // 정답 표시
+  // @param answer - {japanese, pronunciation, meaning}
+
+hideAnswer(): void
+  // 정답 숨김
+
+updateProgress(completed: number, total: number): void
+  // 진행률 업데이트
+
+updateWeight(weight: number): void
+  // 가중치 배지 업데이트
+
+setButtonAlignment(alignment: 'left'|'center'|'right'): void
+  // 버튼 정렬 설정
+
+toggleAlignmentMenu(): void
+  // 정렬 메뉴 토글
+```
+
+#### 6.3 StudyTableUI (ui/StudyTableUI.js)
+
+공부하기 테이블 UI
+
+**메서드**:
+```javascript
+show(): void
+hide(): void
+
+render(words: Word[], sortOrder: string): void
+  // 테이블 렌더링
+  // @param words - 단어 배열
+  // @param sortOrder - 정렬 순서
+
+toggleColumn(columnType: string): void
+  // 컬럼 전체 토글
+
+toggleCell(cell: HTMLElement): void
+  // 개별 셀 토글
+```
+
+#### 6.4 StatisticsUI (ui/StatisticsUI.js)
+
+통계 화면 UI
+
+**메서드**:
+```javascript
+update(stats: object, groups: array, callbacks: object): void
+  // 통계 업데이트
+  // @param stats - 통계 데이터
+  // @param groups - 그룹 배열
+  // @param callbacks - 이벤트 콜백 객체
+
+toggleDetail(tryCount: number|string): void
+  // 상세 테이블 토글
+
+createStatisticsItem(group: object): string
+  // 통계 항목 HTML 생성
+
+createDetailTable(tryCount: number|string, questions: Question[]): string
+  // 상세 테이블 HTML 생성
+```
+
+---
+
+### 7. Utilities
+
+#### 7.1 ClipboardUtils (utils/ClipboardUtils.js)
+
+클립보드 복사 유틸리티
+
+**메서드**:
+```javascript
+startLongPress(element: HTMLElement, text: string): void
+  // 긴 누름 시작
+  // 500ms 후 클립보드에 복사
+
+endLongPress(): void
+  // 긴 누름 종료
+
+setClickTimer(callback: Function): void
+  // 클릭 타이머 설정 (긴 누름과 구분)
+
+isLongPressCompleted(): boolean
+  // 긴 누름 완료 여부
+
+resetLongPressFlag(): void
+  // 긴 누름 플래그 리셋
+```
+
+#### 7.2 DOMUtils (utils/DOMUtils.js)
+
+DOM 조작 헬퍼
+
+**메서드**:
+```javascript
+static getElement(id: string): HTMLElement|null
+  // ID로 요소 찾기
+
+static toggleVisibility(element: HTMLElement, show: boolean): void
+  // 요소 표시/숨김
+
+static addClass(element: HTMLElement, className: string): void
+  // 클래스 추가
+
+static removeClass(element: HTMLElement, className: string): void
+  // 클래스 제거
+
+static toggleClass(element: HTMLElement, className: string): void
+  // 클래스 토글
+
+static setHTML(element: HTMLElement, html: string): void
+  // innerHTML 설정
+
+static setText(element: HTMLElement, text: string): void
+  // textContent 설정
+```
+
+#### 7.3 SortUtils (utils/SortUtils.js)
+
+정렬 알고리즘
+
+**메서드**:
+```javascript
+static fisherYatesShuffle(array: any[]): any[]
+  // Fisher-Yates 셔플 알고리즘
+  // 배열을 랜덤하게 섞음
+  // @param array - 원본 배열 (변경됨)
+  // @returns 셔플된 배열
+
+static sortById(array: object[], order: 'asc'|'desc'): object[]
+  // ID 기준 정렬
+  // @param array - {id: number} 속성을 가진 객체 배열
+  // @param order - 정렬 순서
+  // @returns 정렬된 배열
+```
+
+---
+
+## 🔄 데이터 흐름
+
+### 평가하기 모드 흐름
+
+```
+1. 사용자 입력
+   └─> FileSelectionUI.getSelectedFiles()
+   └─> FileSelectionUI.getSelectedMode() === 'quiz'
+   └─> FileSelectionUI.getSelectedQuestionTypes()
+
+2. 초기화
+   └─> WordSetService.loadWordSets(files)
+   └─> QuizMode.initialize(wordSets, questionTypes)
+        └─> WeightService.initializeWeights(questions)
+        └─> StatisticsService 초기화
+
+3. 문제 선택
+   └─> QuizMode.selectNextQuestion()
+        └─> WeightService.getTotalWeight()
+        └─> 가중치 기반 랜덤 선택
+        └─> 최근 5개 단어 중복 확인
+        └─> HistoryManager.push(question)
+        └─> StatisticsService.initializeTryCount(weightKey)
+
+4. 문제 표시
+   └─> FlashcardUI.showQuestion(question)
+   └─> FlashcardUI.updateProgress(completed, total)
+   └─> FlashcardUI.updateWeight(weight)
+
+5. 사용자 답변
+   5a. 정답
+       └─> QuizMode.markCorrect()
+            └─> WeightService.decreaseWeight(weightKey)
+            └─> StatisticsService.recordCompletion(weightKey)
+   
+   5b. 오답
+       └─> QuizMode.markIncorrect()
+            └─> WeightService.increaseWeight(weightKey)
+            └─> StatisticsService.incrementTryCount(weightKey)
+
+6. 통계 업데이트
+   └─> QuizMode.calculateStatistics()
+   └─> QuizMode.groupStatistics(stats)
+   └─> StatisticsUI.update(stats, groups)
+```
+
+### 공부하기 모드 흐름
+
+```
+1. 사용자 입력
+   └─> FileSelectionUI.getSelectedFiles()
+   └─> FileSelectionUI.getSelectedMode() === 'study'
+
+2. 초기화
+   └─> WordSetService.loadWordSets(files)
+   └─> StudyMode.initialize(wordSets)
+
+3. 테이블 렌더링
+   └─> StudyMode.getWords()
+   └─> StudyTableUI.render(words, sortOrder)
+
+4. 사용자 상호작용
+   4a. 정렬
+       └─> StudyMode.toggleSortOrder()
+       └─> StudyMode.sortWords(order)
+       └─> StudyTableUI.render(words, order)
+   
+   4b. 컬럼 토글
+       └─> StudyTableUI.toggleColumn(columnType)
+   
+   4c. 셀 토글
+       └─> StudyTableUI.toggleCell(cell)
+   
+   4d. 클립보드 복사
+       └─> ClipboardUtils.startLongPress(element, text)
+       └─> (500ms 후) navigator.clipboard.writeText(text)
+```
+
+---
+
+## 🎨 CSS 클래스 명세
+
+### 주요 클래스
+
+#### 레이아웃
+- `.container`: 메인 컨테이너
+- `.header`: 헤더 영역
+- `.content`: 콘텐츠 영역
+
+#### 파일 선택
+- `.file-selection`: 파일 선택 컨테이너
+- `.mode-selection`: 모드 선택 영역
+- `.mode-option`: 모드 옵션 (선택 시 `.selected` 추가)
+- `.file-list`: 파일 목록
+- `.file-item`: 개별 파일 아이템
+- `.question-type-selection`: 문제 유형 선택 영역
+
+#### 플래시카드
+- `.flashcard`: 플래시카드 컨테이너
+- `.card`: 카드 (height: 500px 고정)
+- `.card-question`: 문제 유형 라벨
+- `.card-content`: 문제 내용 (48px)
+- `.card-answer`: 정답 영역
+- `.card-answer.hidden`: 정답 숨김 상태
+- `.card-controls`: 버튼 영역
+  - `.align-left`: 왼쪽 정렬
+  - `.align-center`: 중앙 정렬
+  - `.align-right`: 오른쪽 정렬
+- `.progress-badge`: 진행률 배지 (좌상단)
+- `.weight-badge`: 가중치 배지 (우상단)
+
+#### 버튼
+- `.btn`: 기본 버튼
+- `.btn-primary`: 주요 버튼 (그라데이션)
+- `.btn-secondary`: 보조 버튼
+- `.btn-icon`: 아이콘 버튼 (56x56px 원형)
+- `.btn:disabled`: 비활성화 버튼
+
+#### 테이블
+- `.study-table`: 공부하기 테이블
+- `.statistics-detail-table`: 통계 상세 테이블
+- `.japanese-cell`: 일본어 셀 (16px, bold)
+- `.pronunciation-cell`: 발음 셀 (16px)
+- `.meaning-cell`: 의미 셀 (16px)
+- `.sentence-cell`: 예문 셀
+- `.hidden-text`: 숨김 텍스트 (회색 배경, "•••" 표시)
+
+#### 통계
+- `.statistics-container`: 통계 컨테이너
+- `.statistics-item`: 통계 항목
+- `.statistics-item-row`: 통계 행 (min-height: 50px)
+- `.statistics-label`: 트라이 횟수 라벨 (클릭 가능)
+- `.statistics-bar-container`: 막대 그래프 컨테이너
+- `.statistics-bar`: 막대 (그라데이션)
+- `.statistics-detail-container`: 상세 테이블 컨테이너
+- `.statistics-detail-container.show`: 표시 상태
+
+#### 반응형
+- `@media (max-width: 768px)`: 모바일 (텍스트 14px)
+- `@media (max-width: 480px)`: 작은 모바일 (텍스트 12px)
+
+---
+
+## 🔧 설정 및 확장
+
+### 새로운 문제 유형 추가
+
+1. **config.js에 문제 유형 추가**
+```javascript
+QUESTION_TYPES: {
+  JAPANESE: 'japanese',
+  MEANING: 'meaning',
+  PRONUNCIATION: 'pronunciation',
+  NEW_TYPE: 'new_type'  // 추가
 }
 ```
 
-### 가중치 시스템
-- **평가하기 모드**:
-  - **키 형식**: `{fileName}_{wordId}_{questionType}` (예: `page_01_1_japanese`, `page_01_1_meaning`)
-  - **값 범위**: 0 ~ 5 (기본값: 1)
-  - **0의 의미**: 문제 완료 (선택 대상에서 제외)
-- **공부하기 모드**:
-  - **키 형식**: `{fileName}_{wordId}` (예: `page_01_1`)
-  - **값 범위**: 1 ~ 5 (기본값: 1)
-- **저장 위치**: 메모리 (세션 중에만 유지, 페이지 새로고침 시 초기화)
-
-### 전역 변수
+2. **Question.js 수정**
 ```javascript
-let wordSets = [];           // 모든 단어셋 배열
-let selectedWords = [];      // 선택된 단어들 (학습용)
-let selectedQuestions = [];  // 평가하기 모드용 문제 배열
-let currentWordIndex = -1;   // 현재 단어 인덱스
-let wordHistory = [];        // 학습 히스토리 (스택 방식)
-let currentQuestion = null;  // 현재 문제 정보
-let answerShown = false;     // 정답 표시 여부
-let weights = {};           // 가중치 객체
-let studyMode = 'quiz';     // 'quiz' or 'study'
-let buttonAlignment = 'center'; // 'left', 'center', 'right'
-let jaVoice = null;         // Web Speech API 일본어 음성 객체
-let longPressTimer = null;  // 긴 누름 타이머
-let longPressCompleted = false; // 긴 누름이 완료되어 복사되었는지 여부
-let clickTimer = null;     // 클릭 타이머
-let idSortOrder = 'asc';   // 'asc', 'desc', 'random' - ID 정렬 순서
-let questionTryCounts = {}; // 각 문제별 트라이 횟수 추적 (키: weightKey, 값: 트라이 횟수)
-let completedTryCounts = {}; // 완료된 문제의 트라이 횟수 (키: weightKey, 값: 완료 시 트라이 횟수)
-```
-
-### 히스토리 구조 (스택 방식)
-- **저장 방식**: 스택(LIFO) 방식으로 관리
-- **저장 데이터**: 단어 객체 + 문제 유형 정보
-  ```javascript
-  {
-      ...word,              // 원본 단어 데이터
-      questionType: 'japanese' | 'meaning',  // 문제 유형
-      questionLabel: '일본어 표기' | '뜻',    // 문제 라벨
-      weightKey: 'page_01_1_japanese' | 'page_01_1_meaning'  // 문제별 가중치 키
+getQuestion() {
+  if (this.type === CONFIG.QUESTION_TYPES.NEW_TYPE) {
+    return this.word.newProperty;
   }
-  ```
-- **동작**: 이전으로 갔다가 다시 다음을 누르면 그 사이의 히스토리가 제거되고 새 문제 추가
-
-## 데이터 저장 방식
-
-### 메모리 기반 (세션 전용)
-- **단어셋**: `wordSets` 배열에 저장 (페이지 로드 시 `results/` 폴더의 JSON 파일들을 동적으로 로드)
-- **가중치**: `weights` 객체에 저장 (학습 시작 시 모든 단어의 가중치를 1로 초기화)
-- **특징**: 페이지 새로고침 시 모든 데이터가 초기화됨
-
-### 초기화 로직
-1. 페이지 로드 시 `init()` 함수 실행:
-   - `results/` 폴더에서 `page_01.json` ~ `page_99.json` 파일들을 fetch하여 로드 시도
-   - `results/` 폴더에서 `grammar_01.json` ~ `grammar_99.json` 파일들을 fetch하여 로드 시도
-   - `loadWordSet(fileName)` 함수로 각 파일을 비동기적으로 로드
-   - 로드 성공한 파일만 `wordSets` 배열에 추가
-   - 파일이 없거나 로드 실패해도 오류 없이 동작 (존재하지 않는 파일은 자동으로 무시)
-2. 학습 시작 시:
-   - **평가하기 모드**: 각 단어에 대해 2개의 문제 생성 (일본어 표기, 의미), 각 문제의 가중치를 1로 초기화, 트라이 횟수 추적 변수 초기화
-   - **공부하기 모드**: 선택된 단어들의 가중치를 모두 1로 초기화
-3. 세션 중에만 가중치와 트라이 횟수가 업데이트됨 (페이지 새로고침 시 초기화)
-
-## 주요 기능
-
-### 1. 파일 관리
-- **`renderFileList()`**: 파일 목록 렌더링
-  - 알파벳순 정렬 (`localeCompare` 사용, 숫자 부분 자연 정렬)
-  - 단어 개수 표시
-  - 체크박스 상태 관리
-
-### 2. 모드 선택
-- **`selectMode(mode)`**: 학습 모드 변경
-  - `'quiz'`: 평가하기 (플래시카드)
-  - `'study'`: 공부하기 (테이블)
-  - 평가하기 모드 선택 시 문제 유형 선택 영역 표시
-  - 공부하기 모드 선택 시 문제 유형 선택 영역 숨김 및 모든 체크박스 해제
-
-### 3. 파일 선택
-- **`toggleFileSelection(index, event)`**: 파일 선택 토글
-  - 평가하기 모드: 다중 선택 가능
-  - 공부하기 모드: 단일 선택만 가능
-  
-- **`selectAll()`**: 전체 선택 (평가하기 모드만)
-- **`deselectAll()`**: 전체 해제
-
-### 4. 학습 시작
-- **`startStudy()`**: 학습 세션 시작
-  - 선택된 단어들을 `selectedWords`에 병합
-  - 각 단어에 `fileName`, `weightKey` 추가
-  - **평가하기 모드**: 
-    - 선택된 문제 유형 확인 (일본어 표기 문제, 의미 문제 체크박스)
-    - 각 단어에 대해 선택된 문제 유형만 문제 생성
-    - 각 문제를 `selectedQuestions` 배열에 추가
-    - 각 문제의 가중치를 1로 초기화
-  - **공부하기 모드**: 
-    - 선택된 단어들의 가중치를 모두 1로 초기화
-    - ID 정렬 순서를 'asc' (오름차순)로 초기화
-  - 모드에 따라 다른 화면 표시
-    - 평가하기: `flashcardScreen` (진행도 표시)
-    - 공부하기: `studyTableScreen`
-
-### 5. 가중치 기반 학습
-- **`getWeightedRandomQuestion()`**: 가중치 기반 랜덤 문제 선택 (평가하기 모드)
-  - 가중치가 1 이상인 문제만 선택 대상에 포함
-  - 총 가중치 합 계산: `(문제의 가중치) / (가중치의 합)` 확률로 선택
-  - 가중치가 높을수록 더 자주 출제
-  - 모든 문제의 가중치가 0이면 `null` 반환 (완료)
-
-- **`getWeightedRandomWord()`**: 가중치 기반 랜덤 단어 선택 (공부하기 모드)
-  - 총 가중치 합 계산
-  - 랜덤 값으로 가중치 구간 선택
-  - 가중치가 높을수록 더 자주 출제
-
-- **가중치 업데이트 규칙**:
-  - **평가하기 모드**:
-    - 정답 확인 후 다음: +1 (최대 5)
-    - 정답 확인 없이 다음: -1 (최소 0, 가중치가 0이면 문제 완료로 간주)
-    - 이전 버튼: 가중치 변화 없음
-    - 이전에서 다음으로: 가중치 변화 없음
-  - **공부하기 모드**:
-    - 항상 +1 (최대 5)
-
-### 6. 플래시카드 (평가하기 모드)
-- **유한 문제 방식**: 각 단어에 대해 2개의 문제 생성 (일본어 표기, 의미)
-  - 총 문제 수 = 선택된 단어 수 × 2
-  - 각 문제는 독립적으로 가중치 관리
-  
-- **`nextCard()`**: 다음 카드 표시
-  - 이전 문제 가중치 업데이트 (정답 확인 여부에 따라 +1/-1)
-  - **트라이 횟수 추적**: 다음 카드로 넘어갈 때마다 현재 문제의 트라이 횟수 증가
-  - **완료 기록**: 가중치가 0이 되면 해당 문제의 트라이 횟수를 `completedTryCounts`에 기록
-  - **스택 방식**: 현재 위치 이후의 히스토리 제거 (이전으로 갔다가 다시 다음을 누른 경우)
-  - 새 문제 가중치 기반 선택 (`getWeightedRandomQuestion()`)
-  - 새 문제가 처음 나타날 때 트라이 횟수를 0으로 초기화
-  - 모든 문제 완료 시 알림 표시 후 바로 처음 화면으로 이동
-  - 진행도 업데이트
-  - 통계 업데이트
-  
-- **`previousCard()`**: 이전 카드로 이동
-  - 히스토리 기반 네비게이션 (스택 방식)
-  - 저장된 문제 유형 그대로 표시
-  - 가중치 변화 없음
-  
-- **`displayCard()`**: 카드 내용 표시
-  - 모드에 따라 다른 함수 호출
-  - 진행도 업데이트
-  - 통계 업데이트
-  
-- **`displayQuizMode(word)`**: 평가 문제 표시
-  - **문제 유형**: 일본어 표기, 뜻 (2가지만, 발음 문제는 제외)
-    - 일본어 표기 → 발음/의미 맞추기
-    - 뜻 → 일본어 표기/발음 맞추기
-  - **히스토리 기반 문제 유형 사용**: 저장된 `questionType`이 있으면 사용, 없으면 랜덤 선택 후 저장
-  - **카드 높이 유지**: 답 부분도 미리 렌더링하되 `hidden` 클래스로 숨김 처리 (공간은 유지)
-  - **답 항목 순서**: 일본어 표기 → 뜻 → 발음 (발음이 가장 아래)
-  - **발음 듣기 버튼**: 발음 항목 옆에 듣기 버튼(▶) 추가 (공부하기 모드와 동일한 스타일)
-    - 발음이 있으면 발음 항목에 버튼 표시
-    - 발음이 없으면 일본어 표기 항목에 버튼 표시
-  - 정답 확인 버튼을 "?" 아이콘으로 초기화하고 항상 표시
-  
-- **`showAnswer()`**: 정답 표시/숨기기 토글
-  - 정답이 숨겨져 있을 때: 정답 표시, 버튼 아이콘을 "✓"로 변경
-  - 정답이 보여져 있을 때: 정답 숨김, 버튼 아이콘을 "?"로 변경
-  - 버튼은 사라지지 않고 계속 표시됨 (토글 가능)
-  - 가중치는 `nextCard()`에서만 변경
-  
-- **`updateProgress()`**: 진행도 업데이트
-  - 가중치가 0이 된 문제 수 계산
-  - 전체 문제 수 대비 완료된 문제 수 표시
-  - "진행도: A / B" 형태로 좌측 상단에 표시
-  
-- **`updateStatistics()`**: 트라이 횟수 통계 업데이트
-  - 완료된 문제들의 트라이 횟수 분포 계산
-  - 트라이 횟수별로 그룹화 (1회, 2회, 3회, 4회, 5회+)
-  - 각 그룹의 단어 개수와 비율(%) 계산
-  - 평균 트라이 횟수 계산
-  - 가로 막대 그래프로 시각화
-  - 완료된 문제가 없으면 안내 메시지 표시
-  
-- **`generateStatisticsDetailTable(tryCount, questions)`**: 통계 상세 테이블 생성
-  - 특정 트라이 횟수 그룹의 단어 목록을 테이블로 생성
-  - 공부하기 모드와 동일한 형태와 기능 제공
-  - 파일명, ID, 재생, 일본어 표기, 발음, 의미, 예문 컬럼
-  - 각 셀에 텍스트 보임/숨김, 클립보드 복사 기능 추가
-  - 재생 버튼 추가
-  - 컬럼 헤더에 전체 보임/숨김 기능 추가
-  
-- **`toggleStatisticsDetail(tryCount)`**: 통계 상세 테이블 토글
-  - 특정 트라이 횟수 그룹의 상세 테이블 표시/숨김
-  
-- **`toggleStatisticsColumn(header, columnType)`**: 통계 상세 테이블의 컬럼 전체 보임/숨김 토글
-  - 공부하기 모드의 `toggleColumn()`과 동일한 기능
-  
-- **버튼 디자인**:
-  - 모든 버튼이 동그라미 형태의 아이콘 버튼
-  - 이전 버튼: ◀ (왼쪽 화살표)
-  - 정답 확인 버튼: ? (물음표, 정답 표시 시 ✓)
-  - 다음 버튼: ▶ (오른쪽 화살표)
-
-### 7. 공부하기 모드
-- **`displayStudyTable(wordSet)`**: 테이블 형태로 모든 단어 표시
-  - ID, 재생, 일본어 표기, 발음, 의미, 예문 컬럼
-  - 스크롤 가능한 고정 헤더 (가로/세로 스크롤 지원)
-  - **안내 문구**: 테이블 위에 사용 안내 문구 표시
-  - **ID 정렬**: `idSortOrder` 상태에 따라 단어 배열 정렬
-    - `'asc'`: ID 오름차순 정렬
-    - `'desc'`: ID 내림차순 정렬
-    - `'random'`: Fisher-Yates 셔플 알고리즘으로 랜덤 정렬
-  - **ID 헤더**: 클릭 가능하며 현재 정렬 상태를 아이콘으로 표시 (↑, ↓, ↕)
-  - **재생 버튼**: 각 행에 재생 버튼(▶) 추가, 클릭 시 `playPronunciation()` 호출
-  - **예문 표시**: 단어 데이터에 `sent_jp`와 `sent_kr`가 있으면 예문 열에 표시 (없으면 "-" 표시)
-  - **텍스트 보임/숨김**: 각 텍스트 셀에 `onclick="toggleCell(this)"` 추가
-  - **컬럼 헤더 클릭**: 헤더에 `onclick="toggleColumn('columnType')"` 추가
-  
-- **`toggleIdSort()`**: ID 정렬 순서 변경
-  - 정렬 순서 순환: `'asc'` → `'desc'` → `'random'` → `'asc'`
-  - 정렬 전에 현재 보임/숨김 상태 저장 (`saveCellVisibilityStates()`)
-  - 정렬 순서 변경 후 테이블 자동 재렌더링
-  - 재렌더링 후 저장된 보임/숨김 상태 복원 (`restoreCellVisibilityStates()`)
-  
-- **`saveCellVisibilityStates()`**: 현재 테이블의 보임/숨김 상태 저장
-  - 각 셀의 `hidden-text` 클래스 유무를 확인
-  - 키 형식: `{wordId}_{fieldType}` (예: `1_japanese`, `1_pronunciation`, `1_meaning`, `1_sentence`)
-  - 상태 객체 반환
-  
-- **`restoreCellVisibilityStates(states)`**: 저장된 보임/숨김 상태 복원
-  - 저장된 상태 객체를 받아 각 셀에 `hidden-text` 클래스 적용/제거
-  - 정렬 후 테이블이 완전히 렌더링된 후 실행 (setTimeout 사용)
-  
-- **`toggleCell(cell)`**: 개별 셀 클릭 시 텍스트 보임/숨김 토글
-  - `hidden-text` 클래스 토글
-  - 가려진 텍스트는 배경색과 "•••" 표시로 구분
-  
-- **`toggleColumn(columnType)`**: 컬럼 헤더 클릭 시 해당 컬럼 전체 보임/숨김 토글
-  - 모든 셀이 숨겨져 있으면 모두 보이게, 하나라도 보이면 모두 숨기기
-  
-- **`startLongPress(cell, text)`**: 긴 누름 시작 (클립보드 복사용)
-  - 500ms 타이머 시작
-  - 타이머 완료 시 `copyToClipboard()` 호출
-  - 복사 완료 시 시각적 피드백 (배경색 변경)
-  
-- **`endLongPress()`**: 긴 누름 종료
-  - 타이머가 실행 중이면 취소 (복사되지 않음)
-  
-- **`copyToClipboard(text)`**: 클립보드에 텍스트 복사
-  - Clipboard API 사용 (최신 브라우저)
-  - 구형 브라우저는 `document.execCommand('copy')` 사용
-  - 복사 완료 시 피드백 메시지 표시
-  
-- **`showCopyFeedback(message, isError)`**: 복사 피드백 메시지 표시
-  - 중앙에 "복사되었습니다!" 메시지 표시
-  - 1.5초 후 자동 제거
-  
-- **`displayStudyMode(word)`**: 플래시카드 형태로 모든 정보 표시
-  - 일본어 표기를 메인으로 표시
-  - 발음, 의미 함께 표시
-
-### 7-1. 발음 재생 기능 (Web Speech API)
-- **`initVoices()`**: 페이지 로드 시 일본어 음성 초기화
-  - Chrome 브라우저에서 "Google 日本語" 음성을 우선적으로 찾음
-  - 없으면 다른 일본어 음성 사용
-  - `speechSynthesis.onvoiceschanged` 이벤트로 음성 목록 업데이트 대기
-  
-- **`playPronunciation(text)`**: Web Speech API를 사용하여 발음 재생
-  - 이전 발화 중단 (`speechSynthesis.cancel()`)
-  - `SpeechSynthesisUtterance` 객체 생성
-  - 언어 설정: `ja-JP`
-  - 음성 선택: `jaVoice`가 있으면 사용 (Chrome의 Google 일본어 음성)
-  - 속도: 0.9 (학습용으로 약간 느리게)
-  - 피치: 1 (기본값)
-  - 에러 처리: `utterance.onerror` 이벤트로 에러 로깅
-  - **사용 위치**: 
-    - 평가하기 모드: 답 공개 후 발음 듣기 버튼(▶) 클릭 시 호출
-    - 공부하기 모드: 각 행의 재생 버튼(▶) 클릭 시 호출
-  - **특징**:
-    - 프록시 서버 불필요
-    - API 키 불필요
-    - Chrome에서 고품질 Google 일본어 음성 사용
-    - 다른 브라우저에서는 OS 기본 일본어 음성 사용
-
-### 8. 네비게이션
-- **`goHome()`**: 처음 화면으로 돌아가기
-  - 확인 다이얼로그
-  - 모든 화면 숨김
-  
-- **`changeWordSet()`**: 단어셋 변경
-  - 확인 다이얼로그
-  - 파일 선택 화면으로 복귀
-
-### 9. 버튼 정렬 설정
-- **`toggleAlignmentMenu()`**: 정렬 메뉴 표시/숨김 토글
-  - 설정 버튼 클릭 시 메뉴 표시/숨김
-  
-- **`setButtonAlignment(alignment)`**: 버튼 정렬 설정
-  - `'left'`: 왼쪽 정렬
-  - `'center'`: 중앙 정렬 (기본값)
-  - `'right'`: 오른쪽 정렬
-  - 선택한 옵션에 따라 `card-controls` 클래스 변경
-  - 메뉴 외부 클릭 시 자동으로 닫힘
-
-### 10. 유틸리티
-- **`updateButtons()`**: 버튼 상태 업데이트 (이전 버튼 활성화/비활성화)
-- **`updateProgress()`**: 진행도 업데이트 (평가하기 모드 전용)
-  - 가중치가 0이 된 문제 수 계산
-  - 전체 문제 수 대비 완료된 문제 수 표시
-  - "진행도: A / B" 형태로 좌측 상단에 표시
-- **`loadWordSet(fileName)`**: JSON 파일 로드 함수
-  - `results/` 폴더에서 지정된 파일명의 JSON 파일을 fetch하여 로드
-  - 파일이 없거나 로드 실패 시 `null` 반환
-  - 에러 처리 포함
-- **`init()`**: 페이지 로드 시 초기화 (async 함수)
-  - `initVoices()` 호출하여 일본어 음성 초기화
-  - `results/` 폴더에서 `page_01.json` ~ `page_99.json` 파일들을 동적으로 로드 시도
-  - `results/` 폴더에서 `grammar_01.json` ~ `grammar_99.json` 파일들을 동적으로 로드 시도
-  - `Promise.all`을 사용하여 병렬 로드
-  - 로드 성공한 파일만 `wordSets` 배열에 추가 (존재하지 않는 파일은 자동으로 필터링)
-  - 파일 목록 렌더링 (알파벳순 정렬)
-
-## CSS 구조
-
-### 주요 스타일
-- **그라데이션 배경**: 보라색 계열 (`#667eea` → `#764ba2`)
-- **카드 디자인**: 둥근 모서리, 그림자 효과
-- **반응형 디자인**: 
-  - 모바일 (≤768px): 세로 레이아웃, 작은 폰트, 가로 스크롤 지원
-  - 작은 모바일 (≤480px): 더 작은 폰트, 패딩 축소, 가로 스크롤 지원
-
-### 주요 클래스
-- `.container`: 메인 컨테이너 (최대 너비 1200px)
-- `.header`: 상단 헤더 (그라데이션 배경)
-- `.card`: 플래시카드 컨테이너
-- `.study-table`: 공부하기 테이블
-- `.study-table-info`: 공부하기 테이블 위 안내 문구
-- `.study-table .play-cell`: 재생 버튼 컬럼
-- `.study-table .play-button`: 재생 버튼 (미니멀 스타일, ▶ 아이콘)
-- `.pronunciation-play-button`: 평가하기 모드의 발음 듣기 버튼 (공부하기 모드와 동일한 스타일)
-- `.study-table th.id-cell`: ID 헤더 (클릭 가능, 호버 효과, 정렬 아이콘 표시)
-- `.study-table .japanese-cell`, `.study-table .pronunciation-cell`, `.study-table .meaning-cell`, `.study-table .sentence-cell`: 클릭 가능한 텍스트 셀
-- `.study-table .sentence-cell`: 예문 셀 (일본어 예문과 한국어 번역 표시)
-- `.study-table .sentence-jp`: 일본어 예문 스타일
-- `.study-table .sentence-kr`: 한국어 예문 번역 스타일
-- `.study-table .hidden-text`: 가려진 텍스트 (배경색 변경, "•••" 표시)
-- `.question-type-selection`: 문제 유형 선택 영역 (평가하기 모드만 표시)
-- `.hidden`: 숨김 처리 (display: none)
-- `.card-answer.hidden`: 답 영역 숨김 처리 (공간은 유지, visibility: hidden 사용)
-- `.progress-badge`: 진행도 배지 (좌측 상단, 보라색 계열)
-- `.weight-badge`: 가중치 배지 (우측 상단, 보라색 계열)
-- `.btn-primary`, `.btn-secondary`: 버튼 스타일
-- `.btn-icon`: 동그라미 아이콘 버튼 (이전: ◀, 정답 확인: ?, 다음: ▶)
-- `.card-controls.align-left`, `.card-controls.align-center`, `.card-controls.align-right`: 버튼 정렬 클래스
-- `.settings-button`: 설정 버튼 (카드 왼쪽 상단)
-- `.alignment-menu`: 버튼 정렬 선택 메뉴
-- `.statistics-container`: 트라이 횟수 통계 컨테이너
-- `.statistics-title`: 통계 제목
-- `.statistics-content`: 통계 내용 영역
-- `.statistics-item`: 통계 항목 (각 횟수 그룹)
-- `.statistics-item-row`: 통계 항목 행 (막대 그래프 포함)
-- `.statistics-label`: 통계 레이블 (클릭 가능, 호버 효과)
-- `.statistics-bar-container`: 막대 그래프 컨테이너
-- `.statistics-bar`: 막대 그래프 (그라데이션 배경)
-- `.statistics-count`: 통계 개수 표시
-- `.statistics-percentage`: 통계 비율 표시
-- `.statistics-detail-container`: 통계 상세 테이블 컨테이너
-- `.statistics-detail-table-container`: 통계 상세 테이블 스크롤 컨테이너 (공부하기 모드와 동일한 스타일)
-- `.statistics-detail-table`: 통계 상세 테이블 (공부하기 모드와 동일한 스타일)
-- `.statistics-detail-table .file-name-cell`: 파일명 셀
-- `.statistics-detail-table .play-button`: 재생 버튼 (공부하기 모드와 동일한 스타일)
-
-## 학습 흐름
-
-### 평가하기 모드 (유한 문제 방식)
-1. **문제 유형 선택**: 일본어 표기 문제와 의미 문제를 체크박스로 선택 (기본값: 둘 다 선택)
-2. 파일 선택 (다중 선택 가능)
-3. 학습 시작
-4. 선택된 문제 유형에 따라 각 단어에 대해 문제 생성 (일본어 표기, 의미)
-5. 각 문제의 가중치를 1로 초기화
-6. 가중치 기반 확률로 문제 선택: `(문제의 가중치) / (가중치의 합)`
-7. 문제 표시 (문제 객체를 히스토리에 저장)
-8. 정답 확인 또는 바로 넘어가기
-9. **발음 듣기**: 답 공개 후 발음 항목 옆의 듣기 버튼(▶) 클릭 시 발음 재생
-10. 가중치 업데이트:
-    - 정답 확인 후 다음: +1 (최대 5)
-    - 정답 확인 없이 다음: -1 (최소 0, 가중치가 0이면 문제 완료)
-11. **트라이 횟수 추적**: 다음 카드로 넘어갈 때마다 현재 문제의 트라이 횟수 증가
-12. **완료 기록**: 가중치가 0이 되면 해당 문제의 트라이 횟수를 `completedTryCounts`에 기록
-13. 진행도 업데이트 (가중치가 0이 된 문제 수 / 전체 문제 수)
-14. **통계 업데이트**: 트라이 횟수 통계 실시간 업데이트 (가로 막대 그래프)
-15. 다음 문제 선택 (6번으로)
-16. **이전 버튼**: 저장된 문제 유형 그대로 표시, 가중치 변화 없음 (스택 방식)
-17. **이전으로 갔다가 다시 다음**: 그 사이의 히스토리 제거 후 새 문제 추가, 가중치 변화 없음
-18. **통계 상세 확인**: 각 횟수 레이블(1회, 2회, 3회, 4회, 5회+) 클릭 시 해당 그룹의 단어 목록을 테이블로 표시
-19. **완료**: 모든 문제의 가중치가 0이 되면 알림 표시 후 처음 화면으로 이동
-
-### 공부하기 모드
-1. 파일 선택 (단일 선택만 가능)
-2. 학습 시작 (ID 정렬 순서는 오름차순으로 초기화)
-3. 테이블 형태로 모든 단어 표시 (안내 문구 포함, 기본적으로 ID 오름차순)
-4. ID 열 헤더 클릭하여 정렬 순서 변경 (오름차순 ↑ → 내림차순 ↓ → 랜덤 ↕ → 오름차순 ↑)
-   - 정렬 시 각 텍스트의 보임/숨김 상태가 자동으로 유지됨
-5. 재생 버튼(▶) 클릭 시 해당 단어의 발음 재생
-6. 각 텍스트(일본어 표기, 발음, 의미) 클릭하여 개별 보임/숨김 처리
-7. 컬럼 헤더 클릭하여 해당 컬럼 전체 보임/숨김 처리
-8. 각 칸을 길게 누르면(500ms 이상) 해당 내용이 클립보드에 자동 복사
-9. 스크롤하여 전체 단어 확인
-
-## 특징 및 제약사항
-
-### 특징
-- ✅ 가중치 기반 반복 학습 (SRS 유사, 세션 중에만 유지)
-- ✅ 두 가지 학습 모드 제공
-- ✅ **유한 문제 방식** (평가하기 모드): 각 단어당 2문제 생성, 총 문제 수 = 단어 수 × 2
-- ✅ 반응형 디자인 (모바일 최적화)
-- ✅ **기본 단어셋 자동 로드**: `results/` 폴더의 모든 JSON 파일을 페이지 로드 시 자동으로 fetch하여 로드 (page_01~99, grammar_01~99)
-- ✅ 간단한 구조 (영구 저장 없음)
-- ✅ 카드 높이 일정 유지 (정답 확인 전후 동일한 높이)
-- ✅ 정답 확인/숨기기 토글 기능 (버튼을 여러 번 클릭하여 정답 표시/숨김 가능)
-- ✅ 동그라미 아이콘 버튼 디자인 (이전: ◀, 정답 확인: ?/✓, 다음: ▶)
-- ✅ 버튼 정렬 선택 기능 (왼쪽/중앙/오른쪽 정렬 선택 가능)
-- ✅ 스택 방식 히스토리 관리 (이전으로 갔다가 다시 다음을 누르면 그 사이 히스토리 제거)
-- ✅ 문제 유형 히스토리 저장 (이전 버튼 클릭 시 같은 문제 유형 표시)
-- ✅ **진행도 표시**: 좌측 상단에 "진행도: A / B" 형태로 표시 (A = 완료된 문제 수, B = 전체 문제 수)
-- ✅ **완료 시 자동 이동**: 모든 문제 완료 시 알림 표시 후 처음 화면으로 이동
-- ✅ **발음 재생 기능**: Web Speech API로 발음 재생 (Chrome에서 Google 일본어 음성 사용)
-  - 평가하기 모드: 답 공개 후 발음 듣기 버튼(▶) 제공
-  - 공부하기 모드: 각 행의 재생 버튼(▶)으로 발음 재생
-- ✅ **문제 유형 선택**: 평가하기 모드에서 일본어 표기 문제와 의미 문제를 선택적으로 출제 가능
-- ✅ **ID 정렬 기능**: 공부하기 모드에서 ID 열 헤더 클릭 시 정렬 순서 변경 (오름차순 → 내림차순 → 랜덤 → 오름차순)
-  - 정렬 시 각 텍스트의 보임/숨김 상태가 자동으로 유지됨
-- ✅ **텍스트 보임/숨김 기능**: 공부하기 모드에서 각 텍스트(일본어 표기, 발음, 의미)를 클릭하여 개별 보임/숨김 처리 가능
-- ✅ **컬럼 전체 보임/숨김**: 공부하기 모드에서 컬럼 헤더 클릭 시 해당 컬럼 전체 보임/숨김 처리
-- ✅ **가려진 텍스트 표시**: 가려진 텍스트는 배경색과 "•••" 표시로 정보가 있음을 알 수 있음
-- ✅ **클립보드 복사 기능**: 공부하기 모드에서 각 칸을 길게 누르면(500ms 이상) 클립보드에 자동 복사
-- ✅ **예문 표시 기능**: 공부하기 모드에서 단어 데이터에 예문(`sent_jp`, `sent_kr`)이 있으면 예문 열에 표시
-- ✅ **알파벳순 정렬**: 단어묶음 목록이 파일명 기준 알파벳순으로 정렬
-- ✅ **트라이 횟수 통계**: 평가하기 모드에서 각 문제별 트라이 횟수 추적 및 실시간 통계 표시
-  - 트라이 횟수별 분포를 가로 막대 그래프로 시각화 (1회, 2회, 3회, 4회, 5회+)
-  - 각 횟수 그룹 클릭 시 해당 단어 목록을 테이블로 확장 표시
-  - 통계 테이블은 공부하기 모드와 동일한 기능 제공 (텍스트 보임/숨김, 클립보드 복사, 발음 재생 등)
-  - 고정된 영역에서 내부 스크롤 가능
-
-### 제약사항
-- ⚠️ 단일 HTML 파일 구조 (코드 분리 없음)
-- ⚠️ 서버 없이 동작 (클라이언트 사이드만)
-- ⚠️ 가중치 범위: 평가하기 모드는 0~5, 공부하기 모드는 1~5 (고정)
-- ⚠️ 공부하기 모드는 단일 파일만 선택 가능
-- ⚠️ 발음 문제 유형 제외 (일본어 표기, 뜻 문제만 출제)
-- ⚠️ 평가하기 모드는 유한 문제 방식 (각 단어당 2문제)
-- ⚠️ 페이지 새로고침 시 모든 학습 데이터 초기화 (가중치, 히스토리 등)
-
-## 확장 가능성
-
-### 개선 가능한 영역
-1. **가중치 시스템**: 범위 확장, 감쇠율 조정
-2. **통계 기능**: 학습 진행률, 정답률 추적 (세션 중)
-3. **필터링**: 가중치별, 파일별 필터
-4. **검색 기능**: 단어 검색
-5. **데이터 영구 저장**: LocalStorage 또는 IndexedDB 추가 (선택적)
-6. **다크 모드**: 테마 전환
-7. **애니메이션**: 카드 플립 효과
-8. **오디오 재생**: 발음 듣기 기능 ✅ (Web Speech API로 구현 완료)
-
-## 코드 품질
-
-### 장점
-- ✅ 명확한 함수 분리
-- ✅ 주석이 적절히 포함
-- ✅ 반응형 디자인 구현
-- ✅ 에러 처리 (파일 업로드)
-
-### 개선 필요
-- ⚠️ 전역 변수 다수 사용
-- ⚠️ 이벤트 핸들러 인라인 사용
-- ⚠️ 매직 넘버 (가중치 최대값 5, 파일 개수 29)
-- ⚠️ 데이터 영구 저장 없음 (세션 종료 시 모든 데이터 손실)
-
-## 데이터 흐름
-
-```
-초기화 (init - async)
-  ↓
-results/ 폴더에서 JSON 파일들 fetch (page_01.json ~ page_99.json, grammar_01.json ~ grammar_99.json)
-  ↓
-로드 성공한 파일들을 wordSets에 추가 (존재하지 않는 파일은 자동으로 무시)
-  ↓
-파일 목록 렌더링 (renderFileList - 알파벳순 정렬)
-  ↓
-[사용자 액션]
-  ↓
-파일 선택 → 학습 시작 (startStudy)
-  ↓
-[평가하기 모드]
-  - 각 단어에 대해 2개의 문제 생성 (일본어 표기, 의미)
-  - 각 문제의 가중치를 1로 초기화
-  - selectedQuestions 배열에 저장
-  ↓
-[공부하기 모드]
-  - 가중치 초기화 (모든 단어를 1로 설정)
-  - 테이블 표시 (안내 문구 포함)
-  ↓
-화면 전환
-  ↓
-[평가하기] 
-  - 가중치 기반 확률로 문제 선택: (문제의 가중치) / (가중치의 합)
-  - 문제 객체를 히스토리에 저장 (스택 방식)
-  - 문제 표시 → 정답 확인 → 가중치 업데이트 (메모리)
-  - 트라이 횟수 추적 및 완료 기록
-  - 진행도 업데이트 (가중치가 0이 된 문제 수 / 전체 문제 수)
-  - 통계 업데이트 (트라이 횟수별 분포 시각화)
-  - 이전 버튼: 저장된 문제 유형 그대로 표시, 가중치 변화 없음
-  - 이전으로 갔다가 다시 다음: 그 사이 히스토리 제거 후 새 문제 추가, 가중치 변화 없음
-  - 통계 상세 확인: 각 횟수 레이블 클릭 시 해당 그룹의 단어 목록을 테이블로 표시
-  - 모든 문제 완료 시 알림 표시 후 바로 처음 화면으로 이동
-  ↓
-[공부하기] 
-  - ID 정렬 순서 초기화 (오름차순)
-  - 테이블 표시 (재생 버튼 포함, ID 오름차순 정렬)
-  - ID 헤더 클릭 시 정렬 순서 변경 (toggleIdSort)
-    - 정렬 전 보임/숨김 상태 저장 (saveCellVisibilityStates)
-    - 테이블 재렌더링
-    - 저장된 보임/숨김 상태 복원 (restoreCellVisibilityStates)
-  - 텍스트 클릭 시 보임/숨김 토글 (toggleCell)
-  - 컬럼 헤더 클릭 시 컬럼 전체 보임/숨김 토글 (toggleColumn)
-  - 재생 버튼 클릭 시 발음 재생 (playPronunciation)
-  ↓
-[페이지 새로고침 시 모든 데이터 초기화]
+  // ...
+}
 ```
 
-## 보안 고려사항
-- JSON 파싱 시 에러 처리 필요 (현재 구현됨)
-- XSS 방지를 위해 사용자 입력 검증 필요 (현재는 파일 업로드만)
-- 데이터가 메모리에만 저장되므로 페이지 종료 시 자동 삭제
+3. **FileSelectionUI.js 수정**
+- 체크박스 옵션 추가
 
-## 브라우저 호환성
-- ES6+ 문법 사용 (async/await, 화살표 함수 등)
-- 모던 브라우저 권장 (Chrome, Firefox, Safari, Edge)
-- LocalStorage 불필요 (메모리 기반만 사용)
-- **Web Speech API**: 발음 재생 기능 사용
-  - Chrome: "Google 日本語" 고품질 음성 사용 (클라우드 기반, 인터넷 연결 필요)
-  - Firefox/Safari: OS 기본 일본어 음성 사용 (로컬 TTS 엔진)
-  - Edge: Chrome과 유사하게 Google 음성 사용 가능
+### 새로운 단어 속성 추가
+
+1. **Word.js 모델 확장**
+```javascript
+constructor(data, fileName) {
+  // 기존 속성...
+  this.newProperty = data.newProperty || '';
+}
+```
+
+2. **JSON 데이터 형식 업데이트**
+```json
+{
+  "words": [
+    {
+      "id": 1,
+      "japanese": "...",
+      "newProperty": "..."
+    }
+  ]
+}
+```
+
+### 통계 계산 방식 변경
+
+`StatisticsService.js`의 `calculateStatistics()` 메서드 수정
+
+---
+
+## 📊 성능 고려사항
+
+### 최적화 포인트
+
+1. **가중치 계산 캐싱**
+   - `WeightService.getTotalWeight()`는 매번 계산하지 않고 변경 시에만 재계산
+
+2. **DOM 업데이트 최소화**
+   - 테이블 렌더링 시 innerHTML 한 번에 설정
+   - 불필요한 리렌더링 방지
+
+3. **이벤트 위임**
+   - 테이블 셀에 개별 리스너 대신 부모에 위임 고려
+
+4. **메모리 관리**
+   - 히스토리 무제한 증가 방지 (필요시 최대 크기 제한)
+
+### 성능 메트릭
+
+- **초기 로드 시간**: < 1초 (단어 1000개 기준)
+- **문제 선택 시간**: < 50ms
+- **테이블 렌더링 시간**: < 200ms (단어 500개 기준)
+
+---
+
+## 🧪 테스트 가이드
+
+### 단위 테스트 대상
+
+1. **Models**
+   - Word.hasSentence()
+   - Question.getQuestion()
+   - Question.getAnswer()
+
+2. **Services**
+   - WeightService.increaseWeight()
+   - WeightService.decreaseWeight()
+   - StatisticsService.calculateStatistics()
+   - SortUtils.fisherYatesShuffle()
+
+3. **Managers**
+   - HistoryManager.push/goBack/goForward
+   - VoiceManager.initialize()
+
+### 통합 테스트 시나리오
+
+1. **평가하기 모드 전체 플로우**
+   - 파일 선택 → 문제 풀기 → 정답/오답 → 통계 확인
+
+2. **공부하기 모드 전체 플로우**
+   - 파일 선택 → 테이블 표시 → 정렬 → 토글
+
+3. **히스토리 네비게이션**
+   - 문제 풀기 → 뒤로 → 앞으로 → 다시 풀기
+
+### 엣지 케이스
+
+- 단어가 0개인 파일
+- 매우 많은 단어 (1000개 이상)
+- 예문이 없는 단어
+- 발음이 없는 단어
+- 음성 API를 지원하지 않는 브라우저
+
+---
+
+## 🔐 보안 고려사항
+
+1. **XSS 방어**
+   - `escapeHtml()` 함수로 사용자 입력 이스케이프
+   - `textContent` 사용 권장
+
+2. **CORS**
+   - 로컬 파일 로드 시 CORS 정책 준수
+   - 로컬 서버 필요
+
+3. **데이터 검증**
+   - JSON 파싱 시 try-catch
+   - 데이터 타입 검증
+
+---
+
+## 📈 향후 개선 사항
+
+### 기능
+- [ ] 학습 진행률 저장 (LocalStorage)
+- [ ] 북마크 기능
+- [ ] 검색 기능
+- [ ] 다크 모드
+- [ ] 키보드 단축키
+- [ ] 오디오 파일 지원
+
+### 기술
+- [ ] Service Worker (오프라인 지원)
+- [ ] IndexedDB (대용량 데이터)
+- [ ] Web Workers (무거운 계산)
+- [ ] TypeScript 마이그레이션
+- [ ] 단위 테스트 추가
+
+### UI/UX
+- [ ] 애니메이션 개선
+- [ ] 접근성 향상 (ARIA)
+- [ ] 다국어 지원
+- [ ] 커스텀 테마
+
+---
+
+## 📞 문서 유지보수
+
+이 문서는 코드 변경 시 함께 업데이트되어야 합니다.
+
+**마지막 업데이트**: 2025-12-06  
+**다음 리뷰 예정일**: 2026-01-06
+
+---
+
+**문서 버전**: 2.0.0  
+**작성자**: AI Assistant  
+**상태**: ✅ 완료
 
