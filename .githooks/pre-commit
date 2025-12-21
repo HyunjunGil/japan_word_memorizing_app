@@ -1,0 +1,31 @@
+#!/bin/bash
+# Pre-commit hook: results 폴더의 JSON 파일이 변경되면 manifest.json 자동 업데이트
+
+# results/ 폴더의 .json 파일이 변경되었는지 확인 (manifest.json 제외)
+RESULTS_CHANGED=$(git diff --cached --name-only | grep -E '^results/.*\.json$' | grep -v 'manifest.json')
+
+if [ -n "$RESULTS_CHANGED" ]; then
+  echo "📝 results 폴더의 JSON 파일이 변경되었습니다."
+  echo "🔄 manifest.json 자동 업데이트 중..."
+  
+  # Python 스크립트 실행
+  python3 update_manifest.py
+  
+  # 실행 결과 확인
+  if [ $? -eq 0 ]; then
+    # manifest.json이 변경되었는지 확인
+    if git diff --name-only | grep -q "results/manifest.json"; then
+      echo "✅ manifest.json이 업데이트되었습니다."
+      echo "📦 manifest.json을 커밋에 추가합니다..."
+      git add results/manifest.json
+    else
+      echo "ℹ️  manifest.json 변경사항 없음"
+    fi
+  else
+    echo "❌ manifest.json 업데이트 실패"
+    exit 1
+  fi
+fi
+
+exit 0
+

@@ -1,7 +1,25 @@
-/.vscode/*
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
 
-/results_tmp/*
-
-/images
-
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+.tmp/
+
+
+images/*
