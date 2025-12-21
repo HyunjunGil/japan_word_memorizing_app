@@ -495,6 +495,12 @@
             color: #333;
         }
         
+        .sentence-value {
+            white-space: pre-line;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
         .pronunciation-play-button {
             background: transparent;
             color: #667eea;

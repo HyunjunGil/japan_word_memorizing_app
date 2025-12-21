@@ -245,7 +245,6 @@ export class App {
       
       if (!nextQuestion) {
         alert('학습을 완료하였습니다!');
-        this.goHome();
         return;
       }
       
@@ -271,6 +270,8 @@ export class App {
       if (previousItem) {
         this.displayCard();
         this.flashcardUI.setPreviousButtonEnabled(this.historyManager.hasPrevious());
+        this.updateProgress();
+        this.updateStatistics();
       }
     } else {
       const previousItem = this.studyMode.previousWord();
@@ -294,12 +295,33 @@ export class App {
       if (!questionToDisplay) {
         const currentItem = this.historyManager.getCurrent();
         if (!currentItem) return;
-        questionToDisplay = new Question(currentItem);
+        
+        // 히스토리 데이터를 Question 객체로 변환
+        // 히스토리에는 평탄화된 데이터가 저장되어 있으므로 재구성 필요
+        const wordData = {
+          id: currentItem.id,
+          japanese: currentItem.japanese,
+          pronunciation: currentItem.pronunciation,
+          meaning: currentItem.meaning,
+          sent_jp: currentItem.sent_jp,
+          sent_kr: currentItem.sent_kr,
+          fileName: currentItem.fileName
+        };
+        
+        questionToDisplay = new Question({
+          word: new Word(wordData),
+          questionType: currentItem.questionType,
+          questionLabel: currentItem.questionLabel,
+          weightKey: currentItem.weightKey
+        });
       }
       
       this.flashcardUI.displayQuiz(questionToDisplay, (text) => {
         this.voiceManager.play(text);
       });
+      
+      // 정답 숨김 처리
+      this.flashcardUI.toggleAnswer(false);
       
       const weight = this.quizMode.getCurrentWeight();
       this.flashcardUI.updateWeight(weight);

@@ -39,10 +39,11 @@ export class FlashcardUI {
       const playButton = ans.hasPlayButton 
         ? `<button class="pronunciation-play-button" data-text="${this.escapeHtml(ans.playText)}" title="발음 재생">▶</button>`
         : '';
+      const valueClass = ans.isSentence ? 'card-answer-value sentence-value' : 'card-answer-value';
       return `
         <div class="card-answer-item">
           <div class="card-answer-label">${ans.label}</div>
-          <div class="card-answer-value">${this.escapeHtml(ans.value)}${playButton}</div>
+          <div class="${valueClass}">${this.escapeHtml(ans.value)}${playButton}</div>
         </div>
       `;
     }).join('');

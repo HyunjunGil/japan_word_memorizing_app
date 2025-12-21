@@ -47,12 +47,13 @@ export class Question {
   }
   
   /**
-   * 정답 항목 배열 반환 (일본어 표기, 뜻, 발음 순서)
+   * 정답 항목 배열 반환 (일본어 표기, 뜻, 발음, 예문 순서)
    * @returns {Array<Object>} 정답 항목 배열
    */
   getAnswerItems() {
     const items = [];
     const hasPronunciation = this.word.hasPronunciation();
+    const hasSentence = this.word.hasSentence();
     
     // 일본어 표기 항목 (문제 유형이 일본어 표기가 아닐 때만)
     if (this.questionType !== CONFIG.QUESTION_TYPES.JAPANESE) {
@@ -75,13 +76,24 @@ export class Question {
       });
     }
     
-    // 발음 항목 (발음이 있을 때만, 가장 아래)
+    // 발음 항목 (발음이 있을 때만)
     if (hasPronunciation && this.questionType !== CONFIG.QUESTION_TYPES.PRONUNCIATION) {
       items.push({
         label: '발음',
         value: this.word.pronunciation,
         hasPlayButton: true,
         playText: this.word.pronunciation
+      });
+    }
+    
+    // 예문 항목 (예문이 있을 때만, 가장 아래)
+    if (hasSentence) {
+      items.push({
+        label: '예문',
+        value: `${this.word.sent_jp}\n${this.word.sent_kr}`,
+        hasPlayButton: true,
+        playText: this.word.sent_jp,
+        isSentence: true
       });
     }
     
