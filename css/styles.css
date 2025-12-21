@@ -811,6 +811,7 @@
             max-width: 400px;
             color: #333;
             line-height: 1.6;
+            cursor: pointer;
             user-select: none;
             transition: background-color 0.2s;
         }
@@ -1136,6 +1137,7 @@
         }
         
         .study-table .sentence-cell {
+            cursor: pointer;
             user-select: none;
             transition: background-color 0.2s;
         }

@@ -38,7 +38,7 @@ export class StudyTableUI {
     // 안내 문구
     const infoHTML = `
       <div class="study-table-info">
-        각 텍스트를 클릭하여 보임/숨김 처리할 수 있습니다<br>
+        예문을 클릭하면 발음이 재생됩니다 • 다른 텍스트는 클릭하여 보임/숨김 처리할 수 있습니다<br>
         텍스트를 길게 누르면 클립보드에 복사됩니다
       </div>
     `;
@@ -129,11 +129,49 @@ export class StudyTableUI {
       });
     });
     
-    // 셀 클릭 및 긴 누름
-    this.container.querySelectorAll('td[data-text]').forEach(cell => {
+    // 예문 셀 - 클릭 시 발음 재생
+    this.container.querySelectorAll('td.sentence-cell[data-text]').forEach(cell => {
       const text = cell.dataset.text;
       
-      // 클릭 이벤트
+      // 클릭 이벤트 - 발음 재생
+      cell.addEventListener('click', (e) => {
+        this.clipboardUtils.setClickTimer(() => {
+          if (!this.clipboardUtils.isLongPressCompleted() && text && onPlayPronunciation) {
+            onPlayPronunciation(text);
+          }
+          this.clipboardUtils.resetLongPressFlag();
+        });
+      });
+      
+      // 긴 누름 이벤트
+      cell.addEventListener('mousedown', () => {
+        this.clipboardUtils.startLongPress(cell, text);
+      });
+      cell.addEventListener('mouseup', () => {
+        this.clipboardUtils.endLongPress();
+      });
+      cell.addEventListener('mouseleave', () => {
+        this.clipboardUtils.endLongPress();
+      });
+      cell.addEventListener('touchstart', () => {
+        this.clipboardUtils.startLongPress(cell, text);
+      });
+      cell.addEventListener('touchend', () => {
+        this.clipboardUtils.endLongPress();
+      });
+      cell.addEventListener('touchcancel', () => {
+        this.clipboardUtils.endLongPress();
+      });
+      cell.addEventListener('touchmove', () => {
+        this.clipboardUtils.endLongPress();
+      });
+    });
+    
+    // 다른 셀들 - 클릭 시 토글
+    this.container.querySelectorAll('td[data-text]:not(.sentence-cell)').forEach(cell => {
+      const text = cell.dataset.text;
+      
+      // 클릭 이벤트 - 토글
       if (onToggleCell) {
         cell.addEventListener('click', (e) => {
           this.clipboardUtils.setClickTimer(() => {
