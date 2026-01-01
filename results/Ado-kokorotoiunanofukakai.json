@@ -35,6 +35,14 @@
     },
     {
       "id": 5,
+      "japanese": "さえ",
+      "pronunciation": "さえ",
+      "meaning": "조차, 까지도",
+      "sent_jp": "目を逸らした音さえ",
+      "sent_kr": "눈을 돌린 소리조차"
+    },
+    {
+      "id": 6,
       "japanese": "容易い",
       "pronunciation": "たやすい",
       "meaning": "쉬운",
@@ -42,7 +50,7 @@
       "sent_kr": "이토록 쉽게 구별해 보이는데"
     },
     {
-      "id": 6,
+      "id": 7,
       "japanese": "聞き分ける",
       "pronunciation": "ききわける",
       "meaning": "듣고 구별하다",
@@ -50,7 +58,23 @@
       "sent_kr": "이토록 쉽게 구별해 보이는데"
     },
     {
-      "id": 7,
+      "id": 8,
+      "japanese": "~のに",
+      "pronunciation": "~のに",
+      "meaning": "~인데, ~는데도",
+      "sent_jp": "こんなにも容易く聞き分けてみせるのに",
+      "sent_kr": "이토록 쉽게 구별해 보이는데"
+    },
+    {
+      "id": 9,
+      "japanese": "時に",
+      "pronunciation": "ときに",
+      "meaning": "때로, 이따금",
+      "sent_jp": "時に、病名を何としましょうか",
+      "sent_kr": "때로, 병명을 뭐라고 할까요"
+    },
+    {
+      "id": 10,
       "japanese": "病名",
       "pronunciation": "びょうめい",
       "meaning": "병명",
@@ -58,7 +82,7 @@
       "sent_kr": "병명을 뭐라고 할까요"
     },
     {
-      "id": 8,
+      "id": 11,
       "japanese": "知る",
       "pronunciation": "しる",
       "meaning": "알다",
@@ -66,7 +90,15 @@
       "sent_kr": "누구도 알 수 없을 터인"
     },
     {
-      "id": 9,
+      "id": 12,
+      "japanese": "~はずの",
+      "pronunciation": "~はずの",
+      "meaning": "~일 터인, ~할 리인",
+      "sent_jp": "誰も知りえないはずの",
+      "sent_kr": "누구도 알 수 없을 터인"
+    },
+    {
+      "id": 13,
       "japanese": "心",
       "pronunciation": "こころ",
       "meaning": "마음",
@@ -74,7 +106,15 @@
       "sent_kr": "마음이라는 이름의 불가해를"
     },
     {
-      "id": 10,
+      "id": 14,
+      "japanese": "なんて",
+      "pronunciation": "なんて",
+      "meaning": "따위",
+      "sent_jp": "ココロなんてさ期待もしないよ",
+      "sent_kr": "마음 따위 기대도 하지 않아"
+    },
+    {
+      "id": 15,
       "japanese": "期待",
       "pronunciation": "きたい",
       "meaning": "기대",
@@ -82,7 +122,7 @@
       "sent_kr": "기대도 하지 않아"
     },
     {
-      "id": 11,
+      "id": 16,
       "japanese": "寸分",
       "pronunciation": "すんぶん",
       "meaning": "털끝만큼, 조금",
@@ -90,7 +130,7 @@
       "sent_kr": "털끝만큼의 어긋남도 없는"
     },
     {
-      "id": 12,
+      "id": 17,
       "japanese": "狂い",
       "pronunciation": "くるい",
       "meaning": "어긋남, 틀림",
@@ -98,7 +138,15 @@
       "sent_kr": "털끝만큼의 어긋남도 없는"
     },
     {
-      "id": 13,
+      "id": 18,
+      "japanese": "だって",
+      "pronunciation": "だって",
+      "meaning": "조차도, ~라도",
+      "sent_jp": "寸分の狂いだってない",
+      "sent_kr": "털끝만큼의 어긋남도 없는"
+    },
+    {
+      "id": 19,
       "japanese": "正確",
       "pronunciation": "せいかく",
       "meaning": "정확",
@@ -106,7 +154,7 @@
       "sent_kr": "정확하게 기록된 지그재그에"
     },
     {
-      "id": 14,
+      "id": 20,
       "japanese": "記録",
       "pronunciation": "きろく",
       "meaning": "기록",
@@ -114,7 +162,7 @@
       "sent_kr": "정확하게 기록된 지그재그에"
     },
     {
-      "id": 15,
+      "id": 21,
       "japanese": "意味",
       "pronunciation": "いみ",
       "meaning": "의미",
@@ -122,7 +170,15 @@
       "sent_kr": "그 이상 의미는 없을 터이니까"
     },
     {
-      "id": 16,
+      "id": 22,
+      "japanese": "~はずだ",
+      "pronunciation": "~はずだ",
+      "meaning": "~할 터이다, ~일 것이다",
+      "sent_jp": "それ以上意味はないはずだもの",
+      "sent_kr": "그 이상 의미는 없을 터이니까"
+    },
+    {
+      "id": 23,
       "japanese": "故に",
       "pronunciation": "ゆえに",
       "meaning": "그러므로",
@@ -130,7 +186,7 @@
       "sent_kr": "그러므로 어떤 얼굴로 웃든"
     },
     {
-      "id": 17,
+      "id": 24,
       "japanese": "顔",
       "pronunciation": "かお",
       "meaning": "얼굴",
@@ -138,7 +194,7 @@
       "sent_kr": "그러므로 어떤 얼굴로 웃든"
     },
     {
-      "id": 18,
+      "id": 25,
       "japanese": "笑う",
       "pronunciation": "わらう",
       "meaning": "웃다",
@@ -146,7 +202,15 @@
       "sent_kr": "그러므로 어떤 얼굴로 웃든"
     },
     {
-      "id": 19,
+      "id": 26,
+      "japanese": "~ようと",
+      "pronunciation": "~ようと",
+      "meaning": "~하든, ~라도",
+      "sent_jp": "故にどんな顔して笑おうと",
+      "sent_kr": "그러므로 어떤 얼굴로 웃든"
+    },
+    {
+      "id": 27,
       "japanese": "カルテ",
       "pronunciation": "カルテ",
       "meaning": "진료 기록부",
@@ -154,7 +218,7 @@
       "sent_kr": "진료 기록부에 적히지 않는 것은"
     },
     {
-      "id": 20,
+      "id": 28,
       "japanese": "書く",
       "pronunciation": "かく",
       "meaning": "쓰다",
@@ -162,7 +226,7 @@
       "sent_kr": "진료 기록부에 적히지 않는 것은"
     },
     {
-      "id": 21,
+      "id": 29,
       "japanese": "信じる",
       "pronunciation": "しんじる",
       "meaning": "믿다",
@@ -170,15 +234,15 @@
       "sent_kr": "믿을 가치가 없어"
     },
     {
-      "id": 22,
-      "japanese": "値する",
-      "pronunciation": "あたいする",
-      "meaning": "가치가 있다",
+      "id": 30,
+      "japanese": "~に値する",
+      "pronunciation": "~にあたいする",
+      "meaning": "~할 가치가 있다",
       "sent_jp": "信じるに値しないんだ",
       "sent_kr": "믿을 가치가 없어"
     },
     {
-      "id": 23,
+      "id": 31,
       "japanese": "全て",
       "pronunciation": "すべて",
       "meaning": "전부, 모두",
@@ -186,7 +250,7 @@
       "sent_kr": "그것이 전부"
     },
     {
-      "id": 24,
+      "id": 32,
       "japanese": "心音",
       "pronunciation": "しんおん",
       "meaning": "심음, 심장 소리",
@@ -194,7 +258,7 @@
       "sent_kr": "심장 소리를 토해내고 있어"
     },
     {
-      "id": 25,
+      "id": 33,
       "japanese": "吐く",
       "pronunciation": "はく",
       "meaning": "토하다, 내뱉다",
@@ -202,7 +266,15 @@
       "sent_kr": "심장 소리를 토해내고 있어"
     },
     {
-      "id": 26,
+      "id": 34,
+      "japanese": "それだけ",
+      "pronunciation": "それだけ",
+      "meaning": "그것뿐, 그뿐",
+      "sent_jp": "心音を吐いているそれだけ",
+      "sent_kr": "심장 소리를 토해내고 있어 그뿐"
+    },
+    {
+      "id": 35,
       "japanese": "曖昧",
       "pronunciation": "あいまい",
       "meaning": "애매함",
@@ -210,7 +282,7 @@
       "sent_kr": "애매한 것이야"
     },
     {
-      "id": 27,
+      "id": 36,
       "japanese": "見える",
       "pronunciation": "みえる",
       "meaning": "보이다",
@@ -218,7 +290,7 @@
       "sent_kr": "보이지 않는 것이야"
     },
     {
-      "id": 28,
+      "id": 37,
       "japanese": "最適",
       "pronunciation": "さいてき",
       "meaning": "최적",
@@ -226,7 +298,7 @@
       "sent_kr": "최적의 치료법 따위 어디에도 없어"
     },
     {
-      "id": 29,
+      "id": 38,
       "japanese": "治療法",
       "pronunciation": "ちりょうほう",
       "meaning": "치료법",
@@ -234,7 +306,15 @@
       "sent_kr": "최적의 치료법 따위 어디에도 없어"
     },
     {
-      "id": 30,
+      "id": 39,
+      "japanese": "など",
+      "pronunciation": "など",
+      "meaning": "따위, 등",
+      "sent_jp": "最適な治療法などどこにもない",
+      "sent_kr": "최적의 치료법 따위 어디에도 없어"
+    },
+    {
+      "id": 40,
       "japanese": "感情",
       "pronunciation": "かんじょう",
       "meaning": "감정",
@@ -242,7 +322,7 @@
       "sent_kr": "감정의 판단은 어떻게 하면 좋을까?"
     },
     {
-      "id": 31,
+      "id": 41,
       "japanese": "判断",
       "pronunciation": "はんだん",
       "meaning": "판단",
@@ -250,7 +330,15 @@
       "sent_kr": "감정의 판단은 어떻게 하면 좋을까?"
     },
     {
-      "id": 32,
+      "id": 42,
+      "japanese": "~たらいい",
+      "pronunciation": "~たらいい",
+      "meaning": "~하면 좋을까",
+      "sent_jp": "感情の判断はどうしたらいい？",
+      "sent_kr": "감정의 판단은 어떻게 하면 좋을까?"
+    },
+    {
+      "id": 43,
       "japanese": "心境",
       "pronunciation": "しんきょう",
       "meaning": "심경",
@@ -258,7 +346,7 @@
       "sent_kr": "심경의 분별은 어떻게 하면 좋을까?"
     },
     {
-      "id": 33,
+      "id": 44,
       "japanese": "分別",
       "pronunciation": "ふんべつ",
       "meaning": "분별",
@@ -266,7 +354,7 @@
       "sent_kr": "심경의 분별은 어떻게 하면 좋을까?"
     },
     {
-      "id": 34,
+      "id": 45,
       "japanese": "証明",
       "pronunciation": "しょうめい",
       "meaning": "증명",
@@ -274,7 +362,15 @@
       "sent_kr": "증명할 방법도 없는 불명료가"
     },
     {
-      "id": 35,
+      "id": 46,
+      "japanese": "~ようもない",
+      "pronunciation": "~ようもない",
+      "meaning": "~할 방법도 없다",
+      "sent_jp": "証明しようもない不明瞭が",
+      "sent_kr": "증명할 방법도 없는 불명료가"
+    },
+    {
+      "id": 47,
       "japanese": "不明瞭",
       "pronunciation": "ふめいりょう",
       "meaning": "불명료",
@@ -282,7 +378,7 @@
       "sent_kr": "증명할 방법도 없는 불명료가"
     },
     {
-      "id": 36,
+      "id": 48,
       "japanese": "エラー",
       "pronunciation": "エラー",
       "meaning": "에러, 오류",
@@ -290,7 +386,7 @@
       "sent_kr": "에러를 토하며 맥박을 치고 있어"
     },
     {
-      "id": 37,
+      "id": 49,
       "japanese": "脈",
       "pronunciation": "みゃく",
       "meaning": "맥박",
@@ -298,7 +394,7 @@
       "sent_kr": "에러를 토하며 맥박을 치고 있어"
     },
     {
-      "id": 38,
+      "id": 50,
       "japanese": "打つ",
       "pronunciation": "うつ",
       "meaning": "치다",
@@ -306,7 +402,15 @@
       "sent_kr": "에러를 토하며 맥박을 치고 있어"
     },
     {
-      "id": 39,
+      "id": 51,
+      "japanese": "~ては",
+      "pronunciation": "~ては",
+      "meaning": "~하고는, ~하며",
+      "sent_jp": "エラー吐いては脈を打つんだ",
+      "sent_kr": "에러를 토하며 맥박을 치고 있어"
+    },
+    {
+      "id": 52,
       "japanese": "安寧",
       "pronunciation": "あんねい",
       "meaning": "안녕, 평온",
@@ -314,7 +418,7 @@
       "sent_kr": "안녕도 안락도 어떻든 좋아"
     },
     {
-      "id": 40,
+      "id": 53,
       "japanese": "安楽",
       "pronunciation": "あんらく",
       "meaning": "안락",
@@ -322,7 +426,15 @@
       "sent_kr": "안녕도 안락도 어떻든 좋아"
     },
     {
-      "id": 41,
+      "id": 54,
+      "japanese": "~だっていい",
+      "pronunciation": "~だっていい",
+      "meaning": "~라도 좋다, 어떻든 좋다",
+      "sent_jp": "安寧も安楽もどうだっていい",
+      "sent_kr": "안녕도 안락도 어떻든 좋아"
+    },
+    {
+      "id": 55,
       "japanese": "後悔",
       "pronunciation": "こうかい",
       "meaning": "후회",
@@ -330,7 +442,7 @@
       "sent_kr": "후회하는 인생이라 해도 좋으니까"
     },
     {
-      "id": 42,
+      "id": 56,
       "japanese": "人生",
       "pronunciation": "じんせい",
       "meaning": "인생",
@@ -338,7 +450,23 @@
       "sent_kr": "후회하는 인생이라 해도 좋으니까"
     },
     {
-      "id": 43,
+      "id": 57,
+      "japanese": "~としたって",
+      "pronunciation": "~としたって",
+      "meaning": "~라 해도, ~라 하더라도",
+      "sent_jp": "後悔の人生だとしたっていいからさ",
+      "sent_kr": "후회하는 인생이라 해도 좋으니까"
+    },
+    {
+      "id": 58,
+      "japanese": "目",
+      "pronunciation": "め",
+      "meaning": "눈",
+      "sent_jp": "この目が潤む病の理由は何なの？",
+      "sent_kr": "이 눈이 젖는 병의 이유는 뭐야?"
+    },
+    {
+      "id": 59,
       "japanese": "潤む",
       "pronunciation": "うるむ",
       "meaning": "젖다, 촉촉해지다",
@@ -346,7 +474,7 @@
       "sent_kr": "이 눈이 젖는 병의 이유는 뭐야?"
     },
     {
-      "id": 44,
+      "id": 60,
       "japanese": "病",
       "pronunciation": "やまい",
       "meaning": "병",
@@ -354,7 +482,7 @@
       "sent_kr": "이 눈이 젖는 병의 이유는 뭐야?"
     },
     {
-      "id": 45,
+      "id": 61,
       "japanese": "理由",
       "pronunciation": "りゆう",
       "meaning": "이유",
@@ -362,7 +490,7 @@
       "sent_kr": "이 눈이 젖는 병의 이유는 뭐야?"
     },
     {
-      "id": 46,
+      "id": 62,
       "japanese": "永遠",
       "pronunciation": "えいえん",
       "meaning": "영원",
@@ -370,7 +498,7 @@
       "sent_kr": "영원과 정적의 문을 두드린 전언"
     },
     {
-      "id": 47,
+      "id": 63,
       "japanese": "静寂",
       "pronunciation": "せいじゃく",
       "meaning": "정적, 고요함",
@@ -378,7 +506,7 @@
       "sent_kr": "영원과 정적의 문을 두드린 전언"
     },
     {
-      "id": 48,
+      "id": 64,
       "japanese": "戸",
       "pronunciation": "と",
       "meaning": "문",
@@ -386,7 +514,7 @@
       "sent_kr": "영원과 정적의 문을 두드린 전언"
     },
     {
-      "id": 49,
+      "id": 65,
       "japanese": "たたく",
       "pronunciation": "たたく",
       "meaning": "두드리다",
@@ -394,7 +522,7 @@
       "sent_kr": "영원과 정적의 문을 두드린 전언"
     },
     {
-      "id": 50,
+      "id": 66,
       "japanese": "言伝",
       "pronunciation": "ことづて",
       "meaning": "전갈, 전언",
@@ -402,7 +530,7 @@
       "sent_kr": "영원과 정적의 문을 두드린 전언"
     },
     {
-      "id": 51,
+      "id": 67,
       "japanese": "忘れる",
       "pronunciation": "わすれる",
       "meaning": "잊다",
@@ -410,7 +538,15 @@
       "sent_kr": "나는 언제까지 잊고 있을 생각일까"
     },
     {
-      "id": 52,
+      "id": 68,
+      "japanese": "~つもり",
+      "pronunciation": "~つもり",
+      "meaning": "~할 생각, ~할 작정",
+      "sent_jp": "私はいつまで忘れているつもりだろう",
+      "sent_kr": "나는 언제까지 잊고 있을 생각일까"
+    },
+    {
+      "id": 69,
       "japanese": "明日",
       "pronunciation": "あした",
       "meaning": "내일",
@@ -418,7 +554,7 @@
       "sent_kr": "내일을 이은 손가락으로"
     },
     {
-      "id": 53,
+      "id": 70,
       "japanese": "繋ぐ",
       "pronunciation": "つなぐ",
       "meaning": "잇다, 연결하다",
@@ -426,7 +562,7 @@
       "sent_kr": "내일을 이은 손가락으로"
     },
     {
-      "id": 54,
+      "id": 71,
       "japanese": "指",
       "pronunciation": "ゆび",
       "meaning": "손가락",
@@ -434,7 +570,7 @@
       "sent_kr": "내일을 이은 손가락으로"
     },
     {
-      "id": 55,
+      "id": 72,
       "japanese": "取りこぼす",
       "pronunciation": "とりこぼす",
       "meaning": "놓치다, 빠뜨리다",
@@ -442,7 +578,7 @@
       "sent_kr": "놓쳐온 것들을 세어버려"
     },
     {
-      "id": 56,
+      "id": 73,
       "japanese": "数える",
       "pronunciation": "かぞえる",
       "meaning": "세다",
@@ -450,7 +586,15 @@
       "sent_kr": "놓쳐온 것들을 세어버려"
     },
     {
-      "id": 57,
+      "id": 74,
+      "japanese": "~てしまう",
+      "pronunciation": "~てしまう",
+      "meaning": "~해버리다 (완료, 유감)",
+      "sent_jp": "取りこぼしてきたものを数えてしまう",
+      "sent_kr": "놓쳐온 것들을 세어버려"
+    },
+    {
+      "id": 75,
       "japanese": "虚しい",
       "pronunciation": "むなしい",
       "meaning": "허무하다",
@@ -458,7 +602,15 @@
       "sent_kr": "허무함 그대로"
     },
     {
-      "id": 58,
+      "id": 76,
+      "japanese": "~のままに",
+      "pronunciation": "~のままに",
+      "meaning": "~그대로",
+      "sent_jp": "虚しさのままに",
+      "sent_kr": "허무함 그대로"
+    },
+    {
+      "id": 77,
       "japanese": "本当",
       "pronunciation": "ほんとう",
       "meaning": "진짜, 정말",
@@ -466,7 +618,7 @@
       "sent_kr": "심장 소리를 토해내고 있어 정말은"
     },
     {
-      "id": 59,
+      "id": 78,
       "japanese": "乱暴",
       "pronunciation": "らんぼう",
       "meaning": "난폭, 거칠다",
@@ -474,7 +626,7 @@
       "sent_kr": "거칠게 네가 닿아준다면"
     },
     {
-      "id": 60,
+      "id": 79,
       "japanese": "触れる",
       "pronunciation": "ふれる",
       "meaning": "닿다, 만지다",
@@ -482,7 +634,15 @@
       "sent_kr": "거칠게 네가 닿아준다면"
     },
     {
-      "id": 61,
+      "id": 80,
+      "japanese": "~てくれたら",
+      "pronunciation": "~てくれたら",
+      "meaning": "~해준다면",
+      "sent_jp": "乱暴に君が触れてくれたら",
+      "sent_kr": "거칠게 네가 닿아준다면"
+    },
+    {
+      "id": 81,
       "japanese": "ぽっかり",
       "pronunciation": "ぽっかり",
       "meaning": "뻥 뚫린",
@@ -490,7 +650,7 @@
       "sent_kr": "뻥 뚫려 보이는 공백도 메울 수 있어"
     },
     {
-      "id": 62,
+      "id": 82,
       "japanese": "覗く",
       "pronunciation": "のぞく",
       "meaning": "들여다보다",
@@ -498,7 +658,7 @@
       "sent_kr": "뻥 뚫려 보이는 공백도 메울 수 있어"
     },
     {
-      "id": 63,
+      "id": 83,
       "japanese": "空白",
       "pronunciation": "くうはく",
       "meaning": "공백",
@@ -506,7 +666,7 @@
       "sent_kr": "뻥 뚫려 보이는 공백도 메울 수 있어"
     },
     {
-      "id": 64,
+      "id": 84,
       "japanese": "埋める",
       "pronunciation": "うめる",
       "meaning": "메우다",
@@ -514,7 +674,7 @@
       "sent_kr": "뻥 뚫려 보이는 공백도 메울 수 있어"
     },
     {
-      "id": 65,
+      "id": 85,
       "japanese": "正体",
       "pronunciation": "しょうたい",
       "meaning": "정체",
@@ -522,7 +682,7 @@
       "sent_kr": "이게 정체?"
     },
     {
-      "id": 66,
+      "id": 86,
       "japanese": "表情",
       "pronunciation": "ひょうじょう",
       "meaning": "표정",
@@ -530,7 +690,7 @@
       "sent_kr": "표정에 메스를 넣어버려"
     },
     {
-      "id": 67,
+      "id": 87,
       "japanese": "メス",
       "pronunciation": "メス",
       "meaning": "메스, 수술 칼",
@@ -538,7 +698,7 @@
       "sent_kr": "표정에 메스를 넣어버려"
     },
     {
-      "id": 68,
+      "id": 88,
       "japanese": "入れる",
       "pronunciation": "いれる",
       "meaning": "넣다",
@@ -546,7 +706,7 @@
       "sent_kr": "표정에 메스를 넣어버려"
     },
     {
-      "id": 69,
+      "id": 89,
       "japanese": "愛情",
       "pronunciation": "あいじょう",
       "meaning": "애정",
@@ -554,7 +714,7 @@
       "sent_kr": "애정은 투약이라 생각되어버려"
     },
     {
-      "id": 70,
+      "id": 90,
       "japanese": "投薬",
       "pronunciation": "とうやく",
       "meaning": "투약",
@@ -562,7 +722,7 @@
       "sent_kr": "애정은 투약이라 생각되어버려"
     },
     {
-      "id": 71,
+      "id": 91,
       "japanese": "思う",
       "pronunciation": "おもう",
       "meaning": "생각하다",
@@ -570,7 +730,7 @@
       "sent_kr": "애정은 투약이라 생각되어버려"
     },
     {
-      "id": 72,
+      "id": 92,
       "japanese": "解剖",
       "pronunciation": "かいぼう",
       "meaning": "해부",
@@ -578,7 +738,7 @@
       "sent_kr": "해부할 수 없는 수술대라면"
     },
     {
-      "id": 73,
+      "id": 93,
       "japanese": "手術台",
       "pronunciation": "しゅじゅつだい",
       "meaning": "수술대",
@@ -586,7 +746,15 @@
       "sent_kr": "해부할 수 없는 수술대라면"
     },
     {
-      "id": 74,
+      "id": 94,
+      "japanese": "~じゃ",
+      "pronunciation": "~じゃ",
+      "meaning": "~라면, ~에서는",
+      "sent_jp": "解剖できない手術台じゃ",
+      "sent_kr": "해부할 수 없는 수술대라면"
+    },
+    {
+      "id": 95,
       "japanese": "答え",
       "pronunciation": "こたえ",
       "meaning": "답",
@@ -594,7 +762,15 @@
       "sent_kr": "답 따위 알 리 없잖아"
     },
     {
-      "id": 75,
+      "id": 96,
+      "japanese": "~やしない",
+      "pronunciation": "~やしない",
+      "meaning": "~하지 않다 (강조)",
+      "sent_jp": "答えなんてさわかりやしないよ",
+      "sent_kr": "답 따위 알 리 없잖아"
+    },
+    {
+      "id": 97,
       "japanese": "数式",
       "pronunciation": "すうしき",
       "meaning": "수식",
@@ -602,7 +778,7 @@
       "sent_kr": "수식으로 일체를 증명하지 않는"
     },
     {
-      "id": 76,
+      "id": 98,
       "japanese": "一切",
       "pronunciation": "いっさい",
       "meaning": "일체, 전혀",
@@ -610,7 +786,7 @@
       "sent_kr": "수식으로 일체를 증명하지 않는"
     },
     {
-      "id": 77,
+      "id": 99,
       "japanese": "名前",
       "pronunciation": "なまえ",
       "meaning": "이름",
@@ -618,7 +794,7 @@
       "sent_kr": "마음이라는 이름의 불가해를"
     },
     {
-      "id": 78,
+      "id": 100,
       "japanese": "不可解",
       "pronunciation": "ふかかい",
       "meaning": "불가해",
@@ -626,7 +802,7 @@
       "sent_kr": "마음이라는 이름의 불가해를"
     },
     {
-      "id": 79,
+      "id": 101,
       "japanese": "素直",
       "pronunciation": "すなお",
       "meaning": "솔직한",
@@ -634,7 +810,15 @@
       "sent_kr": "솔직해질 수 없는 나를"
     },
     {
-      "id": 80,
+      "id": 102,
+      "japanese": "~ぬ",
+      "pronunciation": "~ぬ",
+      "meaning": "~지 않다 (부정)",
+      "sent_jp": "素直になれぬ私のことを",
+      "sent_kr": "솔직해질 수 없는 나를"
+    },
+    {
+      "id": 103,
       "japanese": "見抜く",
       "pronunciation": "みぬく",
       "meaning": "간파하다, 꿰뚫어보다",
@@ -642,7 +826,7 @@
       "sent_kr": "솔직해질 수 없는 나를 꿰뚫어봐줘"
     },
     {
-      "id": 81,
+      "id": 104,
       "japanese": "覚める",
       "pronunciation": "さめる",
       "meaning": "깨다",
@@ -650,7 +834,7 @@
       "sent_kr": "깨지 않는 꿈 따위 여기엔 없다고 가르쳐줘"
     },
     {
-      "id": 82,
+      "id": 105,
       "japanese": "夢",
       "pronunciation": "ゆめ",
       "meaning": "꿈",
@@ -658,7 +842,7 @@
       "sent_kr": "깨지 않는 꿈 따위 여기엔 없다고 가르쳐줘"
     },
     {
-      "id": 83,
+      "id": 106,
       "japanese": "教える",
       "pronunciation": "おしえる",
       "meaning": "가르치다, 알려주다",
@@ -666,7 +850,7 @@
       "sent_kr": "깨지 않는 꿈 따위 여기엔 없다고 가르쳐줘"
     },
     {
-      "id": 84,
+      "id": 107,
       "japanese": "拒む",
       "pronunciation": "こばむ",
       "meaning": "거부하다",
@@ -674,7 +858,7 @@
       "sent_kr": "몇 번을 거부해도"
     },
     {
-      "id": 85,
+      "id": 108,
       "japanese": "振りほどく",
       "pronunciation": "ふりほどく",
       "meaning": "뿌리치다",
@@ -682,7 +866,7 @@
       "sent_kr": "뿌리쳐도"
     },
     {
-      "id": 86,
+      "id": 109,
       "japanese": "優しい",
       "pronunciation": "やさしい",
       "meaning": "친절하다, 다정하다",
@@ -690,7 +874,15 @@
       "sent_kr": "또 다정하게 할 거잖아?"
     },
     {
-      "id": 87,
+      "id": 110,
+      "japanese": "~でしょう",
+      "pronunciation": "~でしょう",
+      "meaning": "~할 것이다, ~겠지",
+      "sent_jp": "また優しくするのでしょう？",
+      "sent_kr": "또 다정하게 할 거잖아?"
+    },
+    {
+      "id": 111,
       "japanese": "想い",
       "pronunciation": "おもい",
       "meaning": "마음, 생각",

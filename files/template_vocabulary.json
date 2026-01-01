@@ -1,0 +1,29 @@
+{
+  "fileName": "template_name",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "例",
+      "pronunciation": "れい",
+      "meaning": "예",
+      "sent_jp": "例文をここに入れます。",
+      "sent_kr": "예문을 여기에 넣습니다."
+    },
+    {
+      "id": 2,
+      "japanese": "単語",
+      "pronunciation": "たんご",
+      "meaning": "단어",
+      "sent_jp": "新しい単語を覚える。",
+      "sent_kr": "새로운 단어를 외운다."
+    },
+    {
+      "id": 3,
+      "japanese": "学習",
+      "pronunciation": "がくしゅう",
+      "meaning": "학습",
+      "sent_jp": "毎日学習を続けています。",
+      "sent_kr": "매일 학습을 계속하고 있습니다."
+    }
+  ]
+}
