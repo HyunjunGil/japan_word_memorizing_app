@@ -1,0 +1,309 @@
+{
+  "fileName": "yorushika_haru",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "風",
+      "pronunciation": "かぜ",
+      "meaning": "바람",
+      "sent_jp": "貴方は風のように",
+      "sent_kr": "당신은 바람처럼"
+    },
+    {
+      "id": 2,
+      "japanese": "目蓋",
+      "pronunciation": "まぶた",
+      "meaning": "눈꺼풀",
+      "sent_jp": "目蓋を開いていた",
+      "sent_kr": "눈꺼풀을 열고 있었다"
+    },
+    {
+      "id": 3,
+      "japanese": "夕暮れ",
+      "pronunciation": "ゆうぐれ",
+      "meaning": "저녁 노을, 해질녘",
+      "sent_jp": "目を閉じては夕暮れ",
+      "sent_kr": "눈을 감으면 해질녘"
+    },
+    {
+      "id": 4,
+      "japanese": "ビイドロ",
+      "pronunciation": "ビイドロ",
+      "meaning": "유리 (포르투갈어 vidro에서 유래)",
+      "sent_jp": "貴方の目はビイドロ",
+      "sent_kr": "당신의 눈은 유리"
+    },
+    {
+      "id": 5,
+      "japanese": "匂い",
+      "pronunciation": "におい",
+      "meaning": "냄새, 향기",
+      "sent_jp": "少しだけ晴るの匂いがした",
+      "sent_kr": "조금만 맑음의 냄새가 났다"
+    },
+    {
+      "id": 6,
+      "japanese": "咲く",
+      "pronunciation": "さく",
+      "meaning": "피다 (꽃이)",
+      "sent_jp": "晴れに晴れ、花よ咲け",
+      "sent_kr": "맑게 개어라, 꽃아 피어라"
+    },
+    {
+      "id": 7,
+      "japanese": "降り止む",
+      "pronunciation": "ふりやむ",
+      "meaning": "그치다 (비가)",
+      "sent_jp": "降り止めば雨でさえ",
+      "sent_kr": "그치면 비조차도"
+    },
+    {
+      "id": 8,
+      "japanese": "飾る",
+      "pronunciation": "かざる",
+      "meaning": "장식하다",
+      "sent_jp": "貴方を飾る晴る",
+      "sent_kr": "당신을 장식하는 맑음"
+    },
+    {
+      "id": 9,
+      "japanese": "胸",
+      "pronunciation": "むね",
+      "meaning": "가슴",
+      "sent_jp": "胸を打つ音よ凪げ",
+      "sent_kr": "가슴을 치는 소리여 잠잠해져라"
+    },
+    {
+      "id": 10,
+      "japanese": "凪ぐ",
+      "pronunciation": "なぐ",
+      "meaning": "잠잠해지다 (바람/파도가)",
+      "sent_jp": "胸を打つ音よ凪げ",
+      "sent_kr": "가슴을 치는 소리여 잠잠해져라"
+    },
+    {
+      "id": 11,
+      "japanese": "雲",
+      "pronunciation": "くも",
+      "meaning": "구름",
+      "sent_jp": "あの雲も越えてゆけ",
+      "sent_kr": "저 구름도 넘어가라"
+    },
+    {
+      "id": 12,
+      "japanese": "越える",
+      "pronunciation": "こえる",
+      "meaning": "넘다, 초월하다",
+      "sent_jp": "あの雲も越えてゆけ",
+      "sent_kr": "저 구름도 넘어가라"
+    },
+    {
+      "id": 13,
+      "japanese": "模様",
+      "pronunciation": "もよう",
+      "meaning": "모양, 무늬",
+      "sent_jp": "貴方は晴れ模様に",
+      "sent_kr": "당신은 맑은 날씨에"
+    },
+    {
+      "id": 14,
+      "japanese": "青色",
+      "pronunciation": "あおいろ",
+      "meaning": "푸른색",
+      "sent_jp": "目を閉じては青色",
+      "sent_kr": "눈을 감으면 푸른색"
+    },
+    {
+      "id": 15,
+      "japanese": "悲しい",
+      "pronunciation": "かなしい",
+      "meaning": "슬프다",
+      "sent_jp": "何が悲しいのだろうか",
+      "sent_kr": "무엇이 슬픈 걸까"
+    },
+    {
+      "id": 16,
+      "japanese": "泣く",
+      "pronunciation": "なく",
+      "meaning": "울다",
+      "sent_jp": "泣きに泣け、空よ泣け",
+      "sent_kr": "울고 또 울어라, 하늘이여 울어라"
+    },
+    {
+      "id": 17,
+      "japanese": "空",
+      "pronunciation": "そら",
+      "meaning": "하늘",
+      "sent_jp": "泣きに泣け、空よ泣け",
+      "sent_kr": "울고 또 울어라, 하늘이여 울어라"
+    },
+    {
+      "id": 18,
+      "japanese": "降り頻る",
+      "pronunciation": "ふりしきる",
+      "meaning": "세차게 내리다",
+      "sent_jp": "降り頻る雨でさえ",
+      "sent_kr": "세차게 내리는 비조차도"
+    },
+    {
+      "id": 19,
+      "japanese": "土",
+      "pronunciation": "つち",
+      "meaning": "흙",
+      "sent_jp": "土を打つ音よ鳴れ",
+      "sent_kr": "흙을 치는 소리여 울려라"
+    },
+    {
+      "id": 20,
+      "japanese": "鳴る",
+      "pronunciation": "なる",
+      "meaning": "울리다, 소리나다",
+      "sent_jp": "土を打つ音よ鳴れ",
+      "sent_kr": "흙을 치는 소리여 울려라"
+    },
+    {
+      "id": 21,
+      "japanese": "春荒れ",
+      "pronunciation": "はるあれ",
+      "meaning": "봄철 폭풍",
+      "sent_jp": "僕ら春荒れ",
+      "sent_kr": "우리들은 봄철 폭풍"
+    },
+    {
+      "id": 22,
+      "japanese": "海",
+      "pronunciation": "うみ",
+      "meaning": "바다",
+      "sent_jp": "あの海も越えてゆく",
+      "sent_kr": "저 바다도 넘어간다"
+    },
+    {
+      "id": 23,
+      "japanese": "通り雨",
+      "pronunciation": "とおりあめ",
+      "meaning": "소나기",
+      "sent_jp": "通り雨　草を靡かせ",
+      "sent_kr": "소나기가 풀을 휘날리게 하네"
+    },
+    {
+      "id": 24,
+      "japanese": "靡く",
+      "pronunciation": "なびく",
+      "meaning": "휘날리다",
+      "sent_jp": "通り雨　草を靡かせ",
+      "sent_kr": "소나기가 풀을 휘날리게 하네"
+    },
+    {
+      "id": 25,
+      "japanese": "羊雲",
+      "pronunciation": "ひつじぐも",
+      "meaning": "양떼구름",
+      "sent_jp": "羊雲　あれも春のせい",
+      "sent_kr": "양떼구름, 저것도 봄 때문"
+    },
+    {
+      "id": 26,
+      "japanese": "裂く",
+      "pronunciation": "さく",
+      "meaning": "찢다, 가르다",
+      "sent_jp": "晴れに晴れ、空よ裂け",
+      "sent_kr": "맑게 개어라, 하늘이여 갈라져라"
+    },
+    {
+      "id": 27,
+      "japanese": "奏でる",
+      "pronunciation": "かなでる",
+      "meaning": "연주하다, 울리다",
+      "sent_jp": "胸を打つ音奏で",
+      "sent_kr": "가슴을 치는 소리를 연주하라"
+    },
+    {
+      "id": 28,
+      "japanese": "春風",
+      "pronunciation": "はるかぜ",
+      "meaning": "봄바람",
+      "sent_jp": "僕ら春風",
+      "sent_kr": "우리들은 봄바람"
+    },
+    {
+      "id": 29,
+      "japanese": "音に聞く",
+      "pronunciation": "おとにきく",
+      "meaning": "소문으로 듣다, 명성이 자자하다",
+      "sent_jp": "音に聞く晴るの風",
+      "sent_kr": "소문으로 듣는 맑음의 바람"
+    },
+    {
+      "id": 30,
+      "japanese": "~のように",
+      "pronunciation": "~のように",
+      "meaning": "~처럼",
+      "sent_jp": "貴方は風のように",
+      "sent_kr": "당신은 바람처럼"
+    },
+    {
+      "id": 31,
+      "japanese": "~ては",
+      "pronunciation": "~ては",
+      "meaning": "~하면 (반복)",
+      "sent_jp": "目を閉じては夕暮れ",
+      "sent_kr": "눈을 감으면 해질녘"
+    },
+    {
+      "id": 32,
+      "japanese": "~でさえ",
+      "pronunciation": "~でさえ",
+      "meaning": "~조차, ~까지도",
+      "sent_jp": "降り止めば雨でさえ",
+      "sent_kr": "그치면 비조차도"
+    },
+    {
+      "id": 33,
+      "japanese": "~のせい",
+      "pronunciation": "~のせい",
+      "meaning": "~때문에, ~탓으로",
+      "sent_jp": "咲いて晴るのせい",
+      "sent_kr": "피어서 맑음 때문에"
+    },
+    {
+      "id": 34,
+      "japanese": "命令形 + よ",
+      "pronunciation": "めいれいけい + よ",
+      "meaning": "~해라 (강한 명령)",
+      "sent_jp": "花よ咲け",
+      "sent_kr": "꽃아 피어라"
+    },
+    {
+      "id": 35,
+      "japanese": "~に~に",
+      "pronunciation": "~に~に",
+      "meaning": "~하고 또 ~하다 (반복 강조)",
+      "sent_jp": "泣きに泣け",
+      "sent_kr": "울고 또 울어라"
+    },
+    {
+      "id": 36,
+      "japanese": "~のだろうか",
+      "pronunciation": "~のだろうか",
+      "meaning": "~일까, ~인가 (추측의 의문)",
+      "sent_jp": "何が悲しいのだろうか",
+      "sent_kr": "무엇이 슬픈 걸까"
+    },
+    {
+      "id": 37,
+      "japanese": "~てゆく",
+      "pronunciation": "~てゆく",
+      "meaning": "~해 나가다",
+      "sent_jp": "あの雲も越えてゆけ",
+      "sent_kr": "저 구름도 넘어가라"
+    },
+    {
+      "id": 38,
+      "japanese": "~を~に",
+      "pronunciation": "~を~に",
+      "meaning": "~을 ~에게",
+      "sent_jp": "貴方を飾る晴る",
+      "sent_kr": "당신을 장식하는 맑음"
+    }
+  ]
+}
