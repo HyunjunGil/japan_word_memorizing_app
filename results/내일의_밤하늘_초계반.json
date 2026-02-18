@@ -1,0 +1,365 @@
+{
+  "fileName": "ashita_yozora",
+  "words": [
+    {
+      "id": 1,
+      "japanese": "気分次第",
+      "pronunciation": "きぶんしだい",
+      "meaning": "기분 나름, 기분에 따라",
+      "sent_jp": "気分次第です僕は",
+      "sent_kr": "나는 기분 나름이에요"
+    },
+    {
+      "id": 2,
+      "japanese": "敵",
+      "pronunciation": "てき",
+      "meaning": "적",
+      "sent_jp": "敵を選んで戦う少年",
+      "sent_kr": "적을 골라 싸우는 소년"
+    },
+    {
+      "id": 3,
+      "japanese": "戦う",
+      "pronunciation": "たたかう",
+      "meaning": "싸우다",
+      "sent_jp": "敵を選んで戦う少年",
+      "sent_kr": "적을 골라 싸우는 소년"
+    },
+    {
+      "id": 4,
+      "japanese": "少年",
+      "pronunciation": "しょうねん",
+      "meaning": "소년",
+      "sent_jp": "敵を選んで戦う少年",
+      "sent_kr": "적을 골라 싸우는 소년"
+    },
+    {
+      "id": 5,
+      "japanese": "叶える",
+      "pronunciation": "かなえる",
+      "meaning": "이루다, 실현하다",
+      "sent_jp": "叶えたい未来も無くて",
+      "sent_kr": "이루고 싶은 미래도 없어서"
+    },
+    {
+      "id": 6,
+      "japanese": "未来",
+      "pronunciation": "みらい",
+      "meaning": "미래",
+      "sent_jp": "叶えたい未来も無くて",
+      "sent_kr": "이루고 싶은 미래도 없어서"
+    },
+    {
+      "id": 7,
+      "japanese": "夢",
+      "pronunciation": "ゆめ",
+      "meaning": "꿈",
+      "sent_jp": "夢に描かれるのを待ってた",
+      "sent_kr": "꿈에 그려지길 기다렸어"
+    },
+    {
+      "id": 8,
+      "japanese": "描く",
+      "pronunciation": "えがく",
+      "meaning": "그리다",
+      "sent_jp": "夢に描かれるのを待ってた",
+      "sent_kr": "꿈에 그려지길 기다렸어"
+    },
+    {
+      "id": 9,
+      "japanese": "過去",
+      "pronunciation": "かこ",
+      "meaning": "과거",
+      "sent_jp": "過去に願って",
+      "sent_kr": "과거에 빌며"
+    },
+    {
+      "id": 10,
+      "japanese": "願う",
+      "pronunciation": "ねがう",
+      "meaning": "바라다, 빌다",
+      "sent_jp": "過去に願って",
+      "sent_kr": "과거에 빌며"
+    },
+    {
+      "id": 11,
+      "japanese": "如何しようも無い",
+      "pronunciation": "どうしようもない",
+      "meaning": "어쩔 수 없다",
+      "sent_jp": "もう如何しようも無くなって叫ぶんだ",
+      "sent_kr": "이제 어쩔 수 없게 되어 외치는 거야"
+    },
+    {
+      "id": 12,
+      "japanese": "叫ぶ",
+      "pronunciation": "さけぶ",
+      "meaning": "외치다",
+      "sent_jp": "もう如何しようも無くなって叫ぶんだ",
+      "sent_kr": "이제 어쩔 수 없게 되어 외치는 거야"
+    },
+    {
+      "id": 13,
+      "japanese": "沈む",
+      "pronunciation": "しずむ",
+      "meaning": "(해가) 지다, 가라앉다",
+      "sent_jp": "そんな僕を置いて月は沈み陽は昇る",
+      "sent_kr": "그런 나를 내버려두고 달은 지고 해는 뜬다"
+    },
+    {
+      "id": 14,
+      "japanese": "陽",
+      "pronunciation": "ひ",
+      "meaning": "태양, 해",
+      "sent_jp": "そんな僕を置いて月は沈み陽は昇る",
+      "sent_kr": "그런 나를 내버려두고 달은 지고 해는 뜬다"
+    },
+    {
+      "id": 15,
+      "japanese": "昇る",
+      "pronunciation": "のぼる",
+      "meaning": "오르다, (해가) 뜨다",
+      "sent_jp": "そんな僕を置いて月は沈み陽は昇る",
+      "sent_kr": "그런 나를 내버려두고 달은 지고 해는 뜬다"
+    },
+    {
+      "id": 16,
+      "japanese": "舞う",
+      "pronunciation": "まう",
+      "meaning": "날다, 춤추다",
+      "sent_jp": "空へ舞う",
+      "sent_kr": "하늘로 날아오른다"
+    },
+    {
+      "id": 17,
+      "japanese": "世界",
+      "pronunciation": "せかい",
+      "meaning": "세계",
+      "sent_jp": "世界の彼方",
+      "sent_kr": "세계의 저 너머"
+    },
+    {
+      "id": 18,
+      "japanese": "彼方",
+      "pronunciation": "かなた",
+      "meaning": "저 너머, 저편",
+      "sent_jp": "世界の彼方",
+      "sent_kr": "세계의 저 너머"
+    },
+    {
+      "id": 19,
+      "japanese": "闇",
+      "pronunciation": "やみ",
+      "meaning": "어둠",
+      "sent_jp": "闇を照らす魁星",
+      "sent_kr": "어둠을 비추는 괴성"
+    },
+    {
+      "id": 20,
+      "japanese": "照らす",
+      "pronunciation": "てらす",
+      "meaning": "비추다",
+      "sent_jp": "闇を照らす魁星",
+      "sent_kr": "어둠을 비추는 괴성"
+    },
+    {
+      "id": 21,
+      "japanese": "魁星",
+      "pronunciation": "かいせい",
+      "meaning": "괴성 (북두칠성의 첫 번째 별, 선구자)",
+      "sent_jp": "闇を照らす魁星",
+      "sent_kr": "어둠을 비추는 괴성"
+    },
+    {
+      "id": 22,
+      "japanese": "向かう",
+      "pronunciation": "むかう",
+      "meaning": "향하다",
+      "sent_jp": "また明日へ向かっていこう",
+      "sent_kr": "또 내일을 향해 나아가자"
+    },
+    {
+      "id": 23,
+      "japanese": "残酷",
+      "pronunciation": "ざんこく",
+      "meaning": "잔혹함",
+      "sent_jp": "未来は残酷で",
+      "sent_kr": "미래는 잔혹해서"
+    },
+    {
+      "id": 24,
+      "japanese": "綺麗",
+      "pronunciation": "きれい",
+      "meaning": "아름답다",
+      "sent_jp": "世界は本当に綺麗だった",
+      "sent_kr": "세계는 정말 아름다웠어"
+    },
+    {
+      "id": 25,
+      "japanese": "忘れる",
+      "pronunciation": "わすれる",
+      "meaning": "잊다",
+      "sent_jp": "忘れてないさ",
+      "sent_kr": "잊지 않았어"
+    },
+    {
+      "id": 26,
+      "japanese": "思い出す",
+      "pronunciation": "おもいだす",
+      "meaning": "떠올리다, 기억해내다",
+      "sent_jp": "思い出せるように仕舞ってるの",
+      "sent_kr": "떠올릴 수 있도록 간직하고 있어"
+    },
+    {
+      "id": 27,
+      "japanese": "仕舞う",
+      "pronunciation": "しまう",
+      "meaning": "간직하다, 넣어두다",
+      "sent_jp": "思い出せるように仕舞ってるの",
+      "sent_kr": "떠올릴 수 있도록 간직하고 있어"
+    },
+    {
+      "id": 28,
+      "japanese": "翔ぶ",
+      "pronunciation": "とぶ",
+      "meaning": "날다",
+      "sent_jp": "君がいてもいなくても翔べるなんて妄想",
+      "sent_kr": "네가 있든 없든 날 수 있다는 건 망상"
+    },
+    {
+      "id": 29,
+      "japanese": "妄想",
+      "pronunciation": "もうそう",
+      "meaning": "망상",
+      "sent_jp": "君がいてもいなくても翔べるなんて妄想",
+      "sent_kr": "네가 있든 없든 날 수 있다는 건 망상"
+    },
+    {
+      "id": 30,
+      "japanese": "独り",
+      "pronunciation": "ひとり",
+      "meaning": "혼자",
+      "sent_jp": "独りじゃ歩くことさえ僕は",
+      "sent_kr": "혼자서는 걷는 것조차 나는"
+    },
+    {
+      "id": 31,
+      "japanese": "藍色",
+      "pronunciation": "あいいろ",
+      "meaning": "남색, 인디고",
+      "sent_jp": "藍色の風に吐いた幻想",
+      "sent_kr": "남색 바람에 내뱉은 환상"
+    },
+    {
+      "id": 32,
+      "japanese": "幻想",
+      "pronunciation": "げんそう",
+      "meaning": "환상",
+      "sent_jp": "藍色の風に吐いた幻想",
+      "sent_kr": "남색 바람에 내뱉은 환상"
+    },
+    {
+      "id": 33,
+      "japanese": "壊す",
+      "pronunciation": "こわす",
+      "meaning": "부수다, 깨뜨리다",
+      "sent_jp": "壊してくれって願って踠いたって",
+      "sent_kr": "부숴달라고 바라며 발버둥쳐도"
+    },
+    {
+      "id": 34,
+      "japanese": "踠く",
+      "pronunciation": "もがく",
+      "meaning": "발버둥치다",
+      "sent_jp": "壊してくれって願って踠いたって",
+      "sent_kr": "부숴달라고 바라며 발버둥쳐도"
+    },
+    {
+      "id": 35,
+      "japanese": "叶う",
+      "pronunciation": "かなう",
+      "meaning": "이루어지다",
+      "sent_jp": "願ったんなら叶えてしまえやって",
+      "sent_kr": "빌었다면 이뤄버리라고"
+    },
+    {
+      "id": 36,
+      "japanese": "逢う",
+      "pronunciation": "あう",
+      "meaning": "만나다 (情感이 담긴 표현)",
+      "sent_jp": "また明日の夜に逢いに行こうと思うが",
+      "sent_kr": "또 내일 밤에 만나러 가려고 하는데"
+    },
+    {
+      "id": 37,
+      "japanese": "~次第",
+      "pronunciation": "~しだい",
+      "meaning": "~에 따라, ~나름",
+      "sent_jp": "気分次第です僕は",
+      "sent_kr": "나는 기분 나름이에요"
+    },
+    {
+      "id": 38,
+      "japanese": "~のを待つ",
+      "pronunciation": "~のをまつ",
+      "meaning": "~되기를 기다리다",
+      "sent_jp": "夢に描かれるのを待ってた",
+      "sent_kr": "꿈에 그려지길 기다렸어"
+    },
+    {
+      "id": 39,
+      "japanese": "そのくせ",
+      "pronunciation": "そのくせ",
+      "meaning": "그런 주제에, 그러면서도",
+      "sent_jp": "そのくせ未来が怖くて明日を嫌って過去に願って",
+      "sent_kr": "그러면서도 미래가 무서워 내일을 싫어하고 과거에 빌며"
+    },
+    {
+      "id": 40,
+      "japanese": "~なんて",
+      "pronunciation": "~なんて",
+      "meaning": "~따위, ~라니 (가벼운 경멸·놀람)",
+      "sent_jp": "君がいてもいなくても翔べるなんて妄想",
+      "sent_kr": "네가 있든 없든 날 수 있다는 건 망상"
+    },
+    {
+      "id": 41,
+      "japanese": "~たって",
+      "pronunciation": "~たって",
+      "meaning": "~해도, ~라도 (=ても의 구어체)",
+      "sent_jp": "壊してくれって願って踠いたって",
+      "sent_kr": "부숴달라고 바라며 발버둥쳐도"
+    },
+    {
+      "id": 42,
+      "japanese": "~まま",
+      "pronunciation": "~まま",
+      "meaning": "~인 채로, ~한 상태로",
+      "sent_jp": "しないまま藍色の風に吐いた幻想",
+      "sent_kr": "하지 않은 채 남색 바람에 내뱉은 환상"
+    },
+    {
+      "id": 43,
+      "japanese": "~てしまう",
+      "pronunciation": "~てしまう",
+      "meaning": "~해버리다 (완료·유감)",
+      "sent_jp": "夢で終わってしまうのならば",
+      "sent_kr": "꿈으로 끝나버린다면"
+    },
+    {
+      "id": 44,
+      "japanese": "~ように",
+      "pronunciation": "~ように",
+      "meaning": "~할 수 있도록, ~처럼",
+      "sent_jp": "思い出せるように仕舞ってるの",
+      "sent_kr": "떠올릴 수 있도록 간직하고 있어"
+    },
+    {
+      "id": 45,
+      "japanese": "~てくれ",
+      "pronunciation": "~てくれ",
+      "meaning": "~해줘 (강한 부탁·명령)",
+      "sent_jp": "壊してくれって願って",
+      "sent_kr": "부숴달라고 바라며"
+    }
+  ]
+}
